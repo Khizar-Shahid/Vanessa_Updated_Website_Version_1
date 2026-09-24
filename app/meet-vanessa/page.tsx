@@ -8,7 +8,7 @@ import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 import PlaceholderNote from '@/components/PlaceholderNote';
 
 export const metadata = {
-  title: 'Meet Vanessa M. Sierra, LMFT | Thrive Mental Health Solutions',
+  title: 'Meet Vanessa M. Sierra, LMFT | Thrive with Therapy',
   description:
     'Learn about Vanessa M. Sierra, Licensed Marriage and Family Therapist with over 20 years of clinical experience in individual, couples, family, and trauma-focused therapy.',
 };

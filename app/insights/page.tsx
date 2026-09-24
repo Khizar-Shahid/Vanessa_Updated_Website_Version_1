@@ -4,7 +4,7 @@ import InsightsBrowser from '@/components/InsightsBrowser';
 import PlaceholderNote from '@/components/PlaceholderNote';
 
 export const metadata = {
-  title: 'Insights | Thrive Mental Health Solutions',
+  title: 'Insights | Thrive with Therapy',
   description:
     'Videos and reflections from Vanessa M. Sierra, LMFT on relationships, emotions, patterns, parenting, and everyday challenges.',
 };

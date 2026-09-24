@@ -446,6 +446,7 @@ p {
   font-weight: 500;
   line-height: 1.1;
   color: var(--ink);
+  white-space: nowrap;
 }
 .logo-lockup__sub {
   font-family: var(--font-nunito-sans), sans-serif;

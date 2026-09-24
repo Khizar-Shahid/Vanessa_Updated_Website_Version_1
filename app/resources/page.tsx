@@ -5,7 +5,7 @@ import PageHero from '@/components/PageHero';
 import PlaceholderNote from '@/components/PlaceholderNote';
 
 export const metadata = {
-  title: 'Resource Library | Thrive Mental Health Solutions',
+  title: 'Resource Library | Thrive with Therapy',
   description:
     'Free reflection tools, nervous system regulation workbooks, and guided courses on attachment and relational healing by Vanessa M. Sierra, LMFT.',
 };

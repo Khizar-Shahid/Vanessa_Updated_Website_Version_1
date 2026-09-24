@@ -4,7 +4,7 @@ import PageHero from '@/components/PageHero';
 import PlaceholderNote from '@/components/PlaceholderNote';
 
 export const metadata = {
-  title: 'Ways We Work | Thrive Mental Health Solutions',
+  title: 'Ways We Work | Thrive with Therapy',
   description:
     'Explore therapeutic services offered by Vanessa M. Sierra, LMFT: Individual Therapy, Couples Therapy, Parenting & Family Therapy, and Trauma-Focused EMDR Care.',
 };

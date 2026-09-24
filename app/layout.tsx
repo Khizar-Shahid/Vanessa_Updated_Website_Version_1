@@ -21,7 +21,7 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Thrive Mental Health Solutions | Vanessa M. Sierra, LMFT',
+  title: 'Thrive with Therapy | Vanessa M. Sierra, LMFT',
   description:
     'Licensed Marriage and Family Therapy in Coral Gables, South Florida. Collaborative individual, couples, parenting, and trauma-focused therapy to understand underlying patterns and find a way forward.',
   metadataBase: new URL('https://www.thrivewiththerapy.org'),
@@ -38,11 +38,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Vanessa M. Sierra, LMFT' }],
   openGraph: {
-    title: 'Thrive Mental Health Solutions | Vanessa M. Sierra, LMFT',
+    title: 'Thrive with Therapy | Vanessa M. Sierra, LMFT',
     description:
       'A safe, collaborative space to understand what is happening, make sense of the patterns beneath it, and find a way forward.',
     url: 'https://www.thrivewiththerapy.org',
-    siteName: 'Thrive Mental Health Solutions',
+    siteName: 'Thrive with Therapy',
     locale: 'en_US',
     type: 'website',
   },
@@ -56,7 +56,7 @@ export default function RootLayout({
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'MedicalBusiness',
-    name: 'Thrive Mental Health Solutions',
+    name: 'Thrive with Therapy',
     founder: {
       '@type': 'Person',
       name: 'Vanessa M. Sierra, LMFT',

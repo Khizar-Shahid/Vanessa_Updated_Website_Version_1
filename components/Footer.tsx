@@ -55,7 +55,7 @@ export default function Footer() {
       <div className="container">
         <div className="site-footer__grid">
           <div className="site-footer__brand">
-            <Link href="/" aria-label="Thrive Mental Health Solutions — Home" className="site-footer__logo">
+            <Link href="/" aria-label="Thrive with Therapy — Home" className="site-footer__logo">
               <LogoLockup size={52} />
             </Link>
             <p>
@@ -106,7 +106,7 @@ export default function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Thrive Mental Health on ${s.label} (opens in a new tab)`}
+                    aria-label={`Thrive with Therapy on ${s.label} (opens in a new tab)`}
                     className="social-icon"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
@@ -120,7 +120,7 @@ export default function Footer() {
         </div>
 
         <div className="site-footer__legal">
-          <p>© {currentYear} Thrive Mental Health Solutions. Vanessa M. Sierra, LMFT. All rights reserved.</p>
+          <p>© {currentYear} Thrive with Therapy. Vanessa M. Sierra, LMFT. All rights reserved.</p>
           <ul>
             {/* TODO(client): these pages don't exist yet */}
             <li>

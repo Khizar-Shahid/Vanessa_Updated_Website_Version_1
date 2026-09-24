@@ -45,8 +45,7 @@ export function LogoLockup({ size = 46, priority = false }: { size?: number; pri
   return (
     <span className="logo-lockup">
       <Image src="/logo.svg" alt="" width={size} height={size} priority={priority} />
-      <span className="logo-lockup__name">Thrive Mental Health</span>
-      <span className="logo-lockup__sub">Solutions</span>
+      <span className="logo-lockup__name">Thrive with Therapy</span>
     </span>
   );
 }
@@ -104,7 +103,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <Link href="/" className="site-header__logo" aria-label="Thrive Mental Health Solutions — Home">
+        <Link href="/" className="site-header__logo" aria-label="Thrive with Therapy — Home">
           <LogoLockup priority />
         </Link>
 
