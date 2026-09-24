@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read expert articles on trauma recovery, EMDR therapy, Somatic Experiencing, and coping strategies from Thrive Mental Health Solutions in Coral Gables.">
+  <title>Blog | Thrive Mental Health Solutions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="main-header">
+    <div class="top-bar">
+      <div class="top-bar-container">
+        <div class="top-bar-left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <a href="tel:954-635-0234">954-635-0234</a>
+        </div>
+        <div class="top-bar-right">
+          <a href="https://linkedin.com" class="social-icon-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com" class="social-icon-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com" class="social-icon-link" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar">
+      <a href="index.html" class="logo" id="logo-link">
+        <img src="logo.svg" alt="Thrive Mental Health Solutions Logo" class="logo-icon">
+        <div class="logo-text">
+          <span class="logo-main">Thrive Mental Health</span>
+          <span class="logo-sub">Solutions</span>
+        </div>
+      </a>
+      
+      <ul class="nav-links" id="nav-menu">
+        <li class="nav-item"><a href="index.html" id="nav-home">Home</a></li>
+        <li class="nav-item"><a href="clinic.html" id="nav-clinic">The Clinic</a></li>
+        <li class="nav-item"><a href="booking.html" id="nav-booking">Book Online</a></li>
+        <li class="nav-item active"><a href="blog.html" id="nav-blog">Blog</a></li>
+        <li class="nav-item"><a href="contact.html" id="nav-contact">Contact</a></li>
+      </ul>
+
+      <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- BLOG HERO -->
+  <section class="section" id="blog-hero" style="background-color: var(--color-primary-light); padding-top: 10rem; padding-bottom: 5rem;">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom: 0;">
+        <span class="subtitle">Insights & Healing</span>
+        <h1>Trauma Recovery Blog</h1>
+        <p style="font-size: 1.25rem; color: var(--color-primary-dark); margin-top: 1.5rem;">Explore professional insights, grounding exercises, and scientific perspectives on EMDR, somatics, and emotional health.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG FILTER & SEARCH -->
+  <section class="section" id="blog-content" style="padding-top: 4rem;">
+    <div class="container">
+      
+      <!-- Search and Filter Bar -->
+      <div class="reveal" style="max-width: 800px; margin: 0 auto 3rem; display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+        <!-- Search input -->
+        <div style="width: 100%; position: relative;">
+          <input type="text" id="blog-search-input" placeholder="Search articles by keywords..." style="width: 100%; padding: 1.1rem 1.5rem 1.1rem 3.5rem; border-radius: 40px; border: 1px solid rgba(0,0,0,0.08); background-color: var(--color-white); box-shadow: var(--shadow-sm); font-size: 1rem; transition: var(--transition);">
+          <svg style="position: absolute; left: 1.5rem; top: 50%; transform: translateY(-50%); color: var(--color-primary); width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </div>
+        
+        <!-- Filter Category list -->
+        <div class="blog-filters">
+          <button class="filter-btn active" data-category="all">All Articles</button>
+          <button class="filter-btn" data-category="EMDR">EMDR</button>
+          <button class="filter-btn" data-category="Somatic">Somatic</button>
+          <button class="filter-btn" data-category="Self-Care">Self-Care</button>
+          <button class="filter-btn" data-category="Trauma">Trauma</button>
+        </div>
+      </div>
+
+      <!-- Blog Card Grid -->
+      <div class="blog-grid" id="blog-posts-grid">
+        <!-- Rendered dynamically by blog.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- READING ARTICLE MODAL -->
+  <div class="blog-modal" id="article-reader-modal" aria-hidden="true" role="dialog">
+    <div class="blog-modal-content">
+      <button class="blog-modal-close" aria-label="Close Article" id="close-modal-btn">×</button>
+      <!-- Modal header hero background / color banner -->
+      <div class="blog-modal-hero" style="background-image: linear-gradient(135deg, var(--color-primary-light), var(--color-primary)); display: flex; align-items: center; justify-content: center; position: relative;">
+        <!-- Soothing pattern overlay -->
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0.1; background-image: radial-gradient(var(--color-primary-dark) 2px, transparent 2px); background-size: 30px 30px;"></div>
+        <!-- Stylized decorative logo graphic inside header -->
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--color-white)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.85;">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <div class="blog-modal-body">
+        <span class="blog-modal-tag" id="modal-article-tag">-</span>
+        <h2 class="blog-modal-title" id="modal-article-title">-</h2>
+        <span class="blog-modal-meta" id="modal-article-meta">-</span>
+        <div class="blog-modal-text" id="modal-article-text">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="logo.svg" alt="Thrive Mental Health Solutions Logo" class="logo-icon">
+          <div class="logo-text">
+            <h3>Thrive Mental Health</h3>
+            <span class="logo-sub">Solutions</span>
+          </div>
+        </div>
+        <p style="color: rgba(255,255,255,0.7); margin-top: 1.5rem;">Compassionate and evidence-based trauma recovery in Coral Gables, Florida. Empowering you to build a renewed path toward healing and emotional resilience.</p>
+      </div>
+      
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="clinic.html">The Clinic</a></li>
+          <li><a href="booking.html">Book Online</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <a href="tel:954-635-0234">954-635-0234</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <a href="mailto:vanessa@thrivementalhealthsolutions.com">vanessa@thrivementalhealthsolutions.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Coral Gables, FL (South Florida)</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Thrive Mental Health Solutions. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#" id="privacy-policy-link">Privacy Policy</a>
+        <a href="#" id="accessibility-statement-link">Accessibility Statement</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html>

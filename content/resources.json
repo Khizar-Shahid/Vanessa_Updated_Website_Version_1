@@ -1,0 +1,49 @@
+{
+  "freeResources": [
+    {
+      "id": "nervous-system-regulation-guide",
+      "title": "Nervous System Regulation & Grounding Workbook",
+      "description": "A comprehensive practical guide featuring 12 somatic exercises, breathwork sequences, and sensory grounding worksheets for moments of high emotional overwhelm.",
+      "format": "Downloadable PDF (24 pages)",
+      "badge": "Free Guide",
+      "downloadUrl": "#",
+      "topics": ["Somatic Regulation", "Anxiety", "Grounding Skills"]
+    },
+    {
+      "id": "couples-communication-blueprint",
+      "title": "De-escalating Relationship Conflict: Reflection Prompts",
+      "description": "Structured questions and reflective journaling exercises designed for partners to break defensive communication cycles and speak from vulnerability.",
+      "format": "Interactive Worksheet",
+      "badge": "Reflection Tool",
+      "downloadUrl": "#",
+      "topics": ["Couples", "Attachment Patterns", "Communication"]
+    },
+    {
+      "id": "parenting-emotional-safety",
+      "title": "Mindful Parenting: Cultivating Safety & Connection",
+      "description": "Practical strategies to help children process intense emotions while keeping parents grounded and maintaining loving, consistent boundaries.",
+      "format": "Printable Resource",
+      "badge": "Parenting Toolkit",
+      "downloadUrl": "#",
+      "topics": ["Parenting", "Family Systems", "Emotional Regulation"]
+    }
+  ],
+  "courses": [
+    {
+      "id": "breaking-relational-cycles",
+      "title": "Breaking Relational Cycles: Understanding Attachment in Love",
+      "description": "A structured, 6-module self-paced course exploring how early attachment styles influence romantic partnerships and how to build lasting emotional safety.",
+      "format": "6 Modules • Video & Guided Journaling",
+      "status": "Enrollment Open",
+      "topics": ["Couples Therapy", "Attachment Theory", "Relational Health"]
+    },
+    {
+      "id": "somatic-healing-pathway",
+      "title": "Beyond Talk Therapy: Fundamentals of Somatic Self-Care",
+      "description": "Learn the physiological language of your nervous system, recognize fight-or-flight triggers, and cultivate embodied calm.",
+      "format": "4 Modules • Guided Body Scans & Audio",
+      "status": "Self-Paced Course",
+      "topics": ["Trauma Recovery", "Somatic Experiencing", "Nervous System"]
+    }
+  ]
+}
