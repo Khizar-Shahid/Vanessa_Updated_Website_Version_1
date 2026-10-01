@@ -1,16 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import insightsData from '@/content/insights.json';
+import { publishedInsights } from '@/lib/insights';
 
 export async function generateStaticParams() {
-  return insightsData.map((item) => ({
+  return publishedInsights.map((item) => ({
     slug: item.slug,
   }));
 }
 
 export default function InsightDetailPage({ params }: { params: { slug: string } }) {
-  const item = insightsData.find((p) => p.slug === params.slug);
+  const item = publishedInsights.find((p) => p.slug === params.slug);
   if (!item) notFound();
 
   return (

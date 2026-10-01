@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import insightsData from '@/content/insights.json';
+import { publishedInsights } from '@/lib/insights';
 import InsightCard from '@/components/InsightCard';
 import { EASE_EDITORIAL } from '@/components/motion/Reveal';
 
@@ -16,25 +16,31 @@ const FILTERS: { id: Filter; label: string }[] = [
 
 /** /insights index: newest first, filterable by type. */
 export default function InsightsBrowser() {
+  const availableFilters = FILTERS.filter(
+    (f) => f.id === 'all' || publishedInsights.some((item) => item.type === f.id),
+  );
   const [activeFilter, setActiveFilter] = useState<Filter>('all');
 
-  const items = insightsData.filter((item) => activeFilter === 'all' || item.type === activeFilter);
+  const items = publishedInsights.filter((item) => activeFilter === 'all' || item.type === activeFilter);
 
   return (
     <>
-      <div className="filter-pills" role="group" aria-label="Filter insights by type">
-        {FILTERS.map((f) => (
-          <button
-            key={f.id}
-            type="button"
-            onClick={() => setActiveFilter(f.id)}
-            aria-pressed={activeFilter === f.id}
-            className="filter-pill"
-          >
-            {f.label}
-          </button>
-        ))}
-      </div>
+      {/* Only offer filters when there is more than one kind of insight to choose from */}
+      {availableFilters.length > 2 && (
+        <div className="filter-pills" role="group" aria-label="Filter insights by type">
+          {availableFilters.map((f) => (
+            <button
+              key={f.id}
+              type="button"
+              onClick={() => setActiveFilter(f.id)}
+              aria-pressed={activeFilter === f.id}
+              className="filter-pill"
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Keyed by filter so the visible set fades in fresh on each change */}
       <ul key={activeFilter} className="card-grid card-grid--3">

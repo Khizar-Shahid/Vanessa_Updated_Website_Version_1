@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import insightsData from '@/content/insights.json';
+import { publishedInsights } from '@/lib/insights';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.thrivewiththerapy.org';
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1.0 : 0.8,
   }));
 
-  const insightRoutes = insightsData.map((item) => ({
+  const insightRoutes = publishedInsights.map((item) => ({
     url: `${baseUrl}/insights/${item.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

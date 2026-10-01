@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import insightsData from '@/content/insights.json';
+import { publishedInsights } from '@/lib/insights';
 import InsightCard from '@/components/InsightCard';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 
@@ -11,7 +11,7 @@ interface InsightsFeedProps {
 
 export default function InsightsFeed({ limit = 3, showHeading = true }: InsightsFeedProps) {
   // insights.json is kept newest-first, so the homepage always shows the latest pieces
-  const latestInsights = insightsData.slice(0, limit);
+  const latestInsights = publishedInsights.slice(0, limit);
 
   return (
     <div>
