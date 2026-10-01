@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PageHero from '@/components/PageHero';
-import PlaceholderNote from '@/components/PlaceholderNote';
 
 interface ServiceData {
   title: string;
@@ -168,10 +167,6 @@ export default function ServiceDetailPage({ params }: { params: { service: strin
       {/* Main Service Content */}
       <section className="section-rhythm">
         <div className="container" style={{ maxWidth: '920px' }}>
-          <PlaceholderNote>
-            Everything on this page below the heading is draft content — who it’s for, what sessions
-            look like, focus areas, and questions. It will be replaced with Vanessa’s own wording.
-          </PlaceholderNote>
           {/* Who It's For & What Sessions Look Like Grid */}
           <div
             style={{

@@ -12,11 +12,12 @@ const EXPLORE_LINKS = [
   { label: 'FAQ', href: '/faq' },
 ];
 
-// TODO(client): replace with the practice's real profile URLs before launch.
+// Vanessa has no Facebook page, so only LinkedIn and Instagram are listed.
 const SOCIAL_LINKS = [
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com',
+    ariaLabel: 'Vanessa M. Sierra on LinkedIn',
+    href: 'https://www.linkedin.com/in/vanessa-m-sierra-lmft-5a5070405',
     icon: (
       <>
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -27,7 +28,8 @@ const SOCIAL_LINKS = [
   },
   {
     label: 'Instagram',
-    href: 'https://instagram.com',
+    ariaLabel: 'Thrive with Therapy on Instagram',
+    href: 'https://www.instagram.com/thrivewiththerapy/',
     icon: (
       <>
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -35,11 +37,6 @@ const SOCIAL_LINKS = [
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
       </>
     ),
-  },
-  {
-    label: 'Facebook',
-    href: 'https://facebook.com',
-    icon: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />,
   },
 ];
 
@@ -106,7 +103,7 @@ export default function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Thrive with Therapy on ${s.label} (opens in a new tab)`}
+                    aria-label={`${s.ariaLabel} (opens in a new tab)`}
                     className="social-icon"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">

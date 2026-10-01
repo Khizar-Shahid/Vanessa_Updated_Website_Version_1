@@ -1,49 +1,43 @@
 {
   "freeResources": [
     {
-      "id": "nervous-system-regulation-guide",
-      "title": "Nervous System Regulation & Grounding Workbook",
-      "description": "A comprehensive practical guide featuring 12 somatic exercises, breathwork sequences, and sensory grounding worksheets for moments of high emotional overwhelm.",
-      "format": "Downloadable PDF (24 pages)",
-      "badge": "Free Guide",
-      "downloadUrl": "#",
-      "topics": ["Somatic Regulation", "Anxiety", "Grounding Skills"]
-    },
-    {
-      "id": "couples-communication-blueprint",
-      "title": "De-escalating Relationship Conflict: Reflection Prompts",
-      "description": "Structured questions and reflective journaling exercises designed for partners to break defensive communication cycles and speak from vulnerability.",
-      "format": "Interactive Worksheet",
+      "id": "the-reaction-reset",
+      "title": "The Reaction Reset",
+      "description": "A simple pause between feeling something and acting on it. Three steps — Pause, Check, Choose — help you notice the moment before a reaction takes over, so you can respond with intention instead.",
+      "format": "Printable PDF · 2 pages",
       "badge": "Reflection Tool",
-      "downloadUrl": "#",
-      "topics": ["Couples", "Attachment Patterns", "Communication"]
+      "file": "the-reaction-reset.pdf",
+      "topics": [
+        "Emotional Reactions",
+        "Self-Awareness",
+        "Communication"
+      ]
     },
     {
-      "id": "parenting-emotional-safety",
-      "title": "Mindful Parenting: Cultivating Safety & Connection",
-      "description": "Practical strategies to help children process intense emotions while keeping parents grounded and maintaining loving, consistent boundaries.",
-      "format": "Printable Resource",
-      "badge": "Parenting Toolkit",
-      "downloadUrl": "#",
-      "topics": ["Parenting", "Family Systems", "Emotional Regulation"]
-    }
-  ],
-  "courses": [
-    {
-      "id": "breaking-relational-cycles",
-      "title": "Breaking Relational Cycles: Understanding Attachment in Love",
-      "description": "A structured, 6-module self-paced course exploring how early attachment styles influence romantic partnerships and how to build lasting emotional safety.",
-      "format": "6 Modules • Video & Guided Journaling",
-      "status": "Enrollment Open",
-      "topics": ["Couples Therapy", "Attachment Theory", "Relational Health"]
+      "id": "the-problem-solving-planner",
+      "title": "The Problem-Solving Planner",
+      "description": "When something feels stuck, don’t solve everything at once. This planner walks you through naming the problem, separating what you can control, weighing your options, and choosing one workable first step.",
+      "format": "Printable PDF · 3 pages",
+      "badge": "Planner",
+      "file": "the-problem-solving-planner.pdf",
+      "topics": [
+        "Feeling Stuck",
+        "Decision-Making",
+        "Next Steps"
+      ]
     },
     {
-      "id": "somatic-healing-pathway",
-      "title": "Beyond Talk Therapy: Fundamentals of Somatic Self-Care",
-      "description": "Learn the physiological language of your nervous system, recognize fight-or-flight triggers, and cultivate embodied calm.",
-      "format": "4 Modules • Guided Body Scans & Audio",
-      "status": "Self-Paced Course",
-      "topics": ["Trauma Recovery", "Somatic Experiencing", "Nervous System"]
+      "id": "reflections-after-a-fight",
+      "title": "Reflections in the Aftermath of a Fight",
+      "description": "After the fight, pause before you repeat the pattern. A five-minute reflection to complete on your own first — what happened, what it brought up, and what you actually needed — before talking it through together.",
+      "format": "Printable PDF · 1 page",
+      "badge": "For Couples",
+      "file": "reflections-after-a-fight.pdf",
+      "topics": [
+        "Couples",
+        "Conflict",
+        "Communication"
+      ]
     }
   ]
 }

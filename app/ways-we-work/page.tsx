@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import PageHero from '@/components/PageHero';
-import PlaceholderNote from '@/components/PlaceholderNote';
 
 export const metadata = {
   title: 'Ways We Work | Thrive with Therapy',
@@ -90,10 +89,6 @@ export default function WaysWeWorkPage() {
       {/* Services List */}
       <section className="section-rhythm">
         <div className="container" style={{ maxWidth: '980px' }}>
-          <PlaceholderNote>
-            The service descriptions and focus lists below are drafts. The one-line introductions come
-            from the approved brief; the rest will be replaced with Vanessa’s own wording.
-          </PlaceholderNote>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
             {SERVICES.map((svc) => (
               <div

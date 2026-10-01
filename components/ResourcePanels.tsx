@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
+import resourcesData from '@/content/resources.json';
+import { Reveal } from '@/components/motion/Reveal';
 
-/* Line-art notebook (free resources) and book stack (courses) — the
+/* Line-art notebook for the free resources panel — the
    §5 §7 "book/notebook visual cue". Decorative only. */
 function NotebookArt() {
   return (
@@ -21,22 +22,6 @@ function NotebookArt() {
   );
 }
 
-function BookStackArt() {
-  return (
-    <svg viewBox="0 0 220 150" fill="none" aria-hidden="true" focusable="false" className="resource-panel__art">
-      <rect x="40" y="104" width="140" height="22" rx="3" fill="#FFFFFF" stroke="var(--salmon-text)" strokeWidth="1.4" />
-      <path d="M54 104 V 126" stroke="var(--salmon)" strokeWidth="1.4" />
-      <rect x="52" y="80" width="120" height="24" rx="3" fill="var(--salmon-soft)" stroke="var(--salmon-text)" strokeWidth="1.4" />
-      <path d="M72 92 H 140" stroke="var(--salmon-text)" strokeWidth="1" strokeLinecap="round" opacity="0.6" />
-      <rect x="46" y="58" width="130" height="22" rx="3" fill="#FFFFFF" stroke="var(--salmon-text)" strokeWidth="1.4" />
-      <path d="M160 58 V 80" stroke="var(--salmon)" strokeWidth="1.4" />
-      <path d="M96 58 C 96 40, 112 26, 128 22 C 124 34, 126 46, 134 56" fill="var(--sage-soft)" stroke="var(--sage-deep)" strokeWidth="1.3" strokeLinejoin="round" />
-      <path d="M100 56 C 108 44, 116 36, 126 28" stroke="var(--sage-deep)" strokeWidth="1" strokeLinecap="round" />
-      <path d="M20 132 C 70 126, 150 138, 200 130" stroke="var(--salmon)" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
-    </svg>
-  );
-}
-
 export default function ResourcePanels() {
   return (
     <section className="section-rhythm section--bordered">
@@ -45,33 +30,32 @@ export default function ResourcePanels() {
           <span className="label-eyebrow">RESOURCE LIBRARY</span>
           <h2>Explore at Your Own Pace.</h2>
           <p className="lead-paragraph">
-            Start with a free resource, or go deeper with guided learning through our courses.
+            Start with a free resource — practical tools you can use on your own.
           </p>
         </Reveal>
 
-        <RevealGroup className="resource-panels">
-          <RevealItem className="resource-panel resource-panel--sage">
-            <div className="resource-panel__visual">
-              <NotebookArt />
-            </div>
-            <h3 className="resource-panel__title">Free Resources</h3>
+        <Reveal className="resource-feature">
+          <div className="resource-feature__visual">
+            <NotebookArt />
+          </div>
+          <div className="resource-feature__body">
+            <span className="label-eyebrow">FREE RESOURCES</span>
+            <h3 className="resource-panel__title">Guides &amp; reflection tools</h3>
             <p>Guides, worksheets, reflection tools, and practical resources to explore on your own.</p>
+            {/* Reads content/resources.json, so new resources appear here automatically */}
+            <ul className="resource-feature__list">
+              {resourcesData.freeResources.map((r) => (
+                <li key={r.id}>
+                  <span className="resource-feature__title">{r.title}</span>
+                  <span className="resource-feature__format">{r.format}</span>
+                </li>
+              ))}
+            </ul>
             <Link href="/resources#free" className="btn btn-primary">
               Explore Free Resources
             </Link>
-          </RevealItem>
-
-          <RevealItem className="resource-panel resource-panel--salmon">
-            <div className="resource-panel__visual">
-              <BookStackArt />
-            </div>
-            <h3 className="resource-panel__title">Courses</h3>
-            <p>Go deeper with structured learning designed around topics that matter in real life.</p>
-            <Link href="/resources#courses" className="btn btn-secondary">
-              Explore Courses
-            </Link>
-          </RevealItem>
-        </RevealGroup>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

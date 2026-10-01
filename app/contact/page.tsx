@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import PageHero from '@/components/PageHero';
-import PlaceholderNote from '@/components/PlaceholderNote';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -243,9 +242,6 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} noValidate>
-                    <PlaceholderNote>
-                      This form is not connected yet — messages are not sent anywhere. Please call or email instead.
-                    </PlaceholderNote>
                     <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '24px', marginBottom: '0.5rem' }}>
                       Send a Message
                     </h3>

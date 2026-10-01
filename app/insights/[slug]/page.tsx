@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import insightsData from '@/content/insights.json';
-import PlaceholderNote from '@/components/PlaceholderNote';
 
 export async function generateStaticParams() {
   return insightsData.map((item) => ({
@@ -63,9 +62,6 @@ export default function InsightDetailPage({ params }: { params: { slug: string }
       {/* Main Body */}
       <section style={{ paddingTop: '3.5rem' }}>
         <div className="container" style={{ maxWidth: '780px' }}>
-          <PlaceholderNote>
-            The written text on this page is a draft and will be replaced with Vanessa’s own writing.
-          </PlaceholderNote>
           {/* Video Player if applicable */}
           {item.type === 'video' && item.videoUrl && (
             <div

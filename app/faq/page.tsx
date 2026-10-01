@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import PageHero from '@/components/PageHero';
-import PlaceholderNote from '@/components/PlaceholderNote';
 
 interface FaqItem {
   id: string;
@@ -93,10 +92,6 @@ export default function FaqPage() {
       {/* FAQ Accordion Section */}
       <section className="section-rhythm">
         <div className="container" style={{ maxWidth: '820px' }}>
-          <PlaceholderNote>
-            These questions and answers — including fees, insurance, and session details — are drafts.
-            They need to be replaced with Vanessa’s real FAQ content before launch.
-          </PlaceholderNote>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {FAQ_ITEMS.map((item) => {
               const isOpen = !!openIds[item.id];

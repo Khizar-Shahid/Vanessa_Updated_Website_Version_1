@@ -5,7 +5,6 @@ import credentialsData from '@/content/credentials.json';
 import OrganicLine from '@/components/OrganicLine';
 import ConvergingLines from '@/components/ConvergingLines';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
-import PlaceholderNote from '@/components/PlaceholderNote';
 
 export const metadata = {
   title: 'Meet Vanessa M. Sierra, LMFT | Thrive with Therapy',
@@ -232,10 +231,6 @@ export default function MeetVanessaPage() {
             <h2>More Than 20 Years of Experience.</h2>
           </Reveal>
 
-          <PlaceholderNote>
-            Some wording in this list was expanded beyond the approved brief — please confirm or correct
-            each item.
-          </PlaceholderNote>
 
           <RevealGroup className="credentials">
             {credentialsData.credentials.map((category) => (

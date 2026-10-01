@@ -65,6 +65,10 @@ export default function RootLayout({
     telephone: '954-635-0234',
     email: 'vanessa@thrivementalhealthsolutions.com',
     url: 'https://www.thrivewiththerapy.org',
+    sameAs: [
+      'https://www.instagram.com/thrivewiththerapy/',
+      'https://www.linkedin.com/in/vanessa-m-sierra-lmft-5a5070405',
+    ],
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Coral Gables',
