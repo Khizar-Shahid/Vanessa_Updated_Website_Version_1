@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Nunito_Sans } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import TopStrip from '@/components/TopStrip';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { IS_STAGING } from '@/lib/site';
+
+// Google Analytics 4 measurement ID
+const GA_MEASUREMENT_ID = 'G-DTYE3P8B89';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -86,6 +90,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        {/* Google tag (gtag.js) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </head>
       <body>
         <a href="#main-content" className="skip-link">
