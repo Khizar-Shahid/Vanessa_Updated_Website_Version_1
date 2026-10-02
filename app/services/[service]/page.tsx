@@ -5,6 +5,9 @@ import PageHero from '@/components/PageHero';
 
 interface ServiceData {
   title: string;
+  seoTitle: string;
+  seoDescription: string;
+  seoH1: string;
   subtitle: string;
   forWhen: string;
   whoItsFor: string[];
@@ -14,8 +17,11 @@ interface ServiceData {
 }
 
 const SERVICE_MAP: Record<string, ServiceData> = {
-  'individual-therapy': {
+  'individual-therapy-coral-gables': {
     title: 'Individual Therapy',
+    seoTitle: 'Individual Therapy in Coral Gables, FL | Thrive With Therapy',
+    seoDescription: 'Get personalized individual therapy in Coral Gables, FL. Explore support for emotional challenges, life changes, anxiety, and personal growth.',
+    seoH1: 'Individual Therapy in Coral Gables, FL',
     subtitle: 'One-on-One Collaborative Care',
     forWhen: 'For when something feels stuck, overwhelming, or difficult to understand on your own.',
     whoItsFor: [
@@ -47,8 +53,11 @@ const SERVICE_MAP: Record<string, ServiceData> = {
       },
     ],
   },
-  'couples-therapy': {
+  'couples-therapy-coral-gables': {
     title: 'Couples Therapy',
+    seoTitle: 'Couples Therapy in Coral Gables, FL | Thrive With Therapy',
+    seoDescription: 'Improve communication and strengthen your relationship with couples therapy in Coral Gables, FL. Get a safe and supportive space to work through challenges.',
+    seoH1: 'Couples Therapy in Coral Gables, FL',
     subtitle: 'Relational Reconnection & Repair',
     forWhen: 'For when you care about each other, but keep getting caught in the same patterns.',
     whoItsFor: [
@@ -80,8 +89,11 @@ const SERVICE_MAP: Record<string, ServiceData> = {
       },
     ],
   },
-  'parenting-family-therapy': {
+  'parenting-family-therapy-coral-gables': {
     title: 'Parenting & Family Therapy',
+    seoTitle: 'Parenting & Family Therapy in Coral Gables, FL | Thrive with Therapy',
+    seoDescription: 'Get compassionate parenting and family therapy in Coral Gables, FL. Thrive with Therapy helps families improve communication, relationships, and emotional well-being.',
+    seoH1: 'Parenting & Family Therapy in Coral Gables, FL',
     subtitle: 'Strengthening Family Bonds & Authority',
     forWhen: 'For families navigating conflict, changing roles, and the challenges of raising children.',
     whoItsFor: [
@@ -113,8 +125,11 @@ const SERVICE_MAP: Record<string, ServiceData> = {
       },
     ],
   },
-  'trauma-focused-therapy': {
+  'trauma-therapy-coral-gables': {
     title: 'Trauma-Focused Therapy',
+    seoTitle: 'Trauma Therapy in Coral Gables, FL | Thrive With Therapy',
+    seoDescription: 'Find compassionate trauma therapy in Coral Gables, FL. Get professional support to process difficult experiences and build healthy coping skills.',
+    seoH1: 'Trauma Therapy in Coral Gables, FL',
     subtitle: 'EMDR & Somatic Healing',
     forWhen: 'For when past experiences still affect how you feel, respond, or connect with others today.',
     whoItsFor: [
@@ -148,6 +163,15 @@ const SERVICE_MAP: Record<string, ServiceData> = {
   },
 };
 
+export async function generateMetadata({ params }: { params: { service: string } }) {
+  const data = SERVICE_MAP[params.service];
+  if (!data) return {};
+  return {
+    title: data.seoTitle,
+    description: data.seoDescription,
+  };
+}
+
 export async function generateStaticParams() {
   return Object.keys(SERVICE_MAP).map((slug) => ({ service: slug }));
 }
@@ -160,7 +184,7 @@ export default function ServiceDetailPage({ params }: { params: { service: strin
     <div className="page">
       <PageHero
         eyebrow={data.subtitle}
-        title={data.title}
+        title={data.seoH1}
         lead={<em>&ldquo;{data.forWhen}&rdquo;</em>}
       />
 
@@ -314,7 +338,7 @@ export default function ServiceDetailPage({ params }: { params: { service: strin
               <Link href="/consultation" className="btn btn-primary">
                 Book a Consultation
               </Link>
-              <Link href="/ways-we-work" className="btn btn-secondary">
+              <Link href="/services" className="btn btn-secondary">
                 Back to All Services
               </Link>
             </div>

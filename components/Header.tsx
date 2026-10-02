@@ -9,11 +9,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Meet Vanessa', href: '/meet-vanessa' },
-  { label: 'Ways We Work', href: '/ways-we-work' },
+  { label: 'Services', href: '/services' },
   { label: 'Insights', href: '/insights' },
   { label: 'Resource Library', href: '/resources' },
   { label: 'Consultation', href: '/consultation' },
-  { label: 'FAQ', href: '/faq' },
+  { label: 'FAQ', href: '/faqs' },
   { label: 'Contact', href: '/contact' },
 ];
 

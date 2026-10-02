@@ -7,9 +7,9 @@ import ConvergingLines from '@/components/ConvergingLines';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 
 export const metadata = {
-  title: 'Meet Vanessa M. Sierra, LMFT | Thrive with Therapy',
+  title: 'Meet Vanessa Sierra, LMFT | Thrive with Therapy',
   description:
-    'Learn about Vanessa M. Sierra, Licensed Marriage and Family Therapist with over 20 years of clinical experience in individual, couples, family, and trauma-focused therapy.',
+    'Meet Vanessa Sierra, LMFT, an experienced therapist in Coral Gables, FL, offering compassionate individual, couples, and family therapy.',
 };
 
 const STEPS = [
@@ -55,7 +55,7 @@ export default function MeetVanessaPage() {
               MEET VANESSA
             </RevealItem>
             <RevealItem as="h1">
-              The Person Behind the <em>Work.</em>
+              Meet Vanessa Sierra, <em>LMFT</em>
             </RevealItem>
             <RevealItem as="p" className="lead-paragraph">
               A therapist, a listener, and a believer that the patterns we carry do not have to
@@ -294,7 +294,7 @@ export default function MeetVanessaPage() {
               <Link href="/consultation" className="btn btn-primary">
                 Book a Consultation
               </Link>
-              <Link href="/ways-we-work" className="text-link">
+              <Link href="/services" className="text-link">
                 Explore Ways We Work
               </Link>
             </div>
