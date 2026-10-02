@@ -8,6 +8,7 @@ interface ServiceData {
   seoTitle: string;
   seoDescription: string;
   seoH1: string;
+  seoKeyword: string;
   subtitle: string;
   forWhen: string;
   whoItsFor: string[];
@@ -22,6 +23,7 @@ const SERVICE_MAP: Record<string, ServiceData> = {
     seoTitle: 'Individual Therapy in Coral Gables, FL | Thrive With Therapy',
     seoDescription: 'Get personalized individual therapy in Coral Gables, FL. Explore support for emotional challenges, life changes, anxiety, and personal growth.',
     seoH1: 'Individual Therapy in Coral Gables, FL',
+    seoKeyword: 'Individual Therapy in Coral Gables',
     subtitle: 'One-on-One Collaborative Care',
     forWhen: 'For when something feels stuck, overwhelming, or difficult to understand on your own.',
     whoItsFor: [
@@ -58,6 +60,7 @@ const SERVICE_MAP: Record<string, ServiceData> = {
     seoTitle: 'Couples Therapy in Coral Gables, FL | Thrive With Therapy',
     seoDescription: 'Improve communication and strengthen your relationship with couples therapy in Coral Gables, FL. Get a safe and supportive space to work through challenges.',
     seoH1: 'Couples Therapy in Coral Gables, FL',
+    seoKeyword: 'Couples Therapy in Coral Gables',
     subtitle: 'Relational Reconnection & Repair',
     forWhen: 'For when you care about each other, but keep getting caught in the same patterns.',
     whoItsFor: [
@@ -94,6 +97,7 @@ const SERVICE_MAP: Record<string, ServiceData> = {
     seoTitle: 'Parenting & Family Therapy in Coral Gables, FL | Thrive with Therapy',
     seoDescription: 'Get compassionate parenting and family therapy in Coral Gables, FL. Thrive with Therapy helps families improve communication, relationships, and emotional well-being.',
     seoH1: 'Parenting & Family Therapy in Coral Gables, FL',
+    seoKeyword: 'Parenting and Family Therapy in Coral Gables',
     subtitle: 'Strengthening Family Bonds & Authority',
     forWhen: 'For families navigating conflict, changing roles, and the challenges of raising children.',
     whoItsFor: [
@@ -130,6 +134,7 @@ const SERVICE_MAP: Record<string, ServiceData> = {
     seoTitle: 'Trauma Therapy in Coral Gables, FL | Thrive With Therapy',
     seoDescription: 'Find compassionate trauma therapy in Coral Gables, FL. Get professional support to process difficult experiences and build healthy coping skills.',
     seoH1: 'Trauma Therapy in Coral Gables, FL',
+    seoKeyword: 'Trauma Therapy in Coral Gables',
     subtitle: 'EMDR & Somatic Healing',
     forWhen: 'For when past experiences still affect how you feel, respond, or connect with others today.',
     whoItsFor: [
@@ -169,6 +174,7 @@ export async function generateMetadata({ params }: { params: { service: string }
   return {
     title: data.seoTitle,
     description: data.seoDescription,
+    keywords: [data.seoKeyword],
   };
 }
 

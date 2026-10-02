@@ -10,6 +10,7 @@ export const metadata = {
   title: 'Meet Vanessa Sierra, LMFT | Thrive with Therapy',
   description:
     'Meet Vanessa Sierra, LMFT, an experienced therapist in Coral Gables, FL, offering compassionate individual, couples, and family therapy.',
+  keywords: ['Vanessa Sierra LMFT'],
 };
 
 const STEPS = [

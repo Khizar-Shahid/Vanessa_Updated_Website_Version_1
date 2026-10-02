@@ -6,6 +6,7 @@ export const metadata = {
   title: 'Therapy Services in Coral Gables, FL',
   description:
     'Explore therapy services in Coral Gables, FL, including individual therapy, trauma therapy, couples therapy, and parenting support.',
+  keywords: ['Therapy Services in Coral Gables'],
 };
 
 const SERVICES = [
