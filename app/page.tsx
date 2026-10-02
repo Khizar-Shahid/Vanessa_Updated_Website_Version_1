@@ -29,7 +29,7 @@ const SERVICES: ServiceSummary[] = [
     forWhen: 'For when something feels stuck, overwhelming, or difficult to understand on your own.',
     focus: 'Self-worth, emotional patterns, trauma-related experiences, and healthier responses.',
     cta: 'Explore Individual Therapy',
-    href: '/ways-we-work/individual-therapy',
+    href: '/services/individual-therapy-coral-gables',
     Icon: Sprout,
     tone: 'sage',
   },
@@ -39,7 +39,7 @@ const SERVICES: ServiceSummary[] = [
     forWhen: 'For when you care about each other, but keep getting caught in the same patterns.',
     focus: 'Communication, emotional needs, attachment patterns, and relationship connection.',
     cta: 'Explore Couples Therapy',
-    href: '/ways-we-work/couples-therapy',
+    href: '/services/couples-therapy-coral-gables',
     Icon: HeartHandshake,
     tone: 'salmon',
   },
@@ -49,7 +49,7 @@ const SERVICES: ServiceSummary[] = [
     forWhen: 'For families navigating conflict, changing roles, and the challenges of raising children.',
     focus: 'Parenting dynamics, developmental stages, family conflict, and healthy authority.',
     cta: 'Explore Parenting & Family Therapy',
-    href: '/ways-we-work/parenting-family-therapy',
+    href: '/services/parenting-family-therapy-coral-gables',
     Icon: Users,
     tone: 'sage',
   },
@@ -59,7 +59,7 @@ const SERVICES: ServiceSummary[] = [
     forWhen: 'For when past experiences still affect how you feel, respond, or connect with others today.',
     focus: 'Trauma, childhood experiences, emotional regulation, and patterns shaped by the past.',
     cta: 'Explore Trauma-Focused Therapy',
-    href: '/ways-we-work/trauma-focused-therapy',
+    href: '/services/trauma-therapy-coral-gables',
     Icon: Feather,
     tone: 'salmon',
   },
@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="container hero__inner">
           <RevealGroup className="hero__copy" immediate stagger={0.12}>
             <RevealItem as="h1" className="hero__title">
-              You Don&apos;t Have to Figure It All Out <em>Alone.</em>
+              Therapist in Coral Gables, FL &ndash; Compassionate Therapy &amp; Support
             </RevealItem>
             <RevealItem as="p" className="hero__lead">
               A safe, collaborative space to understand what&apos;s happening, make sense of the
@@ -154,7 +154,7 @@ export default function HomePage() {
               difficult, but on developing greater awareness and finding healthier ways to move
               forward.
             </p>
-            <Link href="/ways-we-work" className="btn btn-primary">
+            <Link href="/services" className="btn btn-primary">
               Explore How We Work
             </Link>
           </Reveal>
@@ -224,7 +224,7 @@ export default function HomePage() {
           <Reveal className="portrait" delay={0.1}>
             <div className="portrait__frame">
               <Image
-                src="/vanessa.jpg"
+                src="/images/vanessa.jpg"
                 alt="Portrait of Vanessa M. Sierra, LMFT"
                 fill
                 sizes="(max-width: 900px) 80vw, 400px"

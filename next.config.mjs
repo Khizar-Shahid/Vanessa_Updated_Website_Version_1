@@ -16,7 +16,7 @@ const nextConfig = {
       },
       {
         source: '/clinic.html',
-        destination: '/ways-we-work',
+        destination: '/services',
         permanent: true,
       },
       {

@@ -17,8 +17,8 @@ interface HeroCardItem {
 const HERO_CARDS: HeroCardItem[] = [
   { number: '01', title: 'Meet Vanessa', href: '/meet-vanessa', Icon: UserRound, tone: 'sage' },
   // Decision pending from the client (§5 §1): card 2 has no dedicated page yet.
-  { number: '02', title: "Understand What I'm Experiencing", href: '/ways-we-work', Icon: Compass, tone: 'salmon' },
-  { number: '03', title: 'Explore Ways We Work', href: '/ways-we-work', Icon: Route, tone: 'sage' },
+  { number: '02', title: "Understand What I'm Experiencing", href: '/services', Icon: Compass, tone: 'salmon' },
+  { number: '03', title: 'Explore Ways We Work', href: '/services', Icon: Route, tone: 'sage' },
   { number: '04', title: 'Explore Free Resources', href: '/resources', Icon: BookOpen, tone: 'salmon' },
   { number: '05', title: 'Book a Consultation', href: '/consultation', Icon: CalendarHeart, tone: 'sage' },
 ];

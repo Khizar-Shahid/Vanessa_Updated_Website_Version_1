@@ -5,11 +5,11 @@ import OrganicLine from '@/components/OrganicLine';
 
 const EXPLORE_LINKS = [
   { label: 'Meet Vanessa', href: '/meet-vanessa' },
-  { label: 'Ways We Work', href: '/ways-we-work' },
+  { label: 'Services', href: '/services' },
   { label: 'Insights', href: '/insights' },
   { label: 'Resource Library', href: '/resources' },
   { label: 'Consultation', href: '/consultation' },
-  { label: 'FAQ', href: '/faq' },
+  { label: 'FAQ', href: '/faqs' },
 ];
 
 // Vanessa has no Facebook page, so only LinkedIn and Instagram are listed.

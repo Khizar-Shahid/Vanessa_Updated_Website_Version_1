@@ -5,7 +5,6 @@ import './globals.css';
 import TopStrip from '@/components/TopStrip';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { IS_STAGING } from '@/lib/site';
 
 // Google Analytics 4 measurement ID
 const GA_MEASUREMENT_ID = 'G-DTYE3P8B89';
@@ -25,13 +24,12 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Thrive with Therapy | Vanessa M. Sierra, LMFT',
+  title: 'Therapist in Coral Gables, FL | Thrive with Therapy',
   description:
-    'Licensed Marriage and Family Therapy in Coral Gables, South Florida. Collaborative individual, couples, parenting, and trauma-focused therapy to understand underlying patterns and find a way forward.',
+    'Find a trusted therapist in Coral Gables, FL at Thrive with Therapy. Get personalized therapy and compassionate support to improve your mental health and well-being.',
   metadataBase: new URL('https://www.thrivewiththerapy.org'),
-  // Keep the client-review deployment out of search results
-  ...(IS_STAGING && { robots: { index: false, follow: false } }),
   keywords: [
+    'therapist in Coral Gables',
     'Vanessa Sierra LMFT',
     'Coral Gables therapist',
     'couples therapy Miami',
@@ -42,9 +40,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Vanessa M. Sierra, LMFT' }],
   openGraph: {
-    title: 'Thrive with Therapy | Vanessa M. Sierra, LMFT',
+    title: 'Therapist in Coral Gables, FL | Thrive with Therapy',
     description:
-      'A safe, collaborative space to understand what is happening, make sense of the patterns beneath it, and find a way forward.',
+      'Find a trusted therapist in Coral Gables, FL at Thrive with Therapy. Get personalized therapy and compassionate support to improve your mental health and well-being.',
     url: 'https://www.thrivewiththerapy.org',
     siteName: 'Thrive with Therapy',
     locale: 'en_US',

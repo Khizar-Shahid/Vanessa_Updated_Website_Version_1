@@ -3,14 +3,14 @@ import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 
 export const metadata = {
-  title: 'Ways We Work | Thrive with Therapy',
+  title: 'Therapy Services in Coral Gables, FL',
   description:
-    'Explore therapeutic services offered by Vanessa M. Sierra, LMFT: Individual Therapy, Couples Therapy, Parenting & Family Therapy, and Trauma-Focused EMDR Care.',
+    'Explore therapy services in Coral Gables, FL, including individual therapy, trauma therapy, couples therapy, and parenting support.',
 };
 
 const SERVICES = [
   {
-    slug: 'individual-therapy',
+    slug: 'individual-therapy-coral-gables',
     num: '01',
     title: 'Individual Therapy',
     eyebrow: 'One-on-One Support',
@@ -25,7 +25,7 @@ const SERVICES = [
     ],
   },
   {
-    slug: 'couples-therapy',
+    slug: 'couples-therapy-coral-gables',
     num: '02',
     title: 'Couples Therapy',
     eyebrow: 'Relational Healing',
@@ -40,7 +40,7 @@ const SERVICES = [
     ],
   },
   {
-    slug: 'parenting-family-therapy',
+    slug: 'parenting-family-therapy-coral-gables',
     num: '03',
     title: 'Parenting & Family Therapy',
     eyebrow: 'Generational Growth',
@@ -55,7 +55,7 @@ const SERVICES = [
     ],
   },
   {
-    slug: 'trauma-focused-therapy',
+    slug: 'trauma-therapy-coral-gables',
     num: '04',
     title: 'Trauma-Focused Therapy',
     eyebrow: 'Somatic & EMDR',
@@ -75,8 +75,8 @@ export default function WaysWeWorkPage() {
   return (
     <div className="page">
       <PageHero
-        eyebrow="WAYS WE WORK"
-        title={<>There&apos;s More Than One Way to Begin.</>}
+        eyebrow="THERAPY SERVICES"
+        title={<>Therapy Services in Coral Gables, FL</>}
         lead={
           <>
             Whether you&apos;re navigating something within yourself, struggling in a
@@ -127,7 +127,7 @@ export default function WaysWeWorkPage() {
                   <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--ink-muted)', marginBottom: '1.5rem' }}>
                     {svc.description}
                   </p>
-                  <Link href={`/ways-we-work/${svc.slug}`} className="btn btn-primary" style={{ fontSize: '14px' }}>
+                  <Link href={`/services/${svc.slug}`} className="btn btn-primary" style={{ fontSize: '14px' }}>
                     Explore {svc.title}
                   </Link>
                 </div>
