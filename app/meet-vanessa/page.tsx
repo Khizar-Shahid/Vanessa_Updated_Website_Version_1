@@ -67,7 +67,7 @@ export default function MeetVanessaPage() {
           <Reveal className="mv-hero__portrait" delay={0.2}>
             <div className="mv-hero__photo">
               <Image
-                src="/vanessa.jpg"
+                src="/images/vanessa.jpg"
                 alt="Portrait of Vanessa M. Sierra, LMFT"
                 fill
                 priority

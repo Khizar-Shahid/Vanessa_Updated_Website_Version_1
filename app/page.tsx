@@ -224,7 +224,7 @@ export default function HomePage() {
           <Reveal className="portrait" delay={0.1}>
             <div className="portrait__frame">
               <Image
-                src="/vanessa.jpg"
+                src="/images/vanessa.jpg"
                 alt="Portrait of Vanessa M. Sierra, LMFT"
                 fill
                 sizes="(max-width: 900px) 80vw, 400px"

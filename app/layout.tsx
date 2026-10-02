@@ -5,7 +5,6 @@ import './globals.css';
 import TopStrip from '@/components/TopStrip';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { IS_STAGING } from '@/lib/site';
 
 // Google Analytics 4 measurement ID
 const GA_MEASUREMENT_ID = 'G-DTYE3P8B89';
@@ -29,8 +28,6 @@ export const metadata: Metadata = {
   description:
     'Licensed Marriage and Family Therapy in Coral Gables, South Florida. Collaborative individual, couples, parenting, and trauma-focused therapy to understand underlying patterns and find a way forward.',
   metadataBase: new URL('https://www.thrivewiththerapy.org'),
-  // Keep the client-review deployment out of search results
-  ...(IS_STAGING && { robots: { index: false, follow: false } }),
   keywords: [
     'Vanessa Sierra LMFT',
     'Coral Gables therapist',
