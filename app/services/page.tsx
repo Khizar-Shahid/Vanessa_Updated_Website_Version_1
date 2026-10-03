@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import PageHero from '@/components/PageHero';
+import { SERVICE_LIST } from '@/content/services';
 
 export const metadata = {
   title: 'Therapy Services in Coral Gables, FL',
@@ -8,69 +9,6 @@ export const metadata = {
     'Explore therapy services in Coral Gables, FL, including individual therapy, trauma therapy, couples therapy, and parenting support.',
   keywords: ['Therapy Services in Coral Gables'],
 };
-
-const SERVICES = [
-  {
-    slug: 'individual-therapy-coral-gables',
-    num: '01',
-    title: 'Individual Therapy',
-    eyebrow: 'One-on-One Support',
-    intro: 'For when something feels stuck, overwhelming, or difficult to understand on your own.',
-    description:
-      'Individual sessions create a collaborative, confidential space to unpack recurring life patterns, overcome anxiety and depression, heal from burnout, and strengthen your relationship with yourself.',
-    focus: [
-      'Self-worth and identity',
-      'Emotional regulation and nervous system calm',
-      'Life transitions and personal boundaries',
-      'Healing internalized criticism',
-    ],
-  },
-  {
-    slug: 'couples-therapy-coral-gables',
-    num: '02',
-    title: 'Couples Therapy',
-    eyebrow: 'Relational Healing',
-    intro: 'For when you care about each other, but keep getting caught in the same patterns.',
-    description:
-      'Using evidence-based approaches including the Gottman Method and attachment theory, we help partners identify repetitive conflict cycles, communicate unmet needs safely, and restore emotional intimacy.',
-    focus: [
-      'De-escalating circular arguments',
-      'Rebuilding trust and emotional safety',
-      'Attachment patterns and vulnerability',
-      'Navigating major relationship transitions',
-    ],
-  },
-  {
-    slug: 'parenting-family-therapy-coral-gables',
-    num: '03',
-    title: 'Parenting & Family Therapy',
-    eyebrow: 'Generational Growth',
-    intro: 'For families navigating conflict, changing roles, and the challenges of raising children.',
-    description:
-      'Family systems work focuses on the emotional dynamics connecting parents and children. We help parents lead with calm authority while establishing warm, secure bonds that stop generational trauma.',
-    focus: [
-      'Parent-child connection & communication',
-      'Developmental stages and emotional outbursts',
-      'Healthy boundaries and cooperative authority',
-      'Co-parenting and blended family dynamics',
-    ],
-  },
-  {
-    slug: 'trauma-therapy-coral-gables',
-    num: '04',
-    title: 'Trauma-Focused Therapy',
-    eyebrow: 'Somatic & EMDR',
-    intro: 'For when past experiences still affect how you feel, respond, or connect with others today.',
-    description:
-      'Specialized, trauma-informed care integrating EMDR (Eye Movement Desensitization and Reprocessing) and Somatic techniques to resolve painful memories stored in the nervous system without requiring re-traumatization.',
-    focus: [
-      'Single-incident and complex developmental trauma',
-      'Nervous system hyperarousal and freeze responses',
-      'Somatic release of stored physical tension',
-      'Cultivating deep, lasting internal safety',
-    ],
-  },
-];
 
 export default function WaysWeWorkPage() {
   return (
@@ -91,7 +29,7 @@ export default function WaysWeWorkPage() {
       <section className="section-rhythm">
         <div className="container" style={{ maxWidth: '980px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
-            {SERVICES.map((svc) => (
+            {SERVICE_LIST.map((svc) => (
               <div
                 key={svc.slug}
                 className="editorial-card"
