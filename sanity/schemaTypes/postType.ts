@@ -35,6 +35,13 @@ export const postType = defineType({
       initialValue: 'Vanessa Sierra, LMFT',
     }),
     defineField({
+      name: 'authorBio',
+      title: 'Author Bio',
+      type: 'text',
+      rows: 3,
+      description: 'A short biography of the author.',
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',

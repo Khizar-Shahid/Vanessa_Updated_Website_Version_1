@@ -115,9 +115,7 @@ export default async function InsightDetailPage({ params }: { params: { slug: st
                 {post.author || 'Vanessa M. Sierra, LMFT'}
               </h4>
               <p style={{ fontSize: '14.5px', lineHeight: 1.6, color: 'var(--ink-muted)', margin: 0 }}>
-                Licensed Marriage and Family Therapist based in Coral Gables, Florida, with over 20
-                years of experience guiding individuals, couples, and families through healing and
-                growth.
+                {post.authorBio || 'Licensed Marriage and Family Therapist based in Coral Gables, Florida, with over 20 years of experience guiding individuals, couples, and families through healing and growth.'}
               </p>
             </div>
           </div>
