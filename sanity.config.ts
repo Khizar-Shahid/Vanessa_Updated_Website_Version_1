@@ -13,6 +13,14 @@ export default defineConfig({
 
   plugins: [structureTool(), visionTool()],
 
+  tools: (prev, {currentUser}) => {
+    // Check if the current user has the 'administrator' role
+    const isAdmin = currentUser?.roles.some((role) => role.name === 'administrator')
+    
+    // If admin, show all tools (Structure + Vision). If not, filter out Vision.
+    return isAdmin ? prev : prev.filter((tool) => tool.name !== 'vision')
+  },
+
   schema: {
     types: schemaTypes,
   },
