@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Nunito_Sans } from 'next/font/google';
 import Script from 'next/script';
-import './globals.css';
+import '../globals.css';
 import TopStrip from '@/components/TopStrip';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';

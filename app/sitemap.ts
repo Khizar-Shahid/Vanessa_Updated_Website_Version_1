@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
-import { publishedInsights } from '@/lib/insights';
 import { SERVICE_SLUGS } from '@/content/services';
+import { client } from '@/sanity/lib/client';
+import { postSlugsQuery } from '@/sanity/lib/queries';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.thrivewiththerapy.org';
 
   /* ── Static pages ── */
@@ -27,9 +28,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1.0 : 0.8,
   }));
 
-  /* ── Dynamic insight articles ── */
-  const insightRoutes = publishedInsights.map((item) => ({
-    url: `${baseUrl}/insights/${item.slug}`,
+  /* ── Dynamic insight articles from Sanity ── */
+  const slugs = await client.fetch(postSlugsQuery);
+  const insightRoutes = slugs.map((post: any) => ({
+    url: `${baseUrl}/insights/${post.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,

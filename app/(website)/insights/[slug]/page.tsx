@@ -1,17 +1,40 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { publishedInsights } from '@/lib/insights';
+import { client } from '@/sanity/lib/client';
+import { postBySlugQuery, postSlugsQuery } from '@/sanity/lib/queries';
+import { PortableText } from '@portabletext/react';
+
+export const revalidate = 3600; // revalidate every hour (or instantly with webhooks)
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = await client.fetch(postBySlugQuery, { slug: params.slug });
+  if (!post) return {};
+  
+  return {
+    title: `${post.title} | Thrive with Therapy`,
+    description: post.excerpt || 'Read the latest insights from Vanessa M. Sierra, LMFT.',
+  };
+}
 
 export async function generateStaticParams() {
-  return publishedInsights.map((item) => ({
-    slug: item.slug,
+  const slugs = await client.fetch(postSlugsQuery);
+  return slugs.map((post: any) => ({
+    slug: post.slug,
   }));
 }
 
-export default function InsightDetailPage({ params }: { params: { slug: string } }) {
-  const item = publishedInsights.find((p) => p.slug === params.slug);
-  if (!item) notFound();
+export default async function InsightDetailPage({ params }: { params: { slug: string } }) {
+  const post = await client.fetch(postBySlugQuery, { slug: params.slug });
+  
+  if (!post) notFound();
+
+  // Format the date
+  const date = new Date(post.publishedAt).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
 
   return (
     <article style={{ width: '100%', paddingBottom: '5rem' }}>
@@ -38,23 +61,21 @@ export default function InsightDetailPage({ params }: { params: { slug: string }
                 fontWeight: 700,
                 letterSpacing: '0.15em',
                 textTransform: 'uppercase',
-                color: item.type === 'video' ? 'var(--salmon-text)' : 'var(--sage-deep)',
+                color: 'var(--sage-deep)',
               }}
             >
-              {item.category}
+              ARTICLE
             </span>
             <span style={{ fontSize: '12.5px', color: 'var(--ink-muted)' }}>•</span>
-            <span style={{ fontSize: '13px', color: 'var(--ink-muted)' }}>{item.date}</span>
-            <span style={{ fontSize: '12.5px', color: 'var(--ink-muted)' }}>•</span>
-            <span style={{ fontSize: '13px', color: 'var(--ink-muted)' }}>{item.readTime}</span>
+            <span style={{ fontSize: '13px', color: 'var(--ink-muted)' }}>{date}</span>
           </div>
 
           <h1 style={{ fontSize: 'clamp(30px, 4.5vw, 46px)', lineHeight: 1.15, marginBottom: '1.25rem' }}>
-            {item.title}
+            {post.title}
           </h1>
 
           <p className="lead-paragraph" style={{ fontSize: '18px', color: 'var(--ink-muted)' }}>
-            {item.summary}
+            {post.excerpt}
           </p>
         </div>
       </section>
@@ -62,45 +83,18 @@ export default function InsightDetailPage({ params }: { params: { slug: string }
       {/* Main Body */}
       <section style={{ paddingTop: '3.5rem' }}>
         <div className="container" style={{ maxWidth: '780px' }}>
-          {/* Video Player if applicable */}
-          {item.type === 'video' && item.videoUrl && (
-            <div
-              style={{
-                position: 'relative',
-                width: '100%',
-                paddingBottom: '56.25%',
-                borderRadius: 'var(--radius-card)',
-                overflow: 'hidden',
-                marginBottom: '3rem',
-                backgroundColor: '#000000',
-                boxShadow: 'var(--shadow-editorial)',
-              }}
-            >
-              <video
-                controls
-                preload="metadata"
-                poster={item.posterUrl || undefined}
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              >
-                <source src={item.videoUrl} type="video/mp4" />
-                Your browser does not support HTML5 video.
-              </video>
-            </div>
-          )}
-
-          {/* Render article HTML content */}
+          
+          {/* Render article HTML content via PortableText */}
           <div
             className="article-content"
             style={{ fontSize: '17px', lineHeight: 1.85, color: 'var(--ink)' }}
-            dangerouslySetInnerHTML={{ __html: item.content }}
-          />
+          >
+            {post.body ? (
+              <PortableText value={post.body} />
+            ) : (
+              <p>No content available.</p>
+            )}
+          </div>
 
           {/* Author Bio Card */}
           <div
@@ -118,18 +112,15 @@ export default function InsightDetailPage({ params }: { params: { slug: string }
             <div>
               <span className="label-eyebrow" style={{ marginBottom: '0.25rem' }}>ABOUT THE AUTHOR</span>
               <h4 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '20px', marginBottom: '0.5rem' }}>
-                Vanessa M. Sierra, LMFT
+                {post.author || 'Vanessa M. Sierra, LMFT'}
               </h4>
               <p style={{ fontSize: '14.5px', lineHeight: 1.6, color: 'var(--ink-muted)', margin: 0 }}>
-                Licensed Marriage and Family Therapist based in Coral Gables, Florida, with over 20
-                years of experience guiding individuals, couples, and families through healing and
-                growth.
+                {post.authorBio || 'Licensed Marriage and Family Therapist based in Coral Gables, Florida, with over 20 years of experience guiding individuals, couples, and families through healing and growth.'}
               </p>
             </div>
           </div>
         </div>
       </section>
-
     </article>
   );
 }

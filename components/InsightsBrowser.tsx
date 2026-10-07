@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { publishedInsights } from '@/lib/insights';
-import InsightCard from '@/components/InsightCard';
+import InsightCard, { InsightItem } from '@/components/InsightCard';
 import { EASE_EDITORIAL } from '@/components/motion/Reveal';
 
 type Filter = 'all' | 'video' | 'article';
@@ -15,13 +14,13 @@ const FILTERS: { id: Filter; label: string }[] = [
 ];
 
 /** /insights index: newest first, filterable by type. */
-export default function InsightsBrowser() {
+export default function InsightsBrowser({ initialItems }: { initialItems: InsightItem[] }) {
   const availableFilters = FILTERS.filter(
-    (f) => f.id === 'all' || publishedInsights.some((item) => item.type === f.id),
+    (f) => f.id === 'all' || initialItems.some((item) => item.type === f.id),
   );
   const [activeFilter, setActiveFilter] = useState<Filter>('all');
 
-  const items = publishedInsights.filter((item) => activeFilter === 'all' || item.type === activeFilter);
+  const items = initialItems.filter((item) => activeFilter === 'all' || item.type === activeFilter);
 
   return (
     <>
