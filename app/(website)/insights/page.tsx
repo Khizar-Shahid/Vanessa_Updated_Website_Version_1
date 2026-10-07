@@ -11,7 +11,7 @@ export const metadata = {
     'Videos and reflections from Vanessa M. Sierra, LMFT on relationships, emotions, patterns, parenting, and everyday challenges.',
 };
 
-export const revalidate = 3600; // revalidate every hour (we will also add a webhook later for instant updates)
+
 
 export default async function InsightsIndexPage() {
   const posts = await client.fetch(postsQuery);

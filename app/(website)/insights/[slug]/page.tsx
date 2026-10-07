@@ -5,7 +5,7 @@ import { client } from '@/sanity/lib/client';
 import { postBySlugQuery, postSlugsQuery } from '@/sanity/lib/queries';
 import { PortableText } from '@portabletext/react';
 
-export const revalidate = 3600; // revalidate every hour (or instantly with webhooks)
+
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = await client.fetch(postBySlugQuery, { slug: params.slug });
