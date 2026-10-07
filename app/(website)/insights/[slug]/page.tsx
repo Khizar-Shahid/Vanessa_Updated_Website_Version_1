@@ -4,7 +4,23 @@ import { notFound } from 'next/navigation';
 import { client } from '@/sanity/lib/client';
 import { postBySlugQuery, postSlugsQuery } from '@/sanity/lib/queries';
 import { PortableText } from '@portabletext/react';
+import { urlForImage } from '@/sanity/lib/image';
 
+const components = {
+  types: {
+    image: ({ value }: any) => {
+      if (!value?.asset?._ref) return null;
+      return (
+        <img
+          alt={value.alt || ' '}
+          loading="lazy"
+          src={urlForImage(value).width(800).url()}
+          style={{ width: '100%', borderRadius: '8px', margin: '2rem 0' }}
+        />
+      );
+    },
+  },
+};
 
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
@@ -77,6 +93,23 @@ export default async function InsightDetailPage({ params }: { params: { slug: st
           <p className="lead-paragraph" style={{ fontSize: '18px', color: 'var(--ink-muted)' }}>
             {post.excerpt}
           </p>
+
+          {post.mainImage && (
+            <div style={{ marginTop: '2.5rem' }}>
+              <img
+                src={urlForImage(post.mainImage).width(1200).url()}
+                alt={post.title}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '500px',
+                  objectFit: 'cover',
+                  borderRadius: 'var(--radius-card)',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.06)'
+                }}
+              />
+            </div>
+          )}
         </div>
       </section>
 
@@ -90,7 +123,7 @@ export default async function InsightDetailPage({ params }: { params: { slug: st
             style={{ fontSize: '17px', lineHeight: 1.85, color: 'var(--ink)' }}
           >
             {post.body ? (
-              <PortableText value={post.body} />
+              <PortableText value={post.body} components={components} />
             ) : (
               <p>No content available.</p>
             )}
