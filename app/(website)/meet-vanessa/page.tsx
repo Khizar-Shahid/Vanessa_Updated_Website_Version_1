@@ -2,8 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import credentialsData from '@/content/credentials.json';
+import videosData from '@/content/meet-vanessa-videos.json';
 import OrganicLine from '@/components/OrganicLine';
 import ConvergingLines from '@/components/ConvergingLines';
+import VideoCard from '@/components/VideoCard';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 
 export const metadata = {
@@ -222,6 +224,24 @@ export default function MeetVanessaPage() {
             ))}
           </ul>
         </Reveal>
+      </section>
+
+      {/* VIDEOS — portrait reels, listed in content/meet-vanessa-videos.json */}
+      <section className="section-rhythm section--wash section--bordered">
+        <div className="container">
+          <Reveal className="section-head section-head--center">
+            <span className="label-eyebrow">VIDEOS</span>
+            <h2>Videos From Vanessa.</h2>
+          </Reveal>
+
+          <RevealGroup as="ul" className="video-grid">
+            {videosData.map((video, idx) => (
+              <RevealItem as="li" key={video.id}>
+                <VideoCard item={video} position={`${idx + 1} of ${videosData.length}`} />
+              </RevealItem>
+            ))}
+          </RevealGroup>
+        </div>
       </section>
 
       {/* SECTION 7 — EXPERIENCE & TRAINING (content/credentials.json) */}
