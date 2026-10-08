@@ -21,9 +21,7 @@ export default function WaysWeWorkPage() {
         title={<>Therapy Services in Coral Gables, FL</>}
         lead={
           <>
-            Whether you&apos;re navigating something within yourself, struggling in a
-            relationship, or trying to create a healthier family dynamic, therapy can offer a space
-            to understand what&apos;s happening and work toward meaningful change.
+            Whether you&apos;re working through personal challenges, experiencing relationship difficulties, or looking to build healthier family relationships, therapy can provide a supportive space to better understand your experiences, develop healthier patterns, and work toward meaningful change.
           </>
         }
       />
@@ -66,7 +64,7 @@ export default function WaysWeWorkPage() {
                   <p style={{ fontStyle: 'italic', color: 'var(--ink)', fontSize: '16px', marginBottom: '1rem' }}>
                     &ldquo;{svc.intro}&rdquo;
                   </p>
-                  <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--ink-muted)', marginBottom: '1.5rem' }}>
+                  <p style={{ fontSize: '15px', lineHeight: 1.7, color: 'var(--ink-muted)', marginBottom: '1.5rem', whiteSpace: 'pre-wrap' }}>
                     {svc.description}
                   </p>
                   <Link href={`/services/${svc.slug}`} className="btn btn-primary" style={{ fontSize: '14px' }}>

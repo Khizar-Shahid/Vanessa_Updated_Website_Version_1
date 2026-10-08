@@ -176,9 +176,7 @@ export default function HomePage() {
             <span className="label-eyebrow">WAYS WE WORK</span>
             <h2>There&apos;s More Than One Way to Begin.</h2>
             <p className="lead-paragraph">
-              Whether you&apos;re navigating something within yourself, struggling in a
-              relationship, or trying to create a healthier family dynamic, therapy can offer a
-              space to understand what&apos;s happening and work toward meaningful change.
+              Whether you&apos;re working through personal challenges, experiencing relationship difficulties, or looking to build healthier family relationships, therapy can provide a supportive space to better understand your experiences, develop healthier patterns, and work toward meaningful change.
             </p>
           </Reveal>
 

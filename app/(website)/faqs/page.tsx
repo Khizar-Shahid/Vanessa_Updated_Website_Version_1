@@ -12,46 +12,70 @@ interface FaqItem {
 
 const FAQ_ITEMS: FaqItem[] = [
   {
-    id: 'first-session',
-    question: 'What happens during a first therapy session?',
+    id: 'what-can-i-talk-about',
+    question: 'What can I talk about with a therapist?',
     answer:
-      'The initial consultation is a warm, unhurried space to discuss what brings you to therapy, review your personal history and current support systems, and clarify what you hope to experience or change. It is an opportunity to ask questions and determine if our therapeutic approach feels safe, supportive, and aligned with your needs.',
+      'You can talk about anything that is bothering you or affecting your life. This may include stress, anxiety, relationships, family problems, life changes, or difficult experiences. Therapy gives you a private place to talk openly without feeling judged.',
   },
   {
-    id: 'session-length',
-    question: 'How long are sessions and how frequently do we meet?',
+    id: 'is-individual-therapy-right',
+    question: 'How do I know if individual therapy is right for me?',
     answer:
-      'Standard individual and couples therapy sessions run for 50 minutes. Most clients begin by meeting weekly to establish rhythm, safety, and momentum. As you make meaningful progress and internalize regulation tools, we may transition to bi-weekly or monthly maintenance sessions.',
+      'If you feel stuck, overwhelmed, stressed, or simply want to understand yourself better, individual therapy may be helpful. You do not need to have everything figured out before starting.',
   },
   {
-    id: 'fees-insurance',
-    question: 'What are your session fees and do you accept insurance?',
+    id: 'when-to-consider-couples-therapy',
+    question: 'When should a couple consider therapy?',
     answer:
-      'Individual sessions are $185 and Couples / Family sessions are $200 per 50-minute clinical hour. While we do not bill insurance directly, we can provide you with a monthly Superbill (statement for insurance reimbursement) that you can submit to your health plan for out-of-network benefits.',
+      'Couples do not have to wait until their relationship is in serious trouble. Therapy can be helpful when you are having the same arguments, finding it hard to communicate, feeling distant, or trying to work through a major change together.',
+  },
+  {
+    id: 'what-happens-trauma-therapy',
+    question: 'What happens in trauma therapy?',
+    answer:
+      'Trauma therapy gives you a safe place to talk about difficult experiences and how they may still affect you today. Your therapist will work with you at a pace that feels comfortable and supportive.',
+  },
+  {
+    id: 'family-therapy-parenting',
+    question: 'Can family therapy help with parenting problems?',
+    answer:
+      'Yes. Family therapy can give parents and children a chance to talk about problems and understand each other better. It can also help with communication, boundaries, family changes, and ongoing conflict.',
+  },
+  {
+    id: 'therapy-in-coral-gables',
+    question: 'Do you offer therapy in Coral Gables?',
+    answer:
+      'Yes. Thrive with Therapy provides individual, couples, trauma, and parenting and family therapy in Coral Gables, FL.',
   },
   {
     id: 'online-therapy',
-    question: 'How does online therapy (telehealth) work?',
+    question: 'Is online therapy available?',
     answer:
-      'Online sessions are conducted over a secure, encrypted, HIPAA-compliant video platform. Telehealth is available to any resident located within the state of Florida. All you need is a private, comfortable space and a stable internet connection.',
+      'Yes. Thrive with Therapy offers online therapy as well as in-person therapy. You can discuss which option works best for you during your consultation.',
   },
   {
-    id: 'emdr-suitability',
-    question: 'How do I know if EMDR is right for me?',
+    id: 'know-type-of-therapy',
+    question: 'Do I need to know what type of therapy I need?',
     answer:
-      'EMDR is recommended if you find yourself stuck in recurring emotional reactions, flashbacks, negative core beliefs, or physical tension stemming from past experiences. In our early sessions, Vanessa assesses your readiness, equips you with emotional grounding tools, and ensures EMDR is paced safely for your nervous system.',
+      'No. You do not need to choose a type of therapy before you reach out. You can simply explain what you are going through, and you can discuss your options during the consultation.',
   },
   {
-    id: 'confidentiality',
-    question: 'Is everything we discuss completely confidential?',
+    id: 'first-session-expectations',
+    question: 'What should I expect from my first session?',
     answer:
-      'Yes. As a Licensed Marriage and Family Therapist (LMFT), Vanessa adheres to strict legal and ethical confidentiality standards under Florida law and HIPAA. Details of your therapy cannot be disclosed to anyone without your written consent, subject to standard legal exceptions (e.g., imminent risk of harm to self or others).',
+      'Your first session is a chance to talk about what brought you to therapy, what you would like help with, and what you hope to get from therapy. It is also a chance for you and your therapist to get to know each other.',
+  },
+  {
+    id: 'schedule-appointment',
+    question: 'How can I schedule a therapy appointment?',
+    answer:
+      'You can contact Thrive with Therapy to schedule a consultation. This is a good first step if you have questions or would like to learn more about the therapy process.',
   },
 ];
 
 export default function FaqPage() {
   const [openIds, setOpenIds] = useState<Record<string, boolean>>({
-    'first-session': true,
+    'what-can-i-talk-about': true,
   });
 
   const toggleItem = (id: string) => {
