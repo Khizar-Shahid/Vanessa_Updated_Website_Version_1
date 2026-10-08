@@ -10,6 +10,14 @@ import ResourcePanels from '@/components/ResourcePanels';
 import TestimonialSlider from '@/components/TestimonialSlider';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
+
 interface ServiceSummary {
   num: string;
   title: string;

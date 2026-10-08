@@ -4,6 +4,9 @@ import PageHero from '@/components/PageHero';
 import { SERVICE_LIST } from '@/content/services';
 
 export const metadata = {
+  alternates: {
+    canonical: "/services",
+  },
   title: 'Therapy Services in Coral Gables, FL',
   description:
     'Explore therapy services in Coral Gables, FL, including individual therapy, trauma therapy, couples therapy, and parenting support.',

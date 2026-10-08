@@ -11,6 +11,9 @@ export async function generateMetadata({ params }: { params: { service: string }
     title: data.seoTitle,
     description: data.seoDescription,
     keywords: [data.seoKeyword],
+    alternates: {
+      canonical: `/services/${params.service}`,
+    },
   };
 }
 

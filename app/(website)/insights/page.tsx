@@ -6,6 +6,9 @@ import { postsQuery } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/image';
 
 export const metadata = {
+  alternates: {
+    canonical: "/insights",
+  },
   title: 'Insights | Thrive with Therapy',
   description:
     'Videos and reflections from Vanessa M. Sierra, LMFT on relationships, emotions, patterns, parenting, and everyday challenges.',

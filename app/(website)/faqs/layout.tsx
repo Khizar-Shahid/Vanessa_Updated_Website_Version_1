@@ -3,6 +3,9 @@ export const metadata = {
   description:
     'Find answers to common questions about therapy, services, appointments, and what to expect from Thrive Mental Health Solutions in Coral Gables, FL.',
   keywords: ['Therapy FAQs'],
+  alternates: {
+    canonical: '/faqs',
+  },
 };
 
 export default function FaqLayout({ children }: { children: React.ReactNode }) {

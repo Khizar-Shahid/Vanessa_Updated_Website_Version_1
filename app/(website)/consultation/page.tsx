@@ -43,6 +43,9 @@ const BOOKING_SERVICES: BookingService[] = [
 ];
 
 export const metadata = {
+  alternates: {
+    canonical: "/consultation",
+  },
   title: 'Book a Consultation | Thrive with Therapy',
   description:
     'Book a session with Vanessa M. Sierra, LMFT — individual, couples, or parenting therapy, online or in person in Coral Gables, FL.',

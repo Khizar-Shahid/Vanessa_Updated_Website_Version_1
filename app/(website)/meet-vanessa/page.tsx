@@ -7,6 +7,9 @@ import ConvergingLines from '@/components/ConvergingLines';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 
 export const metadata = {
+  alternates: {
+    canonical: "/meet-vanessa",
+  },
   title: 'Meet Vanessa Sierra, LMFT | Thrive with Therapy',
   description:
     'Meet Vanessa Sierra, LMFT, an experienced therapist in Coral Gables, FL, offering compassionate individual, couples, and family therapy.',
@@ -248,7 +251,31 @@ export default function MeetVanessaPage() {
         </div>
       </section>
 
-      {/* SECTION 8 — CORE BELIEF: the page's strongest branded moment */}
+      {/* SECTION 8 — HEAR FROM VANESSA (REELS) */}
+      <section className="section-rhythm section--bordered">
+        <div className="container">
+          <Reveal className="section-head" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+            <span className="label-eyebrow">HEAR FROM VANESSA</span>
+            <h2>Thoughts &amp; Reflections.</h2>
+          </Reveal>
+          
+          <RevealGroup as="ul" className="card-grid card-grid--4" style={{ listStyle: 'none', padding: 0, marginTop: '3rem' }} stagger={0.15}>
+            {[1, 2, 3, 4].map((num) => (
+              <RevealItem as="li" key={num}>
+                <video 
+                  src={`/videos/reel${num}.mp4`}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  style={{ width: '100%', borderRadius: '16px', aspectRatio: '9/16', objectFit: 'cover', display: 'block', backgroundColor: '#111' }}
+                />
+              </RevealItem>
+            ))}
+          </RevealGroup>
+        </div>
+      </section>
+
+      {/* SECTION 9 — CORE BELIEF: the page's strongest branded moment */}
       <section className="belief">
         <div className="belief__line belief__line--a" aria-hidden="true">
           <OrganicLine variant="curve-right" />

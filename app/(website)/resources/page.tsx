@@ -4,6 +4,9 @@ import PageHero from '@/components/PageHero';
 import ResourceRequestButton from '@/components/ResourceRequestButton';
 
 export const metadata = {
+  alternates: {
+    canonical: "/resources",
+  },
   title: 'Resource Library | Thrive with Therapy',
   description:
     'Free printable reflection tools from Vanessa M. Sierra, LMFT — for pausing before you react, working through a problem one step at a time, and reflecting after a fight.',

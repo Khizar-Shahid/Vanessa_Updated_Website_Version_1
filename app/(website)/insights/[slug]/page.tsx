@@ -30,6 +30,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${post.title} | Thrive with Therapy`,
     description: post.excerpt || 'Read the latest insights from Vanessa M. Sierra, LMFT.',
+    alternates: {
+      canonical: `/insights/${params.slug}`,
+    },
   };
 }
 
