@@ -24,9 +24,9 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Therapist in Coral Gables, FL | Thrive with Therapy',
+  title: 'Therapist in Florida | Thrive With Therapy',
   description:
-    'Find a trusted therapist in Coral Gables, FL at Thrive with Therapy. Get personalized therapy and compassionate support to improve your mental health and well-being.',
+    'Looking for a therapist in Florida? Thrive With Therapy offers individual, trauma, couples, and family therapy to help you improve your emotional well-being.',
   metadataBase: new URL('https://www.thrivewiththerapy.org'),
   keywords: [
     'therapist in Coral Gables',
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Vanessa M. Sierra, LMFT' }],
   openGraph: {
-    title: 'Therapist in Coral Gables, FL | Thrive with Therapy',
+    title: 'Therapist in Florida | Thrive With Therapy',
     description:
-      'Find a trusted therapist in Coral Gables, FL at Thrive with Therapy. Get personalized therapy and compassionate support to improve your mental health and well-being.',
+      'Looking for a therapist in Florida? Thrive With Therapy offers individual, trauma, couples, and family therapy to help you improve your emotional well-being.',
     url: 'https://www.thrivewiththerapy.org',
     siteName: 'Thrive with Therapy',
     locale: 'en_US',

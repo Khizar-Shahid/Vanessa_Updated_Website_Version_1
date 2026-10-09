@@ -87,7 +87,7 @@ export default function HomePage() {
         <div className="container hero__inner">
           <RevealGroup className="hero__copy" immediate stagger={0.12}>
             <RevealItem as="h1" className="hero__title">
-              Therapist in Coral Gables, FL &ndash; Compassionate Therapy &amp; Support
+              Find a Trusted Therapist in Florida
             </RevealItem>
             <RevealItem as="p" className="hero__lead">
               A safe, collaborative space to understand what&apos;s happening, make sense of the
