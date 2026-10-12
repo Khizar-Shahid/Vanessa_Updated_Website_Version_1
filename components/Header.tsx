@@ -5,13 +5,46 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
-const NAV_LINKS = [
+type NavChild = {
+  label: string;
+  description: string;
+  href: string;
+};
+
+type NavItem =
+  | {
+      label: string;
+      href: string;
+      children?: never;
+    }
+  | {
+      label: string;
+      href?: never;
+      children: NavChild[];
+    };
+
+const NAV_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Meet Vanessa', href: '/meet-vanessa' },
   { label: 'Services', href: '/services' },
   { label: 'Insights', href: '/insights' },
-  { label: 'Resource Library', href: '/resources' },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Resource Library',
+        description: 'Free printable clinical tools & reflection guides',
+        href: '/resources',
+      },
+      {
+        label: 'Podcasts',
+        description: 'Video episodes, conversations & mental health guidance',
+        href: '/podcasts',
+      },
+    ],
+  },
   { label: 'Consultation', href: '/consultation' },
   { label: 'FAQ', href: '/faqs' },
   { label: 'Contact', href: '/contact' },
@@ -53,15 +86,45 @@ export function LogoLockup({ size = 46, priority = false }: { size?: number; pri
 export default function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+
   const menuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Close mobile menu on route change
+  // Close menus on route change; open mobile accordion if on resources/podcasts
   useEffect(() => {
     setMobileMenuOpen(false);
+    setResourcesDropdownOpen(false);
+    if (pathname.startsWith('/resources') || pathname.startsWith('/podcasts')) {
+      setMobileResourcesOpen(true);
+    }
   }, [pathname]);
 
-  // While open: close on Escape, trap focus inside the panel, lock page scroll
+  const handleMouseEnter = () => {
+    if (dropdownTimerRef.current) clearTimeout(dropdownTimerRef.current);
+    setResourcesDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimerRef.current = setTimeout(() => {
+      setResourcesDropdownOpen(false);
+    }, 150);
+  };
+
+  // Keyboard navigation & escape listener for desktop dropdown
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && resourcesDropdownOpen) {
+        setResourcesDropdownOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [resourcesDropdownOpen]);
+
+  // While mobile menu open: close on Escape, trap focus inside the panel, lock page scroll
   useEffect(() => {
     if (!mobileMenuOpen) return;
 
@@ -110,6 +173,73 @@ export default function Header() {
         <nav aria-label="Primary" className="desktop-nav">
           <ul>
             {NAV_LINKS.map((item) => {
+              if (item.children) {
+                const isAnyChildActive = item.children.some((child) => isActivePath(pathname, child.href));
+                return (
+                  <li
+                    key={item.label}
+                    className="nav-dropdown-wrapper"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <button
+                      type="button"
+                      className={`nav-link nav-dropdown-trigger ${isAnyChildActive ? 'is-active' : ''}`}
+                      aria-expanded={resourcesDropdownOpen}
+                      aria-haspopup="true"
+                      onClick={() => setResourcesDropdownOpen((prev) => !prev)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setResourcesDropdownOpen(true);
+                        }
+                      }}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown
+                        size={14}
+                        className={`nav-dropdown-chevron ${resourcesDropdownOpen ? 'is-rotated' : ''}`}
+                        aria-hidden="true"
+                      />
+                      {isAnyChildActive && <Squiggle key={pathname} />}
+                    </button>
+
+                    <AnimatePresence>
+                      {resourcesDropdownOpen && (
+                        <motion.div
+                          className="nav-dropdown-menu"
+                          role="menu"
+                          initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                          transition={{ duration: 0.2, ease: EASE }}
+                        >
+                          <div className="nav-dropdown-menu__inner">
+                            {item.children.map((child) => {
+                              const isChildActive = isActivePath(pathname, child.href);
+                              return (
+                                <Link
+                                  key={child.href}
+                                  href={child.href}
+                                  role="menuitem"
+                                  className={`nav-dropdown-item ${isChildActive ? 'is-active' : ''}`}
+                                  onClick={() => setResourcesDropdownOpen(false)}
+                                >
+                                  <div className="nav-dropdown-item__text">
+                                    <span className="nav-dropdown-item__title">{child.label}</span>
+                                    <span className="nav-dropdown-item__desc">{child.description}</span>
+                                  </div>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </li>
+                );
+              }
+
               const isActive = isActivePath(pathname, item.href);
               return (
                 <li key={item.href}>
@@ -159,6 +289,73 @@ export default function Header() {
             <nav aria-label="Primary">
               <ul>
                 {NAV_LINKS.map((item, idx) => {
+                  if (item.children) {
+                    const isAnyChildActive = item.children.some((child) => isActivePath(pathname, child.href));
+                    return (
+                      <motion.li
+                        key={item.label}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, ease: EASE, delay: 0.04 * idx }}
+                        className="mobile-nav__accordion-item"
+                      >
+                        <button
+                          type="button"
+                          onClick={() => setMobileResourcesOpen((o) => !o)}
+                          aria-expanded={mobileResourcesOpen}
+                          className={`mobile-nav__link mobile-nav__accordion-trigger ${
+                            isAnyChildActive ? 'is-active' : ''
+                          }`}
+                        >
+                          <span className="mobile-nav__num" aria-hidden="true">
+                            {String(idx + 1).padStart(2, '0')}
+                          </span>
+                          <span className="mobile-nav__accordion-label">{item.label}</span>
+                          <ChevronDown
+                            size={20}
+                            className={`mobile-nav__accordion-chevron ${mobileResourcesOpen ? 'is-rotated' : ''}`}
+                            aria-hidden="true"
+                          />
+                        </button>
+
+                        <AnimatePresence initial={false}>
+                          {mobileResourcesOpen && (
+                            <motion.ul
+                              className="mobile-nav__sublist"
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.25, ease: EASE }}
+                            >
+                              {item.children.map((child, subIdx) => {
+                                const isChildActive = isActivePath(pathname, child.href);
+                                const subLetter = String.fromCharCode(97 + subIdx);
+                                return (
+                                  <li key={child.href}>
+                                    <Link
+                                      href={child.href}
+                                      onClick={() => setMobileMenuOpen(false)}
+                                      className={`mobile-nav__sublink ${isChildActive ? 'is-active' : ''}`}
+                                      aria-current={isChildActive ? 'page' : undefined}
+                                    >
+                                      <span className="mobile-nav__subnum" aria-hidden="true">
+                                        {String(idx + 1).padStart(2, '0')}{subLetter}
+                                      </span>
+                                      <div className="mobile-nav__subtext">
+                                        <span className="mobile-nav__subtitle">{child.label}</span>
+                                        <span className="mobile-nav__subdesc">{child.description}</span>
+                                      </div>
+                                    </Link>
+                                  </li>
+                                );
+                              })}
+                            </motion.ul>
+                          )}
+                        </AnimatePresence>
+                      </motion.li>
+                    );
+                  }
+
                   const isActive = isActivePath(pathname, item.href);
                   return (
                     <motion.li

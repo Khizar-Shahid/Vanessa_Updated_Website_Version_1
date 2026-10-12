@@ -8,6 +8,7 @@ const EXPLORE_LINKS = [
   { label: 'Services', href: '/services' },
   { label: 'Insights', href: '/insights' },
   { label: 'Resource Library', href: '/resources' },
+  { label: 'Podcasts', href: '/podcasts' },
   { label: 'Consultation', href: '/consultation' },
   { label: 'FAQ', href: '/faqs' },
 ];

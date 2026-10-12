@@ -1,0 +1,65 @@
+{
+  "channel": {
+    "title": "Thrive with Therapy",
+    "handle": "@thrivewiththerapy",
+    "url": "https://www.youtube.com/@thrivewiththerapy",
+    "subscribeUrl": "https://www.youtube.com/@thrivewiththerapy?sub_confirmation=1",
+    "description": "Conversations on nervous system regulation, couples communication, EMDR trauma processing, and emotional wellness with Vanessa M. Sierra, LMFT."
+  },
+  "featured": {
+    "id": "ep-1",
+    "youtubeId": "bF3J1bW2V2A",
+    "title": "Understanding Your Nervous System in Conflict: The Fight, Flight & Freeze Response",
+    "description": "In this in-depth conversation, licensed marriage and family therapist Vanessa M. Sierra explores how childhood attachment blueprints shape our automatic reactions during heated disagreements, and how EMDR and somatic exercises can help couples de-escalate in real time.",
+    "duration": "28 min",
+    "publishedAt": "October 2026",
+    "topics": ["Nervous System", "Relationships", "Trauma & EMDR"]
+  },
+  "episodes": [
+    {
+      "id": "ep-2",
+      "youtubeId": "Wxxjiw_0Lq8",
+      "title": "Somatic Tools for Calming Acute Anxiety & Nervous System Dysregulation",
+      "description": "Practical somatic grounding exercises you can use immediately when feelings of panic, overwhelm, or hypervigilance take over.",
+      "duration": "22 min",
+      "publishedAt": "September 2026",
+      "topics": ["Nervous System", "Mindfulness & Anxiety"]
+    },
+    {
+      "id": "ep-3",
+      "youtubeId": "v4Zshf0N4q8",
+      "title": "Breaking the Overthinking Loop: How Cognitive & Somatic Therapy Work Together",
+      "description": "Why thinking your way out of anxiety often keeps you stuck, and how nervous-system-informed therapy creates sustainable physiological calm.",
+      "duration": "25 min",
+      "publishedAt": "August 2026",
+      "topics": ["Mindfulness & Anxiety", "Trauma & EMDR"]
+    },
+    {
+      "id": "ep-4",
+      "youtubeId": "4b8G0i3H60Q",
+      "title": "Repairing After a Conflict: How Healthy Couples Reconnect",
+      "description": "A step-by-step breakdown of how to initiate a repair attempt without triggering defensiveness, using principles from the Gottman Method.",
+      "duration": "31 min",
+      "publishedAt": "July 2026",
+      "topics": ["Relationships", "Couples Therapy"]
+    },
+    {
+      "id": "ep-5",
+      "youtubeId": "r9Lelq3VwY8",
+      "title": "Attachment Styles in Adulthood: Anxious, Avoidant & Secure Dynamics",
+      "description": "Discover how early developmental attachments unconsciously steer partner selection, intimacy thresholds, and emotional vulnerability.",
+      "duration": "34 min",
+      "publishedAt": "June 2026",
+      "topics": ["Relationships", "Attachment"]
+    },
+    {
+      "id": "ep-6",
+      "youtubeId": "hnpQrMqDoqE",
+      "title": "Demystifying EMDR Therapy: What Actually Happens in an EMDR Session?",
+      "description": "A clear, clinical explanation of bilateral stimulation, memory reprocessing, and what clients experience during EMDR trauma treatment.",
+      "duration": "29 min",
+      "publishedAt": "May 2026",
+      "topics": ["Trauma & EMDR", "Clinical Insights"]
+    }
+  ]
+}
