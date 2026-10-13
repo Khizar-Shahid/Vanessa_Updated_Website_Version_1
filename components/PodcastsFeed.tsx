@@ -192,8 +192,8 @@ export default function PodcastsFeed({ channel, featured, episodes }: PodcastsFe
         </section>
       )}
 
-      {/* Episodes Grid Section */}
-      <section className="section-rhythm podcasts-grid-section" aria-labelledby="all-episodes-heading">
+      {/* Episodes Grid Section — hidden for now; re-enable when channel has multiple videos */}
+      {false && <section className="section-rhythm podcasts-grid-section" aria-labelledby="all-episodes-heading">
         <div className="container">
           <div className="podcasts-section-header">
             <div>
@@ -298,7 +298,13 @@ export default function PodcastsFeed({ channel, featured, episodes }: PodcastsFe
             </div>
           )}
 
-          {/* Cross-resource Banner */}
+          {/* Cross-resource Banner — inside hidden section */}
+        </div>
+      </section>}
+
+      {/* Cross-resource Banner */}
+      <section className="section-rhythm" style={{ paddingTop: 0 }}>
+        <div className="container">
           <div className="podcast-cross-banner">
             <div className="podcast-cross-banner__content">
               <span className="label-eyebrow" style={{ color: 'var(--salmon-text)' }}>
