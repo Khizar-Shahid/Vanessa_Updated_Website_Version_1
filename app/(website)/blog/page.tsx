@@ -1,25 +1,25 @@
 import React from 'react';
 import PageHero from '@/components/PageHero';
-import InsightsBrowser from '@/components/InsightsBrowser';
+import BlogBrowser from '@/components/BlogBrowser';
 import { client } from '@/sanity/lib/client';
 import { postsQuery } from '@/sanity/lib/queries';
 import { urlForImage } from '@/sanity/lib/image';
 
 export const metadata = {
   alternates: {
-    canonical: "/insights",
+    canonical: "/blog",
   },
-  title: 'Insights | Thrive with Therapy',
+  title: 'Blog | Thrive with Therapy',
   description:
     'Videos and reflections from Vanessa M. Sierra, LMFT on relationships, emotions, patterns, parenting, and everyday challenges.',
 };
 
 
 
-export default async function InsightsIndexPage() {
+export default async function BlogIndexPage() {
   const posts = await client.fetch(postsQuery);
 
-  // Map Sanity posts to the existing InsightItem format
+  // Map Sanity posts to the existing BlogItem format
   const formattedPosts = posts.map((post: any) => ({
     id: post._id,
     slug: post.slug,
@@ -35,14 +35,14 @@ export default async function InsightsIndexPage() {
   return (
     <div className="page">
       <PageHero
-        eyebrow="INSIGHTS"
+        eyebrow="BLOG"
         title="A Little More to Think About."
         lead="Thoughtful ideas about relationships, emotions, patterns, parenting, and everyday challenges."
       />
 
       <section className="section-rhythm" style={{ paddingTop: '3rem' }}>
         <div className="container">
-          <InsightsBrowser initialItems={formattedPosts} />
+          <BlogBrowser initialItems={formattedPosts} />
         </div>
       </section>
     </div>

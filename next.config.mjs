@@ -47,7 +47,7 @@ const nextConfig = {
       },
       {
         source: '/blog.html',
-        destination: '/insights',
+        destination: '/blog',
         permanent: true,
       },
     ];

@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '',
     '/meet-vanessa',
     '/services',
-    '/insights',
+    '/blog',
     '/resources',
     '/podcasts',
     '/consultation',
@@ -29,14 +29,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === '' ? 1.0 : 0.8,
   }));
 
-  /* ── Dynamic insight articles from Sanity ── */
+  /* ── Dynamic blog posts from Sanity ── */
   const slugs = await client.fetch(postSlugsQuery);
-  const insightRoutes = slugs.map((post: any) => ({
-    url: `${baseUrl}/insights/${post.slug}`,
+  const blogRoutes = slugs.map((post: any) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
 
-  return [...routes, ...insightRoutes];
+  return [...routes, ...blogRoutes];
 }

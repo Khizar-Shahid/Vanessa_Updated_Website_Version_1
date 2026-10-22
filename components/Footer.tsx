@@ -6,7 +6,7 @@ import OrganicLine from '@/components/OrganicLine';
 const EXPLORE_LINKS = [
   { label: 'Meet Vanessa', href: '/meet-vanessa' },
   { label: 'Services', href: '/services' },
-  { label: 'Insights', href: '/insights' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Resource Library', href: '/resources' },
   { label: 'Podcasts', href: '/podcasts' },
   { label: 'Consultation', href: '/consultation' },

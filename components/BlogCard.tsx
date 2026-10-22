@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Play } from 'lucide-react';
 
-export interface InsightItem {
+export interface BlogItem {
   id: string;
   slug: string;
   type: string;
@@ -15,8 +15,8 @@ export interface InsightItem {
   posterUrl: string | null;
 }
 
-/** Editorial card for a single Insight (video, article, or Instagram piece). */
-export default function InsightCard({ item, showDate = false }: { item: InsightItem; showDate?: boolean }) {
+/** Editorial card for a single blog post (video, article, or Instagram piece). */
+export default function BlogCard({ item, showDate = false }: { item: BlogItem; showDate?: boolean }) {
   const isVideo = item.type === 'video';
 
   return (
@@ -54,7 +54,7 @@ export default function InsightCard({ item, showDate = false }: { item: InsightI
         </p>
         <h3 className="insight-card__title">
           {/* Stretched link: the whole card is clickable, one tab stop */}
-          <Link href={`/insights/${item.slug}`} className="stretched-link">
+          <Link href={`/blog/${item.slug}`} className="stretched-link">
             {item.title}
           </Link>
         </h3>

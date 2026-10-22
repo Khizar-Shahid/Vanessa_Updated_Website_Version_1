@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   
   return {
     title: `${post.title} | Thrive with Therapy`,
-    description: post.excerpt || 'Read the latest insights from Vanessa M. Sierra, LMFT.',
+    description: post.excerpt || 'Read the latest blog post from Vanessa M. Sierra, LMFT.',
     alternates: {
-      canonical: `/insights/${params.slug}`,
+      canonical: `/blog/${params.slug}`,
     },
   };
 }
@@ -43,7 +43,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function InsightDetailPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = await client.fetch(postBySlugQuery, { slug: params.slug });
   
   if (!post) notFound();
@@ -68,8 +68,8 @@ export default async function InsightDetailPage({ params }: { params: { slug: st
       >
         <div className="container" style={{ maxWidth: '780px' }}>
           <div style={{ marginBottom: '1.25rem' }}>
-            <Link href="/insights" className="text-link" style={{ fontSize: '13.5px' }}>
-              &larr; Back to Insights
+            <Link href="/blog" className="text-link" style={{ fontSize: '13.5px' }}>
+              &larr; Back to Blog
             </Link>
           </div>
 

@@ -22,12 +22,12 @@ export async function POST(req: NextRequest) {
     // Grab the slug of the document that was just published/edited in Sanity
     const slug = body?.slug?.current;
 
-    // 1. Revalidate the main insights listing page so the new card shows up
-    revalidatePath('/insights');
+    // 1. Revalidate the main blog listing page so the new card shows up
+    revalidatePath('/blog');
 
     // 2. Revalidate the specific blog post so the new content shows up
     if (slug) {
-      revalidatePath(`/insights/${slug}`);
+      revalidatePath(`/blog/${slug}`);
     }
 
     // 3. Revalidate the sitemap so Google sees the new URL immediately

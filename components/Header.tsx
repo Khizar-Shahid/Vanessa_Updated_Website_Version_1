@@ -29,7 +29,7 @@ const NAV_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Meet Vanessa', href: '/meet-vanessa' },
   { label: 'Services', href: '/services' },
-  { label: 'Insights', href: '/insights' },
+  { label: 'Blog', href: '/blog' },
   {
     label: 'Resources',
     children: [

@@ -5,7 +5,7 @@ import { ArrowRight, Feather, HeartHandshake, Sprout, Users } from 'lucide-react
 import type { LucideIcon } from 'lucide-react';
 import HeroCards from '@/components/HeroCards';
 import OrganicLine from '@/components/OrganicLine';
-import InsightsFeed from '@/components/InsightsFeed';
+import BlogFeed from '@/components/BlogFeed';
 import ResourcePanels from '@/components/ResourcePanels';
 import TestimonialSlider from '@/components/TestimonialSlider';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
@@ -243,10 +243,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 6 — INSIGHTS: latest 3, read from content/insights.json */}
+      {/* SECTION 6 — BLOG: latest 3, read from content/blog.json */}
       <section className="section-rhythm section--bordered">
         <div className="container">
-          <InsightsFeed limit={3} showHeading />
+          <BlogFeed limit={3} showHeading />
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity'
 
-// Query to get all posts for the main Insights listing page
+// Query to get all posts for the main Blog listing page
 export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
   _id,
   title,
