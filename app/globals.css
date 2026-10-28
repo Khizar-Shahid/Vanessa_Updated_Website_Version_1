@@ -884,6 +884,22 @@ p {
   bottom: -40px;
   z-index: 3;
 }
+.portrait__badge {
+  position: absolute;
+  left: -28px;
+  bottom: -24px;
+  width: 110px;
+  height: 110px;
+  z-index: 4;
+  filter: drop-shadow(0 10px 20px rgba(44, 38, 34, 0.16));
+  pointer-events: none;
+}
+.portrait__badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 @media (max-width: 900px) {
   .portrait {
     width: min(86%, 380px);
@@ -891,6 +907,12 @@ p {
   }
   .portrait__flourish {
     right: -12px;
+  }
+  .portrait__badge {
+    left: -14px;
+    bottom: -18px;
+    width: 92px;
+    height: 92px;
   }
 }
 
@@ -1740,7 +1762,7 @@ p {
 .mv-hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(3.5rem, 7vw, 6rem) 0 0;
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
   border-bottom: 1px solid var(--hairline);
 }
 .mv-hero__grid {
@@ -1749,10 +1771,10 @@ p {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 3rem;
-  align-items: end;
+  align-items: center;
 }
 .mv-hero__text {
-  padding-bottom: clamp(3.5rem, 7vw, 6rem);
+  padding-bottom: 0;
   align-self: center;
 }
 .mv-hero__text h1 {
@@ -1764,37 +1786,34 @@ p {
 .mv-hero__portrait {
   position: relative;
   justify-self: center;
-  width: min(100%, 420px);
+  width: min(100%, 460px);
 }
-/* Soft sage arch the portrait stands in front of */
+/* Offset hairline border echoing the home page portrait frame */
 .mv-hero__portrait::before {
   content: '';
   position: absolute;
-  left: 6%;
-  right: 6%;
-  bottom: 0;
-  top: 8%;
-  border-radius: 999px 999px 0 0;
-  background-color: var(--wash-sage);
-  border: 1px solid rgba(94, 161, 91, 0.35);
-  border-bottom: none;
+  inset: -14px 14px 14px -14px;
+  border-radius: var(--radius-img);
+  border: 1px solid var(--sage);
+  pointer-events: none;
 }
 .mv-hero__photo {
   position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: 999px 999px 0 0;
+  aspect-ratio: 800 / 748;
+  border-radius: var(--radius-img);
   overflow: hidden;
-  margin: 0 6% 0;
-  top: 0;
+  margin: 0;
+  box-shadow: var(--shadow-editorial);
+  border: 1px solid var(--hairline);
 }
 .mv-hero__photo img {
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center;
 }
 @media (max-width: 860px) {
   .mv-hero__grid { grid-template-columns: 1fr; }
   .mv-hero__text { padding-bottom: 0; }
-  .mv-hero__portrait { width: min(88%, 380px); }
+  .mv-hero__portrait { width: min(92%, 400px); }
 }
 
 .mv-intro {

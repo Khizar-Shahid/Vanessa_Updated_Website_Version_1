@@ -7,8 +7,8 @@ import resourcesData from '@/content/resources.json';
 //
 // Environment variables (set in Vercel → Settings → Environment Variables):
 //   RESEND_API_KEY         required — API key from resend.com
-//   RESOURCE_FROM_EMAIL    required — sender on a domain verified in Resend,
-//                          e.g. "Vanessa Sierra <resources@thrivementalhealthsolutions.com>"
+//   CONTACT_FROM_EMAIL     required — sender on a domain verified in Resend,
+//                          e.g. "Thrive with Therapy <notifications@mail.thrivewiththerapy.org>"
 //   RESOURCE_REPLY_TO      optional — where replies go (defaults to the practice email)
 //   RESOURCE_NOTIFY_EMAIL  optional — also send the practice a note for each request
 //   GHL_PRIVATE_TOKEN      GoHighLevel Private Integration token (scope: contacts.write)
@@ -125,7 +125,7 @@ export async function POST(request: Request) {
   );
 
   const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.RESOURCE_FROM_EMAIL;
+  const from = process.env.CONTACT_FROM_EMAIL;
   if (!apiKey || !from) {
     await crmSaved;
     if (process.env.NODE_ENV === 'development') {
@@ -133,7 +133,7 @@ export async function POST(request: Request) {
       console.info(`[resources] Email not configured — would send "${resource.title}" to ${email}`);
       return NextResponse.json({ ok: true, simulated: true });
     }
-    console.error('[resources] RESEND_API_KEY or RESOURCE_FROM_EMAIL is not set');
+    console.error('[resources] RESEND_API_KEY or CONTACT_FROM_EMAIL is not set');
     return NextResponse.json(
       { error: 'Sorry, we can’t send resources right now. Please try again later.' },
       { status: 503 },

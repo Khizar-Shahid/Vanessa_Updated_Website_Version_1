@@ -15,6 +15,7 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const validate = () => {
     const errs: Record<string, string> = {};
@@ -30,7 +31,7 @@ export default function ContactPage() {
     return errs;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -39,13 +40,28 @@ export default function ContactPage() {
     }
 
     setErrors({});
+    setSubmitError('');
     setIsSubmitting(true);
 
-    // Simulate submission to clinical routing
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setSubmitError(data.error || 'Something went wrong. Please try again.');
+        return;
+      }
+
       setSubmitted(true);
-    }, 800);
+    } catch {
+      setSubmitError('We couldn\'t reach the server. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -382,6 +398,24 @@ export default function ContactPage() {
                         </span>
                       )}
                     </div>
+
+                    {/* Server Error */}
+                    {submitError && (
+                      <div
+                        role="alert"
+                        style={{
+                          padding: '0.75rem 1rem',
+                          backgroundColor: '#FFF5F4',
+                          borderRadius: '6px',
+                          border: '1px solid var(--salmon-text)',
+                          fontSize: '13px',
+                          color: 'var(--salmon-text)',
+                          marginBottom: '1rem',
+                        }}
+                      >
+                        {submitError}
+                      </div>
+                    )}
 
                     {/* Submit Button */}
                     <button

@@ -239,6 +239,14 @@ export default function HomePage() {
             <div className="portrait__flourish" aria-hidden="true">
               <OrganicLine variant="loop" stroke="var(--salmon)" />
             </div>
+            <div className="portrait__badge">
+              <Image
+                src="/badge.png"
+                alt="Influential Women Verified"
+                width={120}
+                height={120}
+              />
+            </div>
           </Reveal>
         </div>
       </section>

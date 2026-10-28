@@ -67,15 +67,14 @@ export default function MeetVanessaPage() {
             </RevealItem>
           </RevealGroup>
 
-          {/* TODO(client): swap for the background-removed portrait PNG (§10.1) */}
           <Reveal className="mv-hero__portrait" delay={0.2}>
             <div className="mv-hero__photo">
               <Image
-                src="/images/vanessa.jpg"
-                alt="Portrait of Vanessa M. Sierra, LMFT"
+                src="/poster.png"
+                alt="Vanessa M. Sierra, LMFT - Influential Women Recognition"
                 fill
                 priority
-                sizes="(max-width: 860px) 88vw, 420px"
+                sizes="(max-width: 860px) 88vw, 460px"
               />
             </div>
           </Reveal>
