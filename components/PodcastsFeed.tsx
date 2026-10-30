@@ -4,7 +4,8 @@ import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Clock, Calendar, ExternalLink, Sparkles, Youtube, Check } from 'lucide-react';
+import { Play, Clock, Calendar, ExternalLink, Sparkles, Check } from 'lucide-react';
+import { YoutubeIcon } from './YoutubeIcon';
 
 export interface PodcastEpisode {
   id: string;
@@ -181,7 +182,7 @@ export default function PodcastsFeed({ channel, featured, episodes }: PodcastsFe
                     className="btn btn-secondary podcast-btn-yt"
                     aria-label={`Watch "${featured.title}" on YouTube (opens in new tab)`}
                   >
-                    <Youtube size={17} className="yt-icon-red" aria-hidden="true" />
+                    <YoutubeIcon size={17} className="yt-icon-red" aria-hidden="true" />
                     Watch on YouTube
                     <ExternalLink size={13} aria-hidden="true" />
                   </a>
@@ -286,7 +287,7 @@ export default function PodcastsFeed({ channel, featured, episodes }: PodcastsFe
                           className="text-link podcast-yt-text-link"
                           aria-label={`Watch ${ep.title} directly on YouTube (opens in new tab)`}
                         >
-                          <Youtube size={15} className="yt-icon-red" aria-hidden="true" />
+                          <YoutubeIcon size={15} className="yt-icon-red" aria-hidden="true" />
                           Watch on YouTube
                           <ExternalLink size={12} aria-hidden="true" />
                         </a>

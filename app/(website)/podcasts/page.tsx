@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import podcastsData from '@/content/podcasts.json';
 import PageHero from '@/components/PageHero';
 import PodcastsFeed from '@/components/PodcastsFeed';
-import { Youtube, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { YoutubeIcon } from '@/components/YoutubeIcon';
 
 export const metadata: Metadata = {
   title: 'Podcasts & Video Insights | Thrive with Therapy',
@@ -31,7 +32,7 @@ export default function PodcastsPage() {
             style={{ gap: '0.65rem' }}
             aria-label="Subscribe to Thrive with Therapy on YouTube (opens in new tab)"
           >
-            <Youtube size={19} aria-hidden="true" />
+            <YoutubeIcon size={19} aria-hidden="true" />
             <span>Subscribe on YouTube</span>
             <ExternalLink size={14} aria-hidden="true" />
           </a>

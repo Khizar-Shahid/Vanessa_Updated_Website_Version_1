@@ -4,15 +4,16 @@ import { notFound } from 'next/navigation';
 import PageHero from '@/components/PageHero';
 import { SERVICE_MAP, SERVICE_SLUGS } from '@/content/services';
 
-export async function generateMetadata({ params }: { params: { service: string } }) {
-  const data = SERVICE_MAP[params.service];
+export async function generateMetadata({ params }: { params: Promise<{ service: string }> }) {
+  const { service } = await params;
+  const data = SERVICE_MAP[service];
   if (!data) return {};
   return {
     title: data.seoTitle,
     description: data.seoDescription,
     keywords: [data.seoKeyword],
     alternates: {
-      canonical: `/services/${params.service}`,
+      canonical: `/services/${service}`,
     },
   };
 }
@@ -21,8 +22,9 @@ export async function generateStaticParams() {
   return SERVICE_SLUGS.map((slug) => ({ service: slug }));
 }
 
-export default function ServiceDetailPage({ params }: { params: { service: string } }) {
-  const data = SERVICE_MAP[params.service];
+export default async function ServiceDetailPage({ params }: { params: Promise<{ service: string }> }) {
+  const { service } = await params;
+  const data = SERVICE_MAP[service];
   if (!data) notFound();
 
   return (

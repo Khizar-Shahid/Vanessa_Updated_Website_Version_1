@@ -23,15 +23,16 @@ const components = {
 };
 
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await client.fetch(postBySlugQuery, { slug: params.slug });
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await client.fetch(postBySlugQuery, { slug });
   if (!post) return {};
   
   return {
     title: `${post.title} | Thrive with Therapy`,
     description: post.excerpt || 'Read the latest blog post from Vanessa M. Sierra, LMFT.',
     alternates: {
-      canonical: `/blog/${params.slug}`,
+      canonical: `/blog/${slug}`,
     },
   };
 }
@@ -43,8 +44,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await client.fetch(postBySlugQuery, { slug: params.slug });
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await client.fetch(postBySlugQuery, { slug });
   
   if (!post) notFound();
 
