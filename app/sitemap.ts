@@ -11,6 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '',
     '/meet-vanessa',
     '/services',
+    '/services/therapist-miami-fl',
     '/blog',
     '/resources',
     '/podcasts',

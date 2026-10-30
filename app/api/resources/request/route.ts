@@ -22,16 +22,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 type Resource = (typeof resourcesData.freeResources)[number];
 
-async function sendEmail(apiKey: string, payload: Record<string, unknown>) {
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-  });
-  if (!res.ok) {
-    throw new Error(`Resend responded ${res.status}: ${await res.text()}`);
-  }
-}
+import { Resend } from 'resend';
 
 const GHL_API = 'https://services.leadconnectorhq.com';
 const GHL_VERSION = '2021-07-28';
@@ -140,23 +131,29 @@ export async function POST(request: Request) {
     );
   }
 
+  const resend = new Resend(apiKey);
+
   try {
     const pdf = await readFile(path.join(process.cwd(), 'private', 'resources', resource.file));
 
-    await sendEmail(apiKey, {
+    const { error: sendError } = await resend.emails.send({
       from,
       to: [email],
-      reply_to: process.env.RESOURCE_REPLY_TO || PRACTICE_EMAIL,
+      replyTo: process.env.RESOURCE_REPLY_TO || PRACTICE_EMAIL,
       subject: `Your free resource: ${resource.title}`,
       html: resourceEmailHtml(resource),
       text: `Thank you for your interest. "${resource.title}" is attached as a PDF.\n\nWarmly,\nVanessa M. Sierra, LMFT`,
-      attachments: [{ filename: `${resource.title}.pdf`, content: pdf.toString('base64') }],
+      attachments: [{ filename: `${resource.title}.pdf`, content: pdf }],
     });
+
+    if (sendError) {
+      throw new Error(`Resend SDK error: ${sendError.message}`);
+    }
 
     const notify = process.env.RESOURCE_NOTIFY_EMAIL;
     if (notify) {
       // Best-effort: the visitor already has their PDF even if this fails
-      await sendEmail(apiKey, {
+      await resend.emails.send({
         from,
         to: [notify],
         subject: `Resource requested: ${resource.title}`,

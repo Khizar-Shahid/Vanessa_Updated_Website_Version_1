@@ -35,13 +35,13 @@ export interface ServiceDetail {
 
 export const SERVICE_LIST: ServiceSummary[] = [
   {
-    slug: 'individual-therapy-coral-gables',
+    slug: 'individual-therapy-miami',
     num: '01',
     title: 'Individual Therapy',
     eyebrow: 'One-on-One Support',
     intro: 'For when something feels stuck, overwhelming, or difficult to understand on your own.',
     description:
-      'Individual therapy in Coral Gables gives you a private and supportive space to talk about what you are going through. It can help you better understand your feelings, deal with stress and anxiety, manage difficult emotions, and work through changes in your life.\n\nTogether, you can understand your thoughts and patterns, build healthier ways to cope, and feel more confident in yourself and your choices.',
+      'Individual therapy in Miami gives you a private and supportive space to talk about what you are going through. It can help you better understand your feelings, deal with stress and anxiety, manage difficult emotions, and work through changes in your life.\n\nTogether, you can understand your thoughts and patterns, build healthier ways to cope, and feel more confident in yourself and your choices.',
     focus: [
       'Self-worth, identity, and confidence',
       'Managing emotions and stress',
@@ -52,13 +52,13 @@ export const SERVICE_LIST: ServiceSummary[] = [
     ],
   },
   {
-    slug: 'couples-therapy-coral-gables',
+    slug: 'couples-therapy-miami',
     num: '02',
     title: 'Couples Therapy',
     eyebrow: 'Relational Healing',
     intro: 'For when you care about each other, but keep having the same problems.',
     description:
-      'Couples therapy in Coral Gables gives partners a safe and private place to talk about their relationship. It can help you communicate better, understand each other, solve problems, and build a stronger connection.\n\nWe use helpful therapy approaches, including the Gottman Method and attachment-based therapy, to help couples understand their problems and find better ways to communicate and support each other.',
+      'Couples therapy in Miami gives partners a safe and private place to talk about their relationship. It can help you communicate better, understand each other, solve problems, and build a stronger connection.\n\nWe use helpful therapy approaches, including the Gottman Method and attachment-based therapy, to help couples understand their problems and find better ways to communicate and support each other.',
     focus: [
       'Managing arguments and disagreements',
       'Building trust and feeling safe',
@@ -69,13 +69,13 @@ export const SERVICE_LIST: ServiceSummary[] = [
     ],
   },
   {
-    slug: 'parenting-family-therapy-coral-gables',
+    slug: 'parenting-family-therapy-miami',
     num: '03',
     title: 'Parenting & Family Therapy',
     eyebrow: 'Generational Growth',
     intro: 'For families going through conflict, changes, or the everyday challenges of raising children.',
     description:
-      'Family life is not always easy. Sometimes parents and children have trouble communicating, understanding each other, or dealing with strong emotions. Parenting and family therapy in Coral Gables offers a comfortable space where families can talk about these challenges and work through them together.\n\nTherapy can help families improve communication, set healthy boundaries, handle difficult situations, and build stronger relationships at home.',
+      'Family life is not always easy. Sometimes parents and children have trouble communicating, understanding each other, or dealing with strong emotions. Parenting and family therapy in Miami offers a comfortable space where families can talk about these challenges and work through them together.\n\nTherapy can help families improve communication, set healthy boundaries, handle difficult situations, and build stronger relationships at home.',
     focus: [
       'Better communication between parents and children',
       'Helping children handle strong emotions',
@@ -85,13 +85,13 @@ export const SERVICE_LIST: ServiceSummary[] = [
     ],
   },
   {
-    slug: 'trauma-therapy-coral-gables',
+    slug: 'trauma-therapy-miami',
     num: '04',
     title: 'Trauma-Focused Therapy',
     eyebrow: 'Somatic & EMDR',
     intro: 'For when something from your past is still affecting you today.',
     description:
-      'Sometimes, difficult experiences from the past can stay with us. They may affect how we feel, how we react to certain situations, or how we connect with other people. Trauma therapy in Coral Gables gives you a safe and private place to talk about these experiences and begin working through them.\n\nTherapy can help you understand what you are feeling, manage difficult emotions, and find healthier ways to cope. Your therapy is based on your needs and what feels comfortable for you.',
+      'Sometimes, difficult experiences from the past can stay with us. They may affect how we feel, how we react to certain situations, or how we connect with other people. Trauma therapy in Miami gives you a safe and private place to talk about these experiences and begin working through them.\n\nTherapy can help you understand what you are feeling, manage difficult emotions, and find healthier ways to cope. Your therapy is based on your needs and what feels comfortable for you.',
     focus: [
       'Difficult or painful past experiences',
       'Fear, stress, and strong emotions',
@@ -105,12 +105,12 @@ export const SERVICE_LIST: ServiceSummary[] = [
 /* ── Detail-page data (dynamic [service] route) ── */
 
 export const SERVICE_MAP: Record<string, ServiceDetail> = {
-  'individual-therapy-coral-gables': {
+  'individual-therapy-miami': {
     title: 'Individual Therapy',
-    seoTitle: 'Individual Therapy in Coral Gables, FL | Thrive With Therapy',
-    seoDescription: 'Get personalized individual therapy in Coral Gables, FL. Explore support for emotional challenges, life changes, anxiety, and personal growth.',
-    seoH1: 'Individual Therapy in Coral Gables, FL',
-    seoKeyword: 'Individual Therapy in Coral Gables',
+    seoTitle: 'Individual Therapy in Miami, FL | Thrive With Therapy',
+    seoDescription: 'Explore individual therapy in Miami, FL, to work through anxiety, stress, life changes, and emotional challenges. Schedule a consultation today.',
+    seoH1: 'Individual Therapy in Miami, FL',
+    seoKeyword: 'Individual Therapy in Miami, FL',
     subtitle: 'One-on-One Collaborative Care',
     forWhen: 'For when something feels stuck, overwhelming, or difficult to understand on your own.',
     whoItsFor: [
@@ -142,12 +142,12 @@ export const SERVICE_MAP: Record<string, ServiceDetail> = {
       },
     ],
   },
-  'couples-therapy-coral-gables': {
+  'couples-therapy-miami': {
     title: 'Couples Therapy',
-    seoTitle: 'Couples Therapy in Coral Gables, FL | Thrive With Therapy',
-    seoDescription: 'Improve communication and strengthen your relationship with couples therapy in Coral Gables, FL. Get a safe and supportive space to work through challenges.',
-    seoH1: 'Couples Therapy in Coral Gables, FL',
-    seoKeyword: 'Couples Therapy in Coral Gables',
+    seoTitle: 'Couples Therapy in Miami, FL | Thrive With Therapy',
+    seoDescription: 'Strengthen your relationship with couples therapy in Miami, FL. Work on communication, trust, recurring conflicts, and emotional connection.',
+    seoH1: 'Couples Therapy in Miami, FL',
+    seoKeyword: 'Couples Therapy in Miami, FL',
     subtitle: 'Relational Reconnection & Repair',
     forWhen: 'For when you care about each other, but keep getting caught in the same patterns.',
     whoItsFor: [
@@ -179,12 +179,12 @@ export const SERVICE_MAP: Record<string, ServiceDetail> = {
       },
     ],
   },
-  'parenting-family-therapy-coral-gables': {
+  'parenting-family-therapy-miami': {
     title: 'Parenting & Family Therapy',
-    seoTitle: 'Parenting & Family Therapy in Coral Gables, FL | Thrive with Therapy',
-    seoDescription: 'Get compassionate parenting and family therapy in Coral Gables, FL. Thrive with Therapy helps families improve communication, relationships, and emotional well-being.',
-    seoH1: 'Parenting & Family Therapy in Coral Gables, FL',
-    seoKeyword: 'Parenting and Family Therapy in Coral Gables',
+    seoTitle: 'Family Therapy in Miami, FL | Thrive With Therapy',
+    seoDescription: 'Improve family communication and navigate parenting challenges with family therapy in Miami, FL. Explore supportive care with Thrive With Therapy.',
+    seoH1: 'Parenting & Family Therapy in Miami, FL',
+    seoKeyword: 'Family Therapy in Miami, FL',
     subtitle: 'Strengthening Family Bonds & Authority',
     forWhen: 'For families navigating conflict, changing roles, and the challenges of raising children.',
     whoItsFor: [
@@ -216,12 +216,12 @@ export const SERVICE_MAP: Record<string, ServiceDetail> = {
       },
     ],
   },
-  'trauma-therapy-coral-gables': {
+  'trauma-therapy-miami': {
     title: 'Trauma-Focused Therapy',
-    seoTitle: 'Trauma Therapy in Coral Gables, FL | Thrive With Therapy',
-    seoDescription: 'Find compassionate trauma therapy in Coral Gables, FL. Get professional support to process difficult experiences and build healthy coping skills.',
-    seoH1: 'Trauma Therapy in Coral Gables, FL',
-    seoKeyword: 'Trauma Therapy in Coral Gables',
+    seoTitle: 'Trauma Therapy in Miami, FL | Thrive With Therapy',
+    seoDescription: 'Explore trauma-focused therapy in Miami, FL, to process difficult experiences and develop healthier coping strategies. Contact Thrive With Therapy.',
+    seoH1: 'Trauma Therapy in Miami, FL',
+    seoKeyword: 'Trauma Therapy in Miami, FL',
     subtitle: 'EMDR & Somatic Healing',
     forWhen: 'For when past experiences still affect how you feel, respond, or connect with others today.',
     whoItsFor: [
