@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import BlogFeed from '@/components/BlogFeed';
-import ResourcePanels from '@/components/ResourcePanels';
-import TestimonialSlider from '@/components/TestimonialSlider';
+import BlogFeed from '@/components/sections/BlogFeed';
+import ResourcePanels from '@/components/sections/ResourcePanels';
+import TestimonialSlider from '@/components/sections/TestimonialSlider';
 import HomeHero from '@/components/home/HomeHero';
 import PauseSection from '@/components/home/PauseSection';
 import ExperienceSection from '@/components/home/ExperienceSection';

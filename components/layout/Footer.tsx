@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { LogoLockup } from '@/components/Header';
-import OrganicLine from '@/components/OrganicLine';
+import { LogoLockup } from '@/components/layout/Header';
+import OrganicLine from '@/components/ui/OrganicLine';
 
 const EXPLORE_LINKS = [
   { label: 'Meet Vanessa', href: '/meet-vanessa' },

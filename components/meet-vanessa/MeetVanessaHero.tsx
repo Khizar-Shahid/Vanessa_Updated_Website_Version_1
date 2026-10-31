@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { RevealGroup, RevealItem, Reveal } from '@/components/motion/Reveal';
-import Atmosphere from '@/components/Atmosphere';
-import Eyebrow from '@/components/Eyebrow';
+import Atmosphere from '@/components/ui/Atmosphere';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 export default function MeetVanessaHero() {
   return (

@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Clock, Calendar, ExternalLink } from 'lucide-react';
-import { YoutubeIcon } from '@/components/YoutubeIcon';
+import { YoutubeIcon } from '@/components/ui/YoutubeIcon';
 import YouTubePlayerFacade from './YouTubePlayerFacade';
 import { PodcastEpisode, EASE } from './types';
 

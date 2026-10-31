@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import PageHero from '@/components/PageHero';
-import OrganicLine from '@/components/OrganicLine';
-import Eyebrow from '@/components/Eyebrow';
+import PageHero from '@/components/ui/PageHero';
+import OrganicLine from '@/components/ui/OrganicLine';
+import Eyebrow from '@/components/ui/Eyebrow';
 import { ArrowRight, Feather, HeartHandshake, Sprout, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 

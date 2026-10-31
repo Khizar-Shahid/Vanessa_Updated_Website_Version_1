@@ -5,7 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import testimonialsData from '@/content/testimonials.json';
 import { Reveal, EASE_EDITORIAL } from '@/components/motion/Reveal';
-import Eyebrow from '@/components/Eyebrow';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 const AUTO_ADVANCE_MS = 8000;
 

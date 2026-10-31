@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import resourcesData from '@/content/resources.json';
 import { Reveal } from '@/components/motion/Reveal';
-import Eyebrow from '@/components/Eyebrow';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 /* Line-art notebook for the free resources panel — the
    §5 §7 "book/notebook visual cue". Decorative only. */

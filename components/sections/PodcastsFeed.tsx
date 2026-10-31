@@ -2,11 +2,11 @@
 
 import React, { useState, useMemo } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import PodcastFeatured from './podcasts/PodcastFeatured';
-import PodcastCard from './podcasts/PodcastCard';
-import PodcastCrossBanner from './podcasts/PodcastCrossBanner';
-import { PodcastChannel, PodcastEpisode } from './podcasts/types';
-import Eyebrow from '@/components/Eyebrow';
+import PodcastFeatured from '@/components/podcasts/PodcastFeatured';
+import PodcastCard from '@/components/podcasts/PodcastCard';
+import PodcastCrossBanner from '@/components/podcasts/PodcastCrossBanner';
+import { PodcastChannel, PodcastEpisode } from '@/components/podcasts/types';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 export type { PodcastChannel, PodcastEpisode };
 

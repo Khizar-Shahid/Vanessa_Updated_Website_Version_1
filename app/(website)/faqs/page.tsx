@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import PageHero from '@/components/PageHero';
+import PageHero from '@/components/ui/PageHero';
 import FaqAccordion, { FaqItem } from '@/components/faqs/FaqAccordion';
 
 const FAQ_ITEMS: FaqItem[] = [

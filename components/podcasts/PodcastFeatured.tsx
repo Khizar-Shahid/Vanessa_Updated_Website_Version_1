@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Clock, Calendar, ExternalLink, Sparkles } from 'lucide-react';
-import { YoutubeIcon } from '@/components/YoutubeIcon';
+import { YoutubeIcon } from '@/components/ui/YoutubeIcon';
 import YouTubePlayerFacade from './YouTubePlayerFacade';
 import { PodcastEpisode } from './types';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Reveal } from '@/components/motion/Reveal';
-import Eyebrow from '@/components/Eyebrow';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 const APPROACHES = [
   'EMDR',

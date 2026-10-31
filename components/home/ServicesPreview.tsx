@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Feather, HeartHandshake, Sprout, Users } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
-import Eyebrow from '@/components/Eyebrow';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 interface ServiceSummary {
   num: string;

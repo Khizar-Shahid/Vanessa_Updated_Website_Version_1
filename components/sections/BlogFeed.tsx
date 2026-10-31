@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { publishedPosts } from '@/lib/blog';
-import BlogCard from './blog/BlogCard';
+import BlogCard from '@/components/blog/BlogCard';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
-import Eyebrow from '@/components/Eyebrow';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 interface BlogFeedProps {
   limit?: number;

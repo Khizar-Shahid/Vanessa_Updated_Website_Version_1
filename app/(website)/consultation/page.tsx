@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import PageHero from '@/components/PageHero';
+import PageHero from '@/components/ui/PageHero';
 
 interface BookingService {
   id: string;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 import credentialsData from '@/content/credentials.json';
-import Eyebrow from '@/components/Eyebrow';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 export default function ClinicalCredentialsGrid() {
   return (

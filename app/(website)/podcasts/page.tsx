@@ -1,10 +1,10 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import podcastsData from '@/content/podcasts.json';
-import PageHero from '@/components/PageHero';
-import PodcastsFeed from '@/components/PodcastsFeed';
+import PageHero from '@/components/ui/PageHero';
+import PodcastsFeed from '@/components/sections/PodcastsFeed';
 import { ExternalLink } from 'lucide-react';
-import { YoutubeIcon } from '@/components/YoutubeIcon';
+import { YoutubeIcon } from '@/components/ui/YoutubeIcon';
 
 export const metadata: Metadata = {
   title: 'Podcasts & Video Insights | Thrive with Therapy',

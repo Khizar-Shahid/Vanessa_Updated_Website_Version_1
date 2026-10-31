@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { Playfair_Display, Nunito_Sans } from 'next/font/google';
 import Script from 'next/script';
 import '../globals.css';
-import TopStrip from '@/components/TopStrip';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import TopStrip from '@/components/layout/TopStrip';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 // Google Analytics 4 measurement ID
 const GA_MEASUREMENT_ID = 'G-DTYE3P8B89';

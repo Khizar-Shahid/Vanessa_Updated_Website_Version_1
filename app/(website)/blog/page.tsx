@@ -1,5 +1,5 @@
 import React from 'react';
-import PageHero from '@/components/PageHero';
+import PageHero from '@/components/ui/PageHero';
 import BlogBrowser from '@/components/blog/BlogBrowser';
 import { getAllBlogPosts } from '@/sanity/lib/blogService';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { RevealGroup, RevealItem } from '@/components/motion/Reveal';
-import OrganicLine from '@/components/OrganicLine';
-import Atmosphere from '@/components/Atmosphere';
-import HeroCards from '@/components/HeroCards';
+import OrganicLine from '@/components/ui/OrganicLine';
+import Atmosphere from '@/components/ui/Atmosphere';
+import HeroCards from '@/components/home/HeroCards';
 
 export default function HomeHero() {
   return (

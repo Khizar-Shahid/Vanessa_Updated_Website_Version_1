@@ -1,7 +1,7 @@
 import React from 'react';
-import PageHero from '@/components/PageHero';
+import PageHero from '@/components/ui/PageHero';
 import ContactForm from '@/components/contact/ContactForm';
-import Eyebrow from '@/components/Eyebrow';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 export const metadata = {
   alternates: {

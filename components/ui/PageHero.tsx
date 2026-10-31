@@ -1,6 +1,6 @@
-import Atmosphere from '@/components/Atmosphere';
-import OrganicLine from '@/components/OrganicLine';
-import Eyebrow from '@/components/Eyebrow';
+import Atmosphere from '@/components/ui/Atmosphere';
+import OrganicLine from '@/components/ui/OrganicLine';
+import Eyebrow from '@/components/ui/Eyebrow';
 import { RevealGroup, RevealItem } from '@/components/motion/Reveal';
 
 interface PageHeroProps {

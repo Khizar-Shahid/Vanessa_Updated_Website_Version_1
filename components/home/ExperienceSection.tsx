@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Reveal } from '@/components/motion/Reveal';
-import OrganicLine from '@/components/OrganicLine';
-import Eyebrow from '@/components/Eyebrow';
+import OrganicLine from '@/components/ui/OrganicLine';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 export default function ExperienceSection() {
   return (

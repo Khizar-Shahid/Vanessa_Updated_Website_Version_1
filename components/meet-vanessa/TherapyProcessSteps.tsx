@@ -1,7 +1,7 @@
 import React from 'react';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
-import OrganicLine from '@/components/OrganicLine';
-import Eyebrow from '@/components/Eyebrow';
+import OrganicLine from '@/components/ui/OrganicLine';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 const STEPS = [
   { num: '01', title: 'Listen', body: 'Understand the story, the present experience, and the patterns within it.' },

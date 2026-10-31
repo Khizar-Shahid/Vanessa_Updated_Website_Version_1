@@ -1,7 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import PageHero from '@/components/PageHero';
+import PageHero from '@/components/ui/PageHero';
 import { SERVICE_MAP, SERVICE_SLUGS } from '@/content/services';
 import ServiceSessionOverview from '@/components/services/ServiceSessionOverview';
 import ServiceFAQ from '@/components/services/ServiceFAQ';

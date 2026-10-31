@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Eyebrow from '@/components/Eyebrow';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 export default function PodcastCrossBanner() {
   return (

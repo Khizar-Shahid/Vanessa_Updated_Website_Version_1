@@ -1,9 +1,9 @@
 import React from 'react';
-import PageHero from '@/components/PageHero';
+import PageHero from '@/components/ui/PageHero';
 import { SERVICE_LIST } from '@/content/services';
 import ServiceCardRow from '@/components/services/ServiceCardRow';
 import Link from 'next/link';
-import Eyebrow from '@/components/Eyebrow';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 export const metadata = {
   alternates: {

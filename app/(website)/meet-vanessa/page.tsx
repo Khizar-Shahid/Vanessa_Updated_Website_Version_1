@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import OrganicLine from '@/components/OrganicLine';
-import ConvergingLines from '@/components/ConvergingLines';
+import OrganicLine from '@/components/ui/OrganicLine';
+import ConvergingLines from '@/components/ui/ConvergingLines';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 import MeetVanessaHero from '@/components/meet-vanessa/MeetVanessaHero';
 import TherapyProcessSteps from '@/components/meet-vanessa/TherapyProcessSteps';
 import ClinicalCredentialsGrid from '@/components/meet-vanessa/ClinicalCredentialsGrid';
 import SpecializedModalities from '@/components/meet-vanessa/SpecializedModalities';
-import Eyebrow from '@/components/Eyebrow';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 export const metadata = {
   alternates: {
