@@ -23,7 +23,7 @@ export default async function BlogIndexPage() {
         lead="Thoughtful ideas about relationships, emotions, patterns, parenting, and everyday challenges."
       />
 
-      <section className="section-rhythm pt-12">
+      <section className="pt-12 pb-16 md:pb-24">
         <div className="container">
           <BlogBrowser initialItems={formattedPosts} />
         </div>

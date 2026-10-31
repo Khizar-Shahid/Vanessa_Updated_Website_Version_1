@@ -12,7 +12,7 @@ export default function ServiceSessionOverview({
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
       {/* Who It's For */}
-      <div className="editorial-card p-8 md:p-10 bg-white rounded-2xl border border-hairline shadow-sm">
+      <div className="p-8 md:p-10 bg-white rounded-2xl border border-hairline shadow-sm">
         <h3 className="font-serif text-[22px] mb-5 text-sage-deep font-medium">
           Who This Is For
         </h3>
@@ -27,7 +27,7 @@ export default function ServiceSessionOverview({
       </div>
 
       {/* What Sessions Look Like */}
-      <div className="editorial-card p-8 md:p-10 bg-white rounded-2xl border border-hairline shadow-sm">
+      <div className="p-8 md:p-10 bg-white rounded-2xl border border-hairline shadow-sm">
         <h3 className="font-serif text-[22px] mb-5 text-salmon-text font-medium">
           What Sessions Look Like
         </h3>

@@ -65,7 +65,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="editorial-card p-8 md:p-12 bg-white rounded-2xl border border-hairline shadow-sm text-center">
+      <div className="p-8 md:p-12 bg-white rounded-2xl border border-hairline shadow-sm text-center">
         <div className="w-14 h-14 rounded-full bg-sage-soft text-sage-deep flex items-center justify-center mx-auto mb-6">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="20 6 9 17 4 12" />
@@ -81,7 +81,7 @@ export default function ContactForm() {
         <button
           type="button"
           onClick={() => setSubmitted(false)}
-          className="btn btn-secondary text-sm"
+          className="inline-flex items-center justify-center gap-2 font-sans text-sm font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-transparent text-graphite border-[1.5px] border-graphite hover:bg-graphite hover:text-white hover:-translate-y-0.5 transition-all duration-300"
         >
           Send Another Message
         </button>
@@ -90,7 +90,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="editorial-card p-8 md:p-12 bg-white rounded-2xl border border-hairline shadow-sm">
+    <div className="p-8 md:p-12 bg-white rounded-2xl border border-hairline shadow-sm">
       <form onSubmit={handleSubmit} noValidate>
         <h3 className="font-serif text-2xl text-ink mb-2">
           Send a Message
@@ -212,7 +212,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="btn btn-primary w-full justify-center text-sm mb-6"
+          className="w-full inline-flex items-center justify-center gap-2 font-sans text-sm font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300 mb-6 disabled:opacity-60"
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>

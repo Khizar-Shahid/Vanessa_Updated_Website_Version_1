@@ -6,19 +6,22 @@ import OrganicLine from '@/components/OrganicLine';
 
 export default function MeetVanessaSection() {
   return (
-    <section className="section-rhythm section--sage section--bordered">
-      <div className="container split">
-        <Reveal className="split__text">
+    <section className="py-16 md:py-24 bg-sage-soft/50 border-t border-hairline">
+      <div className="container grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
+        <Reveal className="[&>h2]:mb-6 [&>p]:mb-8">
           <span className="label-eyebrow">MEET VANESSA</span>
           <h2>The Person Behind the Work.</h2>
-          <p className="body-large">
+          <p className="text-[18px] leading-[1.8]">
             Vanessa M. Sierra is a Licensed Marriage and Family Therapist with more than 20 years
             of experience working with adults, couples, families, and children. Her work is
             grounded in listening closely, understanding the patterns behind what clients are
             experiencing, and creating a supportive space where people can feel understood, safe,
             and ready to move toward change.
           </p>
-          <Link href="/meet-vanessa" className="btn btn-primary">
+          <Link
+            href="/meet-vanessa"
+            className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
+          >
             Meet Vanessa
           </Link>
         </Reveal>

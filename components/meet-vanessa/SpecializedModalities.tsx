@@ -14,11 +14,11 @@ const APPROACHES = [
 
 export default function SpecializedModalities() {
   return (
-    <section className="section-rhythm section--bordered">
+    <section className="py-16 md:py-24 border-t border-hairline">
       <Reveal className="container max-w-[900px]">
         <span className="label-eyebrow block mb-2">MY APPROACH</span>
         <h2 className="mb-6">Different People Need Different Paths.</h2>
-        <p className="body-large text-ink-muted text-[16px] md:text-[18px] leading-relaxed mb-8">
+        <p className="text-ink-muted text-[16px] md:text-[18px] leading-[1.8] mb-8">
           My work is collaborative and individualized. Depending on the person, the concern, and
           the goals of therapy, I may draw from approaches including EMDR, interpersonal therapy,
           narrative therapy, strength-based therapy, ACT, somatic and trauma-focused approaches,

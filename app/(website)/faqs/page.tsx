@@ -102,7 +102,7 @@ export default function FaqPage() {
         lead="Helpful information about session structure, fees, clinical approaches, and what to expect when beginning therapy."
       />
 
-      <section className="section-rhythm">
+      <section className="py-16 md:py-24">
         <div className="container max-w-[820px]">
           <FaqAccordion items={FAQ_ITEMS} defaultOpenId="what-can-i-talk-about" />
 
@@ -116,10 +116,16 @@ export default function FaqPage() {
               therapy.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="btn btn-primary">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
+              >
                 Contact Our Office
               </Link>
-              <Link href="/consultation" className="btn btn-secondary">
+              <Link
+                href="/consultation"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-transparent text-graphite border-[1.5px] border-graphite hover:bg-graphite hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+              >
                 Book a Consultation
               </Link>
             </div>

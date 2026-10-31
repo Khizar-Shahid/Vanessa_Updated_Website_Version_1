@@ -19,12 +19,12 @@ const STEPS = [
 
 export default function TherapyProcessSteps() {
   return (
-    <section className="section-rhythm section--sage section--bordered">
+    <section className="py-16 md:py-24 bg-sage-soft/50 border-t border-hairline">
       <div className="container">
-        <Reveal className="section-head max-w-[820px] mb-12">
+        <Reveal className="max-w-[820px] mb-12">
           <span className="label-eyebrow block mb-2">HOW I WORK</span>
           <h2 className="mb-4">I Start by Listening.</h2>
-          <p className="body-large text-ink-muted text-[16px] md:text-[18px] leading-relaxed">
+          <p className="text-ink-muted text-[16px] md:text-[18px] leading-[1.8]">
             I listen carefully to what clients say—and to what may be communicated through body
             language, emotional expression, communication style, beliefs, relationships, and
             patterns of response. I also pay attention to a person&apos;s history, support

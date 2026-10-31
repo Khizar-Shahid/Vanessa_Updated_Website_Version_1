@@ -60,12 +60,12 @@ const SERVICES: ServiceSummary[] = [
 
 export default function ServicesPreview() {
   return (
-    <section className="section-rhythm section--bordered">
+    <section className="py-16 md:py-24 border-t border-hairline">
       <div className="container">
-        <Reveal className="section-head section-head--center">
+        <Reveal className="text-center max-w-[780px] mx-auto mb-14 [&>h2]:mb-4">
           <span className="label-eyebrow">WAYS WE WORK</span>
           <h2>There&apos;s More Than One Way to Begin.</h2>
-          <p className="lead-paragraph">
+          <p className="text-[18px] leading-[1.7] text-ink-muted mx-auto max-w-[62ch]">
             Whether you&apos;re working through personal challenges, experiencing relationship difficulties, or looking to build healthier family relationships, therapy can provide a supportive space to better understand your experiences, develop healthier patterns, and work toward meaningful change.
           </p>
         </Reveal>

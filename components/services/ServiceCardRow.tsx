@@ -17,7 +17,7 @@ interface ServiceCardRowProps {
 
 export default function ServiceCardRow({ service }: ServiceCardRowProps) {
   return (
-    <div className="editorial-card p-8 md:p-12 bg-white rounded-2xl border border-hairline shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <div className="p-8 md:p-12 bg-white rounded-2xl border border-hairline shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] hover:border-sage/40 transition-colors grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       <div className="lg:col-span-7 flex flex-col items-start">
         <span className="font-sans text-[11px] font-bold tracking-[0.18em] uppercase text-salmon-text block mb-2">
           {service.num} • {service.eyebrow}
@@ -31,7 +31,10 @@ export default function ServiceCardRow({ service }: ServiceCardRowProps) {
         <p className="text-[15px] leading-relaxed text-ink-muted mb-6 whitespace-pre-wrap">
           {service.description}
         </p>
-        <Link href={`/services/${service.slug}`} className="btn btn-primary text-[14px]">
+        <Link
+          href={`/services/${service.slug}`}
+          className="inline-flex items-center justify-center gap-2 font-sans text-[14px] font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
+        >
           Explore {service.title}
         </Link>
       </div>

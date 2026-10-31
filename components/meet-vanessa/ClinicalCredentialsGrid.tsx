@@ -4,9 +4,9 @@ import credentialsData from '@/content/credentials.json';
 
 export default function ClinicalCredentialsGrid() {
   return (
-    <section className="section-rhythm section--cream section--bordered">
+    <section className="py-16 md:py-24 bg-cream border-t border-hairline">
       <div className="container max-w-[1000px]">
-        <Reveal className="section-head mb-12">
+        <Reveal className="mb-12 [&>h2]:mt-2">
           <span className="label-eyebrow block mb-2">EXPERIENCE &amp; TRAINING</span>
           <h2>More Than 20 Years of Experience.</h2>
         </Reveal>

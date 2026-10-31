@@ -1,5 +1,5 @@
-import React from 'react';
 import OrganicLine from '@/components/OrganicLine';
+import Atmosphere from '@/components/Atmosphere';
 import { RevealGroup, RevealItem } from '@/components/motion/Reveal';
 
 interface PageHeroProps {
@@ -15,11 +15,7 @@ export default function PageHero({ eyebrow, title, lead, align = 'center', child
   const isCenter = align === 'center';
   return (
     <section className="relative overflow-hidden py-16 md:py-24 border-b border-hairline">
-      <div className="ambient-background" aria-hidden="true">
-        <div className="ambient-orb ambient-orb-sage opacity-25" />
-        <div className="ambient-orb ambient-orb-salmon opacity-25" />
-        <div className="grain" />
-      </div>
+      <Atmosphere opacity="soft" />
       <div className="container">
         <RevealGroup className={`relative z-10 max-w-[860px] ${isCenter ? 'mx-auto text-center' : ''}`} immediate stagger={0.1}>
           <RevealItem as="span" className="label-eyebrow">

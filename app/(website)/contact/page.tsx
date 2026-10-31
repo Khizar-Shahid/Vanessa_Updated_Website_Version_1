@@ -20,7 +20,7 @@ export default function ContactPage() {
         lead="We are here to support you. Reach out to ask questions, coordinate care details, or learn more about starting therapy in Coral Gables or online throughout Florida."
       />
 
-      <section className="section-rhythm">
+      <section className="py-16 md:py-24">
         <div className="container max-w-[1040px]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left Column: Direct Contact Info & Office Details */}
@@ -41,7 +41,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-serif text-lg text-ink mb-0.5">Phone</h4>
                     <p className="m-0">
-                      <a href="tel:954-635-0234" className="text-link text-[15px] hover:text-salmon-text">
+                      <a href="tel:954-635-0234" className="font-semibold text-ink text-[15px] hover:text-salmon-text underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon-text transition-colors duration-200">
                         954-635-0234
                       </a>
                     </p>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-serif text-lg text-ink mb-0.5">Email</h4>
                     <p className="m-0">
-                      <a href="mailto:vanessa@thrivementalhealthsolutions.com" className="text-link text-[15px] break-all hover:text-salmon-text">
+                      <a href="mailto:vanessa@thrivementalhealthsolutions.com" className="font-semibold text-ink text-[15px] break-all hover:text-salmon-text underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon-text transition-colors duration-200">
                         vanessa@thrivementalhealthsolutions.com
                       </a>
                     </p>

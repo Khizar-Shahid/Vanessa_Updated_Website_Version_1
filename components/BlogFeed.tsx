@@ -15,17 +15,20 @@ export default function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProp
   return (
     <div>
       {showHeading && (
-        <Reveal className="section-head section-head--split flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <span className="label-eyebrow block mb-2">BLOG</span>
             <h2>A Little More to Think About.</h2>
           </div>
           <div className="max-w-[480px]">
-            <p className="lead-paragraph text-ink-muted mb-4 text-[15px] leading-relaxed">
+            <p className="text-ink-muted mb-4 text-[15px] leading-relaxed max-w-[62ch]">
               Thoughtful ideas about relationships, emotions, patterns, parenting, and everyday
               challenges.
             </p>
-            <Link href="/blog" className="btn btn-secondary">
+            <Link
+              href="/blog"
+              className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-transparent text-graphite border-[1.5px] border-graphite hover:bg-graphite hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+            >
               Explore All Posts
             </Link>
           </div>

@@ -69,7 +69,7 @@ export default function Footer() {
             <ul className="list-none flex flex-col gap-2.5 text-[14.5px]">
               {EXPLORE_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-link hover:text-salmon-text transition-colors">
+                  <Link href={link.href} className="font-semibold text-ink hover:text-salmon-text underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon-text transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -86,7 +86,7 @@ export default function Footer() {
                 <span className="text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-muted">
                   Phone
                 </span>
-                <a href="tel:954-635-0234" className="text-link hover:text-salmon-text transition-colors">
+                <a href="tel:954-635-0234" className="font-semibold text-ink hover:text-salmon-text underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon-text transition-colors duration-200">
                   954-635-0234
                 </a>
               </li>
@@ -94,7 +94,7 @@ export default function Footer() {
                 <span className="text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-muted">
                   Email
                 </span>
-                <a href="mailto:vanessa@thrivementalhealthsolutions.com" className="text-link break-all hover:text-salmon-text transition-colors">
+                <a href="mailto:vanessa@thrivementalhealthsolutions.com" className="font-semibold text-ink break-all hover:text-salmon-text underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon-text transition-colors duration-200">
                   vanessa@thrivementalhealthsolutions.com
                 </a>
               </li>
@@ -132,12 +132,12 @@ export default function Footer() {
           </p>
           <ul className="list-none flex gap-6">
             <li>
-              <Link href="/contact" className="text-link hover:text-salmon-text transition-colors">
+              <Link href="/contact" className="font-semibold text-ink hover:text-salmon-text underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon-text transition-colors duration-200">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="text-link hover:text-salmon-text transition-colors">
+              <Link href="/contact" className="font-semibold text-ink hover:text-salmon-text underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon-text transition-colors duration-200">
                 Accessibility Statement
               </Link>
             </li>

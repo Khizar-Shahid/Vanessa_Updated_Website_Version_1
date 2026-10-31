@@ -6,23 +6,24 @@ import OrganicLine from '@/components/OrganicLine';
 
 export default function ExperienceSection() {
   return (
-    <section className="section-rhythm section--wash section--bordered">
-      <div className="container split split--reverse">
-        <Reveal className="split__media">
-          <div className="media-frame media-frame--left">
+    <section className="py-16 md:py-24 bg-white/55 border-t border-hairline">
+      <div className="container grid grid-cols-1 md:grid-cols-[1.05fr_1fr] gap-12 md:gap-16 items-center">
+        <Reveal className="relative before:content-[''] before:absolute before:inset-[1rem_1rem_-1rem_-0.75rem] md:before:inset-[1.75rem_1.75rem_-1.75rem_-1.75rem] before:bg-salmon-soft before:rounded-md before:z-0">
+          <div className="relative aspect-[4/3] rounded-md overflow-hidden shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] z-10">
             <Image
               src="/images/understanding-experience.jpg"
               alt="A woman in a cardigan sitting in an armchair by a sunlit window, smiling softly"
               fill
               sizes="(max-width: 900px) 100vw, 50vw"
+              className="object-cover"
             />
           </div>
-          <div className="split__line split__line--left" aria-hidden="true">
+          <div className="absolute w-full md:w-[125%] -bottom-[22%] -left-[6%] md:-left-[20%] z-10 pointer-events-none" aria-hidden="true">
             <OrganicLine variant="curve-left" />
           </div>
         </Reveal>
 
-        <Reveal className="split__text" delay={0.1}>
+        <Reveal className="[&>h2]:mb-6 [&>p]:mb-8" delay={0.1}>
           <span className="label-eyebrow">UNDERSTANDING YOUR EXPERIENCE</span>
           <h2>You Don&apos;t Have to Carry It All By Yourself.</h2>
           <p>
@@ -35,7 +36,10 @@ export default function ExperienceSection() {
             difficult, but on developing greater awareness and finding healthier ways to move
             forward.
           </p>
-          <Link href="/services" className="btn btn-primary">
+          <Link
+            href="/services"
+            className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
+          >
             Explore How We Work
           </Link>
         </Reveal>

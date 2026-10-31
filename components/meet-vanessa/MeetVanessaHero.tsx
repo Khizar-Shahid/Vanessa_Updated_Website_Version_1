@@ -2,14 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import { RevealGroup, RevealItem, Reveal } from '@/components/motion/Reveal';
 
+import Atmosphere from '@/components/Atmosphere';
+
 export default function MeetVanessaHero() {
   return (
     <section className="relative py-16 md:py-24 text-center md:text-left overflow-hidden border-b border-hairline">
-      <div className="ambient-background absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-        <div className="ambient-orb ambient-orb-sage" />
-        <div className="ambient-orb ambient-orb-salmon" />
-        <div className="grain" />
-      </div>
+      <Atmosphere />
 
       <div className="container relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         <RevealGroup className="md:col-span-7 flex flex-col items-center md:items-start" immediate stagger={0.12}>

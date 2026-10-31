@@ -20,7 +20,7 @@ export default function PodcastCard({ episode, index }: PodcastCardProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.35, ease: EASE, delay: index * 0.05 }}
-      className="editorial-card podcast-card flex flex-col bg-white/70 backdrop-blur-sm rounded-xl border border-hairline overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+      className="podcast-card flex flex-col bg-white/70 backdrop-blur-sm rounded-xl border border-hairline overflow-hidden shadow-sm hover:shadow-md transition-shadow"
     >
       <div className="podcast-card__media">
         <YouTubePlayerFacade
@@ -63,7 +63,7 @@ export default function PodcastCard({ episode, index }: PodcastCardProps) {
             href={`https://www.youtube.com/watch?v=${episode.youtubeId}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-link podcast-yt-text-link inline-flex items-center gap-1.5 text-[13px] text-ink-muted hover:text-ink transition-colors"
+            className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-ink-muted hover:text-ink underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon transition-colors duration-200"
             aria-label={`Watch ${episode.title} directly on YouTube (opens in new tab)`}
           >
             <YoutubeIcon size={15} className="text-[#FF0000]" aria-hidden="true" />

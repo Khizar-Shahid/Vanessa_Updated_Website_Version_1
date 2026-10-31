@@ -46,9 +46,9 @@ export default function TestimonialSlider() {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="section-rhythm bg-cream border-y border-hairline" aria-labelledby="testimonials-heading">
+    <section className="py-16 md:py-24 bg-cream border-y border-hairline" aria-labelledby="testimonials-heading">
       <div className="container">
-        <Reveal className="section-head section-head--center">
+        <Reveal className="text-center max-w-[780px] mx-auto mb-14 [&>h2]:mb-4">
           <span className="label-eyebrow">WHAT CLIENTS HAVE SHARED</span>
           <h2 id="testimonials-heading">A Few Words From Those I&apos;ve Worked With.</h2>
         </Reveal>

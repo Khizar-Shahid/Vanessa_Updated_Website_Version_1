@@ -8,7 +8,7 @@ interface ResourceCardProps {
 
 export default function ResourceCard({ item }: ResourceCardProps) {
   return (
-    <div className="editorial-card p-8 md:p-10 bg-white rounded-2xl border border-hairline shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+    <div className="p-8 md:p-10 bg-white rounded-2xl border border-hairline shadow-sm hover:shadow-md hover:border-sage/40 transition-[box-shadow,border-color] flex flex-col justify-between">
       <div>
         <div className="inline-block bg-sage-soft text-sage-deep text-[11px] font-bold tracking-wider uppercase px-3.5 py-1 rounded-full mb-4">
           {item.badge}

@@ -58,7 +58,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section className="pt-16 md:pt-24 pb-10 md:pb-16 border-b border-hairline bg-[#FAF6F1]">
         <div className="container max-w-[780px]">
           <div className="mb-5">
-            <Link href="/blog" className="text-link text-[13.5px] hover:text-salmon-text">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 font-semibold text-ink text-[13.5px] hover:text-salmon-text underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon-text transition-colors duration-200"
+            >
               &larr; Back to Blog
             </Link>
           </div>
@@ -119,7 +122,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {/* Back button */}
           <div className="mt-12 text-center">
-            <Link href="/blog" className="btn btn-secondary">
+            <Link
+              href="/blog"
+              className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-transparent text-graphite border-[1.5px] border-graphite hover:bg-graphite hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+            >
               &larr; Read More Articles
             </Link>
           </div>

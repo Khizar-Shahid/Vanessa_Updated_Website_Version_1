@@ -62,7 +62,7 @@ export default function ResourceRequestButton({
       <button
         type="button"
         onClick={open}
-        className="btn btn-secondary w-full justify-center text-sm"
+        className="w-full inline-flex items-center justify-center gap-2 font-sans text-sm font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-transparent text-graphite border-[1.5px] border-graphite hover:bg-graphite hover:text-white hover:-translate-y-0.5 transition-all duration-300"
       >
         Download Free Resource
       </button>
@@ -95,7 +95,11 @@ export default function ResourceRequestButton({
                 We&apos;ve sent <strong>{resourceTitle}</strong> to <strong>{email}</strong>. If it
                 doesn&apos;t arrive in a few minutes, please check your spam folder.
               </p>
-              <button type="button" onClick={close} className="btn btn-primary mt-2">
+              <button
+                type="button"
+                onClick={close}
+                className="inline-flex items-center justify-center gap-2 font-sans text-sm font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] transition-colors mt-2"
+              >
                 Done
               </button>
             </div>
@@ -150,7 +154,7 @@ export default function ResourceRequestButton({
 
               <button
                 type="submit"
-                className="btn btn-primary w-full justify-center mt-2"
+                className="w-full inline-flex items-center justify-center gap-2 font-sans text-sm font-semibold tracking-[0.02em] rounded-full min-h-[46px] px-6 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] transition-colors mt-2 disabled:opacity-60"
                 disabled={status === 'sending'}
               >
                 {status === 'sending' ? 'Sending…' : 'Email me the PDF'}

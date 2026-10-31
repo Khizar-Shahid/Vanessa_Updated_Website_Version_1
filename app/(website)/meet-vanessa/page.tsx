@@ -26,7 +26,7 @@ export default function MeetVanessaPage() {
       <MeetVanessaHero />
 
       {/* 2. Short Intro */}
-      <section className="section-rhythm text-center">
+      <section className="py-16 md:py-24 text-center">
         <Reveal className="container max-w-[820px] mx-auto">
           <span className="label-eyebrow">A LITTLE ABOUT ME</span>
           <h2 className="mb-7">Creating a Space Where People Feel Seen, Safe, and Understood.</h2>
@@ -45,9 +45,9 @@ export default function MeetVanessaPage() {
       </section>
 
       {/* 3. My Story */}
-      <section className="section-rhythm section--cream section--bordered">
-        <div className="container split">
-          <Reveal className="split__text mv-story__text">
+      <section className="py-16 md:py-24 bg-cream border-t border-hairline">
+        <div className="container grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
+          <Reveal className="[&>h2]:mb-6 [&>p]:mb-6 [&>p:last-child]:mb-0">
             <span className="label-eyebrow">MY STORY</span>
             <h2>I Learned Early That Feeling Safe Can Change Everything.</h2>
             <p>
@@ -71,16 +71,17 @@ export default function MeetVanessaPage() {
             </p>
           </Reveal>
 
-          <Reveal className="split__media mv-story__media" delay={0.15}>
-            <div className="media-frame">
+          <Reveal className="relative before:content-[''] before:absolute before:inset-[1rem_-0.75rem_-1rem_1rem] md:before:inset-[1.75rem_-1.75rem_-1.75rem_1.75rem] before:bg-sage-soft before:rounded-md before:z-0" delay={0.15}>
+            <div className="relative aspect-[4/3] rounded-md overflow-hidden shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] z-10">
               <Image
                 src="/images/my-story-symbolic.jpg"
                 alt="A quiet sunlit windowsill looking out over a garden"
                 fill
                 sizes="(max-width: 900px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
-            <div className="split__line split__line--right" aria-hidden="true">
+            <div className="absolute w-full md:w-[125%] -top-[18%] -right-[6%] md:-right-[22%] z-10 pointer-events-none" aria-hidden="true">
               <OrganicLine variant="curve-right" />
             </div>
           </Reveal>
@@ -88,7 +89,7 @@ export default function MeetVanessaPage() {
       </section>
 
       {/* 4. Shift in Perspective */}
-      <section className="section-rhythm section--bordered">
+      <section className="py-16 md:py-24 border-t border-hairline">
         <div className="container max-w-[900px]">
           <Reveal>
             <span className="label-eyebrow">A SHIFT IN PERSPECTIVE</span>
@@ -125,9 +126,9 @@ export default function MeetVanessaPage() {
       <ClinicalCredentialsGrid />
 
       {/* 8. Hear From Vanessa (Reels) */}
-      <section className="section-rhythm section--bordered">
+      <section className="py-16 md:py-24 border-t border-hairline">
         <div className="container">
-          <Reveal className="section-head text-center max-w-[800px] mx-auto mb-12">
+          <Reveal className="text-center max-w-[800px] mx-auto mb-12">
             <span className="label-eyebrow block mb-2">HEAR FROM VANESSA</span>
             <h2>Thoughts &amp; Reflections.</h2>
           </Reveal>
@@ -176,7 +177,7 @@ export default function MeetVanessaPage() {
       </section>
 
       {/* 10. Closing CTA */}
-      <section className="section-rhythm">
+      <section className="py-16 md:py-24">
         <div className="container">
           <Reveal className="relative overflow-hidden text-center p-8 sm:p-14 md:p-20 rounded-2xl border border-hairline bg-[rgba(221,235,219,0.5)]">
             <div className="absolute w-[220px] md:w-[360px] pointer-events-none -left-16 -bottom-16" aria-hidden="true">
@@ -189,15 +190,21 @@ export default function MeetVanessaPage() {
             <h2 className="max-w-[760px] mx-auto mb-5">
               You Don&apos;t Have to Have the Right Words Yet.
             </h2>
-            <p className="lead-paragraph mx-auto mb-9">
+            <p className="text-[18px] leading-[1.7] text-ink-muted max-w-[62ch] mx-auto mb-9">
               Start with a conversation about what you&apos;re experiencing and what you hope to
               understand or change.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 relative z-10">
-              <Link href="/consultation" className="btn btn-primary">
+              <Link
+                href="/consultation"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
+              >
                 Book a Consultation
               </Link>
-              <Link href="/services" className="text-link">
+              <Link
+                href="/services"
+                className="font-semibold text-ink hover:text-salmon-text inline-flex items-center gap-1.5 underline underline-offset-4 decoration-salmon hover:decoration-salmon-text transition-colors duration-200"
+              >
                 Explore Ways We Work
               </Link>
             </div>

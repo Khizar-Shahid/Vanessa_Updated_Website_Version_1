@@ -22,7 +22,7 @@ export default function ResourceLibraryPage() {
       />
 
       {/* Free Resources Section */}
-      <section id="free" className="section-rhythm">
+      <section id="free" className="py-16 md:py-24">
         <div className="container">
           <div className="max-w-[780px] mb-12">
             <span className="font-sans text-[11px] tracking-[0.18em] font-bold uppercase text-sage-deep block mb-2">

@@ -42,7 +42,7 @@ export default function PodcastsFeed({ featured, episodes }: PodcastsFeedProps) 
 
       {/* 2. Grid Section (ready for multiple episodes) */}
       {false && (
-        <section className="section-rhythm podcasts-grid-section" aria-labelledby="all-episodes-heading">
+        <section className="py-16 md:py-24" aria-labelledby="all-episodes-heading">
           <div className="container">
             <div className="podcasts-section-header flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
               <div>
@@ -80,7 +80,7 @@ export default function PodcastsFeed({ featured, episodes }: PodcastsFeedProps) 
                 <button
                   type="button"
                   onClick={() => setSelectedTopic('All')}
-                  className="btn btn-secondary mt-4"
+                  className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-transparent text-graphite border-[1.5px] border-graphite hover:bg-graphite hover:text-white transition-all duration-300 mt-4"
                 >
                   Reset Topic Filter
                 </button>

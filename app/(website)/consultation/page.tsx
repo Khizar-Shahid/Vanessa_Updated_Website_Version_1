@@ -60,7 +60,7 @@ export default function ConsultationBookingPage() {
       />
 
       {/* Main Booking Interface */}
-      <section className="section-rhythm">
+      <section className="py-16 md:py-24">
         <div className="container max-w-[880px]">
           <div className="bg-white rounded-2xl border border-hairline shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] p-8 md:p-14">
             <div className="text-center mb-10">
