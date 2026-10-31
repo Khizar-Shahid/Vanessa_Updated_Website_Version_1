@@ -10,12 +10,79 @@ const components = {
     image: ({ value }: any) => {
       if (!value?.asset?._ref) return null;
       return (
-        <img
-          alt={value.alt || ' '}
-          loading="lazy"
-          src={urlForImage(value).width(800).url()}
-          className="w-full rounded-lg my-8"
-        />
+        <figure className="my-10">
+          <img
+            alt={value.alt || ''}
+            loading="lazy"
+            src={urlForImage(value).width(1200).url()}
+            className="w-full rounded-xl border border-border object-cover"
+          />
+          {value.caption && (
+            <figcaption className="text-center text-sm text-muted mt-3 italic">
+              {value.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
+  },
+  block: {
+    h2: ({ children }: any) => (
+      <h2 className="font-serif text-2xl md:text-3xl text-foreground font-normal tracking-[-0.01em] mt-12 mb-5">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }: any) => (
+      <h3 className="font-serif text-xl md:text-2xl text-foreground font-normal mt-10 mb-4">
+        {children}
+      </h3>
+    ),
+    h4: ({ children }: any) => (
+      <h4 className="font-serif text-lg md:text-xl text-foreground font-medium mt-8 mb-3">
+        {children}
+      </h4>
+    ),
+    normal: ({ children }: any) => (
+      <p className="text-[17px] md:text-[18px] leading-[1.8] text-foreground mb-6 font-sans">
+        {children}
+      </p>
+    ),
+    blockquote: ({ children }: any) => (
+      <blockquote className="border-l-4 border-primary pl-6 my-8 font-serif italic text-xl md:text-2xl text-foreground/90 leading-snug">
+        {children}
+      </blockquote>
+    ),
+  },
+  list: {
+    bullet: ({ children }: any) => (
+      <ul className="list-disc pl-6 mb-6 space-y-2 text-[17px] md:text-[18px] text-foreground leading-[1.75]">
+        {children}
+      </ul>
+    ),
+    number: ({ children }: any) => (
+      <ol className="list-decimal pl-6 mb-6 space-y-2 text-[17px] md:text-[18px] text-foreground leading-[1.75]">
+        {children}
+      </ol>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }: any) => <li className="pl-1">{children}</li>,
+    number: ({ children }: any) => <li className="pl-1">{children}</li>,
+  },
+  marks: {
+    strong: ({ children }: any) => <strong className="font-bold text-foreground">{children}</strong>,
+    em: ({ children }: any) => <em className="italic">{children}</em>,
+    link: ({ value, children }: any) => {
+      const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
+      return (
+        <a
+          href={value?.href}
+          target={target}
+          rel={target ? 'noopener noreferrer' : undefined}
+          className="font-semibold text-primary underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-colors"
+        >
+          {children}
+        </a>
       );
     },
   },
@@ -92,11 +159,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
           )}
 
-          <div className="prose prose-lg max-w-none text-foreground leading-relaxed font-sans text-[16.5px]">
+          <div className="w-full text-foreground">
             {post.body ? (
               <PortableText value={post.body} components={components} />
             ) : (
-              <p className="italic text-muted">{post.excerpt}</p>
+              <p className="font-serif italic text-lg text-muted">{post.excerpt}</p>
             )}
           </div>
 
