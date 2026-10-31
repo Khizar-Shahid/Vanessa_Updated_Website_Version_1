@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { publishedPosts } from '@/lib/blog';
-import BlogCard from '@/components/BlogCard';
+import BlogCard from './blog/BlogCard';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 
 interface BlogFeedProps {
@@ -10,19 +10,18 @@ interface BlogFeedProps {
 }
 
 export default function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProps) {
-  // blog.json is kept newest-first, so the homepage always shows the latest pieces
   const latestPosts = publishedPosts.slice(0, limit);
 
   return (
     <div>
       {showHeading && (
-        <Reveal className="section-head section-head--split">
+        <Reveal className="section-head section-head--split flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <span className="label-eyebrow">BLOG</span>
+            <span className="label-eyebrow block mb-2">BLOG</span>
             <h2>A Little More to Think About.</h2>
           </div>
-          <div>
-            <p className="lead-paragraph">
+          <div className="max-w-[480px]">
+            <p className="lead-paragraph text-ink-muted mb-4 text-[15px] leading-relaxed">
               Thoughtful ideas about relationships, emotions, patterns, parenting, and everyday
               challenges.
             </p>
@@ -33,7 +32,7 @@ export default function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProp
         </Reveal>
       )}
 
-      <RevealGroup as="ul" className="card-grid card-grid--3">
+      <RevealGroup as="ul" className="card-grid card-grid--3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0">
         {latestPosts.map((item) => (
           <RevealItem as="li" key={item.id}>
             <BlogCard item={item} />
