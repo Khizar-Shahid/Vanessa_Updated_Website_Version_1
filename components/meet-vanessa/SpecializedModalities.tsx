@@ -26,7 +26,7 @@ export default function SpecializedModalities() {
           work, movement, art, music, and narrative writing may also be used when they fit the work
           and the client&apos;s needs.
         </p>
-        <ul className="approach-list flex flex-wrap gap-2.5 list-none p-0" aria-label="Approaches Vanessa may draw from">
+        <ul className="flex flex-wrap gap-2.5 list-none p-0 mt-8" aria-label="Approaches Vanessa may draw from">
           {APPROACHES.map((a) => (
             <li
               key={a}

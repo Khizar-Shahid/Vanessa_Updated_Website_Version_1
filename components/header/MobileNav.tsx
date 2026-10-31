@@ -31,7 +31,7 @@ export default function MobileNav({
         <motion.div
           ref={menuRef}
           id="mobile-nav-menu"
-          className="mobile-nav fixed inset-0 z-50 bg-parchment pt-[8.5rem] px-6 pb-8 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-parchment pt-[8.5rem] px-6 pb-8 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-label="Site menu"
@@ -51,26 +51,26 @@ export default function MobileNav({
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, ease: EASE, delay: 0.04 * idx }}
-                      className="mobile-nav__accordion-item border-b border-hairline"
+                      className="border-b border-hairline"
                     >
                       <button
                         type="button"
                         onClick={() => setMobileResourcesOpen((o) => !o)}
                         aria-expanded={mobileResourcesOpen}
-                        className={`mobile-nav__link mobile-nav__accordion-trigger w-full flex items-baseline justify-between py-3.5 font-serif text-[26px] leading-[1.25] text-ink text-left ${
-                          isAnyChildActive ? 'is-active text-salmon-text' : ''
+                        className={`w-full flex items-baseline justify-between py-3.5 font-serif text-[26px] leading-[1.25] text-ink text-left cursor-pointer ${
+                          isAnyChildActive ? 'text-salmon-text font-medium' : ''
                         }`}
                       >
                         <div className="flex items-baseline gap-4">
-                          <span className="mobile-nav__num font-sans text-[12px] tracking-[0.1em] text-sage-deep" aria-hidden="true">
+                          <span className="font-sans text-[12px] tracking-[0.1em] text-sage-deep" aria-hidden="true">
                             {String(idx + 1).padStart(2, '0')}
                           </span>
-                          <span className="mobile-nav__accordion-label">{item.label}</span>
+                          <span>{item.label}</span>
                         </div>
                         <ChevronDown
                           size={20}
-                          className={`mobile-nav__accordion-chevron transition-transform duration-200 ${
-                            mobileResourcesOpen ? 'is-rotated rotate-180' : ''
+                          className={`transition-transform duration-200 ${
+                            mobileResourcesOpen ? 'rotate-180 text-salmon-text' : 'text-ink-muted'
                           }`}
                           aria-hidden="true"
                         />
@@ -79,7 +79,7 @@ export default function MobileNav({
                       <AnimatePresence initial={false}>
                         {mobileResourcesOpen && (
                           <motion.ul
-                            className="mobile-nav__sublist flex flex-col gap-2 pl-8 pb-3 list-none overflow-hidden"
+                            className="flex flex-col gap-2 pl-8 pb-3 list-none overflow-hidden"
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
@@ -93,19 +93,19 @@ export default function MobileNav({
                                   <Link
                                     href={child.href}
                                     onClick={onClose}
-                                    className={`mobile-nav__sublink flex items-baseline gap-3 py-2 text-ink no-underline ${
-                                      isChildActive ? 'is-active text-salmon-text font-medium' : ''
+                                    className={`flex items-baseline gap-3 py-2 text-ink no-underline rounded-lg px-2 hover:bg-cream/50 transition-colors ${
+                                      isChildActive ? 'text-salmon-text font-medium bg-cream/40' : ''
                                     }`}
                                     aria-current={isChildActive ? 'page' : undefined}
                                   >
-                                    <span className="mobile-nav__subnum font-sans text-[11px] text-sage-deep" aria-hidden="true">
+                                    <span className="font-sans text-[11px] text-sage-deep font-bold" aria-hidden="true">
                                       {String(idx + 1).padStart(2, '0')}{subLetter}
                                     </span>
-                                    <div className="mobile-nav__subtext">
-                                      <span className="mobile-nav__subtitle block text-[17px] font-serif">
+                                    <div>
+                                      <span className="block text-[17px] font-serif">
                                         {child.label}
                                       </span>
-                                      <span className="mobile-nav__subdesc block text-[12px] text-ink-muted">
+                                      <span className="block text-[12px] text-ink-muted">
                                         {child.description}
                                       </span>
                                     </div>
@@ -132,12 +132,12 @@ export default function MobileNav({
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className={`mobile-nav__link flex items-baseline gap-4 py-3.5 font-serif text-[26px] leading-[1.25] text-ink no-underline ${
-                        isActive ? 'is-active text-salmon-text font-semibold' : ''
+                      className={`flex items-baseline gap-4 py-3.5 font-serif text-[26px] leading-[1.25] text-ink no-underline ${
+                        isActive ? 'text-salmon-text font-semibold' : ''
                       }`}
                       aria-current={isActive ? 'page' : undefined}
                     >
-                      <span className="mobile-nav__num font-sans text-[12px] tracking-[0.1em] text-sage-deep" aria-hidden="true">
+                      <span className="font-sans text-[12px] tracking-[0.1em] text-sage-deep font-bold" aria-hidden="true">
                         {String(idx + 1).padStart(2, '0')}
                       </span>
                       {item.label}

@@ -11,9 +11,9 @@ export default function ClinicalCredentialsGrid() {
           <h2>More Than 20 Years of Experience.</h2>
         </Reveal>
 
-        <RevealGroup className="credentials grid grid-cols-1 md:grid-cols-2 gap-8">
+        <RevealGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {credentialsData.credentials.map((category) => (
-            <RevealItem key={category.category} className="credential-group bg-white p-8 rounded-2xl border border-hairline shadow-sm">
+            <RevealItem key={category.category} className="bg-white p-8 rounded-2xl border border-hairline shadow-sm">
               <h3 className="font-serif text-xl text-sage-deep mb-4 pb-2 border-b border-hairline font-medium">
                 {category.category}
               </h3>

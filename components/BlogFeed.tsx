@@ -32,7 +32,7 @@ export default function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProp
         </Reveal>
       )}
 
-      <RevealGroup as="ul" className="card-grid card-grid--3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0">
+      <RevealGroup as="ul" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0">
         {latestPosts.map((item) => (
           <RevealItem as="li" key={item.id}>
             <BlogCard item={item} />

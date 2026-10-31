@@ -25,16 +25,16 @@ export default function BlogBrowser({ initialItems }: { initialItems: BlogItem[]
   return (
     <>
       {availableFilters.length > 2 && (
-        <div className="filter-pills flex flex-wrap gap-2 mb-8 justify-center" role="group" aria-label="Filter posts by type">
+        <div className="flex flex-wrap gap-2 mb-8 justify-center" role="group" aria-label="Filter posts by type">
           {availableFilters.map((f) => (
             <button
               key={f.id}
               type="button"
               onClick={() => setActiveFilter(f.id)}
               aria-pressed={activeFilter === f.id}
-              className={`filter-pill px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors ${
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors min-h-[38px] ${
                 activeFilter === f.id
-                  ? 'bg-sage-deep text-white'
+                  ? 'bg-sage-deep text-white shadow-sm'
                   : 'bg-white text-ink-muted hover:text-ink border border-hairline'
               }`}
             >
@@ -44,7 +44,7 @@ export default function BlogBrowser({ initialItems }: { initialItems: BlogItem[]
         </div>
       )}
 
-      <ul key={activeFilter} className="card-grid card-grid--3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0">
+      <ul key={activeFilter} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0">
         {items.map((item, idx) => (
           <motion.li
             key={item.id}

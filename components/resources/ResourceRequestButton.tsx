@@ -62,31 +62,31 @@ export default function ResourceRequestButton({
       <button
         type="button"
         onClick={open}
-        className="btn btn-secondary resource-card__cta w-full justify-center text-sm"
+        className="btn btn-secondary w-full justify-center text-sm"
       >
         Download Free Resource
       </button>
 
       <dialog
         ref={dialogRef}
-        className="resource-dialog p-0 rounded-2xl border border-hairline shadow-2xl backdrop:bg-black/50 backdrop:backdrop-blur-sm max-w-lg w-full m-auto"
+        className="p-0 rounded-2xl border border-hairline shadow-2xl backdrop:bg-black/50 backdrop:backdrop-blur-sm max-w-lg w-full m-auto"
         aria-labelledby={`${ids}-title`}
         onClick={(e) => {
           if (e.target === dialogRef.current) close();
         }}
       >
-        <div className="resource-dialog__panel p-8 md:p-10 bg-white relative">
+        <div className="p-8 md:p-10 bg-white relative">
           <button
             type="button"
             onClick={close}
-            className="resource-dialog__close absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center text-ink-muted hover:text-ink bg-cream/50 border border-hairline transition-colors"
+            className="absolute top-5 right-5 w-8 h-8 rounded-full flex items-center justify-center text-ink-muted hover:text-ink bg-cream/50 border border-hairline transition-colors"
             aria-label="Close"
           >
             <X size={18} strokeWidth={1.8} />
           </button>
 
           {status === 'sent' ? (
-            <div className="resource-dialog__done text-center py-4 flex flex-col items-center gap-4" role="status">
+            <div className="text-center py-4 flex flex-col items-center gap-4" role="status">
               <CheckCircle2 size={44} strokeWidth={1.4} className="text-sage" aria-hidden="true" />
               <h2 id={`${ids}-title`} className="font-serif text-2xl text-ink">
                 Check your inbox
@@ -101,18 +101,18 @@ export default function ResourceRequestButton({
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate={false} className="flex flex-col gap-4">
-              <span className="resource-dialog__icon w-12 h-12 rounded-full bg-sage-soft text-sage-deep flex items-center justify-center mb-1" aria-hidden="true">
+              <span className="w-12 h-12 rounded-full bg-sage-soft text-sage-deep flex items-center justify-center mb-1" aria-hidden="true">
                 <Mail size={22} strokeWidth={1.6} />
               </span>
               <h2 id={`${ids}-title`} className="font-serif text-2xl text-ink">
                 Get {resourceTitle}
               </h2>
-              <p className="resource-dialog__lead text-ink-muted text-[14.5px]">
+              <p className="text-ink-muted text-[14.5px]">
                 Enter your email address and we&apos;ll deliver the free PDF directly to your inbox.
               </p>
 
               <div>
-                <label htmlFor={`${ids}-email`} className="resource-dialog__label block text-[13px] font-semibold text-ink-muted mb-1.5 uppercase tracking-wider">
+                <label htmlFor={`${ids}-email`} className="block text-[13px] font-semibold text-ink-muted mb-1.5 uppercase tracking-wider">
                   Email address
                 </label>
                 <input
@@ -126,7 +126,7 @@ export default function ResourceRequestButton({
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="resource-dialog__input w-full px-4 py-2.5 rounded-lg border border-hairline bg-parchment text-ink focus:outline-none focus:ring-2 focus:ring-sage"
+                  className="w-full px-4 py-2.5 rounded-lg border border-hairline bg-parchment text-ink focus:outline-none focus:ring-2 focus:ring-sage"
                   aria-describedby={message ? `${ids}-error` : undefined}
                   aria-invalid={status === 'error' || undefined}
                 />
@@ -143,14 +143,14 @@ export default function ResourceRequestButton({
               />
 
               {message && (
-                <p id={`${ids}-error`} className="resource-dialog__error text-salmon-text text-sm" role="alert">
+                <p id={`${ids}-error`} className="text-salmon-text text-sm" role="alert">
                   {message}
                 </p>
               )}
 
               <button
                 type="submit"
-                className="btn btn-primary resource-dialog__submit w-full justify-center mt-2"
+                className="btn btn-primary w-full justify-center mt-2"
                 disabled={status === 'sending'}
               >
                 {status === 'sending' ? 'Sending…' : 'Email me the PDF'}

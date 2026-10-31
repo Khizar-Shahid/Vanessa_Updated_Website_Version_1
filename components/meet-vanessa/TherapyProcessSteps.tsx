@@ -34,13 +34,13 @@ export default function TherapyProcessSteps() {
         </Reveal>
 
         <div className="relative">
-          <div className="steps__thread" aria-hidden="true">
+          <div className="absolute left-0 right-0 -top-2 z-0 hidden lg:block" aria-hidden="true">
             <OrganicLine variant="thread" />
           </div>
-          <RevealGroup as="ol" className="steps list-none p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.18}>
+          <RevealGroup as="ol" className="list-none p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10" stagger={0.18}>
             {STEPS.map((step) => (
-              <RevealItem as="li" key={step.num} className="step bg-white/70 backdrop-blur-sm p-6 rounded-2xl border border-hairline flex flex-col gap-2">
-                <span className="step__dot inline-flex items-center justify-center w-8 h-8 rounded-full bg-sage-soft text-sage-deep font-bold text-xs" aria-hidden="true">
+              <RevealItem as="li" key={step.num} className="bg-white/70 backdrop-blur-sm p-6 rounded-2xl border border-hairline flex flex-col gap-2 relative z-10">
+                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-parchment border border-sage text-sage-deep font-bold text-xs mb-2" aria-hidden="true">
                   {step.num}
                 </span>
                 <h3 className="font-serif text-xl text-ink font-medium">{step.title}</h3>

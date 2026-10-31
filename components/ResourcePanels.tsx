@@ -7,7 +7,7 @@ import { Reveal } from '@/components/motion/Reveal';
    §5 §7 "book/notebook visual cue". Decorative only. */
 function NotebookArt() {
   return (
-    <svg viewBox="0 0 220 150" fill="none" aria-hidden="true" focusable="false" className="resource-panel__art">
+    <svg viewBox="0 0 220 150" fill="none" aria-hidden="true" focusable="false" className="w-[220px] max-w-[80%] transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:-rotate-1">
       <path d="M110 30 C 88 22, 52 20, 24 26 V 128 C 52 122, 88 124, 110 132 Z" fill="#FFFFFF" stroke="var(--sage-deep)" strokeWidth="1.4" strokeLinejoin="round" />
       <path d="M110 30 C 132 22, 168 20, 196 26 V 128 C 168 122, 132 124, 110 132 Z" fill="#FFFFFF" stroke="var(--sage-deep)" strokeWidth="1.4" strokeLinejoin="round" />
       <path d="M110 30 V 132" stroke="var(--sage-deep)" strokeWidth="1.4" />
@@ -34,20 +34,20 @@ export default function ResourcePanels() {
           </p>
         </Reveal>
 
-        <Reveal className="resource-feature">
-          <div className="resource-feature__visual">
+        <Reveal className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] gap-8 md:gap-14 items-center max-w-[1060px] mx-auto p-7 md:p-12 rounded-xl border border-hairline bg-[rgba(221,235,219,0.5)]">
+          <div className="grid place-items-center min-h-[180px] md:min-h-[240px] rounded-lg bg-white/65 group">
             <NotebookArt />
           </div>
-          <div className="resource-feature__body">
+          <div>
             <span className="label-eyebrow">FREE RESOURCES</span>
-            <h3 className="resource-panel__title">Guides &amp; reflection tools</h3>
-            <p>Guides, worksheets, reflection tools, and practical resources to explore on your own.</p>
+            <h3 className="font-serif text-2xl md:text-3xl font-normal mb-2 text-ink">Guides &amp; reflection tools</h3>
+            <p className="text-ink text-base mb-5">Guides, worksheets, reflection tools, and practical resources to explore on your own.</p>
             {/* Reads content/resources.json, so new resources appear here automatically */}
-            <ul className="resource-feature__list">
+            <ul className="list-none mb-7 border-t border-hairline">
               {resourcesData.freeResources.map((r) => (
-                <li key={r.id}>
-                  <span className="resource-feature__title">{r.title}</span>
-                  <span className="resource-feature__format">{r.format}</span>
+                <li key={r.id} className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 sm:gap-4 py-2.5 border-b border-hairline">
+                  <span className="font-serif text-[17px] text-ink font-medium">{r.title}</span>
+                  <span className="shrink-0 text-[12.5px] text-ink-muted">{r.format}</span>
                 </li>
               ))}
             </ul>

@@ -26,11 +26,11 @@ export default function MeetVanessaPage() {
       <MeetVanessaHero />
 
       {/* 2. Short Intro */}
-      <section className="section-rhythm mv-intro">
-        <Reveal className="container mv-intro__inner">
+      <section className="section-rhythm text-center">
+        <Reveal className="container max-w-[820px] mx-auto">
           <span className="label-eyebrow">A LITTLE ABOUT ME</span>
-          <h2>Creating a Space Where People Feel Seen, Safe, and Understood.</h2>
-          <p>
+          <h2 className="mb-7">Creating a Space Where People Feel Seen, Safe, and Understood.</h2>
+          <p className="text-[18px] leading-[1.85] mx-auto text-ink">
             For over 20 years, I have worked with adults, couples, families, and children across
             nonprofit, educational, and private-practice settings. My work is grounded in listening
             closely to what people are saying, noticing the patterns underneath what they are
@@ -38,7 +38,7 @@ export default function MeetVanessaPage() {
             judgment. I believe meaningful change begins when we can make sense of what we have been
             carrying and begin seeing new possibilities for how we relate to ourselves and others.
           </p>
-          <div className="mv-intro__line" aria-hidden="true">
+          <div className="w-[min(420px,80%)] mx-auto mt-12" aria-hidden="true">
             <OrganicLine variant="connecting" />
           </div>
         </Reveal>
@@ -132,7 +132,7 @@ export default function MeetVanessaPage() {
             <h2>Thoughts &amp; Reflections.</h2>
           </Reveal>
           
-          <RevealGroup as="ul" className="card-grid card-grid--4 list-none p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.15}>
+          <RevealGroup as="ul" className="list-none p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.15}>
             {[1, 2, 3, 4].map((num) => (
               <RevealItem as="li" key={num}>
                 <video 
@@ -149,27 +149,27 @@ export default function MeetVanessaPage() {
       </section>
 
       {/* 9. Core Belief */}
-      <section className="belief">
-        <div className="belief__line belief__line--a" aria-hidden="true">
+      <section className="relative overflow-hidden py-24 md:py-36 text-center bg-white border-y border-hairline">
+        <div className="absolute w-[55%] pointer-events-none opacity-90 -left-[8%] top-[8%]" aria-hidden="true">
           <OrganicLine variant="curve-right" />
         </div>
-        <div className="belief__line belief__line--b" aria-hidden="true">
+        <div className="absolute w-[55%] pointer-events-none opacity-90 -right-[8%] bottom-[6%]" aria-hidden="true">
           <OrganicLine variant="curve-left" stroke="var(--salmon)" />
         </div>
-        <RevealGroup className="container belief__inner" stagger={0.15}>
+        <RevealGroup className="container relative z-10 max-w-[900px] mx-auto" stagger={0.15}>
           <RevealItem as="span" className="label-eyebrow">
             WHAT I BELIEVE
           </RevealItem>
-          <RevealItem as="h2">
+          <RevealItem as="h2" className="text-3xl md:text-5xl lg:text-6xl mb-8">
             Your Past May Shape You. It Does Not Have to <em>Define</em> You.
           </RevealItem>
-          <RevealItem as="p">
+          <RevealItem as="p" className="text-[18px] md:text-[19px] leading-[1.85] mx-auto mb-10 text-ink">
             No one owns our identities. We do not have to remain chained to the voices of the past. I
             believe there is always room to understand what we have inherited, question what no
             longer serves us, and move toward a life that feels more aligned with who we are
             becoming.
           </RevealItem>
-          <RevealItem as="p" className="belief__closing">
+          <RevealItem as="p" className="font-serif italic text-2xl md:text-3xl text-salmon-text leading-snug max-w-[30ch] mx-auto">
             There is an open door we have the right to walk through. Let&apos;s walk there together.
           </RevealItem>
         </RevealGroup>
@@ -178,20 +178,22 @@ export default function MeetVanessaPage() {
       {/* 10. Closing CTA */}
       <section className="section-rhythm">
         <div className="container">
-          <Reveal className="closing-panel">
-            <div className="closing-panel__line closing-panel__line--a" aria-hidden="true">
+          <Reveal className="relative overflow-hidden text-center p-8 sm:p-14 md:p-20 rounded-2xl border border-hairline bg-[rgba(221,235,219,0.5)]">
+            <div className="absolute w-[220px] md:w-[360px] pointer-events-none -left-16 -bottom-16" aria-hidden="true">
               <OrganicLine variant="curve-left" />
             </div>
-            <div className="closing-panel__line closing-panel__line--b" aria-hidden="true">
+            <div className="absolute w-[220px] md:w-[360px] pointer-events-none -right-20 -top-20" aria-hidden="true">
               <OrganicLine variant="curve-right" stroke="var(--salmon)" />
             </div>
             <span className="label-eyebrow">READY TO BEGIN?</span>
-            <h2>You Don&apos;t Have to Have the Right Words Yet.</h2>
-            <p className="lead-paragraph">
+            <h2 className="max-w-[760px] mx-auto mb-5">
+              You Don&apos;t Have to Have the Right Words Yet.
+            </h2>
+            <p className="lead-paragraph mx-auto mb-9">
               Start with a conversation about what you&apos;re experiencing and what you hope to
               understand or change.
             </p>
-            <div className="closing-panel__actions">
+            <div className="flex flex-wrap items-center justify-center gap-6 relative z-10">
               <Link href="/consultation" className="btn btn-primary">
                 Book a Consultation
               </Link>

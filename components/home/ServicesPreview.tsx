@@ -70,31 +70,75 @@ export default function ServicesPreview() {
           </p>
         </Reveal>
 
-        <RevealGroup as="ul" className="card-grid card-grid--4">
-          {SERVICES.map(({ num, title, forWhen, focus, cta, href, Icon, tone }) => (
-            <RevealItem as="li" key={num}>
-              <article className={`service-card service-card--${tone}`}>
-                <div className="service-card__head">
-                  <span className="service-card__icon" aria-hidden="true">
-                    <Icon size={22} strokeWidth={1.5} />
-                  </span>
-                  <span className="service-card__num" aria-hidden="true">
-                    {num}
-                  </span>
-                </div>
-                <h3 className="service-card__title">{title}</h3>
-                <p className="service-card__for">{forWhen}</p>
-                <div className="service-card__focus">
-                  <span className="service-card__focus-label">Focus</span>
-                  <p>{focus}</p>
-                </div>
-                <Link href={href} className="service-card__link">
-                  <span>{cta}</span>
-                  <ArrowRight size={16} strokeWidth={1.8} aria-hidden="true" />
-                </Link>
-              </article>
-            </RevealItem>
-          ))}
+        <RevealGroup as="ul" className="list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {SERVICES.map(({ num, title, forWhen, focus, cta, href, Icon, tone }) => {
+            const isSalmon = tone === 'salmon';
+            return (
+              <RevealItem as="li" key={num} className="flex">
+                <article className="group relative flex flex-col w-full p-7 bg-white rounded-2xl border border-hairline shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-sage/40">
+                  {/* Top line accent */}
+                  <span
+                    className={`absolute top-0 left-0 right-0 h-[3px] ${
+                      isSalmon ? 'bg-salmon' : 'bg-sage'
+                    }`}
+                    aria-hidden="true"
+                  />
+
+                  <div className="flex justify-between items-start">
+                    <span
+                      className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                        isSalmon ? 'bg-salmon-soft text-salmon-text' : 'bg-sage-soft text-sage-deep'
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <Icon size={22} strokeWidth={1.5} />
+                    </span>
+                    <span
+                      className={`font-serif italic text-3xl leading-none opacity-60 ${
+                        isSalmon ? 'text-salmon' : 'text-sage'
+                      }`}
+                      aria-hidden="true"
+                    >
+                      {num}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif text-[22px] font-medium text-ink my-4">
+                    {title}
+                  </h3>
+                  <p className="text-[15px] leading-relaxed text-ink mb-5 flex-1">
+                    {forWhen}
+                  </p>
+
+                  <div className="pt-4 border-t border-dashed border-hairline mb-6">
+                    <span
+                      className={`block text-[11px] font-bold tracking-wider uppercase mb-1 ${
+                        isSalmon ? 'text-salmon-text' : 'text-sage-deep'
+                      }`}
+                    >
+                      Focus
+                    </span>
+                    <p className="text-[13.5px] leading-relaxed text-ink-muted">
+                      {focus}
+                    </p>
+                  </div>
+
+                  <Link
+                    href={href}
+                    className="flex justify-between items-center gap-3 min-h-[44px] px-4 py-2.5 rounded-full border-[1.5px] border-graphite text-[13.5px] font-semibold text-ink no-underline hover:bg-graphite hover:text-white transition-colors duration-200 group/btn"
+                  >
+                    <span>{cta}</span>
+                    <ArrowRight
+                      size={16}
+                      strokeWidth={1.8}
+                      aria-hidden="true"
+                      className="shrink-0 transition-transform duration-200 group-hover/btn:translate-x-1"
+                    />
+                  </Link>
+                </article>
+              </RevealItem>
+            );
+          })}
         </RevealGroup>
       </div>
     </section>

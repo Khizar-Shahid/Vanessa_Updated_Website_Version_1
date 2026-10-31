@@ -91,11 +91,11 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="site-header bg-parchment border-b border-hairline relative z-40">
-      <div className="container site-header__inner flex items-center justify-between gap-8 py-3.5">
+    <header className="bg-parchment border-b border-hairline relative z-40">
+      <div className="container flex items-center justify-between gap-8 py-3.5">
         <Link
           href="/"
-          className="site-header__logo relative z-50 rounded-lg no-underline text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
+          className="relative z-50 rounded-lg no-underline text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
           aria-label="Thrive with Therapy — Home"
         >
           <LogoLockup priority />
@@ -117,7 +117,7 @@ export default function Header() {
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-nav-menu"
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-          className="mobile-toggle-btn min-[1120px]:hidden flex flex-col justify-center items-center gap-[5px] w-11 h-11 rounded-full cursor-pointer relative z-50 bg-transparent border-0"
+          className="min-[1120px]:hidden flex flex-col justify-center items-center gap-[5px] w-11 h-11 rounded-full cursor-pointer relative z-50 bg-transparent border-0"
         >
           <span
             className={`block w-[22px] h-[1.5px] bg-ink transition-transform duration-300 ${
