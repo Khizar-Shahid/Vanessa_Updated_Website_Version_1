@@ -1,14 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import credentialsData from '@/content/credentials.json';
 import OrganicLine from '@/components/OrganicLine';
 import ConvergingLines from '@/components/ConvergingLines';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
+import MeetVanessaHero from '@/components/meet-vanessa/MeetVanessaHero';
+import TherapyProcessSteps from '@/components/meet-vanessa/TherapyProcessSteps';
+import ClinicalCredentialsGrid from '@/components/meet-vanessa/ClinicalCredentialsGrid';
+import SpecializedModalities from '@/components/meet-vanessa/SpecializedModalities';
 
 export const metadata = {
   alternates: {
-    canonical: "/meet-vanessa",
+    canonical: '/meet-vanessa',
   },
   title: 'Meet Vanessa Sierra, LMFT | Thrive with Therapy',
   description:
@@ -16,72 +19,13 @@ export const metadata = {
   keywords: ['Vanessa Sierra LMFT'],
 };
 
-const STEPS = [
-  { num: '01', title: 'Listen', body: 'Understand the story, the present experience, and the patterns within it.' },
-  { num: '02', title: 'Notice', body: 'Explore emotions, beliefs, triggers, relationships, and responses.' },
-  {
-    num: '03',
-    title: 'Understand',
-    body: 'Connect what is happening today with the experiences and patterns that may be influencing it.',
-  },
-  {
-    num: '04',
-    title: 'Move Forward',
-    body: 'Build awareness and practice healthier ways of responding, communicating, and relating.',
-  },
-];
-
-// Drawn directly from the §6 §6 paragraph — no added descriptions
-const APPROACHES = [
-  'EMDR',
-  'Interpersonal therapy',
-  'Narrative therapy',
-  'Strength-based therapy',
-  'ACT',
-  'Somatic & trauma-focused approaches',
-  'Art therapy',
-  'The Gottman Method for couples',
-];
-
 export default function MeetVanessaPage() {
   return (
     <div className="page">
-      {/* SECTION 1 — HERO: text left, portrait right, gentle fade only */}
-      <section className="mv-hero">
-        <div className="ambient-background" aria-hidden="true">
-          <div className="ambient-orb ambient-orb-sage" />
-          <div className="ambient-orb ambient-orb-salmon" />
-          <div className="grain" />
-        </div>
-        <div className="container mv-hero__grid">
-          <RevealGroup className="mv-hero__text" immediate stagger={0.12}>
-            <RevealItem as="span" className="label-eyebrow">
-              MEET VANESSA
-            </RevealItem>
-            <RevealItem as="h1">
-              Meet Vanessa Sierra, <em>LMFT</em>
-            </RevealItem>
-            <RevealItem as="p" className="lead-paragraph">
-              A therapist, a listener, and a believer that the patterns we carry do not have to
-              define the life we create.
-            </RevealItem>
-          </RevealGroup>
+      {/* 1. Hero */}
+      <MeetVanessaHero />
 
-          <Reveal className="mv-hero__portrait" delay={0.2}>
-            <div className="mv-hero__photo">
-              <Image
-                src="/poster.png"
-                alt="Vanessa M. Sierra, LMFT - Influential Women Recognition"
-                fill
-                priority
-                sizes="(max-width: 860px) 88vw, 460px"
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* SECTION 2 — SHORT INTRO */}
+      {/* 2. Short Intro */}
       <section className="section-rhythm mv-intro">
         <Reveal className="container mv-intro__inner">
           <span className="label-eyebrow">A LITTLE ABOUT ME</span>
@@ -100,7 +44,7 @@ export default function MeetVanessaPage() {
         </Reveal>
       </section>
 
-      {/* SECTION 3 — MY STORY: major section, large text + one editorial image */}
+      {/* 3. My Story */}
       <section className="section-rhythm section--cream section--bordered">
         <div className="container split">
           <Reveal className="split__text mv-story__text">
@@ -143,15 +87,15 @@ export default function MeetVanessaPage() {
         </div>
       </section>
 
-      {/* SECTION 4 — A SHIFT IN PERSPECTIVE: signature converging lines */}
+      {/* 4. Shift in Perspective */}
       <section className="section-rhythm section--bordered">
-        <div className="container" style={{ maxWidth: '900px' }}>
+        <div className="container max-w-[900px]">
           <Reveal>
             <span className="label-eyebrow">A SHIFT IN PERSPECTIVE</span>
-            <h2 style={{ marginBottom: '1.75rem' }}>
+            <h2 className="mb-7">
               Sometimes What Looks Like Distance Still Has Connection Underneath.
             </h2>
-            <p className="body-large" style={{ marginBottom: '1.25rem' }}>
+            <p className="body-large mb-5">
               Early in my career, I expected my work to focus mainly on children and families.
               Working with my first couple changed that. I began to see how much can become
               fragmented in a relationship without people realizing it, and how meaningful it can be
@@ -171,94 +115,24 @@ export default function MeetVanessaPage() {
         </div>
       </section>
 
-      {/* SECTION 5 — HOW I WORK: four steps threaded by a sage line */}
-      <section className="section-rhythm section--sage section--bordered">
-        <div className="container">
-          <Reveal className="section-head" style={{ maxWidth: '820px' }}>
-            <span className="label-eyebrow">HOW I WORK</span>
-            <h2>I Start by Listening.</h2>
-            <p className="body-large">
-              I listen carefully to what clients say- and to what may be communicated through body
-              language, emotional expression, communication style, beliefs, relationships, and
-              patterns of response. I also pay attention to a person&apos;s history, support
-              systems, self-awareness, readiness for change, and the connection between what they say
-              they want from therapy and what may be keeping them stuck.
-            </p>
-          </Reveal>
+      {/* 5. How I Work: 4 steps */}
+      <TherapyProcessSteps />
 
-          <div style={{ position: 'relative' }}>
-            <div className="steps__thread" aria-hidden="true">
-              <OrganicLine variant="thread" />
-            </div>
-            <RevealGroup as="ol" className="steps" stagger={0.18}>
-              {STEPS.map((step) => (
-                <RevealItem as="li" key={step.num} className="step">
-                  <span className="step__dot" aria-hidden="true">
-                    {step.num}
-                  </span>
-                  <h3>{step.title}</h3>
-                  <p>{step.body}</p>
-                </RevealItem>
-              ))}
-            </RevealGroup>
-          </div>
-        </div>
-      </section>
+      {/* 6. My Approach Modalities */}
+      <SpecializedModalities />
 
-      {/* SECTION 6 — MY APPROACH: a clean visual list, not a certification wall */}
-      <section className="section-rhythm section--bordered">
-        <Reveal className="container" style={{ maxWidth: '900px' }}>
-          <span className="label-eyebrow">MY APPROACH</span>
-          <h2 style={{ marginBottom: '1.5rem' }}>Different People Need Different Paths.</h2>
-          <p className="body-large">
-            My work is collaborative and individualized. Depending on the person, the concern, and
-            the goals of therapy, I may draw from approaches including EMDR, interpersonal therapy,
-            narrative therapy, strength-based therapy, ACT, somatic and trauma-focused approaches,
-            art therapy, and the Gottman Method for couples. Exercises such as grounding, breath
-            work, movement, art, music, and narrative writing may also be used when they fit the work
-            and the client&apos;s needs.
-          </p>
-          <ul className="approach-list" aria-label="Approaches Vanessa may draw from">
-            {APPROACHES.map((a) => (
-              <li key={a}>{a}</li>
-            ))}
-          </ul>
-        </Reveal>
-      </section>
+      {/* 7. Experience & Training Credentials */}
+      <ClinicalCredentialsGrid />
 
-      {/* SECTION 7 — EXPERIENCE & TRAINING (content/credentials.json) */}
-      <section className="section-rhythm section--cream section--bordered">
-        <div className="container" style={{ maxWidth: '1000px' }}>
-          <Reveal className="section-head">
-            <span className="label-eyebrow">EXPERIENCE &amp; TRAINING</span>
-            <h2>More Than 20 Years of Experience.</h2>
-          </Reveal>
-
-
-          <RevealGroup className="credentials">
-            {credentialsData.credentials.map((category) => (
-              <RevealItem key={category.category} className="credential-group">
-                <h3>{category.category}</h3>
-                <ul>
-                  {category.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-        </div>
-      </section>
-
-      {/* SECTION 8 — HEAR FROM VANESSA (REELS) */}
+      {/* 8. Hear From Vanessa (Reels) */}
       <section className="section-rhythm section--bordered">
         <div className="container">
-          <Reveal className="section-head" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-            <span className="label-eyebrow">HEAR FROM VANESSA</span>
+          <Reveal className="section-head text-center max-w-[800px] mx-auto mb-12">
+            <span className="label-eyebrow block mb-2">HEAR FROM VANESSA</span>
             <h2>Thoughts &amp; Reflections.</h2>
           </Reveal>
           
-          <RevealGroup as="ul" className="card-grid card-grid--4" style={{ listStyle: 'none', padding: 0, marginTop: '3rem' }} stagger={0.15}>
+          <RevealGroup as="ul" className="card-grid card-grid--4 list-none p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.15}>
             {[1, 2, 3, 4].map((num) => (
               <RevealItem as="li" key={num}>
                 <video 
@@ -266,7 +140,7 @@ export default function MeetVanessaPage() {
                   controls
                   playsInline
                   preload="metadata"
-                  style={{ width: '100%', borderRadius: '16px', aspectRatio: '9/16', objectFit: 'cover', display: 'block', backgroundColor: '#111' }}
+                  className="w-full rounded-2xl aspect-[9/16] object-cover block bg-black shadow-md"
                 />
               </RevealItem>
             ))}
@@ -274,7 +148,7 @@ export default function MeetVanessaPage() {
         </div>
       </section>
 
-      {/* SECTION 9 — CORE BELIEF: the page's strongest branded moment */}
+      {/* 9. Core Belief */}
       <section className="belief">
         <div className="belief__line belief__line--a" aria-hidden="true">
           <OrganicLine variant="curve-right" />
@@ -301,7 +175,7 @@ export default function MeetVanessaPage() {
         </RevealGroup>
       </section>
 
-      {/* SECTION 9 — FINAL CTA */}
+      {/* 10. Closing CTA */}
       <section className="section-rhythm">
         <div className="container">
           <Reveal className="closing-panel">
