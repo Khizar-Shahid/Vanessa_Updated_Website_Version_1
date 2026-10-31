@@ -62,7 +62,7 @@ export default function ResourceRequestButton({
       <button
         type="button"
         onClick={open}
-        className="w-full inline-flex items-center justify-center gap-2 font-sans text-sm font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-transparent text-graphite border-[1.5px] border-graphite hover:bg-graphite hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+        className="w-full inline-flex items-center justify-center gap-2 font-sans text-sm font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-transparent text-foreground border-[1.5px] border-foreground hover:bg-foreground hover:text-white hover:-translate-y-0.5 transition-all duration-300"
       >
         Download Free Resource
       </button>

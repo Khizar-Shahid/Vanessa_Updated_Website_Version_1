@@ -126,7 +126,7 @@ export default function ServicesPreview() {
 
                   <Link
                     href={href}
-                    className="flex justify-between items-center gap-3 min-h-[44px] px-4 py-2.5 rounded-full border-[1.5px] border-graphite text-[13.5px] font-semibold text-foreground no-underline hover:bg-graphite hover:text-white transition-colors duration-200 group/btn"
+                    className="flex justify-between items-center gap-3 min-h-[44px] px-4 py-2.5 rounded-full border-[1.5px] border-foreground text-[13.5px] font-semibold text-foreground no-underline hover:bg-foreground hover:text-white transition-colors duration-200 group/btn"
                   >
                     <span>{cta}</span>
                     <ArrowRight

@@ -81,7 +81,7 @@ export default function PodcastsFeed({ featured, episodes }: PodcastsFeedProps) 
                 <button
                   type="button"
                   onClick={() => setSelectedTopic('All')}
-                  className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-transparent text-graphite border-[1.5px] border-graphite hover:bg-graphite hover:text-white transition-all duration-300 mt-4"
+                  className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-transparent text-foreground border-[1.5px] border-foreground hover:bg-foreground hover:text-white transition-all duration-300 mt-4"
                 >
                   Reset Topic Filter
                 </button>

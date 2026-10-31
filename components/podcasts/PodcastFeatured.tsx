@@ -64,7 +64,7 @@ export default function PodcastFeatured({ featured }: PodcastFeaturedProps) {
                 href={`https://www.youtube.com/watch?v=${featured.youtubeId}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-6 bg-transparent text-graphite border-[1.5px] border-graphite hover:bg-graphite hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-6 bg-transparent text-foreground border-[1.5px] border-foreground hover:bg-foreground hover:text-white hover:-translate-y-0.5 transition-all duration-300"
                 aria-label={`Watch "${featured.title}" on YouTube (opens in new tab)`}
               >
                 <YoutubeIcon size={17} className="text-[#FF0000]" aria-hidden="true" />
