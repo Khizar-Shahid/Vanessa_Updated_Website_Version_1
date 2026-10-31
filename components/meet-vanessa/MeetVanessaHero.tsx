@@ -26,7 +26,7 @@ export default function MeetVanessaHero() {
         <Reveal className="md:col-span-5 relative justify-self-center w-[min(100%,460px)] max-[860px]:w-[min(92%,400px)] before:content-[''] before:absolute before:inset-[-14px_14px_14px_-14px] before:border before:border-primary before:rounded-md before:pointer-events-none" delay={0.2}>
           <div className="relative aspect-[800/748] rounded-md overflow-hidden shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] border border-border bg-surface">
             <Image
-              src="/poster.png"
+              src="/images/poster.png"
               alt="Vanessa M. Sierra, LMFT - Influential Women Recognition"
               fill
               priority

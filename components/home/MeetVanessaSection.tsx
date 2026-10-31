@@ -42,7 +42,7 @@ export default function MeetVanessaSection() {
           </div>
           <div className="absolute -left-7 max-[900px]:-left-3.5 -bottom-6 max-[900px]:-bottom-4.5 w-[110px] h-[110px] max-[900px]:w-[92px] max-[900px]:h-[92px] z-20 drop-shadow-[0_10px_20px_rgba(44,38,34,0.16)] pointer-events-none">
             <Image
-              src="/badge.png"
+              src="/images/badge.png"
               alt="Influential Women Verified"
               width={120}
               height={120}

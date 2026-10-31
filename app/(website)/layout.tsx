@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-    icon: '/logo.svg',
-    shortcut: '/logo.svg',
-    apple: '/logo.svg',
+    icon: '/images/logo.svg',
+    shortcut: '/images/logo.svg',
+    apple: '/images/logo.svg',
   },
   verification: {
     google: 'BVyPH9hIOw-yihznwYzLAlNfz6wu25ek4d1dUNZgAus',
