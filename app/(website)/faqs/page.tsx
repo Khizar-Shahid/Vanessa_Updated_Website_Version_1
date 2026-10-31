@@ -1,14 +1,7 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import PageHero from '@/components/PageHero';
-
-interface FaqItem {
-  id: string;
-  question: string;
-  answer: string;
-}
+import FaqAccordion, { FaqItem } from '@/components/faqs/FaqAccordion';
 
 const FAQ_ITEMS: FaqItem[] = [
   {
@@ -73,19 +66,16 @@ const FAQ_ITEMS: FaqItem[] = [
   },
 ];
 
+export const metadata = {
+  alternates: {
+    canonical: '/faqs',
+  },
+  title: 'Frequently Asked Questions | Thrive with Therapy',
+  description:
+    'Helpful information about session structure, fees, clinical approaches, and what to expect when beginning therapy in Coral Gables, FL.',
+};
+
 export default function FaqPage() {
-  const [openIds, setOpenIds] = useState<Record<string, boolean>>({
-    'what-can-i-talk-about': true,
-  });
-
-  const toggleItem = (id: string) => {
-    setOpenIds((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
-
-  // Structured Data (JSON-LD) for FAQPage (§9)
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -101,7 +91,6 @@ export default function FaqPage() {
 
   return (
     <div className="page">
-      {/* Inject FAQ Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -113,105 +102,20 @@ export default function FaqPage() {
         lead="Helpful information about session structure, fees, clinical approaches, and what to expect when beginning therapy."
       />
 
-      {/* FAQ Accordion Section */}
       <section className="section-rhythm">
-        <div className="container" style={{ maxWidth: '820px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            {FAQ_ITEMS.map((item) => {
-              const isOpen = !!openIds[item.id];
-
-              return (
-                <div
-                  key={item.id}
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid var(--hairline)',
-                    borderRadius: 'var(--radius-card)',
-                    overflow: 'hidden',
-                    boxShadow: '0 4px 15px -4px rgba(42, 43, 42, 0.05)',
-                  }}
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggleItem(item.id)}
-                    aria-expanded={isOpen}
-                    aria-controls={`faq-answer-${item.id}`}
-                    style={{
-                      width: '100%',
-                      padding: '1.5rem 1.75rem',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      gap: '1rem',
-                      background: 'none',
-                      border: 'none',
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-playfair), serif',
-                        fontSize: '19px',
-                        fontWeight: 500,
-                        color: 'var(--ink)',
-                      }}
-                    >
-                      {item.question}
-                    </span>
-                    <span
-                      style={{
-                        fontSize: '22px',
-                        color: isOpen ? 'var(--salmon-text)' : 'var(--sage-deep)',
-                        fontWeight: 300,
-                        transform: isOpen ? 'rotate(45deg)' : 'none',
-                        transition: 'transform 0.25s ease',
-                      }}
-                      aria-hidden="true"
-                    >
-                      +
-                    </span>
-                  </button>
-
-                  {isOpen && (
-                    <div
-                      id={`faq-answer-${item.id}`}
-                      style={{
-                        padding: '0 1.75rem 1.75rem 1.75rem',
-                        fontSize: '15.5px',
-                        lineHeight: 1.75,
-                        color: 'var(--ink-muted)',
-                        borderTop: '1px solid rgba(42, 43, 42, 0.06)',
-                        paddingTop: '1rem',
-                      }}
-                    >
-                      {item.answer}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+        <div className="container max-w-[820px]">
+          <FaqAccordion items={FAQ_ITEMS} defaultOpenId="what-can-i-talk-about" />
 
           {/* Have a question banner */}
-          <div
-            style={{
-              marginTop: '4.5rem',
-              padding: '2.5rem',
-              backgroundColor: '#FAF5EE',
-              borderRadius: 'var(--radius-card)',
-              border: '1px solid var(--hairline)',
-              textAlign: 'center',
-            }}
-          >
-            <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '22px', marginBottom: '0.5rem' }}>
+          <div className="mt-16 p-8 md:p-10 bg-[#FAF5EE] rounded-2xl border border-hairline text-center">
+            <h3 className="font-serif text-2xl text-ink mb-2">
               Still have a question?
             </h3>
-            <p style={{ color: 'var(--ink-muted)', marginBottom: '1.5rem' }}>
+            <p className="text-ink-muted mb-6 text-[15px] leading-relaxed max-w-[500px] mx-auto">
               We are happy to answer any questions about our practice or help you navigate starting
               therapy.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/contact" className="btn btn-primary">
                 Contact Our Office
               </Link>

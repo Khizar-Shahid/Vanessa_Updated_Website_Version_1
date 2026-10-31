@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import PageHero from '@/components/PageHero';
 
@@ -44,7 +43,7 @@ const BOOKING_SERVICES: BookingService[] = [
 
 export const metadata = {
   alternates: {
-    canonical: "/consultation",
+    canonical: '/consultation',
   },
   title: 'Book a Consultation | Thrive with Therapy',
   description:
@@ -62,62 +61,47 @@ export default function ConsultationBookingPage() {
 
       {/* Main Booking Interface */}
       <section className="section-rhythm">
-        <div className="container" style={{ maxWidth: '880px' }}>
-          <div
-            style={{
-              backgroundColor: '#FFFFFF',
-              borderRadius: 'var(--radius-card)',
-              border: '1px solid var(--hairline)',
-              boxShadow: 'var(--shadow-editorial)',
-              padding: 'clamp(2rem, 5vw, 3.5rem)',
-            }}
-          >
-            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-              <h2 style={{ fontSize: '26px', marginBottom: '0.75rem' }}>
+        <div className="container max-w-[880px]">
+          <div className="bg-white rounded-2xl border border-hairline shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] p-8 md:p-14">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl text-ink font-serif mb-3">
                 Select Your Therapeutic Service
               </h2>
-              <p style={{ color: 'var(--ink-muted)', fontSize: '15px', margin: '0 auto' }}>
+              <p className="text-ink-muted text-[15px] leading-relaxed max-w-[580px] mx-auto">
                 Choose a service to open Vanessa&apos;s booking calendar, where you can pick a time,
-                share insurance details, and confirm your appointment.
+                share details, and confirm your appointment.
               </p>
             </div>
 
-            {/* Each card links straight to that service's Google booking page. Google blocks
-                embedding, so it opens in a new tab. */}
-            <ul className="booking-options">
+            <ul className="list-none p-0 m-0 flex flex-col gap-5">
               {BOOKING_SERVICES.map((svc) => (
                 <li key={svc.id}>
                   <a
                     href={svc.googleLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="booking-option"
+                    className="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-6 md:p-8 bg-parchment hover:bg-[#F3EDE3] border border-hairline rounded-xl transition-all duration-200 no-underline text-ink"
                   >
-                    <span className="booking-option__text">
-                      <span className="booking-option__name">{svc.name}</span>
-                      <span className="booking-option__duration">{svc.duration}</span>
-                      <span className="booking-option__desc">{svc.description}</span>
-                    </span>
-                    <span className="booking-option__side">
-                      <span className="booking-option__price">{svc.price}</span>
-                      <span className="booking-option__cta">
-                        View calendar <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" />
+                    <div className="flex flex-col gap-1.5 flex-1">
+                      <span className="font-serif text-xl font-medium text-ink group-hover:text-salmon-text transition-colors">
+                        {svc.name}
                       </span>
-                      <span className="visually-hidden"> (opens in a new tab)</span>
-                    </span>
+                      <span className="text-[13px] font-semibold tracking-wider uppercase text-sage-deep">
+                        {svc.duration} • {svc.price}
+                      </span>
+                      <span className="text-[14px] text-ink-muted leading-relaxed mt-1">
+                        {svc.description}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2 text-salmon-text font-semibold text-sm shrink-0">
+                      <span>Book on Google</span>
+                      <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </div>
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Clinical Care Notice */}
-          <div style={{ marginTop: '2.5rem', textAlign: 'center', fontSize: '13px', color: 'var(--ink-muted)' }}>
-            Have questions before booking?{' '}
-            <Link href="/contact" className="text-link" style={{ fontSize: '13px' }}>
-              Send a confidential message to Vanessa
-            </Link>{' '}
-            or call <a href="tel:954-635-0234" className="text-link" style={{ fontSize: '13px' }}>954-635-0234</a>.
           </div>
         </div>
       </section>
