@@ -1,5 +1,6 @@
 import React from 'react';
 import { Reveal } from '@/components/motion/Reveal';
+import Eyebrow from '@/components/Eyebrow';
 
 const APPROACHES = [
   'EMDR',
@@ -15,9 +16,9 @@ const APPROACHES = [
 export default function SpecializedModalities() {
   return (
     <section className="py-16 md:py-24 border-t border-hairline">
-      <Reveal className="container max-w-[900px]">
-        <span className="label-eyebrow block mb-2">MY APPROACH</span>
-        <h2 className="mb-6">Different People Need Different Paths.</h2>
+      <Reveal className="w-full max-w-[900px] mx-auto px-6">
+        <Eyebrow className="block mb-2">MY APPROACH</Eyebrow>
+        <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-6">Different People Need Different Paths.</h2>
         <p className="text-ink-muted text-[16px] md:text-[18px] leading-[1.8] mb-8">
           My work is collaborative and individualized. Depending on the person, the concern, and
           the goals of therapy, I may draw from approaches including EMDR, interpersonal therapy,

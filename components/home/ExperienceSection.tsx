@@ -3,11 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Reveal } from '@/components/motion/Reveal';
 import OrganicLine from '@/components/OrganicLine';
+import Eyebrow from '@/components/Eyebrow';
 
 export default function ExperienceSection() {
   return (
     <section className="py-16 md:py-24 bg-white/55 border-t border-hairline">
-      <div className="container grid grid-cols-1 md:grid-cols-[1.05fr_1fr] gap-12 md:gap-16 items-center">
+      <div className="w-full max-w-[1160px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1.05fr_1fr] gap-12 md:gap-16 items-center">
         <Reveal className="relative before:content-[''] before:absolute before:inset-[1rem_1rem_-1rem_-0.75rem] md:before:inset-[1.75rem_1.75rem_-1.75rem_-1.75rem] before:bg-salmon-soft before:rounded-md before:z-0">
           <div className="relative aspect-[4/3] rounded-md overflow-hidden shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] z-10">
             <Image
@@ -24,8 +25,8 @@ export default function ExperienceSection() {
         </Reveal>
 
         <Reveal className="[&>h2]:mb-6 [&>p]:mb-8" delay={0.1}>
-          <span className="label-eyebrow">UNDERSTANDING YOUR EXPERIENCE</span>
-          <h2>You Don&apos;t Have to Carry It All By Yourself.</h2>
+          <Eyebrow>UNDERSTANDING YOUR EXPERIENCE</Eyebrow>
+          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">You Don&apos;t Have to Carry It All By Yourself.</h2>
           <p>
             Life can leave us carrying more than we realize—difficult experiences, relationship
             struggles, emotional patterns, or the feeling that something in our lives is no

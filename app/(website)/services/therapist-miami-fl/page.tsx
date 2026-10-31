@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import PageHero from '@/components/PageHero';
 import OrganicLine from '@/components/OrganicLine';
+import Eyebrow from '@/components/Eyebrow';
 import { ArrowRight, Feather, HeartHandshake, Sprout, Users } from 'lucide-react';
 import type { Metadata } from 'next';
 
@@ -53,7 +54,7 @@ const THERAPY_OFFERINGS = [
 
 export default function TherapistMiamiFLPage() {
   return (
-    <div className="page">
+    <div className="relative w-full overflow-x-clip">
       <PageHero
         eyebrow="MIAMI, FLORIDA PRACTICE"
         title="Therapist in Miami, FL – Compassionate Therapy & Support"
@@ -66,10 +67,10 @@ export default function TherapistMiamiFLPage() {
 
       {/* Overview Section */}
       <section className="py-16 md:py-24 border-t border-hairline">
-        <div className="container grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
+        <div className="w-full max-w-[1160px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
           <div className="[&>h2]:mb-6 [&>p]:mb-6 [&>p:last-child]:mb-0">
-            <span className="label-eyebrow">COMPASSIONATE CARE</span>
-            <h2>Therapy Tailored to Your Life in Miami</h2>
+            <Eyebrow>COMPASSIONATE CARE</Eyebrow>
+            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">Therapy Tailored to Your Life in Miami</h2>
             <p className="text-[18px] leading-[1.8]">
               Living in Miami brings energy, culture, and vibrant opportunity—but it also comes with high-paced demands, relationship strains, career stress, and personal transitions. Whether you are facing anxiety, processing past hardship, or seeking deeper connection with a partner or child, therapy offers a space to pause and reflect.
             </p>
@@ -97,82 +98,39 @@ export default function TherapistMiamiFLPage() {
 
       {/* Therapy Offerings Grid */}
       <section className="py-16 md:py-24">
-        <div className="container" style={{ maxWidth: '1080px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <span className="label-eyebrow">OUR SERVICES IN MIAMI</span>
-            <h2 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '32px', marginBottom: '1rem' }}>
+        <div className="w-full max-w-[1080px] mx-auto px-6">
+          <div className="text-center mb-14">
+            <Eyebrow>OUR SERVICES IN MIAMI</Eyebrow>
+            <h2 className="font-serif text-[32px] text-ink mb-4">
               Specialized Areas of Care
             </h2>
-            <p style={{ color: 'var(--ink-muted)', maxWidth: '640px', margin: '0 auto', fontSize: '16px' }}>
+            <p className="text-ink-muted max-w-[640px] mx-auto text-[16px]">
               We provide tailored modalities designed to support individuals, couples, and families through every stage of growth.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '2rem',
-              marginBottom: '3.5rem',
-            }}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-14">
             {THERAPY_OFFERINGS.map(({ num, title, subtitle, intro, href, Icon }) => (
               <div
                 key={num}
-                className="rounded-2xl border border-hairline shadow-sm hover:shadow-md hover:border-sage/40 transition-[box-shadow,border-color]"
-                style={{
-                  padding: '2.5rem 2rem',
-                  backgroundColor: '#FFFFFF',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
+                className="rounded-2xl border border-hairline shadow-sm hover:shadow-md hover:border-sage/40 transition-[box-shadow,border-color] p-8 md:p-10 bg-white flex flex-col justify-between"
               >
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-                    <span
-                      style={{
-                        width: '42px',
-                        height: '42px',
-                        borderRadius: '50%',
-                        backgroundColor: 'var(--sage-soft, #EEF3ED)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'var(--sage-deep)',
-                      }}
-                    >
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="w-[42px] h-[42px] rounded-full bg-sage-soft flex items-center justify-center text-sage-deep">
                       <Icon size={20} strokeWidth={1.75} />
                     </span>
-                    <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--salmon-text)' }}>
+                    <span className="text-[13px] font-bold text-salmon-text">
                       {num}
                     </span>
                   </div>
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-nunito-sans), sans-serif',
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      color: 'var(--ink-muted)',
-                      display: 'block',
-                      marginBottom: '0.35rem',
-                    }}
-                  >
+                  <span className="font-sans text-[11px] font-bold tracking-[0.12em] uppercase text-ink-muted block mb-1.5">
                     {subtitle}
                   </span>
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-playfair), serif',
-                      fontSize: '22px',
-                      marginBottom: '0.85rem',
-                      color: 'var(--ink)',
-                    }}
-                  >
+                  <h3 className="font-serif text-[22px] mb-3 text-ink">
                     {title}
                   </h3>
-                  <p style={{ fontSize: '14.5px', lineHeight: 1.6, color: 'var(--ink-muted)', marginBottom: '1.5rem' }}>
+                  <p className="text-[14.5px] leading-[1.6] text-ink-muted mb-6">
                     {intro}
                   </p>
                 </div>
@@ -192,8 +150,8 @@ export default function TherapistMiamiFLPage() {
 
       {/* Clinical Approach / Office info */}
       <section className="py-16 md:py-24 bg-white/55 border-t border-hairline">
-        <div className="container max-w-[860px] text-center">
-          <span className="label-eyebrow">FLEXIBLE & CONFIDENTIAL</span>
+        <div className="w-full max-w-[860px] mx-auto px-6 text-center">
+          <Eyebrow>FLEXIBLE & CONFIDENTIAL</Eyebrow>
           <h2 className="font-serif text-[30px] mb-5">
             In-Person in South Florida & Telehealth Across Florida
           </h2>

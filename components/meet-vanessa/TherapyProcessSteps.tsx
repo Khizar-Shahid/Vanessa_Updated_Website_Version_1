@@ -1,6 +1,7 @@
 import React from 'react';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 import OrganicLine from '@/components/OrganicLine';
+import Eyebrow from '@/components/Eyebrow';
 
 const STEPS = [
   { num: '01', title: 'Listen', body: 'Understand the story, the present experience, and the patterns within it.' },
@@ -20,10 +21,10 @@ const STEPS = [
 export default function TherapyProcessSteps() {
   return (
     <section className="py-16 md:py-24 bg-sage-soft/50 border-t border-hairline">
-      <div className="container">
+      <div className="w-full max-w-[1160px] mx-auto px-6">
         <Reveal className="max-w-[820px] mb-12">
-          <span className="label-eyebrow block mb-2">HOW I WORK</span>
-          <h2 className="mb-4">I Start by Listening.</h2>
+          <Eyebrow className="block mb-2">HOW I WORK</Eyebrow>
+          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-4">I Start by Listening.</h2>
           <p className="text-ink-muted text-[16px] md:text-[18px] leading-[1.8]">
             I listen carefully to what clients say—and to what may be communicated through body
             language, emotional expression, communication style, beliefs, relationships, and

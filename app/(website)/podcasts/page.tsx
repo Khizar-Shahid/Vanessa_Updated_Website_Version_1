@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function PodcastsPage() {
   return (
-    <div className="page page-podcasts">
+    <div className="relative w-full overflow-x-clip">
       <PageHero
         eyebrow="PODCASTS &amp; VIDEO INSIGHTS"
         title="Conversations on Healing, Growth &amp; Connection."

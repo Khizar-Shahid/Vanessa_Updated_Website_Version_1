@@ -16,7 +16,7 @@ export default async function BlogIndexPage() {
   const formattedPosts = await getAllBlogPosts();
 
   return (
-    <div className="page">
+    <div className="relative w-full overflow-x-clip">
       <PageHero
         eyebrow="BLOG"
         title="A Little More to Think About."
@@ -24,7 +24,7 @@ export default async function BlogIndexPage() {
       />
 
       <section className="pt-12 pb-16 md:pb-24">
-        <div className="container">
+        <div className="w-full max-w-[1160px] mx-auto px-6">
           <BlogBrowser initialItems={formattedPosts} />
         </div>
       </section>

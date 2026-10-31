@@ -20,7 +20,7 @@ export default function ConvergingLines() {
         <motion.g data-converge="" style={{ y: topY }}>
           <path
             d="M10 50 C 150 20, 260 90, 400 58 C 520 30, 640 84, 890 70"
-            stroke="var(--sage)"
+            stroke="var(--color-sage)"
             strokeWidth="1.8"
             strokeLinecap="round"
           />
@@ -28,12 +28,12 @@ export default function ConvergingLines() {
         <motion.g data-converge="" style={{ y: bottomY }}>
           <path
             d="M10 90 C 170 120, 280 52, 420 82 C 540 108, 660 56, 890 70"
-            stroke="var(--salmon)"
+            stroke="var(--color-salmon)"
             strokeWidth="1.8"
             strokeLinecap="round"
           />
         </motion.g>
-        <circle cx="890" cy="70" r="4" fill="var(--sage-deep)" />
+        <circle cx="890" cy="70" r="4" fill="var(--color-sage-deep)" />
       </svg>
     </div>
   );

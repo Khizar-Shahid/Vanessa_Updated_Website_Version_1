@@ -1,15 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import Eyebrow from '@/components/Eyebrow';
 
 export default function PodcastCrossBanner() {
   return (
     <section className="pb-16 md:pb-24 pt-0">
-      <div className="container">
+      <div className="w-full max-w-[1160px] mx-auto px-6">
         <div className="podcast-cross-banner bg-cream/70 rounded-2xl border border-hairline p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="podcast-cross-banner__content max-w-[600px]">
-            <span className="label-eyebrow text-salmon-text font-bold block mb-2">
+            <Eyebrow className="block mb-2 font-bold">
               LOOKING FOR PRINTABLE EXERCISES?
-            </span>
+            </Eyebrow>
             <h3 className="font-serif text-2xl md:text-3xl text-ink mb-3">
               Explore Our Free Resource Library
             </h3>

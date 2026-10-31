@@ -52,7 +52,7 @@ export const metadata = {
 
 export default function ConsultationBookingPage() {
   return (
-    <div className="page">
+    <div className="relative w-full overflow-x-clip">
       <PageHero
         eyebrow="SCHEDULING & CARE"
         title="Schedule Your Consultation"
@@ -61,7 +61,7 @@ export default function ConsultationBookingPage() {
 
       {/* Main Booking Interface */}
       <section className="py-16 md:py-24">
-        <div className="container max-w-[880px]">
+        <div className="w-full max-w-[880px] mx-auto px-6">
           <div className="bg-white rounded-2xl border border-hairline shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] p-8 md:p-14">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl text-ink font-serif mb-3">

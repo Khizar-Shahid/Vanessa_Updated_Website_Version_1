@@ -1,14 +1,15 @@
 import React from 'react';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 import credentialsData from '@/content/credentials.json';
+import Eyebrow from '@/components/Eyebrow';
 
 export default function ClinicalCredentialsGrid() {
   return (
     <section className="py-16 md:py-24 bg-cream border-t border-hairline">
-      <div className="container max-w-[1000px]">
+      <div className="w-full max-w-[1000px] mx-auto px-6">
         <Reveal className="mb-12 [&>h2]:mt-2">
-          <span className="label-eyebrow block mb-2">EXPERIENCE &amp; TRAINING</span>
-          <h2>More Than 20 Years of Experience.</h2>
+          <Eyebrow className="block mb-2">EXPERIENCE &amp; TRAINING</Eyebrow>
+          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">More Than 20 Years of Experience.</h2>
         </Reveal>
 
         <RevealGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">

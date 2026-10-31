@@ -2,14 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 import { Reveal } from '@/components/motion/Reveal';
 import OrganicLine from '@/components/OrganicLine';
+import Eyebrow from '@/components/Eyebrow';
 
 export default function PauseSection() {
   return (
     <section className="py-16 md:py-24 border-t border-hairline">
-      <div className="container grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
+      <div className="w-full max-w-[1160px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
         <Reveal className="[&>h2]:mb-6 [&>p]:mb-8 [&>p:last-child]:mb-0">
-          <span className="label-eyebrow">A SPACE TO PAUSE</span>
-          <h2>Sometimes, What&apos;s Happening on the Surface Isn&apos;t the Whole Story.</h2>
+          <Eyebrow>A SPACE TO PAUSE</Eyebrow>
+          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">Sometimes, What&apos;s Happening on the Surface Isn&apos;t the Whole Story.</h2>
           <p className="text-[18px] leading-[1.8]">
             Therapy can be a space to slow down, notice what&apos;s happening beneath the
             surface, and begin making sense of the patterns that shape how we feel, think, and

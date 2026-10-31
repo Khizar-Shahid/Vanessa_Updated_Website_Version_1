@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import testimonialsData from '@/content/testimonials.json';
 import { Reveal, EASE_EDITORIAL } from '@/components/motion/Reveal';
+import Eyebrow from '@/components/Eyebrow';
 
 const AUTO_ADVANCE_MS = 8000;
 
@@ -47,10 +48,10 @@ export default function TestimonialSlider() {
 
   return (
     <section className="py-16 md:py-24 bg-cream border-y border-hairline" aria-labelledby="testimonials-heading">
-      <div className="container">
+      <div className="w-full max-w-[1160px] mx-auto px-6">
         <Reveal className="text-center max-w-[780px] mx-auto mb-14 [&>h2]:mb-4">
-          <span className="label-eyebrow">WHAT CLIENTS HAVE SHARED</span>
-          <h2 id="testimonials-heading">A Few Words From Those I&apos;ve Worked With.</h2>
+          <Eyebrow>WHAT CLIENTS HAVE SHARED</Eyebrow>
+          <h2 id="testimonials-heading" className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">A Few Words From Those I&apos;ve Worked With.</h2>
         </Reveal>
 
         <Reveal className="max-w-[860px] mx-auto">

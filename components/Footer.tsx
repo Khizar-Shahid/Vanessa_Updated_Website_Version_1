@@ -49,7 +49,7 @@ export default function Footer() {
         <OrganicLine variant="thread" />
       </div>
 
-      <div className="container">
+      <div className="w-full max-w-[1160px] mx-auto px-6">
         <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.25fr] gap-12 pb-12 border-b border-hairline">
           <div className="md:col-span-2 lg:col-span-1">
             <Link href="/" aria-label="Thrive with Therapy — Home" className="inline-block rounded-lg no-underline text-ink">

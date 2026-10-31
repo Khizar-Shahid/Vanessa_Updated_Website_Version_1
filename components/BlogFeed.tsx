@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { publishedPosts } from '@/lib/blog';
 import BlogCard from './blog/BlogCard';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
+import Eyebrow from '@/components/Eyebrow';
 
 interface BlogFeedProps {
   limit?: number;
@@ -17,8 +18,8 @@ export default function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProp
       {showHeading && (
         <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <span className="label-eyebrow block mb-2">BLOG</span>
-            <h2>A Little More to Think About.</h2>
+            <Eyebrow className="block mb-2">BLOG</Eyebrow>
+            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">A Little More to Think About.</h2>
           </div>
           <div className="max-w-[480px]">
             <p className="text-ink-muted mb-4 text-[15px] leading-relaxed max-w-[62ch]">

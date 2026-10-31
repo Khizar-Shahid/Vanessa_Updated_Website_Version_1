@@ -9,9 +9,9 @@ export default function HomeHero() {
     <section className="relative py-12 md:py-16 text-center">
       <Atmosphere />
 
-      <div className="container relative z-10">
+      <div className="w-full max-w-[1160px] mx-auto px-6 relative z-10">
         <RevealGroup className="max-w-[900px] mx-auto" immediate stagger={0.12}>
-          <RevealItem as="h1">
+          <RevealItem as="h1" className="font-serif text-[34px] sm:text-[44px] md:text-[54px] font-normal leading-[1.1] text-ink text-balance tracking-[-0.015em] [&>em]:italic [&>em]:text-sage-deep">
             Find a Trusted Therapist in Florida
           </RevealItem>
           <RevealItem as="p" className="mt-6 mx-auto text-[17px] md:text-[20px] leading-[1.65] text-ink-muted max-w-[56ch]">

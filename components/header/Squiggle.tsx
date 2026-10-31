@@ -10,7 +10,7 @@ export default function Squiggle() {
       <motion.path
         data-draw=""
         d="M2 5.5C11 1.5 19 6.5 28 4C36 1.8 45 6.2 52 3.5"
-        stroke="var(--salmon)"
+        stroke="var(--color-salmon)"
         strokeWidth="2"
         strokeLinecap="round"
         initial={{ pathLength: 0 }}

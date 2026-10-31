@@ -13,7 +13,7 @@ interface PodcastFeaturedProps {
 export default function PodcastFeatured({ featured }: PodcastFeaturedProps) {
   return (
     <section className="section-featured-podcast py-12 md:py-16" aria-labelledby="featured-podcast-heading">
-      <div className="container">
+      <div className="w-full max-w-[1160px] mx-auto px-6">
         <div className="podcast-featured-card bg-white/70 backdrop-blur-md rounded-2xl border border-hairline p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)]">
           <div className="podcast-featured-card__media lg:col-span-7">
             <YouTubePlayerFacade

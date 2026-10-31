@@ -90,7 +90,7 @@ export default function FaqPage() {
   };
 
   return (
-    <div className="page">
+    <div className="relative w-full overflow-x-clip">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -103,7 +103,7 @@ export default function FaqPage() {
       />
 
       <section className="py-16 md:py-24">
-        <div className="container max-w-[820px]">
+        <div className="w-full max-w-[820px] mx-auto px-6">
           <FaqAccordion items={FAQ_ITEMS} defaultOpenId="what-can-i-talk-about" />
 
           {/* Have a question banner */}

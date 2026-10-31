@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHero from '@/components/PageHero';
 import ContactForm from '@/components/contact/ContactForm';
+import Eyebrow from '@/components/Eyebrow';
 
 export const metadata = {
   alternates: {
@@ -13,7 +14,7 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="page">
+    <div className="relative w-full overflow-x-clip">
       <PageHero
         eyebrow="CONNECT WITH US"
         title="Contact Our Office"
@@ -21,12 +22,12 @@ export default function ContactPage() {
       />
 
       <section className="py-16 md:py-24">
-        <div className="container max-w-[1040px]">
+        <div className="w-full max-w-[1040px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left Column: Direct Contact Info & Office Details */}
             <div className="lg:col-span-5 flex flex-col gap-6">
               <div>
-                <span className="label-eyebrow block mb-2">PRACTICE DETAILS</span>
+                <Eyebrow className="block mb-2">PRACTICE DETAILS</Eyebrow>
                 <h2 className="text-2xl md:text-3xl text-ink font-serif mb-6">Get in Touch</h2>
               </div>
 

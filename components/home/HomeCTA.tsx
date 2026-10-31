@@ -2,20 +2,21 @@ import React from 'react';
 import Link from 'next/link';
 import { Reveal } from '@/components/motion/Reveal';
 import OrganicLine from '@/components/OrganicLine';
+import Eyebrow from '@/components/Eyebrow';
 
 export default function HomeCTA() {
   return (
     <section className="py-16 md:py-24">
-      <div className="container">
+      <div className="w-full max-w-[1160px] mx-auto px-6">
         <Reveal className="relative overflow-hidden text-center p-8 sm:p-14 md:p-20 rounded-2xl border border-hairline bg-[rgba(221,235,219,0.5)]">
           <div className="absolute w-[220px] md:w-[360px] pointer-events-none -left-16 -bottom-16" aria-hidden="true">
             <OrganicLine variant="curve-left" />
           </div>
           <div className="absolute w-[220px] md:w-[360px] pointer-events-none -right-20 -top-20" aria-hidden="true">
-            <OrganicLine variant="curve-right" stroke="var(--salmon)" />
+            <OrganicLine variant="curve-right" stroke="var(--color-salmon)" />
           </div>
-          <span className="label-eyebrow">READY WHEN YOU ARE</span>
-          <h2 className="max-w-[760px] mx-auto mb-5">
+          <Eyebrow>READY WHEN YOU ARE</Eyebrow>
+          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep max-w-[760px] mx-auto mb-5">
             You Don&apos;t Have to Have Everything Figured Out Before Reaching Out.
           </h2>
           <p className="text-[18px] leading-[1.7] text-ink-muted max-w-[62ch] mx-auto mb-9">

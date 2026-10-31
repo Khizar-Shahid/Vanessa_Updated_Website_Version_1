@@ -6,6 +6,7 @@ import PodcastFeatured from './podcasts/PodcastFeatured';
 import PodcastCard from './podcasts/PodcastCard';
 import PodcastCrossBanner from './podcasts/PodcastCrossBanner';
 import { PodcastChannel, PodcastEpisode } from './podcasts/types';
+import Eyebrow from '@/components/Eyebrow';
 
 export type { PodcastChannel, PodcastEpisode };
 
@@ -43,11 +44,11 @@ export default function PodcastsFeed({ featured, episodes }: PodcastsFeedProps) 
       {/* 2. Grid Section (ready for multiple episodes) */}
       {false && (
         <section className="py-16 md:py-24" aria-labelledby="all-episodes-heading">
-          <div className="container">
+          <div className="w-full max-w-[1160px] mx-auto px-6">
             <div className="podcasts-section-header flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
               <div>
-                <span className="label-eyebrow">ALL EPISODES</span>
-                <h2 id="all-episodes-heading">Explore Conversations &amp; Clinical Insights</h2>
+                <Eyebrow>ALL EPISODES</Eyebrow>
+                <h2 id="all-episodes-heading" className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">Explore Conversations &amp; Clinical Insights</h2>
               </div>
 
               {/* Topic Filter Pills */}

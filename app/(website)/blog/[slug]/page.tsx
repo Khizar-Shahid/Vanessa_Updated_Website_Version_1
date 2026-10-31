@@ -56,7 +56,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <article className="w-full pb-20">
       {/* Header */}
       <section className="pt-16 md:pt-24 pb-10 md:pb-16 border-b border-hairline bg-[#FAF6F1]">
-        <div className="container max-w-[780px]">
+        <div className="w-full max-w-[780px] mx-auto px-6">
           <div className="mb-5">
             <Link
               href="/blog"
@@ -81,7 +81,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Content */}
       <section className="pt-12">
-        <div className="container max-w-[780px]">
+        <div className="w-full max-w-[780px] mx-auto px-6">
           {post.mainImage && (
             <div className="relative w-full aspect-[16/9] mb-12 rounded-xl overflow-hidden border border-hairline">
               <img

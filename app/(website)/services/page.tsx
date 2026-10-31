@@ -3,6 +3,7 @@ import PageHero from '@/components/PageHero';
 import { SERVICE_LIST } from '@/content/services';
 import ServiceCardRow from '@/components/services/ServiceCardRow';
 import Link from 'next/link';
+import Eyebrow from '@/components/Eyebrow';
 
 export const metadata = {
   alternates: {
@@ -16,7 +17,7 @@ export const metadata = {
 
 export default function WaysWeWorkPage() {
   return (
-    <div className="page">
+    <div className="relative w-full overflow-x-clip">
       <PageHero
         eyebrow="THERAPY SERVICES"
         title={<>Therapy Services in Coral Gables, FL</>}
@@ -29,7 +30,7 @@ export default function WaysWeWorkPage() {
 
       {/* Services List */}
       <section className="py-16 md:py-24">
-        <div className="container max-w-[980px]">
+        <div className="w-full max-w-[980px] mx-auto px-6">
           <div className="flex flex-col gap-12">
             {SERVICE_LIST.map((svc) => (
               <ServiceCardRow key={svc.slug} service={svc} />
@@ -40,9 +41,9 @@ export default function WaysWeWorkPage() {
 
       {/* Consultation Banner */}
       <section className="py-16 md:py-20 bg-[#FAF5EE] border-t border-hairline text-center">
-        <div className="container max-w-[720px] mx-auto">
-          <span className="label-eyebrow block mb-2">BEGIN YOUR JOURNEY</span>
-          <h2 className="mb-4">Ready to Take the Next Step?</h2>
+        <div className="w-full max-w-[720px] mx-auto px-6">
+          <Eyebrow className="block mb-2">BEGIN YOUR JOURNEY</Eyebrow>
+          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-4">Ready to Take the Next Step?</h2>
           <p className="text-ink-muted mb-8 text-[15px] leading-relaxed">
             Reach out to schedule a consultation or ask questions about how these services can meet
             your needs.

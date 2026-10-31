@@ -30,7 +30,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   if (!data) notFound();
 
   return (
-    <div className="page">
+    <div className="relative w-full overflow-x-clip">
       <PageHero
         eyebrow={data.subtitle}
         title={data.seoH1}
@@ -39,7 +39,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
       {/* Main Service Content */}
       <section className="py-16 md:py-24">
-        <div className="container max-w-[920px]">
+        <div className="w-full max-w-[920px] mx-auto px-6">
           {/* Who It's For & What Sessions Look Like */}
           <ServiceSessionOverview
             whoItsFor={data.whoItsFor}

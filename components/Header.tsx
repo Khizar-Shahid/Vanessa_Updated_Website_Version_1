@@ -92,7 +92,7 @@ export default function Header() {
 
   return (
     <header className="bg-parchment border-b border-hairline relative z-40">
-      <div className="container flex items-center justify-between gap-8 py-3.5">
+      <div className="w-full max-w-[1160px] mx-auto px-6 flex items-center justify-between gap-8 py-3.5">
         <Link
           href="/"
           className="relative z-50 rounded-lg no-underline text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"

@@ -8,6 +8,7 @@ import MeetVanessaHero from '@/components/meet-vanessa/MeetVanessaHero';
 import TherapyProcessSteps from '@/components/meet-vanessa/TherapyProcessSteps';
 import ClinicalCredentialsGrid from '@/components/meet-vanessa/ClinicalCredentialsGrid';
 import SpecializedModalities from '@/components/meet-vanessa/SpecializedModalities';
+import Eyebrow from '@/components/Eyebrow';
 
 export const metadata = {
   alternates: {
@@ -21,15 +22,15 @@ export const metadata = {
 
 export default function MeetVanessaPage() {
   return (
-    <div className="page">
+    <div className="relative w-full overflow-x-clip">
       {/* 1. Hero */}
       <MeetVanessaHero />
 
       {/* 2. Short Intro */}
       <section className="py-16 md:py-24 text-center">
-        <Reveal className="container max-w-[820px] mx-auto">
-          <span className="label-eyebrow">A LITTLE ABOUT ME</span>
-          <h2 className="mb-7">Creating a Space Where People Feel Seen, Safe, and Understood.</h2>
+        <Reveal className="w-full max-w-[820px] mx-auto px-6">
+          <Eyebrow>A LITTLE ABOUT ME</Eyebrow>
+          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-7">Creating a Space Where People Feel Seen, Safe, and Understood.</h2>
           <p className="text-[18px] leading-[1.85] mx-auto text-ink">
             For over 20 years, I have worked with adults, couples, families, and children across
             nonprofit, educational, and private-practice settings. My work is grounded in listening
@@ -46,10 +47,10 @@ export default function MeetVanessaPage() {
 
       {/* 3. My Story */}
       <section className="py-16 md:py-24 bg-cream border-t border-hairline">
-        <div className="container grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
+        <div className="w-full max-w-[1160px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
           <Reveal className="[&>h2]:mb-6 [&>p]:mb-6 [&>p:last-child]:mb-0">
-            <span className="label-eyebrow">MY STORY</span>
-            <h2>I Learned Early That Feeling Safe Can Change Everything.</h2>
+            <Eyebrow>MY STORY</Eyebrow>
+            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">I Learned Early That Feeling Safe Can Change Everything.</h2>
             <p>
               As a shy and reserved child, I often found comfort in my imagination and was deeply
               sensitive to the feelings of others. As I grew, I became more observant of people and
@@ -90,20 +91,20 @@ export default function MeetVanessaPage() {
 
       {/* 4. Shift in Perspective */}
       <section className="py-16 md:py-24 border-t border-hairline">
-        <div className="container max-w-[900px]">
+        <div className="w-full max-w-[900px] mx-auto px-6">
           <Reveal>
-            <span className="label-eyebrow">A SHIFT IN PERSPECTIVE</span>
-            <h2 className="mb-7">
+            <Eyebrow>A SHIFT IN PERSPECTIVE</Eyebrow>
+            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-7">
               Sometimes What Looks Like Distance Still Has Connection Underneath.
             </h2>
-            <p className="body-large mb-5">
+            <p className="text-[18px] leading-[1.8] mb-5">
               Early in my career, I expected my work to focus mainly on children and families.
               Working with my first couple changed that. I began to see how much can become
               fragmented in a relationship without people realizing it, and how meaningful it can be
               to help two people slow down, understand what is happening between them, and discover
               what may still be underneath the hurt.
             </p>
-            <p className="body-large">
+            <p className="text-[18px] leading-[1.8]">
               Over the years, I have worked with couples who arrived feeling as though separation was
               the only option. With time, professional guidance, and clinical support, some began to
               see their relationship differently - to understand the patterns between them, create a
@@ -111,7 +112,7 @@ export default function MeetVanessaPage() {
             </p>
           </Reveal>
         </div>
-        <div className="container">
+        <div className="w-full max-w-[1160px] mx-auto px-6">
           <ConvergingLines />
         </div>
       </section>
@@ -127,10 +128,10 @@ export default function MeetVanessaPage() {
 
       {/* 8. Hear From Vanessa (Reels) */}
       <section className="py-16 md:py-24 border-t border-hairline">
-        <div className="container">
+        <div className="w-full max-w-[1160px] mx-auto px-6">
           <Reveal className="text-center max-w-[800px] mx-auto mb-12">
-            <span className="label-eyebrow block mb-2">HEAR FROM VANESSA</span>
-            <h2>Thoughts &amp; Reflections.</h2>
+            <Eyebrow className="block mb-2">HEAR FROM VANESSA</Eyebrow>
+            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">Thoughts &amp; Reflections.</h2>
           </Reveal>
           
           <RevealGroup as="ul" className="list-none p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.15}>
@@ -155,13 +156,13 @@ export default function MeetVanessaPage() {
           <OrganicLine variant="curve-right" />
         </div>
         <div className="absolute w-[55%] pointer-events-none opacity-90 -right-[8%] bottom-[6%]" aria-hidden="true">
-          <OrganicLine variant="curve-left" stroke="var(--salmon)" />
+          <OrganicLine variant="curve-left" stroke="var(--color-salmon)" />
         </div>
-        <RevealGroup className="container relative z-10 max-w-[900px] mx-auto" stagger={0.15}>
-          <RevealItem as="span" className="label-eyebrow">
-            WHAT I BELIEVE
+        <RevealGroup className="w-full max-w-[900px] mx-auto px-6 relative z-10" stagger={0.15}>
+          <RevealItem>
+            <Eyebrow>WHAT I BELIEVE</Eyebrow>
           </RevealItem>
-          <RevealItem as="h2" className="text-3xl md:text-5xl lg:text-6xl mb-8">
+          <RevealItem as="h2" className="font-serif text-3xl md:text-5xl lg:text-6xl text-ink font-normal text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-8">
             Your Past May Shape You. It Does Not Have to <em>Define</em> You.
           </RevealItem>
           <RevealItem as="p" className="text-[18px] md:text-[19px] leading-[1.85] mx-auto mb-10 text-ink">
@@ -178,16 +179,16 @@ export default function MeetVanessaPage() {
 
       {/* 10. Closing CTA */}
       <section className="py-16 md:py-24">
-        <div className="container">
+        <div className="w-full max-w-[1160px] mx-auto px-6">
           <Reveal className="relative overflow-hidden text-center p-8 sm:p-14 md:p-20 rounded-2xl border border-hairline bg-[rgba(221,235,219,0.5)]">
             <div className="absolute w-[220px] md:w-[360px] pointer-events-none -left-16 -bottom-16" aria-hidden="true">
               <OrganicLine variant="curve-left" />
             </div>
             <div className="absolute w-[220px] md:w-[360px] pointer-events-none -right-20 -top-20" aria-hidden="true">
-              <OrganicLine variant="curve-right" stroke="var(--salmon)" />
+              <OrganicLine variant="curve-right" stroke="var(--color-salmon)" />
             </div>
-            <span className="label-eyebrow">READY TO BEGIN?</span>
-            <h2 className="max-w-[760px] mx-auto mb-5">
+            <Eyebrow>READY TO BEGIN?</Eyebrow>
+            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep max-w-[760px] mx-auto mb-5">
               You Don&apos;t Have to Have the Right Words Yet.
             </h2>
             <p className="text-[18px] leading-[1.7] text-ink-muted max-w-[62ch] mx-auto mb-9">

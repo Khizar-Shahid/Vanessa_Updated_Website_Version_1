@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="page">
+    <div className="relative w-full overflow-x-clip">
       {/* 1. Hero with interactive prompt cards */}
       <HomeHero />
 
@@ -35,7 +35,7 @@ export default function HomePage() {
 
       {/* 6. Recent Articles */}
       <section className="py-16 md:py-24 border-t border-hairline">
-        <div className="container">
+        <div className="w-full max-w-[1160px] mx-auto px-6">
           <BlogFeed limit={3} showHeading />
         </div>
       </section>
