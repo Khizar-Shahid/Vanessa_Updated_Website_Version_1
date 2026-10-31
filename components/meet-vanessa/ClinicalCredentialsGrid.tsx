@@ -9,7 +9,7 @@ export default function ClinicalCredentialsGrid() {
       <div className="w-full max-w-[1000px] mx-auto px-6">
         <Reveal className="mb-12 [&>h2]:mt-2">
           <Eyebrow className="block mb-2">EXPERIENCE &amp; TRAINING</Eyebrow>
-          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">More Than 20 Years of Experience.</h2>
+          <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">More Than 20 Years of Experience.</h2>
         </Reveal>
 
         <RevealGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">

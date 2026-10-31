@@ -29,7 +29,7 @@ export default function ResourcePanels() {
       <div className="w-full max-w-[1160px] mx-auto px-6">
         <Reveal className="text-center max-w-[780px] mx-auto mb-14 [&>h2]:mb-4">
           <Eyebrow>RESOURCE LIBRARY</Eyebrow>
-          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">Explore at Your Own Pace.</h2>
+          <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">Explore at Your Own Pace.</h2>
           <p className="text-[18px] leading-[1.7] text-ink-muted mx-auto max-w-[62ch]">
             Start with a free resource — practical tools you can use on your own.
           </p>

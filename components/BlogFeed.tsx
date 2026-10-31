@@ -19,7 +19,7 @@ export default function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProp
         <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <Eyebrow className="block mb-2">BLOG</Eyebrow>
-            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">A Little More to Think About.</h2>
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">A Little More to Think About.</h2>
           </div>
           <div className="max-w-[480px]">
             <p className="text-ink-muted mb-4 text-[15px] leading-relaxed max-w-[62ch]">

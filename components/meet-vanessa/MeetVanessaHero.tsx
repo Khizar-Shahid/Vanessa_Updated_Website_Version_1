@@ -14,7 +14,7 @@ export default function MeetVanessaHero() {
           <RevealItem>
             <Eyebrow className="mb-3">MEET VANESSA</Eyebrow>
           </RevealItem>
-          <RevealItem as="h1" className="font-serif text-3xl md:text-5xl text-ink leading-tight mb-4 text-balance [&>em]:italic [&>em]:text-sage-deep">
+          <RevealItem as="h1" className="font-serif text-5xl font-normal text-foreground leading-tight mb-4 text-balance [&>em]:italic [&>em]:text-primary">
             Meet Vanessa Sierra, <em>LMFT</em>
           </RevealItem>
           <RevealItem as="p" className="text-[18px] leading-[1.7] text-ink-muted text-[17px] md:text-[19px] max-w-[52ch]">

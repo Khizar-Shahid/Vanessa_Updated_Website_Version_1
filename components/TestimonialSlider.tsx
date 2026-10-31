@@ -51,7 +51,7 @@ export default function TestimonialSlider() {
       <div className="w-full max-w-[1160px] mx-auto px-6">
         <Reveal className="text-center max-w-[780px] mx-auto mb-14 [&>h2]:mb-4">
           <Eyebrow>WHAT CLIENTS HAVE SHARED</Eyebrow>
-          <h2 id="testimonials-heading" className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">A Few Words From Those I&apos;ve Worked With.</h2>
+          <h2 id="testimonials-heading" className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">A Few Words From Those I&apos;ve Worked With.</h2>
         </Reveal>
 
         <Reveal className="max-w-[860px] mx-auto">

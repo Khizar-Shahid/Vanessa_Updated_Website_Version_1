@@ -18,7 +18,7 @@ export default function SpecializedModalities() {
     <section className="py-16 md:py-24 border-t border-hairline">
       <Reveal className="w-full max-w-[900px] mx-auto px-6">
         <Eyebrow className="block mb-2">MY APPROACH</Eyebrow>
-        <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-6">Different People Need Different Paths.</h2>
+        <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-6">Different People Need Different Paths.</h2>
         <p className="text-ink-muted text-[16px] md:text-[18px] leading-[1.8] mb-8">
           My work is collaborative and individualized. Depending on the person, the concern, and
           the goals of therapy, I may draw from approaches including EMDR, interpersonal therapy,

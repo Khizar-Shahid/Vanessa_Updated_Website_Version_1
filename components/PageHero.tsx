@@ -22,7 +22,7 @@ export default function PageHero({ eyebrow, title, lead, align = 'center', child
           <RevealItem>
             <Eyebrow>{eyebrow}</Eyebrow>
           </RevealItem>
-          <RevealItem as="h1" className="font-serif text-[34px] sm:text-[44px] md:text-[54px] font-normal leading-[1.1] text-ink text-balance tracking-[-0.015em] [&>em]:italic [&>em]:text-sage-deep mb-5">{title}</RevealItem>
+          <RevealItem as="h1" className="font-serif text-5xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-5">{title}</RevealItem>
           {lead && (
             <RevealItem as="p" className={`text-[18px] leading-[1.7] text-ink-muted max-w-[62ch] ${isCenter ? 'mx-auto' : ''}`}>
               {lead}

@@ -24,7 +24,7 @@ export default function TherapyProcessSteps() {
       <div className="w-full max-w-[1160px] mx-auto px-6">
         <Reveal className="max-w-[820px] mb-12">
           <Eyebrow className="block mb-2">HOW I WORK</Eyebrow>
-          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-4">I Start by Listening.</h2>
+          <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-4">I Start by Listening.</h2>
           <p className="text-ink-muted text-[16px] md:text-[18px] leading-[1.8]">
             I listen carefully to what clients say—and to what may be communicated through body
             language, emotional expression, communication style, beliefs, relationships, and

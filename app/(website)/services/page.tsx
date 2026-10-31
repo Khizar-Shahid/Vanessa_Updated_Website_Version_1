@@ -43,7 +43,7 @@ export default function WaysWeWorkPage() {
       <section className="py-16 md:py-20 bg-[#FAF5EE] border-t border-hairline text-center">
         <div className="w-full max-w-[720px] mx-auto px-6">
           <Eyebrow className="block mb-2">BEGIN YOUR JOURNEY</Eyebrow>
-          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-4">Ready to Take the Next Step?</h2>
+          <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-4">Ready to Take the Next Step?</h2>
           <p className="text-ink-muted mb-8 text-[15px] leading-relaxed">
             Reach out to schedule a consultation or ask questions about how these services can meet
             your needs.

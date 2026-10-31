@@ -1,17 +1,44 @@
 @import "tailwindcss";
 
 @theme {
+  /* Semantic Color Tokens */
+  --color-background: #FAF6F1;
+  --color-foreground: #2A2B2A;
+  --color-muted: #5C605B;
+  --color-surface: #F5EFE7;
+  --color-border: rgba(42, 43, 42, 0.13);
+
+  --color-primary: #47804A;
+  --color-primary-soft: #DDEBDB;
+  --color-primary-hover: #3D6F40;
+
+  --color-accent: #B5533F;
+  --color-accent-soft: #F7DED8;
+  --color-accent-light: #E89285;
+
+  /* Legacy Brand Aliases (for safe phased migration) */
   --color-sage: #5EA15B;
-  --color-sage-deep: #47804A;
-  --color-sage-soft: #DDEBDB;
-  --color-salmon: #E89285;
-  --color-salmon-text: #B5533F;
-  --color-salmon-soft: #F7DED8;
-  --color-parchment: #FAF6F1;
-  --color-ink: #2A2B2A;
-  --color-ink-muted: #5C605B;
-  --color-cream: #F5EFE7;
-  --color-hairline: rgba(42, 43, 42, 0.13);
+  --color-sage-deep: var(--color-primary);
+  --color-sage-soft: var(--color-primary-soft);
+  --color-salmon: var(--color-accent-light);
+  --color-salmon-text: var(--color-accent);
+  --color-salmon-soft: var(--color-accent-soft);
+  --color-parchment: var(--color-background);
+  --color-ink: var(--color-foreground);
+  --color-ink-muted: var(--color-muted);
+  --color-cream: var(--color-surface);
+  --color-hairline: var(--color-border);
+
+  /* Fluid Typography Scale */
+  --text-4xl: clamp(1.75rem, 3.4vw, 2.5rem);
+  --text-4xl--line-height: 1.2;
+  --text-4xl--letter-spacing: -0.01em;
+
+  --text-5xl: clamp(2.125rem, 5vw, 3.375rem);
+  --text-5xl--line-height: 1.1;
+  --text-5xl--letter-spacing: -0.015em;
+
+  /* Font Families */
   --font-serif: var(--font-playfair), Georgia, serif;
   --font-sans: var(--font-nunito-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }

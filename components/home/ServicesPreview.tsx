@@ -65,7 +65,7 @@ export default function ServicesPreview() {
       <div className="w-full max-w-[1160px] mx-auto px-6">
         <Reveal className="text-center max-w-[780px] mx-auto mb-14 [&>h2]:mb-4">
           <Eyebrow>WAYS WE WORK</Eyebrow>
-          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">There&apos;s More Than One Way to Begin.</h2>
+          <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">There&apos;s More Than One Way to Begin.</h2>
           <p className="text-[18px] leading-[1.7] text-ink-muted mx-auto max-w-[62ch]">
             Whether you&apos;re working through personal challenges, experiencing relationship difficulties, or looking to build healthier family relationships, therapy can provide a supportive space to better understand your experiences, develop healthier patterns, and work toward meaningful change.
           </p>

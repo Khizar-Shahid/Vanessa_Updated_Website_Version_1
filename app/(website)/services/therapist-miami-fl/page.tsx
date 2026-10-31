@@ -70,7 +70,7 @@ export default function TherapistMiamiFLPage() {
         <div className="w-full max-w-[1160px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
           <div className="[&>h2]:mb-6 [&>p]:mb-6 [&>p:last-child]:mb-0">
             <Eyebrow>COMPASSIONATE CARE</Eyebrow>
-            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">Therapy Tailored to Your Life in Miami</h2>
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">Therapy Tailored to Your Life in Miami</h2>
             <p className="text-[18px] leading-[1.8]">
               Living in Miami brings energy, culture, and vibrant opportunity—but it also comes with high-paced demands, relationship strains, career stress, and personal transitions. Whether you are facing anxiety, processing past hardship, or seeking deeper connection with a partner or child, therapy offers a space to pause and reflect.
             </p>
@@ -101,7 +101,7 @@ export default function TherapistMiamiFLPage() {
         <div className="w-full max-w-[1080px] mx-auto px-6">
           <div className="text-center mb-14">
             <Eyebrow>OUR SERVICES IN MIAMI</Eyebrow>
-            <h2 className="font-serif text-[32px] text-ink mb-4">
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance mb-4">
               Specialized Areas of Care
             </h2>
             <p className="text-ink-muted max-w-[640px] mx-auto text-[16px]">

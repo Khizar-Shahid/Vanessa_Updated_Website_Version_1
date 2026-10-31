@@ -48,7 +48,7 @@ export default function PodcastsFeed({ featured, episodes }: PodcastsFeedProps) 
             <div className="podcasts-section-header flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
               <div>
                 <Eyebrow>ALL EPISODES</Eyebrow>
-                <h2 id="all-episodes-heading" className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">Explore Conversations &amp; Clinical Insights</h2>
+                <h2 id="all-episodes-heading" className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">Explore Conversations &amp; Clinical Insights</h2>
               </div>
 
               {/* Topic Filter Pills */}

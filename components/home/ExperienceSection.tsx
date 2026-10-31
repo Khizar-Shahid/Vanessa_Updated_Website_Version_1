@@ -26,7 +26,7 @@ export default function ExperienceSection() {
 
         <Reveal className="[&>h2]:mb-6 [&>p]:mb-8" delay={0.1}>
           <Eyebrow>UNDERSTANDING YOUR EXPERIENCE</Eyebrow>
-          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">You Don&apos;t Have to Carry It All By Yourself.</h2>
+          <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">You Don&apos;t Have to Carry It All By Yourself.</h2>
           <p>
             Life can leave us carrying more than we realize—difficult experiences, relationship
             struggles, emotional patterns, or the feeling that something in our lives is no

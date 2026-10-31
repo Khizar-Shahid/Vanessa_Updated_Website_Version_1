@@ -30,7 +30,7 @@ export default function MeetVanessaPage() {
       <section className="py-16 md:py-24 text-center">
         <Reveal className="w-full max-w-[820px] mx-auto px-6">
           <Eyebrow>A LITTLE ABOUT ME</Eyebrow>
-          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-7">Creating a Space Where People Feel Seen, Safe, and Understood.</h2>
+          <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-7">Creating a Space Where People Feel Seen, Safe, and Understood.</h2>
           <p className="text-[18px] leading-[1.85] mx-auto text-ink">
             For over 20 years, I have worked with adults, couples, families, and children across
             nonprofit, educational, and private-practice settings. My work is grounded in listening
@@ -50,7 +50,7 @@ export default function MeetVanessaPage() {
         <div className="w-full max-w-[1160px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
           <Reveal className="[&>h2]:mb-6 [&>p]:mb-6 [&>p:last-child]:mb-0">
             <Eyebrow>MY STORY</Eyebrow>
-            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">I Learned Early That Feeling Safe Can Change Everything.</h2>
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">I Learned Early That Feeling Safe Can Change Everything.</h2>
             <p>
               As a shy and reserved child, I often found comfort in my imagination and was deeply
               sensitive to the feelings of others. As I grew, I became more observant of people and
@@ -94,7 +94,7 @@ export default function MeetVanessaPage() {
         <div className="w-full max-w-[900px] mx-auto px-6">
           <Reveal>
             <Eyebrow>A SHIFT IN PERSPECTIVE</Eyebrow>
-            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-7">
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-7">
               Sometimes What Looks Like Distance Still Has Connection Underneath.
             </h2>
             <p className="text-[18px] leading-[1.8] mb-5">
@@ -131,7 +131,7 @@ export default function MeetVanessaPage() {
         <div className="w-full max-w-[1160px] mx-auto px-6">
           <Reveal className="text-center max-w-[800px] mx-auto mb-12">
             <Eyebrow className="block mb-2">HEAR FROM VANESSA</Eyebrow>
-            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep">Thoughts &amp; Reflections.</h2>
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">Thoughts &amp; Reflections.</h2>
           </Reveal>
           
           <RevealGroup as="ul" className="list-none p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.15}>
@@ -188,7 +188,7 @@ export default function MeetVanessaPage() {
               <OrganicLine variant="curve-right" stroke="var(--color-salmon)" />
             </div>
             <Eyebrow>READY TO BEGIN?</Eyebrow>
-            <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep max-w-[760px] mx-auto mb-5">
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary max-w-[760px] mx-auto mb-5">
               You Don&apos;t Have to Have the Right Words Yet.
             </h2>
             <p className="text-[18px] leading-[1.7] text-ink-muted max-w-[62ch] mx-auto mb-9">

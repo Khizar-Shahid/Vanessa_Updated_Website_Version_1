@@ -16,7 +16,7 @@ export default function HomeCTA() {
             <OrganicLine variant="curve-right" stroke="var(--color-salmon)" />
           </div>
           <Eyebrow>READY WHEN YOU ARE</Eyebrow>
-          <h2 className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-normal leading-[1.2] text-ink text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep max-w-[760px] mx-auto mb-5">
+          <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary max-w-[760px] mx-auto mb-5">
             You Don&apos;t Have to Have Everything Figured Out Before Reaching Out.
           </h2>
           <p className="text-[18px] leading-[1.7] text-ink-muted max-w-[62ch] mx-auto mb-9">
