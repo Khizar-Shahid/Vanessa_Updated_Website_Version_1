@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   outputFileTracingIncludes: {
-    '/api/resources/request': ['./private/resources/**/*'],
+    '/api/resources/request': ['./public/docs/**/*'],
   },
   images: {
     remotePatterns: [

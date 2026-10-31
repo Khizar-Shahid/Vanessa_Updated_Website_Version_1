@@ -134,7 +134,7 @@ export async function POST(request: Request) {
   const resend = new Resend(apiKey);
 
   try {
-    const pdf = await readFile(path.join(process.cwd(), 'private', 'resources', resource.file));
+    const pdf = await readFile(path.join(process.cwd(), 'public', 'docs', resource.file));
 
     const { error: sendError } = await resend.emails.send({
       from,
