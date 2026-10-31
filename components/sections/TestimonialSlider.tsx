@@ -66,7 +66,7 @@ export default function TestimonialSlider() {
             onKeyDown={handleKeyDown}
           >
             <div className="relative bg-white border border-border rounded-2xl shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] px-6 py-12 sm:px-12 md:py-16 md:px-16 text-center">
-              <span className="absolute -top-6 left-1/2 -translate-x-1/2 font-serif text-[110px] md:text-[120px] leading-none text-accent-light pointer-events-none select-none opacity-80" aria-hidden="true">
+              <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif text-[100px] md:text-[110px] leading-none text-accent-light pointer-events-none select-none" aria-hidden="true">
                 &ldquo;
               </span>
               <div className="min-h-[250px] max-sm:min-h-[340px] grid items-center" aria-live={isPaused ? 'polite' : 'off'}>
