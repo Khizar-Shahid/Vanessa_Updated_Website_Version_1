@@ -13,7 +13,6 @@ const EXPLORE_LINKS = [
   { label: 'FAQ', href: '/faqs' },
 ];
 
-// Vanessa has no Facebook page, so only LinkedIn and Instagram are listed.
 const SOCIAL_LINKS = [
   {
     label: 'LinkedIn',
@@ -45,18 +44,18 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="site-footer">
-      <div className="site-footer__line" aria-hidden="true">
+    <footer className="site-footer relative overflow-hidden bg-[#F3EFE9] border-t border-hairline pt-24 pb-9 mt-auto">
+      <div className="site-footer__line absolute top-3 left-0 right-0 h-14 overflow-hidden opacity-60 pointer-events-none" aria-hidden="true">
         <OrganicLine variant="thread" />
       </div>
 
       <div className="container">
-        <div className="site-footer__grid">
-          <div className="site-footer__brand">
-            <Link href="/" aria-label="Thrive with Therapy — Home" className="site-footer__logo">
+        <div className="site-footer__grid relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.25fr] gap-12 pb-12 border-b border-hairline">
+          <div className="site-footer__brand md:col-span-2 lg:col-span-1">
+            <Link href="/" aria-label="Thrive with Therapy — Home" className="site-footer__logo inline-block rounded-lg no-underline text-ink">
               <LogoLockup size={52} />
             </Link>
-            <p>
+            <p className="mt-5 text-[14.5px] leading-[1.7] text-ink-muted max-w-[40ch]">
               Vanessa M. Sierra, LMFT provides thoughtful individual, couples, and family therapy. A
               calm and collaborative space to understand the patterns beneath your experiences and
               find a healthier way forward.
@@ -64,11 +63,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="site-footer__heading">Explore</h2>
-            <ul className="site-footer__list">
+            <h2 className="site-footer__heading font-sans text-[11.5px] font-bold tracking-[0.18em] uppercase text-salmon-text mb-5">
+              Explore
+            </h2>
+            <ul className="site-footer__list list-none flex flex-col gap-2.5 text-[14.5px]">
               {EXPLORE_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-link">
+                  <Link href={link.href} className="text-link hover:text-salmon-text transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -77,27 +78,35 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="site-footer__heading">Get in Touch</h2>
-            <ul className="site-footer__list site-footer__contact">
-              <li>
-                <span className="site-footer__k">Phone</span>
-                <a href="tel:954-635-0234" className="text-link">
+            <h2 className="site-footer__heading font-sans text-[11.5px] font-bold tracking-[0.18em] uppercase text-salmon-text mb-5">
+              Get in Touch
+            </h2>
+            <ul className="site-footer__list site-footer__contact list-none flex flex-col gap-2.5 text-[14.5px]">
+              <li className="flex flex-col">
+                <span className="site-footer__k text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-muted">
+                  Phone
+                </span>
+                <a href="tel:954-635-0234" className="text-link hover:text-salmon-text transition-colors">
                   954-635-0234
                 </a>
               </li>
-              <li>
-                <span className="site-footer__k">Email</span>
-                <a href="mailto:vanessa@thrivementalhealthsolutions.com" className="text-link site-footer__email">
+              <li className="flex flex-col">
+                <span className="site-footer__k text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-muted">
+                  Email
+                </span>
+                <a href="mailto:vanessa@thrivementalhealthsolutions.com" className="text-link site-footer__email break-all hover:text-salmon-text transition-colors">
                   vanessa@thrivementalhealthsolutions.com
                 </a>
               </li>
-              <li>
-                <span className="site-footer__k">Location</span>
-                <span>Coral Gables, FL (South Florida)</span>
+              <li className="flex flex-col">
+                <span className="site-footer__k text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-muted">
+                  Location
+                </span>
+                <span className="text-ink">Coral Gables, FL (South Florida)</span>
               </li>
             </ul>
 
-            <ul className="site-footer__social">
+            <ul className="site-footer__social list-none flex gap-2.5 mt-7">
               {SOCIAL_LINKS.map((s) => (
                 <li key={s.label}>
                   <a
@@ -105,7 +114,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${s.ariaLabel} (opens in a new tab)`}
-                    className="social-icon"
+                    className="social-icon inline-flex items-center justify-center w-11 h-11 rounded-full bg-white text-ink border border-hairline hover:-translate-y-1 hover:text-white hover:bg-sage-deep hover:border-sage-deep transition-all duration-300"
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
                       {s.icon}
@@ -117,17 +126,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="site-footer__legal">
-          <p>© {currentYear} Thrive with Therapy. Vanessa M. Sierra, LMFT. All rights reserved.</p>
-          <ul>
-            {/* TODO(client): these pages don't exist yet */}
+        <div className="site-footer__legal flex flex-wrap justify-between gap-4 pt-7 text-[13px]">
+          <p className="text-ink-muted max-w-none">
+            © {currentYear} Thrive with Therapy. Vanessa M. Sierra, LMFT. All rights reserved.
+          </p>
+          <ul className="list-none flex gap-6">
             <li>
-              <Link href="/contact" className="text-link">
+              <Link href="/contact" className="text-link hover:text-salmon-text transition-colors">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="text-link">
+              <Link href="/contact" className="text-link hover:text-salmon-text transition-colors">
                 Accessibility Statement
               </Link>
             </li>
