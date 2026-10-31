@@ -1,0 +1,35 @@
+import React from 'react';
+import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
+import credentialsData from '@/content/credentials.json';
+import Eyebrow from '@/components/ui/Eyebrow';
+
+export default function ClinicalCredentialsGrid() {
+  return (
+    <section className="py-16 md:py-24 bg-surface border-t border-border">
+      <div className="w-full max-w-[1000px] mx-auto px-6">
+        <Reveal className="mb-12 [&>h2]:mt-2">
+          <Eyebrow className="block mb-2">EXPERIENCE &amp; TRAINING</Eyebrow>
+          <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">More Than 20 Years of Experience.</h2>
+        </Reveal>
+
+        <RevealGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {credentialsData.credentials.map((category) => (
+            <RevealItem key={category.category} className="bg-white p-8 rounded-2xl border border-border shadow-sm">
+              <h3 className="font-serif text-xl text-primary mb-4 pb-2 border-b border-border font-medium">
+                {category.category}
+              </h3>
+              <ul className="list-none p-0 m-0 flex flex-col gap-2.5">
+                {category.items.map((item) => (
+                  <li key={item} className="text-[14.5px] leading-relaxed text-foreground flex items-start gap-2.5">
+                    <span className="text-primary font-bold leading-none mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      </div>
+    </section>
+  );
+}

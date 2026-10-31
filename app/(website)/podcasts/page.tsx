@@ -1,9 +1,10 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import podcastsData from '@/content/podcasts.json';
-import PageHero from '@/components/PageHero';
-import PodcastsFeed from '@/components/PodcastsFeed';
-import { Youtube, ExternalLink } from 'lucide-react';
+import PageHero from '@/components/ui/PageHero';
+import PodcastsFeed from '@/components/sections/PodcastsFeed';
+import { ExternalLink } from 'lucide-react';
+import { YoutubeIcon } from '@/components/ui/YoutubeIcon';
 
 export const metadata: Metadata = {
   title: 'Podcasts & Video Insights | Thrive with Therapy',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function PodcastsPage() {
   return (
-    <div className="page page-podcasts">
+    <div className="relative w-full overflow-x-clip">
       <PageHero
         eyebrow="PODCASTS &amp; VIDEO INSIGHTS"
         title="Conversations on Healing, Growth &amp; Connection."
@@ -27,11 +28,10 @@ export default function PodcastsPage() {
             href={podcastsData.channel.subscribeUrl || podcastsData.channel.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary"
-            style={{ gap: '0.65rem' }}
+            className="inline-flex items-center justify-center gap-2.5 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-primary text-white border-[1.5px] border-primary hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
             aria-label="Subscribe to Thrive with Therapy on YouTube (opens in new tab)"
           >
-            <Youtube size={19} aria-hidden="true" />
+            <YoutubeIcon size={19} aria-hidden="true" />
             <span>Subscribe on YouTube</span>
             <ExternalLink size={14} aria-hidden="true" />
           </a>

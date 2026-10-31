@@ -1,14 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import credentialsData from '@/content/credentials.json';
-import OrganicLine from '@/components/OrganicLine';
-import ConvergingLines from '@/components/ConvergingLines';
+import OrganicLine from '@/components/ui/OrganicLine';
+import ConvergingLines from '@/components/ui/ConvergingLines';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
+import MeetVanessaHero from '@/components/meet-vanessa/MeetVanessaHero';
+import TherapyProcessSteps from '@/components/meet-vanessa/TherapyProcessSteps';
+import ClinicalCredentialsGrid from '@/components/meet-vanessa/ClinicalCredentialsGrid';
+import SpecializedModalities from '@/components/meet-vanessa/SpecializedModalities';
+import Eyebrow from '@/components/ui/Eyebrow';
 
 export const metadata = {
   alternates: {
-    canonical: "/meet-vanessa",
+    canonical: '/meet-vanessa',
   },
   title: 'Meet Vanessa Sierra, LMFT | Thrive with Therapy',
   description:
@@ -16,77 +20,18 @@ export const metadata = {
   keywords: ['Vanessa Sierra LMFT'],
 };
 
-const STEPS = [
-  { num: '01', title: 'Listen', body: 'Understand the story, the present experience, and the patterns within it.' },
-  { num: '02', title: 'Notice', body: 'Explore emotions, beliefs, triggers, relationships, and responses.' },
-  {
-    num: '03',
-    title: 'Understand',
-    body: 'Connect what is happening today with the experiences and patterns that may be influencing it.',
-  },
-  {
-    num: '04',
-    title: 'Move Forward',
-    body: 'Build awareness and practice healthier ways of responding, communicating, and relating.',
-  },
-];
-
-// Drawn directly from the §6 §6 paragraph — no added descriptions
-const APPROACHES = [
-  'EMDR',
-  'Interpersonal therapy',
-  'Narrative therapy',
-  'Strength-based therapy',
-  'ACT',
-  'Somatic & trauma-focused approaches',
-  'Art therapy',
-  'The Gottman Method for couples',
-];
-
 export default function MeetVanessaPage() {
   return (
-    <div className="page">
-      {/* SECTION 1 — HERO: text left, portrait right, gentle fade only */}
-      <section className="mv-hero">
-        <div className="ambient-background" aria-hidden="true">
-          <div className="ambient-orb ambient-orb-sage" />
-          <div className="ambient-orb ambient-orb-salmon" />
-          <div className="grain" />
-        </div>
-        <div className="container mv-hero__grid">
-          <RevealGroup className="mv-hero__text" immediate stagger={0.12}>
-            <RevealItem as="span" className="label-eyebrow">
-              MEET VANESSA
-            </RevealItem>
-            <RevealItem as="h1">
-              Meet Vanessa Sierra, <em>LMFT</em>
-            </RevealItem>
-            <RevealItem as="p" className="lead-paragraph">
-              A therapist, a listener, and a believer that the patterns we carry do not have to
-              define the life we create.
-            </RevealItem>
-          </RevealGroup>
+    <div className="relative w-full overflow-x-clip">
+      {/* 1. Hero */}
+      <MeetVanessaHero />
 
-          <Reveal className="mv-hero__portrait" delay={0.2}>
-            <div className="mv-hero__photo">
-              <Image
-                src="/poster.png"
-                alt="Vanessa M. Sierra, LMFT - Influential Women Recognition"
-                fill
-                priority
-                sizes="(max-width: 860px) 88vw, 460px"
-              />
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* SECTION 2 — SHORT INTRO */}
-      <section className="section-rhythm mv-intro">
-        <Reveal className="container mv-intro__inner">
-          <span className="label-eyebrow">A LITTLE ABOUT ME</span>
-          <h2>Creating a Space Where People Feel Seen, Safe, and Understood.</h2>
-          <p>
+      {/* 2. Short Intro */}
+      <section className="py-16 md:py-24 text-center">
+        <Reveal className="w-full max-w-[820px] mx-auto px-6">
+          <Eyebrow>A LITTLE ABOUT ME</Eyebrow>
+          <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-7">Creating a Space Where People Feel Seen, Safe, and Understood.</h2>
+          <p className="text-[18px] leading-[1.85] mx-auto text-foreground">
             For over 20 years, I have worked with adults, couples, families, and children across
             nonprofit, educational, and private-practice settings. My work is grounded in listening
             closely to what people are saying, noticing the patterns underneath what they are
@@ -94,18 +39,18 @@ export default function MeetVanessaPage() {
             judgment. I believe meaningful change begins when we can make sense of what we have been
             carrying and begin seeing new possibilities for how we relate to ourselves and others.
           </p>
-          <div className="mv-intro__line" aria-hidden="true">
+          <div className="w-[min(420px,80%)] mx-auto mt-12" aria-hidden="true">
             <OrganicLine variant="connecting" />
           </div>
         </Reveal>
       </section>
 
-      {/* SECTION 3 — MY STORY: major section, large text + one editorial image */}
-      <section className="section-rhythm section--cream section--bordered">
-        <div className="container split">
-          <Reveal className="split__text mv-story__text">
-            <span className="label-eyebrow">MY STORY</span>
-            <h2>I Learned Early That Feeling Safe Can Change Everything.</h2>
+      {/* 3. My Story */}
+      <section className="py-16 md:py-24 bg-surface border-t border-border">
+        <div className="w-full max-w-[1160px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
+          <Reveal className="[&>h2]:mb-6 [&>p]:mb-6 [&>p:last-child]:mb-0">
+            <Eyebrow>MY STORY</Eyebrow>
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">I Learned Early That Feeling Safe Can Change Everything.</h2>
             <p>
               As a shy and reserved child, I often found comfort in my imagination and was deeply
               sensitive to the feelings of others. As I grew, I became more observant of people and
@@ -127,38 +72,39 @@ export default function MeetVanessaPage() {
             </p>
           </Reveal>
 
-          <Reveal className="split__media mv-story__media" delay={0.15}>
-            <div className="media-frame">
+          <Reveal className="relative before:content-[''] before:absolute before:inset-[1rem_-0.75rem_-1rem_1rem] md:before:inset-[1.75rem_-1.75rem_-1.75rem_1.75rem] before:bg-primary-soft before:rounded-md before:z-0" delay={0.15}>
+            <div className="relative aspect-[4/3] rounded-md overflow-hidden shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] z-10">
               <Image
                 src="/images/my-story-symbolic.jpg"
                 alt="A quiet sunlit windowsill looking out over a garden"
                 fill
                 sizes="(max-width: 900px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
-            <div className="split__line split__line--right" aria-hidden="true">
+            <div className="absolute w-full md:w-[125%] -top-[18%] -right-[6%] md:-right-[22%] z-10 pointer-events-none" aria-hidden="true">
               <OrganicLine variant="curve-right" />
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* SECTION 4 — A SHIFT IN PERSPECTIVE: signature converging lines */}
-      <section className="section-rhythm section--bordered">
-        <div className="container" style={{ maxWidth: '900px' }}>
+      {/* 4. Shift in Perspective */}
+      <section className="py-16 md:py-24 border-t border-border">
+        <div className="w-full max-w-[900px] mx-auto px-6">
           <Reveal>
-            <span className="label-eyebrow">A SHIFT IN PERSPECTIVE</span>
-            <h2 style={{ marginBottom: '1.75rem' }}>
+            <Eyebrow>A SHIFT IN PERSPECTIVE</Eyebrow>
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-7">
               Sometimes What Looks Like Distance Still Has Connection Underneath.
             </h2>
-            <p className="body-large" style={{ marginBottom: '1.25rem' }}>
+            <p className="text-[18px] leading-[1.8] mb-5">
               Early in my career, I expected my work to focus mainly on children and families.
               Working with my first couple changed that. I began to see how much can become
               fragmented in a relationship without people realizing it, and how meaningful it can be
               to help two people slow down, understand what is happening between them, and discover
               what may still be underneath the hurt.
             </p>
-            <p className="body-large">
+            <p className="text-[18px] leading-[1.8]">
               Over the years, I have worked with couples who arrived feeling as though separation was
               the only option. With time, professional guidance, and clinical support, some began to
               see their relationship differently - to understand the patterns between them, create a
@@ -166,99 +112,29 @@ export default function MeetVanessaPage() {
             </p>
           </Reveal>
         </div>
-        <div className="container">
+        <div className="w-full max-w-[1160px] mx-auto px-6">
           <ConvergingLines />
         </div>
       </section>
 
-      {/* SECTION 5 — HOW I WORK: four steps threaded by a sage line */}
-      <section className="section-rhythm section--sage section--bordered">
-        <div className="container">
-          <Reveal className="section-head" style={{ maxWidth: '820px' }}>
-            <span className="label-eyebrow">HOW I WORK</span>
-            <h2>I Start by Listening.</h2>
-            <p className="body-large">
-              I listen carefully to what clients say- and to what may be communicated through body
-              language, emotional expression, communication style, beliefs, relationships, and
-              patterns of response. I also pay attention to a person&apos;s history, support
-              systems, self-awareness, readiness for change, and the connection between what they say
-              they want from therapy and what may be keeping them stuck.
-            </p>
-          </Reveal>
+      {/* 5. How I Work: 4 steps */}
+      <TherapyProcessSteps />
 
-          <div style={{ position: 'relative' }}>
-            <div className="steps__thread" aria-hidden="true">
-              <OrganicLine variant="thread" />
-            </div>
-            <RevealGroup as="ol" className="steps" stagger={0.18}>
-              {STEPS.map((step) => (
-                <RevealItem as="li" key={step.num} className="step">
-                  <span className="step__dot" aria-hidden="true">
-                    {step.num}
-                  </span>
-                  <h3>{step.title}</h3>
-                  <p>{step.body}</p>
-                </RevealItem>
-              ))}
-            </RevealGroup>
-          </div>
-        </div>
-      </section>
+      {/* 6. My Approach Modalities */}
+      <SpecializedModalities />
 
-      {/* SECTION 6 — MY APPROACH: a clean visual list, not a certification wall */}
-      <section className="section-rhythm section--bordered">
-        <Reveal className="container" style={{ maxWidth: '900px' }}>
-          <span className="label-eyebrow">MY APPROACH</span>
-          <h2 style={{ marginBottom: '1.5rem' }}>Different People Need Different Paths.</h2>
-          <p className="body-large">
-            My work is collaborative and individualized. Depending on the person, the concern, and
-            the goals of therapy, I may draw from approaches including EMDR, interpersonal therapy,
-            narrative therapy, strength-based therapy, ACT, somatic and trauma-focused approaches,
-            art therapy, and the Gottman Method for couples. Exercises such as grounding, breath
-            work, movement, art, music, and narrative writing may also be used when they fit the work
-            and the client&apos;s needs.
-          </p>
-          <ul className="approach-list" aria-label="Approaches Vanessa may draw from">
-            {APPROACHES.map((a) => (
-              <li key={a}>{a}</li>
-            ))}
-          </ul>
-        </Reveal>
-      </section>
+      {/* 7. Experience & Training Credentials */}
+      <ClinicalCredentialsGrid />
 
-      {/* SECTION 7 — EXPERIENCE & TRAINING (content/credentials.json) */}
-      <section className="section-rhythm section--cream section--bordered">
-        <div className="container" style={{ maxWidth: '1000px' }}>
-          <Reveal className="section-head">
-            <span className="label-eyebrow">EXPERIENCE &amp; TRAINING</span>
-            <h2>More Than 20 Years of Experience.</h2>
-          </Reveal>
-
-
-          <RevealGroup className="credentials">
-            {credentialsData.credentials.map((category) => (
-              <RevealItem key={category.category} className="credential-group">
-                <h3>{category.category}</h3>
-                <ul>
-                  {category.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </RevealItem>
-            ))}
-          </RevealGroup>
-        </div>
-      </section>
-
-      {/* SECTION 8 — HEAR FROM VANESSA (REELS) */}
-      <section className="section-rhythm section--bordered">
-        <div className="container">
-          <Reveal className="section-head" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-            <span className="label-eyebrow">HEAR FROM VANESSA</span>
-            <h2>Thoughts &amp; Reflections.</h2>
+      {/* 8. Hear From Vanessa (Reels) */}
+      <section className="py-16 md:py-24 border-t border-border">
+        <div className="w-full max-w-[1160px] mx-auto px-6">
+          <Reveal className="text-center max-w-[800px] mx-auto mb-12">
+            <Eyebrow className="block mb-2">HEAR FROM VANESSA</Eyebrow>
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">Thoughts &amp; Reflections.</h2>
           </Reveal>
           
-          <RevealGroup as="ul" className="card-grid card-grid--4" style={{ listStyle: 'none', padding: 0, marginTop: '3rem' }} stagger={0.15}>
+          <RevealGroup as="ul" className="list-none p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.15}>
             {[1, 2, 3, 4].map((num) => (
               <RevealItem as="li" key={num}>
                 <video 
@@ -266,7 +142,7 @@ export default function MeetVanessaPage() {
                   controls
                   playsInline
                   preload="metadata"
-                  style={{ width: '100%', borderRadius: '16px', aspectRatio: '9/16', objectFit: 'cover', display: 'block', backgroundColor: '#111' }}
+                  className="w-full rounded-2xl aspect-[9/16] object-cover block bg-black shadow-md"
                 />
               </RevealItem>
             ))}
@@ -274,54 +150,62 @@ export default function MeetVanessaPage() {
         </div>
       </section>
 
-      {/* SECTION 9 — CORE BELIEF: the page's strongest branded moment */}
-      <section className="belief">
-        <div className="belief__line belief__line--a" aria-hidden="true">
+      {/* 9. Core Belief */}
+      <section className="relative overflow-hidden py-24 md:py-36 text-center bg-white border-y border-border">
+        <div className="absolute w-[55%] pointer-events-none opacity-90 -left-[8%] top-[8%]" aria-hidden="true">
           <OrganicLine variant="curve-right" />
         </div>
-        <div className="belief__line belief__line--b" aria-hidden="true">
-          <OrganicLine variant="curve-left" stroke="var(--salmon)" />
+        <div className="absolute w-[55%] pointer-events-none opacity-90 -right-[8%] bottom-[6%]" aria-hidden="true">
+          <OrganicLine variant="curve-left" stroke="var(--color-accent-light)" />
         </div>
-        <RevealGroup className="container belief__inner" stagger={0.15}>
-          <RevealItem as="span" className="label-eyebrow">
-            WHAT I BELIEVE
+        <RevealGroup className="w-full max-w-[900px] mx-auto px-6 relative z-10" stagger={0.15}>
+          <RevealItem>
+            <Eyebrow>WHAT I BELIEVE</Eyebrow>
           </RevealItem>
-          <RevealItem as="h2">
+          <RevealItem as="h2" className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground font-normal text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-primary mb-8">
             Your Past May Shape You. It Does Not Have to <em>Define</em> You.
           </RevealItem>
-          <RevealItem as="p">
+          <RevealItem as="p" className="text-[18px] md:text-[19px] leading-[1.85] mx-auto mb-10 text-foreground">
             No one owns our identities. We do not have to remain chained to the voices of the past. I
             believe there is always room to understand what we have inherited, question what no
             longer serves us, and move toward a life that feels more aligned with who we are
             becoming.
           </RevealItem>
-          <RevealItem as="p" className="belief__closing">
+          <RevealItem as="p" className="font-serif italic text-2xl md:text-3xl text-accent leading-snug max-w-[30ch] mx-auto">
             There is an open door we have the right to walk through. Let&apos;s walk there together.
           </RevealItem>
         </RevealGroup>
       </section>
 
-      {/* SECTION 9 — FINAL CTA */}
-      <section className="section-rhythm">
-        <div className="container">
-          <Reveal className="closing-panel">
-            <div className="closing-panel__line closing-panel__line--a" aria-hidden="true">
+      {/* 10. Closing CTA */}
+      <section className="py-16 md:py-24">
+        <div className="w-full max-w-[1160px] mx-auto px-6">
+          <Reveal className="relative overflow-hidden text-center p-8 sm:p-14 md:p-20 rounded-2xl border border-border bg-[rgba(221,235,219,0.5)]">
+            <div className="absolute w-[220px] md:w-[360px] pointer-events-none -left-16 -bottom-16" aria-hidden="true">
               <OrganicLine variant="curve-left" />
             </div>
-            <div className="closing-panel__line closing-panel__line--b" aria-hidden="true">
-              <OrganicLine variant="curve-right" stroke="var(--salmon)" />
+            <div className="absolute w-[220px] md:w-[360px] pointer-events-none -right-20 -top-20" aria-hidden="true">
+              <OrganicLine variant="curve-right" stroke="var(--color-accent-light)" />
             </div>
-            <span className="label-eyebrow">READY TO BEGIN?</span>
-            <h2>You Don&apos;t Have to Have the Right Words Yet.</h2>
-            <p className="lead-paragraph">
+            <Eyebrow>READY TO BEGIN?</Eyebrow>
+            <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary max-w-[760px] mx-auto mb-5">
+              You Don&apos;t Have to Have the Right Words Yet.
+            </h2>
+            <p className="text-[18px] leading-[1.7] text-muted max-w-[62ch] mx-auto mb-9">
               Start with a conversation about what you&apos;re experiencing and what you hope to
               understand or change.
             </p>
-            <div className="closing-panel__actions">
-              <Link href="/consultation" className="btn btn-primary">
+            <div className="flex flex-wrap items-center justify-center gap-6 relative z-10">
+              <Link
+                href="/consultation"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-primary text-white border-[1.5px] border-primary hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
+              >
                 Book a Consultation
               </Link>
-              <Link href="/services" className="text-link">
+              <Link
+                href="/services"
+                className="font-semibold text-foreground hover:text-accent inline-flex items-center gap-1.5 underline underline-offset-4 decoration-accent-light hover:decoration-accent transition-colors duration-200"
+              >
                 Explore Ways We Work
               </Link>
             </div>

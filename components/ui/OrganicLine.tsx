@@ -40,7 +40,7 @@ const PATHS = {
  */
 export default function OrganicLine({
   variant = 'curve-right',
-  stroke = 'var(--sage)',
+  stroke = 'var(--color-primary)',
   style,
   className,
 }: OrganicLineProps) {

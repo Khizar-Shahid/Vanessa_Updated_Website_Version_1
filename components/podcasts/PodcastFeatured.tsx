@@ -1,0 +1,80 @@
+'use client';
+
+import React from 'react';
+import { Clock, Calendar, ExternalLink, Sparkles } from 'lucide-react';
+import { YoutubeIcon } from '@/components/ui/YoutubeIcon';
+import YouTubePlayerFacade from './YouTubePlayerFacade';
+import { PodcastEpisode } from './types';
+
+interface PodcastFeaturedProps {
+  featured: PodcastEpisode;
+}
+
+export default function PodcastFeatured({ featured }: PodcastFeaturedProps) {
+  return (
+    <section className="section-featured-podcast py-12 md:py-16" aria-labelledby="featured-podcast-heading">
+      <div className="w-full max-w-[1160px] mx-auto px-6">
+        <div className="podcast-featured-card bg-white/70 backdrop-blur-md rounded-2xl border border-border p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)]">
+          <div className="podcast-featured-card__media lg:col-span-7">
+            <YouTubePlayerFacade
+              youtubeId={featured.youtubeId}
+              title={featured.title}
+              priority={true}
+              aspectRatio="16 / 9"
+            />
+          </div>
+
+          <div className="podcast-featured-card__content lg:col-span-5 flex flex-col items-start gap-4">
+            <div className="podcast-badge-row flex flex-wrap items-center gap-3 text-[12px] text-muted">
+              <span className="podcast-badge-featured inline-flex items-center gap-1.5 bg-accent-soft text-accent font-bold px-3 py-1 rounded-full tracking-wider text-[11px] uppercase">
+                <Sparkles size={13} aria-hidden="true" />
+                LATEST EPISODE
+              </span>
+              <span className="podcast-meta-item inline-flex items-center gap-1">
+                <Clock size={13} aria-hidden="true" />
+                {featured.duration}
+              </span>
+              <span className="podcast-meta-item inline-flex items-center gap-1">
+                <Calendar size={13} aria-hidden="true" />
+                {featured.publishedAt}
+              </span>
+            </div>
+
+            <h2 id="featured-podcast-heading" className="podcast-featured-title font-serif text-2xl md:text-3xl text-foreground leading-tight">
+              {featured.title}
+            </h2>
+
+            <p className="podcast-featured-desc text-muted text-[15px] leading-relaxed">
+              {featured.description}
+            </p>
+
+            <div className="podcast-topics-list flex flex-wrap gap-2">
+              {featured.topics.map((topic) => (
+                <span
+                  key={topic}
+                  className="podcast-topic-tag bg-background text-muted text-[12px] px-3 py-1 rounded-full border border-border"
+                >
+                  {topic}
+                </span>
+              ))}
+            </div>
+
+            <div className="podcast-featured-actions mt-2">
+              <a
+                href={`https://www.youtube.com/watch?v=${featured.youtubeId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-6 bg-transparent text-foreground border-[1.5px] border-foreground hover:bg-foreground hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+                aria-label={`Watch "${featured.title}" on YouTube (opens in new tab)`}
+              >
+                <YoutubeIcon size={17} className="text-[#FF0000]" aria-hidden="true" />
+                Watch on YouTube
+                <ExternalLink size={13} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

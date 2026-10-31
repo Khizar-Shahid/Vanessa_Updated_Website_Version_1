@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { Playfair_Display, Nunito_Sans } from 'next/font/google';
 import Script from 'next/script';
 import '../globals.css';
-import TopStrip from '@/components/TopStrip';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import TopStrip from '@/components/layout/TopStrip';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 // Google Analytics 4 measurement ID
 const GA_MEASUREMENT_ID = 'G-DTYE3P8B89';
@@ -48,6 +48,11 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  icons: {
+    icon: '/images/logo.svg',
+    shortcut: '/images/logo.svg',
+    apple: '/images/logo.svg',
+  },
   verification: {
     google: 'BVyPH9hIOw-yihznwYzLAlNfz6wu25ek4d1dUNZgAus',
   },
@@ -85,7 +90,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${playfair.variable} ${nunitoSans.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${nunitoSans.variable} scroll-smooth bg-background text-foreground antialiased`}>
       <head>
         <script
           type="application/ld+json"
@@ -105,8 +110,11 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body>
-        <a href="#main-content" className="skip-link">
+      <body className="font-sans text-[16.5px] leading-[1.75] bg-background text-foreground min-h-screen flex flex-col overflow-x-hidden selection:bg-accent-soft selection:text-foreground">
+        <a
+          href="#main-content"
+          className="absolute -top-[100px] focus:top-4 left-4 bg-foreground text-background px-5 py-3 rounded-full font-semibold z-[9999] transition-[top] duration-200 focus:outline-2 focus:outline-accent-light focus:outline-offset-2 no-underline"
+        >
           Skip to main content
         </a>
         <TopStrip />

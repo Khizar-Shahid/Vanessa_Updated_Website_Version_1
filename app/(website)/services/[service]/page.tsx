@@ -1,18 +1,21 @@
 import React from 'react';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import PageHero from '@/components/PageHero';
+import Link from 'next/link';
+import PageHero from '@/components/ui/PageHero';
 import { SERVICE_MAP, SERVICE_SLUGS } from '@/content/services';
+import ServiceSessionOverview from '@/components/services/ServiceSessionOverview';
+import ServiceFAQ from '@/components/services/ServiceFAQ';
 
-export async function generateMetadata({ params }: { params: { service: string } }) {
-  const data = SERVICE_MAP[params.service];
+export async function generateMetadata({ params }: { params: Promise<{ service: string }> }) {
+  const { service } = await params;
+  const data = SERVICE_MAP[service];
   if (!data) return {};
   return {
     title: data.seoTitle,
     description: data.seoDescription,
     keywords: [data.seoKeyword],
     alternates: {
-      canonical: `/services/${params.service}`,
+      canonical: `/services/${service}`,
     },
   };
 }
@@ -21,12 +24,13 @@ export async function generateStaticParams() {
   return SERVICE_SLUGS.map((slug) => ({ service: slug }));
 }
 
-export default function ServiceDetailPage({ params }: { params: { service: string } }) {
-  const data = SERVICE_MAP[params.service];
+export default async function ServiceDetailPage({ params }: { params: Promise<{ service: string }> }) {
+  const { service } = await params;
+  const data = SERVICE_MAP[service];
   if (!data) notFound();
 
   return (
-    <div className="page">
+    <div className="relative w-full overflow-x-clip">
       <PageHero
         eyebrow={data.subtitle}
         title={data.seoH1}
@@ -34,93 +38,24 @@ export default function ServiceDetailPage({ params }: { params: { service: strin
       />
 
       {/* Main Service Content */}
-      <section className="section-rhythm">
-        <div className="container" style={{ maxWidth: '920px' }}>
-          {/* Who It's For & What Sessions Look Like Grid */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '2.5rem',
-              marginBottom: '4rem',
-            }}
-          >
-            {/* Who It's For */}
-            <div
-              className="editorial-card"
-              style={{ padding: '2.5rem', backgroundColor: '#FFFFFF' }}
-            >
-              <h3
-                style={{
-                  fontFamily: 'var(--font-playfair), serif',
-                  fontSize: '22px',
-                  marginBottom: '1.25rem',
-                  color: 'var(--sage-deep)',
-                }}
-              >
-                Who This Is For
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {data.whoItsFor.map((item, idx) => (
-                  <li key={idx} style={{ fontSize: '15px', lineHeight: 1.6, color: 'var(--ink)', display: 'flex', gap: '0.65rem' }}>
-                    <span style={{ color: 'var(--sage)', fontWeight: 700 }}>•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+      <section className="py-16 md:py-24">
+        <div className="w-full max-w-[920px] mx-auto px-6">
+          {/* Who It's For & What Sessions Look Like */}
+          <ServiceSessionOverview
+            whoItsFor={data.whoItsFor}
+            whatSessionsLookLike={data.whatSessionsLookLike}
+          />
 
-            {/* What Sessions Look Like */}
-            <div
-              className="editorial-card"
-              style={{ padding: '2.5rem', backgroundColor: '#FFFFFF' }}
-            >
-              <h3
-                style={{
-                  fontFamily: 'var(--font-playfair), serif',
-                  fontSize: '22px',
-                  marginBottom: '1.25rem',
-                  color: 'var(--salmon-text)',
-                }}
-              >
-                What Sessions Look Like
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {data.whatSessionsLookLike.map((item, idx) => (
-                  <li key={idx} style={{ fontSize: '15px', lineHeight: 1.6, color: 'var(--ink)', display: 'flex', gap: '0.65rem' }}>
-                    <span style={{ color: 'var(--salmon-text)', fontWeight: 700 }}>•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Focus Areas List */}
-          <div
-            style={{
-              backgroundColor: '#FAF5EE',
-              borderRadius: 'var(--radius-card)',
-              padding: '2.5rem',
-              border: '1px solid var(--hairline)',
-              marginBottom: '4rem',
-            }}
-          >
-            <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '22px', marginBottom: '1.25rem' }}>
+          {/* Key Clinical Focus Areas List */}
+          <div className="bg-[#FAF5EE] rounded-2xl p-8 md:p-10 border border-border mb-14">
+            <h3 className="font-serif text-[22px] mb-5 text-foreground font-medium">
               Key Clinical Focus Areas
             </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               {data.focusAreas.map((area, idx) => (
                 <div
                   key={idx}
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    padding: '1rem 1.25rem',
-                    borderRadius: '8px',
-                    border: '1px solid var(--hairline)',
-                    fontSize: '14.5px',
-                    fontWeight: 500,
-                  }}
+                  className="bg-white px-5 py-3.5 rounded-lg border border-border text-[14.5px] font-medium text-foreground shadow-sm"
                 >
                   {area}
                 </div>
@@ -129,61 +64,27 @@ export default function ServiceDetailPage({ params }: { params: { service: strin
           </div>
 
           {/* Service FAQ */}
-          <div style={{ marginBottom: '4rem' }}>
-            <h3
-              style={{
-                fontFamily: 'var(--font-playfair), serif',
-                fontSize: '24px',
-                textAlign: 'center',
-                marginBottom: '2rem',
-              }}
-            >
-              Common Questions
-            </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              {data.faq.map((item, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid var(--hairline)',
-                    borderRadius: 'var(--radius-card)',
-                    padding: '1.75rem',
-                  }}
-                >
-                  <h4 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '18px', marginBottom: '0.5rem' }}>
-                    {item.q}
-                  </h4>
-                  <p style={{ color: 'var(--ink-muted)', fontSize: '15px', lineHeight: 1.7, margin: 0 }}>
-                    {item.a}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ServiceFAQ faq={data.faq} />
 
           {/* CTA Box */}
-          <div
-            style={{
-              textAlign: 'center',
-              padding: '3rem 2rem',
-              backgroundColor: '#FFFFFF',
-              borderRadius: 'var(--radius-card)',
-              border: '1px solid var(--hairline)',
-              boxShadow: 'var(--shadow-editorial)',
-            }}
-          >
-            <h3 style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '24px', marginBottom: '0.75rem' }}>
+          <div className="text-center p-8 md:p-12 bg-white rounded-2xl border border-border shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)]">
+            <h3 className="font-serif text-2xl mb-2.5 text-foreground font-medium">
               Take the Next Step in Care
             </h3>
-            <p style={{ color: 'var(--ink-muted)', marginBottom: '1.75rem' }}>
+            <p className="text-muted mb-7 text-[15px] leading-relaxed max-w-[500px] mx-auto">
               Schedule a consultation with Vanessa to discuss how {data.title.toLowerCase()} can support your goals.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-              <Link href="/consultation" className="btn btn-primary">
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link
+                href="/consultation"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-primary text-white border-[1.5px] border-primary hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
+              >
                 Book a Consultation
               </Link>
-              <Link href="/services" className="btn btn-secondary">
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-transparent text-foreground border-[1.5px] border-foreground hover:bg-foreground hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+              >
                 Back to All Services
               </Link>
             </div>
