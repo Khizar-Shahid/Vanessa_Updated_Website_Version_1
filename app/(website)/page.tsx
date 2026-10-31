@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Metadata } from 'next';
 import BlogFeed from '@/components/BlogFeed';
 import ResourcePanels from '@/components/ResourcePanels';
