@@ -1,11 +1,11 @@
 import React from 'react';
 import resourcesData from '@/content/resources.json';
 import PageHero from '@/components/PageHero';
-import ResourceRequestButton from '@/components/ResourceRequestButton';
+import ResourceCard from '@/components/resources/ResourceCard';
 
 export const metadata = {
   alternates: {
-    canonical: "/resources",
+    canonical: '/resources',
   },
   title: 'Resource Library | Thrive with Therapy',
   description:
@@ -24,104 +24,20 @@ export default function ResourceLibraryPage() {
       {/* Free Resources Section */}
       <section id="free" className="section-rhythm">
         <div className="container">
-          <div style={{ maxWidth: '780px', marginBottom: '3rem' }}>
-            <span
-              style={{
-                fontFamily: 'var(--font-nunito-sans), sans-serif',
-                fontSize: '11px',
-                letterSpacing: '0.18em',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                color: 'var(--sage-deep)',
-                display: 'block',
-                marginBottom: '0.5rem',
-              }}
-            >
+          <div className="max-w-[780px] mb-12">
+            <span className="font-sans text-[11px] tracking-[0.18em] font-bold uppercase text-sage-deep block mb-2">
               FREE CLINICAL TOOLS
             </span>
-            <h2 style={{ marginBottom: '0.75rem' }}>Guides &amp; Reflection Tools</h2>
-            <p style={{ color: 'var(--ink-muted)', margin: 0 }}>
+            <h2 className="mb-3">Guides &amp; Reflection Tools</h2>
+            <p className="text-ink-muted m-0 text-[15px] leading-relaxed">
               Practical exercises, worksheets, and nervous system regulation tools to explore
               independently.
             </p>
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '2rem',
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {resourcesData.freeResources.map((item) => (
-              <div
-                key={item.id}
-                className="editorial-card"
-                style={{
-                  padding: '2.5rem 2rem',
-                  backgroundColor: '#FFFFFF',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
-              >
-                <div>
-                  <div
-                    style={{
-                      display: 'inline-block',
-                      backgroundColor: 'var(--sage-soft)',
-                      color: 'var(--sage-deep)',
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      padding: '0.35rem 0.85rem',
-                      borderRadius: 'var(--radius-pill)',
-                      marginBottom: '1rem',
-                    }}
-                  >
-                    {item.badge}
-                  </div>
-
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-playfair), serif',
-                      fontSize: '21px',
-                      lineHeight: 1.3,
-                      marginBottom: '0.75rem',
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-
-                  <p style={{ fontSize: '14.5px', lineHeight: 1.65, color: 'var(--ink-muted)', marginBottom: '1.25rem' }}>
-                    {item.description}
-                  </p>
-
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.5rem' }}>
-                    {item.topics.map((t, idx) => (
-                      <span
-                        key={idx}
-                        style={{
-                          fontSize: '11.5px',
-                          color: 'var(--ink)',
-                          backgroundColor: '#FAF5EE',
-                          padding: '0.2rem 0.6rem',
-                          borderRadius: '4px',
-                        }}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div style={{ paddingTop: '1rem', borderTop: '1px solid var(--hairline)' }}>
-                  <span style={{ fontSize: '12.5px', color: 'var(--ink-muted)', display: 'block', marginBottom: '0.75rem' }}>
-                    {item.format}
-                  </span>
-                  <ResourceRequestButton resourceId={item.id} resourceTitle={item.title} />
-                </div>
-              </div>
+              <ResourceCard key={item.id} item={item} />
             ))}
           </div>
         </div>
