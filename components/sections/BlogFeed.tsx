@@ -46,7 +46,7 @@ export default async function BlogFeed({ limit = 3, showHeading = true }: BlogFe
       {latestPosts.length > 0 ? (
         <RevealGroup as="ul" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0">
           {latestPosts.map((item) => (
-            <RevealItem as="li" key={item.id}>
+            <RevealItem as="li" key={item.id} className="flex h-full">
               <BlogCard item={item} />
             </RevealItem>
           ))}

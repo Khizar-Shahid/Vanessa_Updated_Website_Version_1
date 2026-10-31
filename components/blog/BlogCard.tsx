@@ -14,7 +14,7 @@ export default function BlogCard({
   const isVideo = item.type === 'video';
 
   return (
-    <article className="group relative flex flex-col bg-white rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <article className="group relative flex flex-col h-full w-full bg-white rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div className="relative w-full aspect-[16/10] bg-[#F5EFE7] overflow-hidden">
         {item.posterUrl ? (
           <>

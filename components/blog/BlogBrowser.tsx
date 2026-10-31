@@ -49,6 +49,7 @@ export default function BlogBrowser({ initialItems }: { initialItems: BlogItem[]
           <motion.li
             key={item.id}
             data-reveal=""
+            className="flex h-full"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: EASE_EDITORIAL, delay: idx * 0.08 }}
