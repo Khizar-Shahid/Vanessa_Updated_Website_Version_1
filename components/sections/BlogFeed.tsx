@@ -23,7 +23,7 @@ export default async function BlogFeed({ limit = 3, showHeading = true }: BlogFe
   return (
     <div>
       {showHeading && (
-        <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 md:mb-16">
           <div>
             <Eyebrow className="block mb-2">BLOG</Eyebrow>
             <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">A Little More to Think About.</h2>
