@@ -23,15 +23,15 @@ export default function MeetVanessaHero() {
           </RevealItem>
         </RevealGroup>
 
-        <Reveal className="md:col-span-5 flex justify-center" delay={0.2}>
-          <div className="relative w-[280px] sm:w-[320px] md:w-[380px] aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-border bg-surface">
+        <Reveal className="md:col-span-5 relative justify-self-center w-[min(100%,460px)] max-[860px]:w-[min(92%,400px)] before:content-[''] before:absolute before:inset-[-14px_14px_14px_-14px] before:border before:border-primary before:rounded-md before:pointer-events-none" delay={0.2}>
+          <div className="relative aspect-[800/748] rounded-md overflow-hidden shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] border border-border bg-surface">
             <Image
               src="/poster.png"
               alt="Vanessa M. Sierra, LMFT - Influential Women Recognition"
               fill
               priority
               sizes="(max-width: 860px) 88vw, 460px"
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
         </Reveal>
