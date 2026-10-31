@@ -30,7 +30,7 @@ export default function HeroCards() {
         {HERO_CARDS.map(({ number, title, href, Icon, tone }) => {
           const isSalmon = tone === 'salmon';
           return (
-            <RevealItem as="li" key={number} className="flex flex-1 min-w-[220px] max-w-[228px] max-sm:max-w-none max-sm:min-w-full">
+            <RevealItem as="li" key={number} className="flex flex-1 min-w-[190px] max-w-[228px] max-sm:max-w-none max-sm:min-w-full">
               <Link
                 href={href}
                 className="group relative flex flex-col sm:flex-col justify-between max-sm:flex-row max-sm:items-center gap-4 max-sm:gap-3 w-full min-h-[188px] max-sm:min-h-0 p-5 max-sm:py-3.5 max-sm:px-4 bg-white/75 backdrop-blur-md border border-hairline rounded-xl shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] text-ink no-underline overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:bg-white hover:border-sage/40"

@@ -11,14 +11,14 @@ export default function Atmosphere({ opacity = 'normal' }: AtmosphereProps) {
     <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
       {/* Drifting Sage Orb */}
       <div
-        className={`absolute rounded-full blur-[80px] ${orbOpacity} w-[620px] height-[620px] -top-[220px] -left-[160px] animate-[floatAmbient_48s_infinite_alternate_ease-in-out]`}
+        className={`absolute rounded-full blur-[80px] ${orbOpacity} w-[620px] h-[620px] -top-[220px] -left-[160px] animate-[floatAmbient_48s_infinite_alternate_ease-in-out]`}
         style={{
           background: 'radial-gradient(circle, var(--color-sage) 0%, rgba(94, 161, 91, 0) 68%)',
         }}
       />
       {/* Drifting Salmon Orb */}
       <div
-        className={`absolute rounded-full blur-[80px] ${orbOpacity} w-[640px] height-[640px] top-[80px] -right-[220px] animate-[floatAmbient_56s_infinite_alternate_ease-in-out]`}
+        className={`absolute rounded-full blur-[80px] ${orbOpacity} w-[640px] h-[640px] top-[80px] -right-[220px] animate-[floatAmbient_56s_infinite_alternate_ease-in-out]`}
         style={{
           background: 'radial-gradient(circle, var(--color-salmon) 0%, rgba(232, 146, 133, 0) 68%)',
           animationDelay: '-18s',
