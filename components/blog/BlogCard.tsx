@@ -32,9 +32,11 @@ export default function BlogCard({
             )}
           </>
         ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center" aria-hidden="true">
-            <span className="font-serif text-5xl text-accent-soft font-normal">&ldquo;</span>
-            <span className="text-[12px] font-bold tracking-wider text-primary uppercase mt-1">{item.category}</span>
+          <div className="absolute inset-0 flex flex-col items-start justify-between p-6 sm:p-7 bg-primary-soft" aria-hidden="true">
+            <span className="font-serif text-3xl sm:text-4xl text-primary font-normal leading-none">&ldquo;&ldquo;</span>
+            <span className="font-serif italic text-xl sm:text-2xl text-foreground font-normal leading-snug">
+              {item.category}
+            </span>
           </div>
         )}
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { publishedPosts } from '@/lib/blog';
+import { getAllBlogPosts } from '@/sanity/lib/blogService';
 import BlogCard from '@/components/blog/BlogCard';
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal';
 import Eyebrow from '@/components/ui/Eyebrow';
@@ -10,8 +10,15 @@ interface BlogFeedProps {
   showHeading?: boolean;
 }
 
-export default function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProps) {
-  const latestPosts = publishedPosts.slice(0, limit);
+export default async function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProps) {
+  let latestPosts: Awaited<ReturnType<typeof getAllBlogPosts>> = [];
+
+  try {
+    const allPosts = await getAllBlogPosts();
+    latestPosts = allPosts.slice(0, limit);
+  } catch (error) {
+    console.error('Failed to load blog posts from Sanity for BlogFeed:', error);
+  }
 
   return (
     <div>
@@ -28,7 +35,7 @@ export default function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProp
             </p>
             <Link
               href="/blog"
-              className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-transparent text-graphite border-[1.5px] border-graphite hover:bg-graphite hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-transparent text-foreground border-[1.5px] border-foreground hover:bg-foreground hover:text-white hover:-translate-y-0.5 transition-all duration-300"
             >
               Explore All Posts
             </Link>
@@ -36,13 +43,21 @@ export default function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProp
         </Reveal>
       )}
 
-      <RevealGroup as="ul" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0">
-        {latestPosts.map((item) => (
-          <RevealItem as="li" key={item.id}>
-            <BlogCard item={item} />
-          </RevealItem>
-        ))}
-      </RevealGroup>
+      {latestPosts.length > 0 ? (
+        <RevealGroup as="ul" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0">
+          {latestPosts.map((item) => (
+            <RevealItem as="li" key={item.id}>
+              <BlogCard item={item} />
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      ) : (
+        <div className="p-10 text-center rounded-2xl bg-surface border border-border">
+          <p className="font-serif italic text-lg text-muted m-0">
+            Articles currently updating. Check back soon.
+          </p>
+        </div>
+      )}
     </div>
   );
 }
