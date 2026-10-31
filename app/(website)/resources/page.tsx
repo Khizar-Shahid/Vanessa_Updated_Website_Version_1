@@ -28,7 +28,7 @@ export default function ResourceLibraryPage() {
           <div className="max-w-[780px] mb-12">
             <Eyebrow className="block mb-2">FREE CLINICAL TOOLS</Eyebrow>
             <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-3">Guides &amp; Reflection Tools</h2>
-            <p className="text-ink-muted m-0 text-[15px] leading-relaxed">
+            <p className="text-muted m-0 text-[15px] leading-relaxed">
               Practical exercises, worksheets, and nervous system regulation tools to explore
               independently.
             </p>

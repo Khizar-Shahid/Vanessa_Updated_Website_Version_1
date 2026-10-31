@@ -5,7 +5,7 @@ import Eyebrow from '@/components/Eyebrow';
 
 export default function ClinicalCredentialsGrid() {
   return (
-    <section className="py-16 md:py-24 bg-cream border-t border-hairline">
+    <section className="py-16 md:py-24 bg-surface border-t border-border">
       <div className="w-full max-w-[1000px] mx-auto px-6">
         <Reveal className="mb-12 [&>h2]:mt-2">
           <Eyebrow className="block mb-2">EXPERIENCE &amp; TRAINING</Eyebrow>
@@ -14,14 +14,14 @@ export default function ClinicalCredentialsGrid() {
 
         <RevealGroup className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {credentialsData.credentials.map((category) => (
-            <RevealItem key={category.category} className="bg-white p-8 rounded-2xl border border-hairline shadow-sm">
-              <h3 className="font-serif text-xl text-sage-deep mb-4 pb-2 border-b border-hairline font-medium">
+            <RevealItem key={category.category} className="bg-white p-8 rounded-2xl border border-border shadow-sm">
+              <h3 className="font-serif text-xl text-primary mb-4 pb-2 border-b border-border font-medium">
                 {category.category}
               </h3>
               <ul className="list-none p-0 m-0 flex flex-col gap-2.5">
                 {category.items.map((item) => (
-                  <li key={item} className="text-[14.5px] leading-relaxed text-ink flex items-start gap-2.5">
-                    <span className="text-sage font-bold leading-none mt-1">•</span>
+                  <li key={item} className="text-[14.5px] leading-relaxed text-foreground flex items-start gap-2.5">
+                    <span className="text-primary font-bold leading-none mt-1">•</span>
                     <span>{item}</span>
                   </li>
                 ))}

@@ -62,12 +62,12 @@ export default function ConsultationBookingPage() {
       {/* Main Booking Interface */}
       <section className="py-16 md:py-24">
         <div className="w-full max-w-[880px] mx-auto px-6">
-          <div className="bg-white rounded-2xl border border-hairline shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] p-8 md:p-14">
+          <div className="bg-white rounded-2xl border border-border shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] p-8 md:p-14">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl text-ink font-serif mb-3">
+              <h2 className="text-2xl md:text-3xl text-foreground font-serif mb-3">
                 Select Your Therapeutic Service
               </h2>
-              <p className="text-ink-muted text-[15px] leading-relaxed max-w-[580px] mx-auto">
+              <p className="text-muted text-[15px] leading-relaxed max-w-[580px] mx-auto">
                 Choose a service to open Vanessa&apos;s booking calendar, where you can pick a time,
                 share details, and confirm your appointment.
               </p>
@@ -80,21 +80,21 @@ export default function ConsultationBookingPage() {
                     href={svc.googleLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-6 md:p-8 bg-parchment hover:bg-[#F3EDE3] border border-hairline rounded-xl transition-all duration-200 no-underline text-ink"
+                    className="group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-6 md:p-8 bg-background hover:bg-[#F3EDE3] border border-border rounded-xl transition-all duration-200 no-underline text-foreground"
                   >
                     <div className="flex flex-col gap-1.5 flex-1">
-                      <span className="font-serif text-xl font-medium text-ink group-hover:text-salmon-text transition-colors">
+                      <span className="font-serif text-xl font-medium text-foreground group-hover:text-accent transition-colors">
                         {svc.name}
                       </span>
-                      <span className="text-[13px] font-semibold tracking-wider uppercase text-sage-deep">
+                      <span className="text-[13px] font-semibold tracking-wider uppercase text-primary">
                         {svc.duration} • {svc.price}
                       </span>
-                      <span className="text-[14px] text-ink-muted leading-relaxed mt-1">
+                      <span className="text-[14px] text-muted leading-relaxed mt-1">
                         {svc.description}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-2 text-salmon-text font-semibold text-sm shrink-0">
+                    <div className="flex items-center gap-2 text-accent font-semibold text-sm shrink-0">
                       <span>Book on Google</span>
                       <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>

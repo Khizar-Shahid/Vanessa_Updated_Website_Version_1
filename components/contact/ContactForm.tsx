@@ -65,16 +65,16 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="p-8 md:p-12 bg-white rounded-2xl border border-hairline shadow-sm text-center">
-        <div className="w-14 h-14 rounded-full bg-sage-soft text-sage-deep flex items-center justify-center mx-auto mb-6">
+      <div className="p-8 md:p-12 bg-white rounded-2xl border border-border shadow-sm text-center">
+        <div className="w-14 h-14 rounded-full bg-primary-soft text-primary flex items-center justify-center mx-auto mb-6">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h3 className="font-serif text-2xl text-ink mb-3">
+        <h3 className="font-serif text-2xl text-foreground mb-3">
           Thank You for Reaching Out
         </h3>
-        <p className="text-ink-muted text-[15px] leading-relaxed mb-8 max-w-[420px] mx-auto">
+        <p className="text-muted text-[15px] leading-relaxed mb-8 max-w-[420px] mx-auto">
           Your message has been safely received. Vanessa will review your note and
           respond within 24 business hours.
         </p>
@@ -90,19 +90,19 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="p-8 md:p-12 bg-white rounded-2xl border border-hairline shadow-sm">
+    <div className="p-8 md:p-12 bg-white rounded-2xl border border-border shadow-sm">
       <form onSubmit={handleSubmit} noValidate>
-        <h3 className="font-serif text-2xl text-ink mb-2">
+        <h3 className="font-serif text-2xl text-foreground mb-2">
           Send a Message
         </h3>
-        <p className="text-ink-muted text-[14px] leading-relaxed mb-7">
+        <p className="text-muted text-[14px] leading-relaxed mb-7">
           Please fill out this form to inquire about therapy services or ask any questions.
         </p>
 
         {/* Name */}
         <div className="mb-5">
-          <label htmlFor="contact-name" className="block text-[13.5px] font-semibold text-ink mb-1.5">
-            Your Full Name <span className="text-salmon-text">*</span>
+          <label htmlFor="contact-name" className="block text-[13.5px] font-semibold text-foreground mb-1.5">
+            Your Full Name <span className="text-accent">*</span>
           </label>
           <input
             id="contact-name"
@@ -111,12 +111,12 @@ export default function ContactForm() {
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? 'name-error' : undefined}
-            className={`w-full px-4 py-2.5 rounded-lg text-[15px] bg-[#FAF6F1] border focus:outline-none focus:ring-2 focus:ring-sage ${
-              errors.name ? 'border-salmon-text' : 'border-hairline'
+            className={`w-full px-4 py-2.5 rounded-lg text-[15px] bg-[#FAF6F1] border focus:outline-none focus:ring-2 focus:ring-primary ${
+              errors.name ? 'border-accent' : 'border-border'
             }`}
           />
           {errors.name && (
-            <span id="name-error" className="text-xs text-salmon-text mt-1.5 block">
+            <span id="name-error" className="text-xs text-accent mt-1.5 block">
               {errors.name}
             </span>
           )}
@@ -124,8 +124,8 @@ export default function ContactForm() {
 
         {/* Email */}
         <div className="mb-5">
-          <label htmlFor="contact-email" className="block text-[13.5px] font-semibold text-ink mb-1.5">
-            Email Address <span className="text-salmon-text">*</span>
+          <label htmlFor="contact-email" className="block text-[13.5px] font-semibold text-foreground mb-1.5">
+            Email Address <span className="text-accent">*</span>
           </label>
           <input
             id="contact-email"
@@ -134,12 +134,12 @@ export default function ContactForm() {
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? 'email-error' : undefined}
-            className={`w-full px-4 py-2.5 rounded-lg text-[15px] bg-[#FAF6F1] border focus:outline-none focus:ring-2 focus:ring-sage ${
-              errors.email ? 'border-salmon-text' : 'border-hairline'
+            className={`w-full px-4 py-2.5 rounded-lg text-[15px] bg-[#FAF6F1] border focus:outline-none focus:ring-2 focus:ring-primary ${
+              errors.email ? 'border-accent' : 'border-border'
             }`}
           />
           {errors.email && (
-            <span id="email-error" className="text-xs text-salmon-text mt-1.5 block">
+            <span id="email-error" className="text-xs text-accent mt-1.5 block">
               {errors.email}
             </span>
           )}
@@ -147,7 +147,7 @@ export default function ContactForm() {
 
         {/* Phone */}
         <div className="mb-5">
-          <label htmlFor="contact-phone" className="block text-[13.5px] font-semibold text-ink mb-1.5">
+          <label htmlFor="contact-phone" className="block text-[13.5px] font-semibold text-foreground mb-1.5">
             Phone Number (Optional)
           </label>
           <input
@@ -155,20 +155,20 @@ export default function ContactForm() {
             type="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-lg text-[15px] bg-[#FAF6F1] border border-hairline focus:outline-none focus:ring-2 focus:ring-sage"
+            className="w-full px-4 py-2.5 rounded-lg text-[15px] bg-[#FAF6F1] border border-border focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
         {/* Service Interest */}
         <div className="mb-5">
-          <label htmlFor="contact-service" className="block text-[13.5px] font-semibold text-ink mb-1.5">
+          <label htmlFor="contact-service" className="block text-[13.5px] font-semibold text-foreground mb-1.5">
             Service of Interest
           </label>
           <select
             id="contact-service"
             value={formData.serviceInterest}
             onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-lg text-[15px] bg-[#FAF6F1] border border-hairline focus:outline-none focus:ring-2 focus:ring-sage text-ink"
+            className="w-full px-4 py-2.5 rounded-lg text-[15px] bg-[#FAF6F1] border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
           >
             <option value="Individual Therapy">Individual Therapy</option>
             <option value="Couples Therapy">Couples Therapy</option>
@@ -180,8 +180,8 @@ export default function ContactForm() {
 
         {/* Message */}
         <div className="mb-6">
-          <label htmlFor="contact-message" className="block text-[13.5px] font-semibold text-ink mb-1.5">
-            Your Message <span className="text-salmon-text">*</span>
+          <label htmlFor="contact-message" className="block text-[13.5px] font-semibold text-foreground mb-1.5">
+            Your Message <span className="text-accent">*</span>
           </label>
           <textarea
             id="contact-message"
@@ -191,12 +191,12 @@ export default function ContactForm() {
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? 'message-error' : undefined}
             placeholder="How can we help you?"
-            className={`w-full px-4 py-2.5 rounded-lg text-[15px] bg-[#FAF6F1] border resize-y focus:outline-none focus:ring-2 focus:ring-sage ${
-              errors.message ? 'border-salmon-text' : 'border-hairline'
+            className={`w-full px-4 py-2.5 rounded-lg text-[15px] bg-[#FAF6F1] border resize-y focus:outline-none focus:ring-2 focus:ring-primary ${
+              errors.message ? 'border-accent' : 'border-border'
             }`}
           />
           {errors.message && (
-            <span id="message-error" className="text-xs text-salmon-text mt-1.5 block">
+            <span id="message-error" className="text-xs text-accent mt-1.5 block">
               {errors.message}
             </span>
           )}
@@ -204,7 +204,7 @@ export default function ContactForm() {
 
         {/* Server Error */}
         {submitError && (
-          <div role="alert" className="p-3 bg-[#FFF5F4] rounded-lg border border-salmon-text text-sm text-salmon-text mb-4">
+          <div role="alert" className="p-3 bg-[#FFF5F4] rounded-lg border border-accent text-sm text-accent mb-4">
             {submitError}
           </div>
         )}
@@ -212,13 +212,13 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full inline-flex items-center justify-center gap-2 font-sans text-sm font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300 mb-6 disabled:opacity-60"
+          className="w-full inline-flex items-center justify-center gap-2 font-sans text-sm font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-primary text-white border-[1.5px] border-primary hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300 mb-6 disabled:opacity-60"
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
 
         {/* Privacy Note */}
-        <div className="p-4 bg-[#FAF5EE] rounded-lg border border-hairline text-xs leading-relaxed text-ink-muted">
+        <div className="p-4 bg-[#FAF5EE] rounded-lg border border-border text-xs leading-relaxed text-muted">
           <strong>Privacy &amp; Confidentiality Notice:</strong> While we treat all inquiries
           with care, standard email and web forms are not encrypted health communication
           channels. Please avoid including sensitive personal clinical details. If you are

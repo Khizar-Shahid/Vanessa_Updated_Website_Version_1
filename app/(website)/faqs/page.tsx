@@ -107,18 +107,18 @@ export default function FaqPage() {
           <FaqAccordion items={FAQ_ITEMS} defaultOpenId="what-can-i-talk-about" />
 
           {/* Have a question banner */}
-          <div className="mt-16 p-8 md:p-10 bg-[#FAF5EE] rounded-2xl border border-hairline text-center">
-            <h3 className="font-serif text-2xl text-ink mb-2">
+          <div className="mt-16 p-8 md:p-10 bg-[#FAF5EE] rounded-2xl border border-border text-center">
+            <h3 className="font-serif text-2xl text-foreground mb-2">
               Still have a question?
             </h3>
-            <p className="text-ink-muted mb-6 text-[15px] leading-relaxed max-w-[500px] mx-auto">
+            <p className="text-muted mb-6 text-[15px] leading-relaxed max-w-[500px] mx-auto">
               We are happy to answer any questions about our practice or help you navigate starting
               therapy.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-primary text-white border-[1.5px] border-primary hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
               >
                 Contact Our Office
               </Link>

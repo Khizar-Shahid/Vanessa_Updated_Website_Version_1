@@ -15,11 +15,11 @@ const APPROACHES = [
 
 export default function SpecializedModalities() {
   return (
-    <section className="py-16 md:py-24 border-t border-hairline">
+    <section className="py-16 md:py-24 border-t border-border">
       <Reveal className="w-full max-w-[900px] mx-auto px-6">
         <Eyebrow className="block mb-2">MY APPROACH</Eyebrow>
         <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-6">Different People Need Different Paths.</h2>
-        <p className="text-ink-muted text-[16px] md:text-[18px] leading-[1.8] mb-8">
+        <p className="text-muted text-[16px] md:text-[18px] leading-[1.8] mb-8">
           My work is collaborative and individualized. Depending on the person, the concern, and
           the goals of therapy, I may draw from approaches including EMDR, interpersonal therapy,
           narrative therapy, strength-based therapy, ACT, somatic and trauma-focused approaches,
@@ -31,7 +31,7 @@ export default function SpecializedModalities() {
           {APPROACHES.map((a) => (
             <li
               key={a}
-              className="bg-white px-4 py-2 rounded-full border border-hairline text-[14px] text-ink font-medium shadow-sm hover:border-sage transition-colors"
+              className="bg-white px-4 py-2 rounded-full border border-border text-[14px] text-foreground font-medium shadow-sm hover:border-primary transition-colors"
             >
               {a}
             </li>

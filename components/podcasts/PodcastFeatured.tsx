@@ -14,7 +14,7 @@ export default function PodcastFeatured({ featured }: PodcastFeaturedProps) {
   return (
     <section className="section-featured-podcast py-12 md:py-16" aria-labelledby="featured-podcast-heading">
       <div className="w-full max-w-[1160px] mx-auto px-6">
-        <div className="podcast-featured-card bg-white/70 backdrop-blur-md rounded-2xl border border-hairline p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)]">
+        <div className="podcast-featured-card bg-white/70 backdrop-blur-md rounded-2xl border border-border p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)]">
           <div className="podcast-featured-card__media lg:col-span-7">
             <YouTubePlayerFacade
               youtubeId={featured.youtubeId}
@@ -25,8 +25,8 @@ export default function PodcastFeatured({ featured }: PodcastFeaturedProps) {
           </div>
 
           <div className="podcast-featured-card__content lg:col-span-5 flex flex-col items-start gap-4">
-            <div className="podcast-badge-row flex flex-wrap items-center gap-3 text-[12px] text-ink-muted">
-              <span className="podcast-badge-featured inline-flex items-center gap-1.5 bg-salmon-soft text-salmon-text font-bold px-3 py-1 rounded-full tracking-wider text-[11px] uppercase">
+            <div className="podcast-badge-row flex flex-wrap items-center gap-3 text-[12px] text-muted">
+              <span className="podcast-badge-featured inline-flex items-center gap-1.5 bg-accent-soft text-accent font-bold px-3 py-1 rounded-full tracking-wider text-[11px] uppercase">
                 <Sparkles size={13} aria-hidden="true" />
                 LATEST EPISODE
               </span>
@@ -40,11 +40,11 @@ export default function PodcastFeatured({ featured }: PodcastFeaturedProps) {
               </span>
             </div>
 
-            <h2 id="featured-podcast-heading" className="podcast-featured-title font-serif text-2xl md:text-3xl text-ink leading-tight">
+            <h2 id="featured-podcast-heading" className="podcast-featured-title font-serif text-2xl md:text-3xl text-foreground leading-tight">
               {featured.title}
             </h2>
 
-            <p className="podcast-featured-desc text-ink-muted text-[15px] leading-relaxed">
+            <p className="podcast-featured-desc text-muted text-[15px] leading-relaxed">
               {featured.description}
             </p>
 
@@ -52,7 +52,7 @@ export default function PodcastFeatured({ featured }: PodcastFeaturedProps) {
               {featured.topics.map((topic) => (
                 <span
                   key={topic}
-                  className="podcast-topic-tag bg-parchment text-ink-muted text-[12px] px-3 py-1 rounded-full border border-hairline"
+                  className="podcast-topic-tag bg-background text-muted text-[12px] px-3 py-1 rounded-full border border-border"
                 >
                   {topic}
                 </span>

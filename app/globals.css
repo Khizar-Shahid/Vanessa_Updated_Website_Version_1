@@ -16,18 +16,6 @@
   --color-accent-soft: #F7DED8;
   --color-accent-light: #E89285;
 
-  /* Legacy Brand Aliases (for safe phased migration) */
-  --color-sage: #5EA15B;
-  --color-sage-deep: var(--color-primary);
-  --color-sage-soft: var(--color-primary-soft);
-  --color-salmon: var(--color-accent-light);
-  --color-salmon-text: var(--color-accent);
-  --color-salmon-soft: var(--color-accent-soft);
-  --color-parchment: var(--color-background);
-  --color-ink: var(--color-foreground);
-  --color-ink-muted: var(--color-muted);
-  --color-cream: var(--color-surface);
-  --color-hairline: var(--color-border);
 
   /* Fluid Typography Scale */
   --text-4xl: clamp(1.75rem, 3.4vw, 2.5rem);

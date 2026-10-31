@@ -55,23 +55,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <article className="w-full pb-20">
       {/* Header */}
-      <section className="pt-16 md:pt-24 pb-10 md:pb-16 border-b border-hairline bg-[#FAF6F1]">
+      <section className="pt-16 md:pt-24 pb-10 md:pb-16 border-b border-border bg-[#FAF6F1]">
         <div className="w-full max-w-[780px] mx-auto px-6">
           <div className="mb-5">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1.5 font-semibold text-ink text-[13.5px] hover:text-salmon-text underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon-text transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 font-semibold text-foreground text-[13.5px] hover:text-accent underline underline-offset-4 decoration-accent-light/60 hover:decoration-accent transition-colors duration-200"
             >
               &larr; Back to Blog
             </Link>
           </div>
-          <span className="font-sans text-[11px] font-bold tracking-[0.18em] uppercase text-salmon-text block mb-3">
+          <span className="font-sans text-[11px] font-bold tracking-[0.18em] uppercase text-accent block mb-3">
             Article
           </span>
-          <h1 className="font-serif text-3xl md:text-5xl text-ink font-normal leading-tight mb-4">
+          <h1 className="font-serif text-3xl md:text-5xl text-foreground font-normal leading-tight mb-4">
             {post.title}
           </h1>
-          <div className="flex items-center gap-3 text-ink-muted text-[13.5px]">
+          <div className="flex items-center gap-3 text-muted text-[13.5px]">
             <span>By {post.author || 'Vanessa M. Sierra, LMFT'}</span>
             <span>&bull;</span>
             <time dateTime={post.publishedAt}>{date}</time>
@@ -83,7 +83,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section className="pt-12">
         <div className="w-full max-w-[780px] mx-auto px-6">
           {post.mainImage && (
-            <div className="relative w-full aspect-[16/9] mb-12 rounded-xl overflow-hidden border border-hairline">
+            <div className="relative w-full aspect-[16/9] mb-12 rounded-xl overflow-hidden border border-border">
               <img
                 src={urlForImage(post.mainImage).width(1200).url()}
                 alt={post.title}
@@ -92,17 +92,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
           )}
 
-          <div className="prose prose-lg max-w-none text-ink leading-relaxed font-sans text-[16.5px]">
+          <div className="prose prose-lg max-w-none text-foreground leading-relaxed font-sans text-[16.5px]">
             {post.body ? (
               <PortableText value={post.body} components={components} />
             ) : (
-              <p className="italic text-ink-muted">{post.excerpt}</p>
+              <p className="italic text-muted">{post.excerpt}</p>
             )}
           </div>
 
           {/* Author Box */}
-          <div className="mt-16 p-8 bg-[#FAF6F1] border border-hairline rounded-2xl flex flex-col sm:flex-row gap-6 items-start sm:items-center">
-            <div className="w-16 h-16 rounded-full overflow-hidden bg-cream shrink-0 border border-hairline">
+          <div className="mt-16 p-8 bg-[#FAF6F1] border border-border rounded-2xl flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+            <div className="w-16 h-16 rounded-full overflow-hidden bg-surface shrink-0 border border-border">
               <img
                 src="/images/vanessa.jpg"
                 alt="Vanessa M. Sierra, LMFT"
@@ -110,10 +110,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               />
             </div>
             <div>
-              <h4 className="font-serif text-xl text-ink mb-1">
+              <h4 className="font-serif text-xl text-foreground mb-1">
                 Written by {post.author || 'Vanessa M. Sierra, LMFT'}
               </h4>
-              <p className="text-ink-muted text-[14px] leading-relaxed m-0">
+              <p className="text-muted text-[14px] leading-relaxed m-0">
                 {post.authorBio ||
                   'Vanessa is a Licensed Marriage and Family Therapist based in Coral Gables, FL, helping individuals, couples, and families thrive.'}
               </p>

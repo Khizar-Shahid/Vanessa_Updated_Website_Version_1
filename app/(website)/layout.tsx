@@ -85,7 +85,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${playfair.variable} ${nunitoSans.variable} scroll-smooth bg-parchment text-ink antialiased`}>
+    <html lang="en" className={`${playfair.variable} ${nunitoSans.variable} scroll-smooth bg-background text-foreground antialiased`}>
       <head>
         <script
           type="application/ld+json"
@@ -105,10 +105,10 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="font-sans text-[16.5px] leading-[1.75] bg-parchment text-ink min-h-screen flex flex-col overflow-x-hidden selection:bg-salmon-soft selection:text-ink">
+      <body className="font-sans text-[16.5px] leading-[1.75] bg-background text-foreground min-h-screen flex flex-col overflow-x-hidden selection:bg-accent-soft selection:text-foreground">
         <a
           href="#main-content"
-          className="absolute -top-[100px] focus:top-4 left-4 bg-ink text-parchment px-5 py-3 rounded-full font-semibold z-[9999] transition-[top] duration-200 focus:outline-2 focus:outline-salmon focus:outline-offset-2 no-underline"
+          className="absolute -top-[100px] focus:top-4 left-4 bg-foreground text-background px-5 py-3 rounded-full font-semibold z-[9999] transition-[top] duration-200 focus:outline-2 focus:outline-accent-light focus:outline-offset-2 no-underline"
         >
           Skip to main content
         </a>

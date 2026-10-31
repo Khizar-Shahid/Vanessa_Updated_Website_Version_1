@@ -64,8 +64,8 @@ export default function PodcastsFeed({ featured, episodes }: PodcastsFeedProps) 
                       onClick={() => setSelectedTopic(topic)}
                       className={`podcast-filter-pill px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors ${
                         isActive
-                          ? 'is-active bg-sage-deep text-white'
-                          : 'bg-white/60 text-ink-muted hover:text-ink'
+                          ? 'is-active bg-primary text-white'
+                          : 'bg-white/60 text-muted hover:text-foreground'
                       }`}
                     >
                       {topic}
@@ -77,7 +77,7 @@ export default function PodcastsFeed({ featured, episodes }: PodcastsFeedProps) 
 
             {filteredGridEpisodes.length === 0 ? (
               <div className="podcast-empty-state text-center py-12 bg-white/40 rounded-xl">
-                <p className="text-ink-muted">No episodes found matching &ldquo;{selectedTopic}&rdquo;.</p>
+                <p className="text-muted">No episodes found matching &ldquo;{selectedTopic}&rdquo;.</p>
                 <button
                   type="button"
                   onClick={() => setSelectedTopic('All')}

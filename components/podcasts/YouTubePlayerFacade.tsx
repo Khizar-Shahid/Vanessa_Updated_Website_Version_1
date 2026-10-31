@@ -43,7 +43,7 @@ export default function YouTubePlayerFacade({
 
   return (
     <div
-      className={`podcast-player-wrapper podcast-player-facade relative w-full overflow-hidden rounded-xl bg-ink cursor-pointer group ${className}`}
+      className={`podcast-player-wrapper podcast-player-facade relative w-full overflow-hidden rounded-xl bg-foreground cursor-pointer group ${className}`}
       style={{ aspectRatio }}
       onClick={() => setIsPlaying(true)}
       role="button"
@@ -69,7 +69,7 @@ export default function YouTubePlayerFacade({
       <div className="podcast-player-overlay absolute inset-0 bg-black/25 flex items-center justify-center transition-colors duration-300 group-hover:bg-black/40">
         <button
           type="button"
-          className="podcast-play-btn w-16 h-16 rounded-full bg-white text-salmon-text flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110"
+          className="podcast-play-btn w-16 h-16 rounded-full bg-white text-accent flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110"
           aria-label={`Play ${title}`}
           tabIndex={-1}
         >

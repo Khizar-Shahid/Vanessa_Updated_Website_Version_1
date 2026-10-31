@@ -91,11 +91,11 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="bg-parchment border-b border-hairline relative z-40">
+    <header className="bg-background border-b border-border relative z-40">
       <div className="w-full max-w-[1160px] mx-auto px-6 flex items-center justify-between gap-8 py-3.5">
         <Link
           href="/"
-          className="relative z-50 rounded-lg no-underline text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
+          className="relative z-50 rounded-lg no-underline text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           aria-label="Thrive with Therapy — Home"
         >
           <LogoLockup priority />
@@ -120,17 +120,17 @@ export default function Header() {
           className="min-[1120px]:hidden flex flex-col justify-center items-center gap-[5px] w-11 h-11 rounded-full cursor-pointer relative z-50 bg-transparent border-0"
         >
           <span
-            className={`block w-[22px] h-[1.5px] bg-ink transition-transform duration-300 ${
+            className={`block w-[22px] h-[1.5px] bg-foreground transition-transform duration-300 ${
               mobileMenuOpen ? 'translate-y-[6.5px] rotate-45' : ''
             }`}
           />
           <span
-            className={`block w-[22px] h-[1.5px] bg-ink transition-opacity duration-200 ${
+            className={`block w-[22px] h-[1.5px] bg-foreground transition-opacity duration-200 ${
               mobileMenuOpen ? 'opacity-0' : 'opacity-100'
             }`}
           />
           <span
-            className={`block w-[22px] h-[1.5px] bg-ink transition-transform duration-300 ${
+            className={`block w-[22px] h-[1.5px] bg-foreground transition-transform duration-300 ${
               mobileMenuOpen ? '-translate-y-[6.5px] -rotate-45' : ''
             }`}
           />

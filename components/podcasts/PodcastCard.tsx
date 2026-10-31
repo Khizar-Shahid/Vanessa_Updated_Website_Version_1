@@ -20,7 +20,7 @@ export default function PodcastCard({ episode, index }: PodcastCardProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.35, ease: EASE, delay: index * 0.05 }}
-      className="podcast-card flex flex-col bg-white/70 backdrop-blur-sm rounded-xl border border-hairline overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+      className="podcast-card flex flex-col bg-white/70 backdrop-blur-sm rounded-xl border border-border overflow-hidden shadow-sm hover:shadow-md transition-shadow"
     >
       <div className="podcast-card__media">
         <YouTubePlayerFacade
@@ -31,7 +31,7 @@ export default function PodcastCard({ episode, index }: PodcastCardProps) {
       </div>
 
       <div className="podcast-card__body p-5 flex flex-col flex-1 gap-3">
-        <div className="podcast-card__meta flex items-center gap-3 text-[12px] text-ink-muted">
+        <div className="podcast-card__meta flex items-center gap-3 text-[12px] text-muted">
           <span className="podcast-meta-item inline-flex items-center gap-1">
             <Clock size={12} aria-hidden="true" />
             {episode.duration}
@@ -42,28 +42,28 @@ export default function PodcastCard({ episode, index }: PodcastCardProps) {
           </span>
         </div>
 
-        <h3 className="podcast-card__title font-serif text-lg text-ink font-medium leading-snug">
+        <h3 className="podcast-card__title font-serif text-lg text-foreground font-medium leading-snug">
           {episode.title}
         </h3>
 
-        <p className="podcast-card__desc text-ink-muted text-[14px] line-clamp-3 leading-relaxed">
+        <p className="podcast-card__desc text-muted text-[14px] line-clamp-3 leading-relaxed">
           {episode.description}
         </p>
 
         <div className="podcast-topics-list mt-auto pt-3 flex flex-wrap gap-1.5">
           {episode.topics.map((t) => (
-            <span key={t} className="podcast-topic-tag bg-parchment text-ink-muted text-[11px] px-2.5 py-0.5 rounded-full border border-hairline">
+            <span key={t} className="podcast-topic-tag bg-background text-muted text-[11px] px-2.5 py-0.5 rounded-full border border-border">
               {t}
             </span>
           ))}
         </div>
 
-        <div className="podcast-card__footer pt-3 border-t border-hairline mt-2">
+        <div className="podcast-card__footer pt-3 border-t border-border mt-2">
           <a
             href={`https://www.youtube.com/watch?v=${episode.youtubeId}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-ink-muted hover:text-ink underline underline-offset-4 decoration-salmon/60 hover:decoration-salmon transition-colors duration-200"
+            className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-muted hover:text-foreground underline underline-offset-4 decoration-accent-light/60 hover:decoration-accent-light transition-colors duration-200"
             aria-label={`Watch ${episode.title} directly on YouTube (opens in new tab)`}
           >
             <YoutubeIcon size={15} className="text-[#FF0000]" aria-hidden="true" />

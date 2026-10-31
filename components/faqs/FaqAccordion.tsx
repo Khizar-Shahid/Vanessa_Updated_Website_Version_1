@@ -33,21 +33,21 @@ export default function FaqAccordion({ items, defaultOpenId }: FaqAccordionProps
         return (
           <div
             key={item.id}
-            className="bg-white border border-hairline rounded-2xl overflow-hidden shadow-[0_4px_15px_-4px_rgba(42,43,42,0.05)] transition-shadow hover:shadow-md"
+            className="bg-white border border-border rounded-2xl overflow-hidden shadow-[0_4px_15px_-4px_rgba(42,43,42,0.05)] transition-shadow hover:shadow-md"
           >
             <button
               type="button"
               onClick={() => toggleItem(item.id)}
               aria-expanded={isOpen}
               aria-controls={`faq-answer-${item.id}`}
-              className="w-full p-6 md:p-7 flex items-center justify-between gap-4 bg-transparent border-0 cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage"
+              className="w-full p-6 md:p-7 flex items-center justify-between gap-4 bg-transparent border-0 cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
-              <span className="font-serif text-lg md:text-xl font-medium text-ink">
+              <span className="font-serif text-lg md:text-xl font-medium text-foreground">
                 {item.question}
               </span>
               <span
                 className={`text-2xl font-light transition-transform duration-200 select-none ${
-                  isOpen ? 'text-salmon-text rotate-45' : 'text-sage-deep'
+                  isOpen ? 'text-accent rotate-45' : 'text-primary'
                 }`}
                 aria-hidden="true"
               >
@@ -58,7 +58,7 @@ export default function FaqAccordion({ items, defaultOpenId }: FaqAccordionProps
             {isOpen && (
               <div
                 id={`faq-answer-${item.id}`}
-                className="px-6 md:px-7 pb-7 text-[15.5px] leading-relaxed text-ink-muted border-t border-hairline/40 pt-4"
+                className="px-6 md:px-7 pb-7 text-[15.5px] leading-relaxed text-muted border-t border-border/40 pt-4"
               >
                 {item.answer}
               </div>

@@ -14,7 +14,7 @@ export default function HomeHero() {
           <RevealItem as="h1" className="font-serif text-5xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">
             Find a Trusted Therapist in Florida
           </RevealItem>
-          <RevealItem as="p" className="mt-6 mx-auto text-[17px] md:text-[20px] leading-[1.65] text-ink-muted max-w-[56ch]">
+          <RevealItem as="p" className="mt-6 mx-auto text-[17px] md:text-[20px] leading-[1.65] text-muted max-w-[56ch]">
             A safe, collaborative space to understand what&apos;s happening, make sense of the
             patterns beneath it, and find a way forward.
           </RevealItem>

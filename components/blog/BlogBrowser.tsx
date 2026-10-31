@@ -34,8 +34,8 @@ export default function BlogBrowser({ initialItems }: { initialItems: BlogItem[]
               aria-pressed={activeFilter === f.id}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors min-h-[38px] ${
                 activeFilter === f.id
-                  ? 'bg-sage-deep text-white shadow-sm'
-                  : 'bg-white text-ink-muted hover:text-ink border border-hairline'
+                  ? 'bg-primary text-white shadow-sm'
+                  : 'bg-white text-muted hover:text-foreground border border-border'
               }`}
             >
               {f.label}

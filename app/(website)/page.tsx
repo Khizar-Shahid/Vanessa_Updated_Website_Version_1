@@ -34,7 +34,7 @@ export default function HomePage() {
       <MeetVanessaSection />
 
       {/* 6. Recent Articles */}
-      <section className="py-16 md:py-24 border-t border-hairline">
+      <section className="py-16 md:py-24 border-t border-border">
         <div className="w-full max-w-[1160px] mx-auto px-6">
           <BlogFeed limit={3} showHeading />
         </div>

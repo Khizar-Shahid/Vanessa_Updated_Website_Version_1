@@ -22,7 +22,7 @@ export default function BlogFeed({ limit = 3, showHeading = true }: BlogFeedProp
             <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">A Little More to Think About.</h2>
           </div>
           <div className="max-w-[480px]">
-            <p className="text-ink-muted mb-4 text-[15px] leading-relaxed max-w-[62ch]">
+            <p className="text-muted mb-4 text-[15px] leading-relaxed max-w-[62ch]">
               Thoughtful ideas about relationships, emotions, patterns, parenting, and everyday
               challenges.
             </p>

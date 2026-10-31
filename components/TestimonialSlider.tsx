@@ -47,7 +47,7 @@ export default function TestimonialSlider() {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="py-16 md:py-24 bg-cream border-y border-hairline" aria-labelledby="testimonials-heading">
+    <section className="py-16 md:py-24 bg-surface border-y border-border" aria-labelledby="testimonials-heading">
       <div className="w-full max-w-[1160px] mx-auto px-6">
         <Reveal className="text-center max-w-[780px] mx-auto mb-14 [&>h2]:mb-4">
           <Eyebrow>WHAT CLIENTS HAVE SHARED</Eyebrow>
@@ -65,8 +65,8 @@ export default function TestimonialSlider() {
             onBlur={() => setIsFocused(false)}
             onKeyDown={handleKeyDown}
           >
-            <div className="relative bg-white border border-hairline rounded-2xl shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] px-6 py-12 sm:px-12 md:py-16 md:px-16 text-center">
-              <span className="absolute -top-6 left-1/2 -translate-x-1/2 font-serif text-[110px] md:text-[120px] leading-none text-salmon pointer-events-none select-none opacity-80" aria-hidden="true">
+            <div className="relative bg-white border border-border rounded-2xl shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] px-6 py-12 sm:px-12 md:py-16 md:px-16 text-center">
+              <span className="absolute -top-6 left-1/2 -translate-x-1/2 font-serif text-[110px] md:text-[120px] leading-none text-accent-light pointer-events-none select-none opacity-80" aria-hidden="true">
                 &ldquo;
               </span>
               <div className="min-h-[250px] max-sm:min-h-[340px] grid items-center" aria-live={isPaused ? 'polite' : 'off'}>
@@ -83,18 +83,18 @@ export default function TestimonialSlider() {
                     transition={{ duration: 0.55, ease: EASE_EDITORIAL }}
                     className="m-0"
                   >
-                    <blockquote className="font-serif italic text-[19px] md:text-[23px] leading-[1.6] text-ink max-w-[62ch] mx-auto mb-8">
+                    <blockquote className="font-serif italic text-[19px] md:text-[23px] leading-[1.6] text-foreground max-w-[62ch] mx-auto mb-8">
                       {current.quote}
                     </blockquote>
                     <figcaption className="inline-flex items-center gap-3.5 text-left">
-                      <span className="w-11 h-11 rounded-full flex items-center justify-center bg-sage-soft text-sage-deep font-serif text-lg font-bold" aria-hidden="true">
+                      <span className="w-11 h-11 rounded-full flex items-center justify-center bg-primary-soft text-primary font-serif text-lg font-bold" aria-hidden="true">
                         {current.author.charAt(0)}
                       </span>
                       <span>
-                        <cite className="block font-serif not-italic text-lg font-medium leading-tight text-ink">
+                        <cite className="block font-serif not-italic text-lg font-medium leading-tight text-foreground">
                           {current.author}
                         </cite>
-                        <span className="text-[11px] font-semibold tracking-wider uppercase text-ink-muted">
+                        <span className="text-[11px] font-semibold tracking-wider uppercase text-muted">
                           {current.role}
                         </span>
                       </span>
@@ -109,7 +109,7 @@ export default function TestimonialSlider() {
                 type="button"
                 onClick={prevSlide}
                 aria-label="Previous testimonial"
-                className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-hairline bg-white text-ink hover:bg-sage-deep hover:text-white hover:border-sage-deep transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-border bg-white text-foreground hover:bg-primary hover:text-white hover:border-primary transition-colors cursor-pointer"
               >
                 <ChevronLeft size={18} strokeWidth={1.8} />
               </button>
@@ -126,7 +126,7 @@ export default function TestimonialSlider() {
                   >
                     <span
                       className={`h-2 rounded-full transition-all duration-300 ${
-                        currentIndex === idx ? 'w-6 bg-sage-deep' : 'w-2 bg-black/25'
+                        currentIndex === idx ? 'w-6 bg-primary' : 'w-2 bg-black/25'
                       }`}
                     />
                   </button>
@@ -137,7 +137,7 @@ export default function TestimonialSlider() {
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next testimonial"
-                className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-hairline bg-white text-ink hover:bg-sage-deep hover:text-white hover:border-sage-deep transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-border bg-white text-foreground hover:bg-primary hover:text-white hover:border-primary transition-colors cursor-pointer"
               >
                 <ChevronRight size={18} strokeWidth={1.8} />
               </button>
@@ -147,7 +147,7 @@ export default function TestimonialSlider() {
                   type="button"
                   onClick={() => setIsStopped((s) => !s)}
                   aria-label={isStopped ? 'Resume automatic rotation' : 'Pause automatic rotation'}
-                  className="inline-flex items-center justify-center w-11 h-11 rounded-full border-0 bg-transparent text-ink-muted hover:text-ink transition-colors cursor-pointer"
+                  className="inline-flex items-center justify-center w-11 h-11 rounded-full border-0 bg-transparent text-muted hover:text-foreground transition-colors cursor-pointer"
                 >
                   {isStopped ? <Play size={14} strokeWidth={1.8} /> : <Pause size={14} strokeWidth={1.8} />}
                 </button>

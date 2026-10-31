@@ -31,7 +31,7 @@ export default function MobileNav({
         <motion.div
           ref={menuRef}
           id="mobile-nav-menu"
-          className="fixed inset-0 z-50 bg-parchment pt-[8.5rem] px-6 pb-8 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-background pt-[8.5rem] px-6 pb-8 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-label="Site menu"
@@ -51,18 +51,18 @@ export default function MobileNav({
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, ease: EASE, delay: 0.04 * idx }}
-                      className="border-b border-hairline"
+                      className="border-b border-border"
                     >
                       <button
                         type="button"
                         onClick={() => setMobileResourcesOpen((o) => !o)}
                         aria-expanded={mobileResourcesOpen}
-                        className={`w-full flex items-baseline justify-between py-3.5 font-serif text-[26px] leading-[1.25] text-ink text-left cursor-pointer ${
-                          isAnyChildActive ? 'text-salmon-text font-medium' : ''
+                        className={`w-full flex items-baseline justify-between py-3.5 font-serif text-[26px] leading-[1.25] text-foreground text-left cursor-pointer ${
+                          isAnyChildActive ? 'text-accent font-medium' : ''
                         }`}
                       >
                         <div className="flex items-baseline gap-4">
-                          <span className="font-sans text-[12px] tracking-[0.1em] text-sage-deep" aria-hidden="true">
+                          <span className="font-sans text-[12px] tracking-[0.1em] text-primary" aria-hidden="true">
                             {String(idx + 1).padStart(2, '0')}
                           </span>
                           <span>{item.label}</span>
@@ -70,7 +70,7 @@ export default function MobileNav({
                         <ChevronDown
                           size={20}
                           className={`transition-transform duration-200 ${
-                            mobileResourcesOpen ? 'rotate-180 text-salmon-text' : 'text-ink-muted'
+                            mobileResourcesOpen ? 'rotate-180 text-accent' : 'text-muted'
                           }`}
                           aria-hidden="true"
                         />
@@ -93,19 +93,19 @@ export default function MobileNav({
                                   <Link
                                     href={child.href}
                                     onClick={onClose}
-                                    className={`flex items-baseline gap-3 py-2 text-ink no-underline rounded-lg px-2 hover:bg-cream/50 transition-colors ${
-                                      isChildActive ? 'text-salmon-text font-medium bg-cream/40' : ''
+                                    className={`flex items-baseline gap-3 py-2 text-foreground no-underline rounded-lg px-2 hover:bg-surface/50 transition-colors ${
+                                      isChildActive ? 'text-accent font-medium bg-surface/40' : ''
                                     }`}
                                     aria-current={isChildActive ? 'page' : undefined}
                                   >
-                                    <span className="font-sans text-[11px] text-sage-deep font-bold" aria-hidden="true">
+                                    <span className="font-sans text-[11px] text-primary font-bold" aria-hidden="true">
                                       {String(idx + 1).padStart(2, '0')}{subLetter}
                                     </span>
                                     <div>
                                       <span className="block text-[17px] font-serif">
                                         {child.label}
                                       </span>
-                                      <span className="block text-[12px] text-ink-muted">
+                                      <span className="block text-[12px] text-muted">
                                         {child.description}
                                       </span>
                                     </div>
@@ -127,17 +127,17 @@ export default function MobileNav({
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, ease: EASE, delay: 0.04 * idx }}
-                    className="border-b border-hairline"
+                    className="border-b border-border"
                   >
                     <Link
                       href={item.href}
                       onClick={onClose}
-                      className={`flex items-baseline gap-4 py-3.5 font-serif text-[26px] leading-[1.25] text-ink no-underline ${
-                        isActive ? 'text-salmon-text font-semibold' : ''
+                      className={`flex items-baseline gap-4 py-3.5 font-serif text-[26px] leading-[1.25] text-foreground no-underline ${
+                        isActive ? 'text-accent font-semibold' : ''
                       }`}
                       aria-current={isActive ? 'page' : undefined}
                     >
-                      <span className="font-sans text-[12px] tracking-[0.1em] text-sage-deep font-bold" aria-hidden="true">
+                      <span className="font-sans text-[12px] tracking-[0.1em] text-primary font-bold" aria-hidden="true">
                         {String(idx + 1).padStart(2, '0')}
                       </span>
                       {item.label}

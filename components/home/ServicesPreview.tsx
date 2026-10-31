@@ -61,12 +61,12 @@ const SERVICES: ServiceSummary[] = [
 
 export default function ServicesPreview() {
   return (
-    <section className="py-16 md:py-24 border-t border-hairline">
+    <section className="py-16 md:py-24 border-t border-border">
       <div className="w-full max-w-[1160px] mx-auto px-6">
         <Reveal className="text-center max-w-[780px] mx-auto mb-14 [&>h2]:mb-4">
           <Eyebrow>WAYS WE WORK</Eyebrow>
           <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">There&apos;s More Than One Way to Begin.</h2>
-          <p className="text-[18px] leading-[1.7] text-ink-muted mx-auto max-w-[62ch]">
+          <p className="text-[18px] leading-[1.7] text-muted mx-auto max-w-[62ch]">
             Whether you&apos;re working through personal challenges, experiencing relationship difficulties, or looking to build healthier family relationships, therapy can provide a supportive space to better understand your experiences, develop healthier patterns, and work toward meaningful change.
           </p>
         </Reveal>
@@ -76,11 +76,11 @@ export default function ServicesPreview() {
             const isSalmon = tone === 'salmon';
             return (
               <RevealItem as="li" key={num} className="flex">
-                <article className="group relative flex flex-col w-full p-7 bg-white rounded-2xl border border-hairline shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-sage/40">
+                <article className="group relative flex flex-col w-full p-7 bg-white rounded-2xl border border-border shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40">
                   {/* Top line accent */}
                   <span
                     className={`absolute top-0 left-0 right-0 h-[3px] ${
-                      isSalmon ? 'bg-salmon' : 'bg-sage'
+                      isSalmon ? 'bg-accent-light' : 'bg-primary'
                     }`}
                     aria-hidden="true"
                   />
@@ -88,7 +88,7 @@ export default function ServicesPreview() {
                   <div className="flex justify-between items-start">
                     <span
                       className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                        isSalmon ? 'bg-salmon-soft text-salmon-text' : 'bg-sage-soft text-sage-deep'
+                        isSalmon ? 'bg-accent-soft text-accent' : 'bg-primary-soft text-primary'
                       }`}
                       aria-hidden="true"
                     >
@@ -96,7 +96,7 @@ export default function ServicesPreview() {
                     </span>
                     <span
                       className={`font-serif italic text-3xl leading-none opacity-60 ${
-                        isSalmon ? 'text-salmon' : 'text-sage'
+                        isSalmon ? 'text-accent-light' : 'text-primary'
                       }`}
                       aria-hidden="true"
                     >
@@ -104,29 +104,29 @@ export default function ServicesPreview() {
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-[22px] font-medium text-ink my-4">
+                  <h3 className="font-serif text-[22px] font-medium text-foreground my-4">
                     {title}
                   </h3>
-                  <p className="text-[15px] leading-relaxed text-ink mb-5 flex-1">
+                  <p className="text-[15px] leading-relaxed text-foreground mb-5 flex-1">
                     {forWhen}
                   </p>
 
-                  <div className="pt-4 border-t border-dashed border-hairline mb-6">
+                  <div className="pt-4 border-t border-dashed border-border mb-6">
                     <span
                       className={`block text-[11px] font-bold tracking-wider uppercase mb-1 ${
-                        isSalmon ? 'text-salmon-text' : 'text-sage-deep'
+                        isSalmon ? 'text-accent' : 'text-primary'
                       }`}
                     >
                       Focus
                     </span>
-                    <p className="text-[13.5px] leading-relaxed text-ink-muted">
+                    <p className="text-[13.5px] leading-relaxed text-muted">
                       {focus}
                     </p>
                   </div>
 
                   <Link
                     href={href}
-                    className="flex justify-between items-center gap-3 min-h-[44px] px-4 py-2.5 rounded-full border-[1.5px] border-graphite text-[13.5px] font-semibold text-ink no-underline hover:bg-graphite hover:text-white transition-colors duration-200 group/btn"
+                    className="flex justify-between items-center gap-3 min-h-[44px] px-4 py-2.5 rounded-full border-[1.5px] border-graphite text-[13.5px] font-semibold text-foreground no-underline hover:bg-graphite hover:text-white transition-colors duration-200 group/btn"
                   >
                     <span>{cta}</span>
                     <ArrowRight

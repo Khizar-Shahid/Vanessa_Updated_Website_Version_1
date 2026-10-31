@@ -47,15 +47,15 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           />
 
           {/* Key Clinical Focus Areas List */}
-          <div className="bg-[#FAF5EE] rounded-2xl p-8 md:p-10 border border-hairline mb-14">
-            <h3 className="font-serif text-[22px] mb-5 text-ink font-medium">
+          <div className="bg-[#FAF5EE] rounded-2xl p-8 md:p-10 border border-border mb-14">
+            <h3 className="font-serif text-[22px] mb-5 text-foreground font-medium">
               Key Clinical Focus Areas
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               {data.focusAreas.map((area, idx) => (
                 <div
                   key={idx}
-                  className="bg-white px-5 py-3.5 rounded-lg border border-hairline text-[14.5px] font-medium text-ink shadow-sm"
+                  className="bg-white px-5 py-3.5 rounded-lg border border-border text-[14.5px] font-medium text-foreground shadow-sm"
                 >
                   {area}
                 </div>
@@ -67,17 +67,17 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <ServiceFAQ faq={data.faq} />
 
           {/* CTA Box */}
-          <div className="text-center p-8 md:p-12 bg-white rounded-2xl border border-hairline shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)]">
-            <h3 className="font-serif text-2xl mb-2.5 text-ink font-medium">
+          <div className="text-center p-8 md:p-12 bg-white rounded-2xl border border-border shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)]">
+            <h3 className="font-serif text-2xl mb-2.5 text-foreground font-medium">
               Take the Next Step in Care
             </h3>
-            <p className="text-ink-muted mb-7 text-[15px] leading-relaxed max-w-[500px] mx-auto">
+            <p className="text-muted mb-7 text-[15px] leading-relaxed max-w-[500px] mx-auto">
               Schedule a consultation with Vanessa to discuss how {data.title.toLowerCase()} can support your goals.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/consultation"
-                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-primary text-white border-[1.5px] border-primary hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
               >
                 Book a Consultation
               </Link>

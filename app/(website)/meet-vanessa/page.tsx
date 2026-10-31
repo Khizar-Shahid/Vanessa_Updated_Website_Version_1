@@ -31,7 +31,7 @@ export default function MeetVanessaPage() {
         <Reveal className="w-full max-w-[820px] mx-auto px-6">
           <Eyebrow>A LITTLE ABOUT ME</Eyebrow>
           <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary mb-7">Creating a Space Where People Feel Seen, Safe, and Understood.</h2>
-          <p className="text-[18px] leading-[1.85] mx-auto text-ink">
+          <p className="text-[18px] leading-[1.85] mx-auto text-foreground">
             For over 20 years, I have worked with adults, couples, families, and children across
             nonprofit, educational, and private-practice settings. My work is grounded in listening
             closely to what people are saying, noticing the patterns underneath what they are
@@ -46,7 +46,7 @@ export default function MeetVanessaPage() {
       </section>
 
       {/* 3. My Story */}
-      <section className="py-16 md:py-24 bg-cream border-t border-hairline">
+      <section className="py-16 md:py-24 bg-surface border-t border-border">
         <div className="w-full max-w-[1160px] mx-auto px-6 grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-12 md:gap-16 items-center">
           <Reveal className="[&>h2]:mb-6 [&>p]:mb-6 [&>p:last-child]:mb-0">
             <Eyebrow>MY STORY</Eyebrow>
@@ -72,7 +72,7 @@ export default function MeetVanessaPage() {
             </p>
           </Reveal>
 
-          <Reveal className="relative before:content-[''] before:absolute before:inset-[1rem_-0.75rem_-1rem_1rem] md:before:inset-[1.75rem_-1.75rem_-1.75rem_1.75rem] before:bg-sage-soft before:rounded-md before:z-0" delay={0.15}>
+          <Reveal className="relative before:content-[''] before:absolute before:inset-[1rem_-0.75rem_-1rem_1rem] md:before:inset-[1.75rem_-1.75rem_-1.75rem_1.75rem] before:bg-primary-soft before:rounded-md before:z-0" delay={0.15}>
             <div className="relative aspect-[4/3] rounded-md overflow-hidden shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] z-10">
               <Image
                 src="/images/my-story-symbolic.jpg"
@@ -90,7 +90,7 @@ export default function MeetVanessaPage() {
       </section>
 
       {/* 4. Shift in Perspective */}
-      <section className="py-16 md:py-24 border-t border-hairline">
+      <section className="py-16 md:py-24 border-t border-border">
         <div className="w-full max-w-[900px] mx-auto px-6">
           <Reveal>
             <Eyebrow>A SHIFT IN PERSPECTIVE</Eyebrow>
@@ -127,7 +127,7 @@ export default function MeetVanessaPage() {
       <ClinicalCredentialsGrid />
 
       {/* 8. Hear From Vanessa (Reels) */}
-      <section className="py-16 md:py-24 border-t border-hairline">
+      <section className="py-16 md:py-24 border-t border-border">
         <div className="w-full max-w-[1160px] mx-auto px-6">
           <Reveal className="text-center max-w-[800px] mx-auto mb-12">
             <Eyebrow className="block mb-2">HEAR FROM VANESSA</Eyebrow>
@@ -151,27 +151,27 @@ export default function MeetVanessaPage() {
       </section>
 
       {/* 9. Core Belief */}
-      <section className="relative overflow-hidden py-24 md:py-36 text-center bg-white border-y border-hairline">
+      <section className="relative overflow-hidden py-24 md:py-36 text-center bg-white border-y border-border">
         <div className="absolute w-[55%] pointer-events-none opacity-90 -left-[8%] top-[8%]" aria-hidden="true">
           <OrganicLine variant="curve-right" />
         </div>
         <div className="absolute w-[55%] pointer-events-none opacity-90 -right-[8%] bottom-[6%]" aria-hidden="true">
-          <OrganicLine variant="curve-left" stroke="var(--color-salmon)" />
+          <OrganicLine variant="curve-left" stroke="var(--color-accent-light)" />
         </div>
         <RevealGroup className="w-full max-w-[900px] mx-auto px-6 relative z-10" stagger={0.15}>
           <RevealItem>
             <Eyebrow>WHAT I BELIEVE</Eyebrow>
           </RevealItem>
-          <RevealItem as="h2" className="font-serif text-3xl md:text-5xl lg:text-6xl text-ink font-normal text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-sage-deep mb-8">
+          <RevealItem as="h2" className="font-serif text-3xl md:text-5xl lg:text-6xl text-foreground font-normal text-balance tracking-[-0.01em] [&>em]:italic [&>em]:text-primary mb-8">
             Your Past May Shape You. It Does Not Have to <em>Define</em> You.
           </RevealItem>
-          <RevealItem as="p" className="text-[18px] md:text-[19px] leading-[1.85] mx-auto mb-10 text-ink">
+          <RevealItem as="p" className="text-[18px] md:text-[19px] leading-[1.85] mx-auto mb-10 text-foreground">
             No one owns our identities. We do not have to remain chained to the voices of the past. I
             believe there is always room to understand what we have inherited, question what no
             longer serves us, and move toward a life that feels more aligned with who we are
             becoming.
           </RevealItem>
-          <RevealItem as="p" className="font-serif italic text-2xl md:text-3xl text-salmon-text leading-snug max-w-[30ch] mx-auto">
+          <RevealItem as="p" className="font-serif italic text-2xl md:text-3xl text-accent leading-snug max-w-[30ch] mx-auto">
             There is an open door we have the right to walk through. Let&apos;s walk there together.
           </RevealItem>
         </RevealGroup>
@@ -180,31 +180,31 @@ export default function MeetVanessaPage() {
       {/* 10. Closing CTA */}
       <section className="py-16 md:py-24">
         <div className="w-full max-w-[1160px] mx-auto px-6">
-          <Reveal className="relative overflow-hidden text-center p-8 sm:p-14 md:p-20 rounded-2xl border border-hairline bg-[rgba(221,235,219,0.5)]">
+          <Reveal className="relative overflow-hidden text-center p-8 sm:p-14 md:p-20 rounded-2xl border border-border bg-[rgba(221,235,219,0.5)]">
             <div className="absolute w-[220px] md:w-[360px] pointer-events-none -left-16 -bottom-16" aria-hidden="true">
               <OrganicLine variant="curve-left" />
             </div>
             <div className="absolute w-[220px] md:w-[360px] pointer-events-none -right-20 -top-20" aria-hidden="true">
-              <OrganicLine variant="curve-right" stroke="var(--color-salmon)" />
+              <OrganicLine variant="curve-right" stroke="var(--color-accent-light)" />
             </div>
             <Eyebrow>READY TO BEGIN?</Eyebrow>
             <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary max-w-[760px] mx-auto mb-5">
               You Don&apos;t Have to Have the Right Words Yet.
             </h2>
-            <p className="text-[18px] leading-[1.7] text-ink-muted max-w-[62ch] mx-auto mb-9">
+            <p className="text-[18px] leading-[1.7] text-muted max-w-[62ch] mx-auto mb-9">
               Start with a conversation about what you&apos;re experiencing and what you hope to
               understand or change.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 relative z-10">
               <Link
                 href="/consultation"
-                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-sage-deep text-white border-[1.5px] border-sage-deep hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-primary text-white border-[1.5px] border-primary hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
               >
                 Book a Consultation
               </Link>
               <Link
                 href="/services"
-                className="font-semibold text-ink hover:text-salmon-text inline-flex items-center gap-1.5 underline underline-offset-4 decoration-salmon hover:decoration-salmon-text transition-colors duration-200"
+                className="font-semibold text-foreground hover:text-accent inline-flex items-center gap-1.5 underline underline-offset-4 decoration-accent-light hover:decoration-accent transition-colors duration-200"
               >
                 Explore Ways We Work
               </Link>

@@ -40,7 +40,7 @@ export default function DesktopNav({
                 <button
                   type="button"
                   className={`relative inline-flex items-center min-h-[44px] px-2.5 text-[14.5px] rounded-full transition-colors duration-200 cursor-pointer ${
-                    isAnyChildActive ? 'text-ink font-semibold' : 'text-ink-muted hover:text-ink'
+                    isAnyChildActive ? 'text-foreground font-semibold' : 'text-muted hover:text-foreground'
                   }`}
                   aria-expanded={resourcesDropdownOpen}
                   aria-haspopup="true"
@@ -56,7 +56,7 @@ export default function DesktopNav({
                   <ChevronDown
                     size={14}
                     className={`ml-1 transition-transform duration-200 ${
-                      resourcesDropdownOpen ? 'rotate-180 text-salmon-text' : 'text-ink-muted'
+                      resourcesDropdownOpen ? 'rotate-180 text-accent' : 'text-muted'
                     }`}
                     aria-hidden="true"
                   />
@@ -73,7 +73,7 @@ export default function DesktopNav({
                       exit={{ opacity: 0, y: 6, scale: 0.98 }}
                       transition={{ duration: 0.2, ease: EASE }}
                     >
-                      <div className="bg-white rounded-xl shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] border border-hairline p-2 flex flex-col gap-1">
+                      <div className="bg-white rounded-xl shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] border border-border p-2 flex flex-col gap-1">
                         {item.children.map((child: NavChild) => {
                           const isChildActive = isActivePath(pathname, child.href);
                           return (
@@ -82,15 +82,15 @@ export default function DesktopNav({
                               href={child.href}
                               role="menuitem"
                               className={`p-3 rounded-lg transition-colors duration-150 block text-left ${
-                                isChildActive ? 'bg-cream/70' : 'hover:bg-cream/50'
+                                isChildActive ? 'bg-surface/70' : 'hover:bg-surface/50'
                               }`}
                               onClick={() => setResourcesDropdownOpen(false)}
                             >
                               <div>
-                                <span className="block text-[14.5px] font-medium text-ink">
+                                <span className="block text-[14.5px] font-medium text-foreground">
                                   {child.label}
                                 </span>
-                                <span className="block text-[12.5px] text-ink-muted leading-tight mt-0.5">
+                                <span className="block text-[12.5px] text-muted leading-tight mt-0.5">
                                   {child.description}
                                 </span>
                               </div>
@@ -111,7 +111,7 @@ export default function DesktopNav({
               <Link
                 href={item.href}
                 className={`relative inline-flex items-center min-h-[44px] px-2.5 text-[14.5px] rounded-full transition-colors duration-200 whitespace-nowrap ${
-                  isActive ? 'text-ink font-semibold' : 'text-ink-muted hover:text-ink'
+                  isActive ? 'text-foreground font-semibold' : 'text-muted hover:text-foreground'
                 }`}
                 aria-current={isActive ? 'page' : undefined}
               >
