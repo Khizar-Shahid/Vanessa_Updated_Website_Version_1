@@ -48,6 +48,11 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  icons: {
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
+  },
   verification: {
     google: 'BVyPH9hIOw-yihznwYzLAlNfz6wu25ek4d1dUNZgAus',
   },
