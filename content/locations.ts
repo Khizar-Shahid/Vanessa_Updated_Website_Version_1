@@ -1,11 +1,12 @@
-﻿/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+/*
  * content/locations.ts
  * Single source of truth for location practice data.
  * Consumed by:
- *   â€¢ app/(website)/locations/page.tsx               (locations hub)
- *   â€¢ app/(website)/locations/[location]/page.tsx   (location landing page)
- *   â€¢ app/sitemap.ts                                 (dynamic URL list)
- * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+ *   - app/(website)/locations/page.tsx
+ *   - app/(website)/locations/[location]/page.tsx
+ *   - app/sitemap.ts
+ */
 
 export type LocationSlug = 'coral-gables' | 'miami';
 
@@ -44,7 +45,7 @@ export const LOCATIONS: Record<LocationSlug, LocationDetail> = {
     eyebrow: 'CORAL GABLES PRACTICE',
     heroTitle: 'Therapy Services in Coral Gables, FL',
     heroLead:
-      'Whether youâ€™re working through personal challenges, experiencing relationship difficulties, or looking to build healthier family relationships, therapy can provide a supportive space to better understand your experiences, develop healthier patterns, and work toward meaningful change.',
+      "Whether you're working through personal challenges, experiencing relationship difficulties, or looking to build healthier family relationships, therapy can provide a supportive space to better understand your experiences, develop healthier patterns, and work toward meaningful change.",
     seoTitle: 'Therapy Services in Coral Gables, FL | Thrive With Therapy',
     seoDescription:
       'Explore therapy services in Coral Gables, FL, including individual therapy, trauma therapy, couples therapy, and parenting support.',
@@ -66,15 +67,18 @@ export const LOCATIONS: Record<LocationSlug, LocationDetail> = {
     settingDetails: [
       {
         label: 'Office Location',
-        description: 'Coral Gables, FL (South Florida) â€” private, serene in-person setting.',
+        description:
+          'Coral Gables, FL (South Florida) - private, serene in-person setting.',
       },
       {
         label: 'Virtual Care',
-        description: 'Secure, encrypted HIPAA-compliant telehealth across the entire state of Florida.',
+        description:
+          'Secure, encrypted HIPAA-compliant telehealth across the entire state of Florida.',
       },
       {
         label: 'Clinical Modalities',
-        description: 'EMDR, Gottman Method, Emotionally Focused Therapy (EFT), Somatic Experiencing, and Family Systems.',
+        description:
+          'EMDR, Gottman Method, Emotionally Focused Therapy (EFT), Somatic Experiencing, and Family Systems.',
       },
     ],
     officeNote:
@@ -84,15 +88,16 @@ export const LOCATIONS: Record<LocationSlug, LocationDetail> = {
     serviceOfferingsDescription:
       'Tailored clinical modalities designed to support individuals, couples, and families through every stage of growth.',
   },
-  'miami': {
+
+  miami: {
     slug: 'miami',
     name: 'Miami',
     fullName: 'Miami, FL',
     shortName: 'Miami',
     eyebrow: 'MIAMI, FLORIDA PRACTICE',
-    heroTitle: 'Therapist in Miami, FL â€“ Compassionate Therapy & Support',
+    heroTitle: 'Therapist in Miami, FL - Compassionate Therapy & Support',
     heroLead:
-      'A warm, confidential, and collaborative space in Miami to explore whatâ€™s happening beneath the surface, understand recurring patterns, and foster lasting emotional healing.',
+      "A warm, confidential, and collaborative space in Miami to explore what's happening beneath the surface, understand recurring patterns, and foster lasting emotional healing.",
     seoTitle: 'Therapist in Miami, FL | Thrive With Therapy',
     seoDescription:
       'Looking for a therapist in Miami, FL? Thrive With Therapy offers individual, couples, family, and trauma-focused therapy. Schedule a consultation.',
@@ -107,21 +112,24 @@ export const LOCATIONS: Record<LocationSlug, LocationDetail> = {
     overviewHeading: 'COMPASSIONATE CARE',
     overviewSubheading: 'Therapy Tailored to Your Life in Miami',
     overviewText: [
-      'Living in Miami brings energy, culture, and vibrant opportunityâ€”but it also comes with high-paced demands, relationship strains, career stress, and personal transitions. Whether you are facing anxiety, processing past hardship, or seeking deeper connection with a partner or child, therapy offers a space to pause and reflect.',
-      'Led by Vanessa M. Sierra, LMFT, our practice provides evidence-based, compassionate care. We work collaboratively to understand not just what you are feeling, but whyâ€”helping you develop sustainable tools and grounded insight.',
+      'Living in Miami brings energy, culture, and vibrant opportunity, but it also comes with high-paced demands, relationship strains, career stress, and personal transitions. Whether you are facing anxiety, processing past hardship, or seeking deeper connection with a partner or child, therapy offers a space to pause and reflect.',
+      'Led by Vanessa M. Sierra, LMFT, our practice provides evidence-based, compassionate care. We work collaboratively to understand not just what you are feeling, but why, helping you develop sustainable tools and grounded insight.',
     ],
     settingDetails: [
       {
         label: 'Serving Greater Miami',
-        description: 'Brickell, Downtown Miami, Coconut Grove, Coral Gables, Wynwood, and surrounding communities.',
+        description:
+          'Brickell, Downtown Miami, Coconut Grove, Coral Gables, Wynwood, and surrounding communities.',
       },
       {
         label: 'In-Person & Online',
-        description: 'In-person sessions in our peaceful South Florida suite and telehealth throughout Florida.',
+        description:
+          'In-person sessions in our peaceful South Florida suite and telehealth throughout Florida.',
       },
       {
         label: 'Collaborative Pacing',
-        description: 'Tailored to the unique rhythms and pressures of living and working in Miami.',
+        description:
+          'Tailored to the unique rhythms and pressures of living and working in Miami.',
       },
     ],
     officeNote:
@@ -141,5 +149,3 @@ export function getLocation(slug: string): LocationDetail | undefined {
   }
   return undefined;
 }
-
-
