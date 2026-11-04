@@ -10,6 +10,10 @@ import MeetVanessaSection from '@/components/home/MeetVanessaSection';
 import HomeCTA from '@/components/home/HomeCTA';
 
 export const metadata: Metadata = {
+  title: 'Therapist in Coral Gables, FL | Thrive with Therapy',
+  description:
+    'Find a trusted therapist in Coral Gables, FL at Thrive with Therapy. Get personalized therapy and compassionate support to improve your mental health and well-being.',
+  keywords: ['Therapist in Coral Gables'],
   alternates: {
     canonical: '/',
   },

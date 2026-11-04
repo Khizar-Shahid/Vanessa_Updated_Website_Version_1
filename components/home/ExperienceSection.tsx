@@ -38,7 +38,7 @@ export default function ExperienceSection() {
             forward.
           </p>
           <Link
-            href="/services"
+            href="/locations"
             className="inline-flex items-center justify-center gap-2 font-sans text-[15px] font-semibold tracking-[0.02em] rounded-full min-h-[48px] px-7 bg-primary text-white border-[1.5px] border-primary hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
           >
             Explore How We Work

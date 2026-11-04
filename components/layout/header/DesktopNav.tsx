@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
@@ -10,61 +10,133 @@ import Squiggle from './Squiggle';
 interface DesktopNavProps {
   navLinks: NavItem[];
   pathname: string;
-  resourcesDropdownOpen: boolean;
-  setResourcesDropdownOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
 }
 
-export default function DesktopNav({
-  navLinks,
-  pathname,
-  resourcesDropdownOpen,
-  setResourcesDropdownOpen,
-  onMouseEnter,
-  onMouseLeave,
-}: DesktopNavProps) {
+export default function DesktopNav({ navLinks, pathname }: DesktopNavProps) {
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelClose = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  const openNow = (label: string) => {
+    cancelClose();
+    setOpenMenu(label);
+  };
+
+  const closeSoon = () => {
+    cancelClose();
+    closeTimerRef.current = setTimeout(() => setOpenMenu(null), 150);
+  };
+
+  // Close any open menu when the route changes
+  useEffect(() => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    setOpenMenu(null);
+  }, [pathname]);
+
+  // Close on Escape
+  useEffect(() => {
+    if (!openMenu) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpenMenu(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [openMenu]);
+
+  // Clear the timer on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    };
+  }, []);
+
   return (
     <nav aria-label="Primary" className="hidden min-[1120px]:block">
       <ul className="list-none flex items-center gap-[0.15rem]">
         {navLinks.map((item) => {
           if (item.children) {
-            const isAnyChildActive = item.children.some((child: NavChild) => isActivePath(pathname, child.href));
+            const isOpen = openMenu === item.label;
+            const isAnyChildActive = item.children.some((child: NavChild) =>
+              isActivePath(pathname, child.href),
+            );
+            const isActive =
+              isAnyChildActive || (item.href ? isActivePath(pathname, item.href) : false);
+
+            const triggerClass = `relative inline-flex items-center min-h-[44px] px-2.5 text-[14.5px] rounded-full transition-colors duration-200 cursor-pointer whitespace-nowrap ${isActive ? 'text-foreground font-semibold' : 'text-muted hover:text-foreground'
+              }`;
+
+            const triggerInner = (
+              <>
+                <span>{item.label}</span>
+                <ChevronDown
+                  size={14}
+                  className={`ml-1 transition-transform duration-200 ${isOpen ? 'rotate-180 text-accent' : 'text-muted'
+                    }`}
+                  aria-hidden="true"
+                />
+                {isActive && <Squiggle key={pathname} />}
+              </>
+            );
+
             return (
               <li
                 key={item.label}
                 className="relative"
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
+                onMouseEnter={() => openNow(item.label)}
+                onMouseLeave={closeSoon}
+                onFocus={(e) => {
+                  // Open on keyboard focus only (not on mouse click)
+                  if ((e.target as HTMLElement).matches(':focus-visible')) openNow(item.label);
+                }}
+                onBlur={(e) => {
+                  if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                    setOpenMenu(null);
+                  }
+                }}
               >
-                <button
-                  type="button"
-                  className={`relative inline-flex items-center min-h-[44px] px-2.5 text-[14.5px] rounded-full transition-colors duration-200 cursor-pointer ${
-                    isAnyChildActive ? 'text-foreground font-semibold' : 'text-muted hover:text-foreground'
-                  }`}
-                  aria-expanded={resourcesDropdownOpen}
-                  aria-haspopup="true"
-                  onClick={() => setResourcesDropdownOpen((prev) => !prev)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setResourcesDropdownOpen(true);
-                    }
-                  }}
-                >
-                  <span>{item.label}</span>
-                  <ChevronDown
-                    size={14}
-                    className={`ml-1 transition-transform duration-200 ${
-                      resourcesDropdownOpen ? 'rotate-180 text-accent' : 'text-muted'
-                    }`}
-                    aria-hidden="true"
-                  />
-                  {isAnyChildActive && <Squiggle key={pathname} />}
-                </button>
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    className={triggerClass}
+                    aria-haspopup="true"
+                    aria-expanded={isOpen}
+                    aria-current={pathname === item.href ? 'page' : undefined}
+                    onClick={() => setOpenMenu(null)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        openNow(item.label);
+                      }
+                    }}
+                  >
+                    {triggerInner}
+                  </Link>
+                ) : (
+                  <button
+                    type="button"
+                    className={triggerClass}
+                    aria-expanded={isOpen}
+                    aria-haspopup="true"
+                    onClick={() => setOpenMenu((prev) => (prev === item.label ? null : item.label))}
+                    onKeyDown={(e) => {
+                      if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openNow(item.label);
+                      }
+                    }}
+                  >
+                    {triggerInner}
+                  </button>
+                )}
 
                 <AnimatePresence>
-                  {resourcesDropdownOpen && (
+                  {isOpen && (
                     <motion.div
                       className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50 w-72"
                       role="menu"
@@ -81,10 +153,9 @@ export default function DesktopNav({
                               key={child.href}
                               href={child.href}
                               role="menuitem"
-                              className={`p-3 rounded-lg transition-colors duration-150 block text-left ${
-                                isChildActive ? 'bg-surface/70' : 'hover:bg-surface/50'
-                              }`}
-                              onClick={() => setResourcesDropdownOpen(false)}
+                              className={`p-3 rounded-lg transition-colors duration-150 block text-left ${isChildActive ? 'bg-surface/70' : 'hover:bg-surface/50'
+                                }`}
+                              onClick={() => setOpenMenu(null)}
                             >
                               <div>
                                 <span className="block text-[14.5px] font-medium text-foreground">
@@ -110,9 +181,8 @@ export default function DesktopNav({
             <li key={item.href}>
               <Link
                 href={item.href}
-                className={`relative inline-flex items-center min-h-[44px] px-2.5 text-[14.5px] rounded-full transition-colors duration-200 whitespace-nowrap ${
-                  isActive ? 'text-foreground font-semibold' : 'text-muted hover:text-foreground'
-                }`}
+                className={`relative inline-flex items-center min-h-[44px] px-2.5 text-[14.5px] rounded-full transition-colors duration-200 whitespace-nowrap ${isActive ? 'text-foreground font-semibold' : 'text-muted hover:text-foreground'
+                  }`}
                 aria-current={isActive ? 'page' : undefined}
               >
                 {item.label}
