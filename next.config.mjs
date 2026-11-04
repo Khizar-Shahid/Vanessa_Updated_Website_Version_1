@@ -1,9 +1,12 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+
   outputFileTracingIncludes: {
     '/api/resources/request': ['./public/docs/**/*'],
   },
+
   images: {
     remotePatterns: [
       {
@@ -20,6 +23,7 @@ const nextConfig = {
       },
     ],
   },
+
   async redirects() {
     return [
       {
@@ -29,7 +33,7 @@ const nextConfig = {
       },
       {
         source: '/clinic.html',
-        destination: '/services',
+        destination: '/locations',
         permanent: true,
       },
       {
@@ -46,6 +50,62 @@ const nextConfig = {
         source: '/blog.html',
         destination: '/blog',
         permanent: true,
+      },
+
+      // Service pages → Location-first URL structure (301 redirects)
+      {
+        source: '/services',
+        destination: '/locations',
+        statusCode: 301,
+      },
+      {
+        source: '/services/therapist-miami-fl',
+        destination: '/locations/miami',
+        statusCode: 301,
+      },
+
+      // Coral Gables service redirects
+      {
+        source: '/services/individual-therapy-coral-gables',
+        destination: '/locations/coral-gables/individual-therapy',
+        statusCode: 301,
+      },
+      {
+        source: '/services/couples-therapy-coral-gables',
+        destination: '/locations/coral-gables/couples-therapy',
+        statusCode: 301,
+      },
+      {
+        source: '/services/parenting-family-therapy-coral-gables',
+        destination: '/locations/coral-gables/parenting-family-therapy',
+        statusCode: 301,
+      },
+      {
+        source: '/services/trauma-therapy-coral-gables',
+        destination: '/locations/coral-gables/trauma-therapy',
+        statusCode: 301,
+      },
+
+      // Miami service redirects
+      {
+        source: '/services/individual-therapy-miami',
+        destination: '/locations/miami/individual-therapy',
+        statusCode: 301,
+      },
+      {
+        source: '/services/couples-therapy-miami',
+        destination: '/locations/miami/couples-therapy',
+        statusCode: 301,
+      },
+      {
+        source: '/services/parenting-family-therapy-miami',
+        destination: '/locations/miami/parenting-family-therapy',
+        statusCode: 301,
+      },
+      {
+        source: '/services/trauma-therapy-miami',
+        destination: '/locations/miami/trauma-therapy',
+        statusCode: 301,
       },
     ];
   },

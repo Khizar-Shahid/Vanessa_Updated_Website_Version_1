@@ -13,9 +13,17 @@ export interface ServiceListItem {
 
 interface ServiceCardRowProps {
   service: ServiceListItem;
+  locationSlug?: string;
+  href?: string;
 }
 
-export default function ServiceCardRow({ service }: ServiceCardRowProps) {
+export default function ServiceCardRow({ service, locationSlug, href }: ServiceCardRowProps) {
+  const targetHref =
+    href ||
+    (locationSlug
+      ? `/locations/${locationSlug}/${service.slug}`
+      : `/locations/coral-gables/${service.slug}`);
+
   return (
     <div className="p-8 md:p-12 bg-white rounded-2xl border border-border shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] hover:border-primary/40 transition-colors grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       <div className="lg:col-span-7 flex flex-col items-start">
@@ -32,7 +40,7 @@ export default function ServiceCardRow({ service }: ServiceCardRowProps) {
           {service.description}
         </p>
         <Link
-          href={`/services/${service.slug}`}
+          href={targetHref}
           className="inline-flex items-center justify-center gap-2 font-sans text-[14px] font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-primary text-white border-[1.5px] border-primary hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
         >
           Explore {service.title}
