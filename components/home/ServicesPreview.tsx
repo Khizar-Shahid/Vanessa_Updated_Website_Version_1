@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Feather, HeartHandshake, Sprout, Users } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -23,7 +23,7 @@ const SERVICES: ServiceSummary[] = [
     forWhen: 'For when something feels stuck, overwhelming, or difficult to understand on your own.',
     focus: 'Self-worth, emotional patterns, trauma-related experiences, and healthier responses.',
     cta: 'Explore Individual Therapy',
-    href: '/locations/coral-gables/individual-therapy',
+    href: '/services/individual-therapy-coral-gables',
     Icon: Sprout,
     tone: 'sage',
   },
@@ -33,7 +33,7 @@ const SERVICES: ServiceSummary[] = [
     forWhen: 'For when you care about each other, but keep getting caught in the same patterns.',
     focus: 'Communication, emotional needs, attachment patterns, and relationship connection.',
     cta: 'Explore Couples Therapy',
-    href: '/locations/coral-gables/couples-therapy',
+    href: '/services/couples-therapy-coral-gables',
     Icon: HeartHandshake,
     tone: 'salmon',
   },
@@ -43,7 +43,7 @@ const SERVICES: ServiceSummary[] = [
     forWhen: 'For families navigating conflict, changing roles, and the challenges of raising children.',
     focus: 'Parenting dynamics, developmental stages, family conflict, and healthy authority.',
     cta: 'Explore Parenting & Family Therapy',
-    href: '/locations/coral-gables/parenting-family-therapy',
+    href: '/services/parenting-family-therapy-coral-gables',
     Icon: Users,
     tone: 'sage',
   },
@@ -53,7 +53,7 @@ const SERVICES: ServiceSummary[] = [
     forWhen: 'For when past experiences still affect how you feel, respond, or connect with others today.',
     focus: 'Trauma, childhood experiences, emotional regulation, and patterns shaped by the past.',
     cta: 'Explore Trauma-Focused Therapy',
-    href: '/locations/coral-gables/trauma-therapy',
+    href: '/services/trauma-therapy-coral-gables',
     Icon: Feather,
     tone: 'salmon',
   },
@@ -140,10 +140,10 @@ export default function ServicesPreview() {
 
         <div className="mt-12 text-center">
           <Link
-            href="/locations"
+            href="/therapist-miami-fl"
             className="inline-flex items-center gap-2 font-semibold text-[15px] text-foreground hover:text-primary transition-colors underline underline-offset-4 decoration-accent-light/60 hover:decoration-accent"
           >
-            <span>Explore All Locations & Service Offerings (Coral Gables & Miami)</span>
+            <span>Explore Our Miami Services</span>
             <ArrowRight size={16} />
           </Link>
         </div>
@@ -151,3 +151,4 @@ export default function ServicesPreview() {
     </section>
   );
 }
+

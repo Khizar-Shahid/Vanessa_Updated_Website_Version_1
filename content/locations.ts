@@ -1,11 +1,11 @@
-/* ─────────────────────────────────────────────
+﻿/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * content/locations.ts
  * Single source of truth for location practice data.
  * Consumed by:
- *   • app/(website)/locations/page.tsx               (locations hub)
- *   • app/(website)/locations/[location]/page.tsx   (location landing page)
- *   • app/sitemap.ts                                 (dynamic URL list)
- * ───────────────────────────────────────────── */
+ *   â€¢ app/(website)/locations/page.tsx               (locations hub)
+ *   â€¢ app/(website)/locations/[location]/page.tsx   (location landing page)
+ *   â€¢ app/sitemap.ts                                 (dynamic URL list)
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 export type LocationSlug = 'coral-gables' | 'miami';
 
@@ -44,7 +44,7 @@ export const LOCATIONS: Record<LocationSlug, LocationDetail> = {
     eyebrow: 'CORAL GABLES PRACTICE',
     heroTitle: 'Therapy Services in Coral Gables, FL',
     heroLead:
-      'Whether you’re working through personal challenges, experiencing relationship difficulties, or looking to build healthier family relationships, therapy can provide a supportive space to better understand your experiences, develop healthier patterns, and work toward meaningful change.',
+      'Whether youâ€™re working through personal challenges, experiencing relationship difficulties, or looking to build healthier family relationships, therapy can provide a supportive space to better understand your experiences, develop healthier patterns, and work toward meaningful change.',
     seoTitle: 'Therapy Services in Coral Gables, FL | Thrive With Therapy',
     seoDescription:
       'Explore therapy services in Coral Gables, FL, including individual therapy, trauma therapy, couples therapy, and parenting support.',
@@ -54,7 +54,7 @@ export const LOCATIONS: Record<LocationSlug, LocationDetail> = {
       'Counseling Coral Gables',
       'Coral Gables Therapy',
     ],
-    canonical: '/locations/coral-gables',
+    canonical: '/services',
     badge: 'In-Person & Telehealth',
     overviewHeading: 'COMPASSIONATE CARE IN CORAL GABLES',
     overviewSubheading: 'A Dedicated Space for Healing & Growth',
@@ -66,7 +66,7 @@ export const LOCATIONS: Record<LocationSlug, LocationDetail> = {
     settingDetails: [
       {
         label: 'Office Location',
-        description: 'Coral Gables, FL (South Florida) — private, serene in-person setting.',
+        description: 'Coral Gables, FL (South Florida) â€” private, serene in-person setting.',
       },
       {
         label: 'Virtual Care',
@@ -90,9 +90,9 @@ export const LOCATIONS: Record<LocationSlug, LocationDetail> = {
     fullName: 'Miami, FL',
     shortName: 'Miami',
     eyebrow: 'MIAMI, FLORIDA PRACTICE',
-    heroTitle: 'Therapist in Miami, FL – Compassionate Therapy & Support',
+    heroTitle: 'Therapist in Miami, FL â€“ Compassionate Therapy & Support',
     heroLead:
-      'A warm, confidential, and collaborative space in Miami to explore what’s happening beneath the surface, understand recurring patterns, and foster lasting emotional healing.',
+      'A warm, confidential, and collaborative space in Miami to explore whatâ€™s happening beneath the surface, understand recurring patterns, and foster lasting emotional healing.',
     seoTitle: 'Therapist in Miami, FL | Thrive With Therapy',
     seoDescription:
       'Looking for a therapist in Miami, FL? Thrive With Therapy offers individual, couples, family, and trauma-focused therapy. Schedule a consultation.',
@@ -102,13 +102,13 @@ export const LOCATIONS: Record<LocationSlug, LocationDetail> = {
       'Counseling Miami FL',
       'Miami Therapist',
     ],
-    canonical: '/locations/miami',
+    canonical: '/therapist-miami-fl',
     badge: 'Serving Greater Miami',
     overviewHeading: 'COMPASSIONATE CARE',
     overviewSubheading: 'Therapy Tailored to Your Life in Miami',
     overviewText: [
-      'Living in Miami brings energy, culture, and vibrant opportunity—but it also comes with high-paced demands, relationship strains, career stress, and personal transitions. Whether you are facing anxiety, processing past hardship, or seeking deeper connection with a partner or child, therapy offers a space to pause and reflect.',
-      'Led by Vanessa M. Sierra, LMFT, our practice provides evidence-based, compassionate care. We work collaboratively to understand not just what you are feeling, but why—helping you develop sustainable tools and grounded insight.',
+      'Living in Miami brings energy, culture, and vibrant opportunityâ€”but it also comes with high-paced demands, relationship strains, career stress, and personal transitions. Whether you are facing anxiety, processing past hardship, or seeking deeper connection with a partner or child, therapy offers a space to pause and reflect.',
+      'Led by Vanessa M. Sierra, LMFT, our practice provides evidence-based, compassionate care. We work collaboratively to understand not just what you are feeling, but whyâ€”helping you develop sustainable tools and grounded insight.',
     ],
     settingDetails: [
       {
@@ -141,4 +141,5 @@ export function getLocation(slug: string): LocationDetail | undefined {
   }
   return undefined;
 }
+
 

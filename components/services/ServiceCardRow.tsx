@@ -1,8 +1,12 @@
+
 import React from 'react';
 import Link from 'next/link';
+import { serviceUrl } from '@/content/seo-urls';
+import type { LocationSlug } from '@/content/locations';
+import type { ServiceSlug } from '@/content/services';
 
 export interface ServiceListItem {
-  slug: string;
+  slug: ServiceSlug;
   num: string;
   eyebrow: string;
   title: string;
@@ -13,16 +17,17 @@ export interface ServiceListItem {
 
 interface ServiceCardRowProps {
   service: ServiceListItem;
-  locationSlug?: string;
+  locationSlug?: LocationSlug;
   href?: string;
 }
 
-export default function ServiceCardRow({ service, locationSlug, href }: ServiceCardRowProps) {
+export default function ServiceCardRow({
+  service,
+  locationSlug,
+  href,
+}: ServiceCardRowProps) {
   const targetHref =
-    href ||
-    (locationSlug
-      ? `/locations/${locationSlug}/${service.slug}`
-      : `/locations/coral-gables/${service.slug}`);
+    href || serviceUrl(locationSlug ?? 'coral-gables', service.slug);
 
   return (
     <div className="p-8 md:p-12 bg-white rounded-2xl border border-border shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] hover:border-primary/40 transition-colors grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -30,15 +35,19 @@ export default function ServiceCardRow({ service, locationSlug, href }: ServiceC
         <span className="font-sans text-[11px] font-bold tracking-[0.18em] uppercase text-accent block mb-2">
           {service.num} • {service.eyebrow}
         </span>
+
         <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-3">
           {service.title}
         </h2>
+
         <p className="italic text-foreground text-[16px] mb-3">
           &ldquo;{service.intro}&rdquo;
         </p>
+
         <p className="text-[15px] leading-relaxed text-muted mb-6 whitespace-pre-wrap">
           {service.description}
         </p>
+
         <Link
           href={targetHref}
           className="inline-flex items-center justify-center gap-2 font-sans text-[14px] font-semibold tracking-[0.02em] rounded-full min-h-[44px] px-6 bg-primary text-white border-[1.5px] border-primary hover:bg-[#3D6F40] hover:border-[#3D6F40] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_-12px_rgba(71,128,74,0.6)] transition-all duration-300"
@@ -51,10 +60,16 @@ export default function ServiceCardRow({ service, locationSlug, href }: ServiceC
         <h4 className="font-serif text-[17px] text-primary mb-3 font-medium">
           Areas of Clinical Focus
         </h4>
+
         <ul className="list-none p-0 m-0 flex flex-col gap-2.5">
           {service.focus.map((item, idx) => (
-            <li key={idx} className="text-[14px] text-foreground flex items-start gap-2">
-              <span className="text-primary font-bold leading-none mt-0.5">✓</span>
+            <li
+              key={idx}
+              className="text-[14px] text-foreground flex items-start gap-2"
+            >
+              <span className="text-primary font-bold leading-none mt-0.5">
+                ✓
+              </span>
               <span>{item}</span>
             </li>
           ))}

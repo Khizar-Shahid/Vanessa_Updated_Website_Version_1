@@ -1,4 +1,6 @@
+
 import { LOCATIONS, LOCATION_SLUGS } from '@/content/locations';
+import { locationUrl } from '@/content/seo-urls';
 
 export type NavChild = {
   label: string;
@@ -18,16 +20,20 @@ export type NavItem =
     children: NavChild[];
   };
 
-const LOCATION_CHILDREN: NavChild[] = LOCATION_SLUGS.map((slug) => ({
+const SERVICE_LOCATION_CHILDREN: NavChild[] = LOCATION_SLUGS.map((slug) => ({
   label: LOCATIONS[slug].name,
   description: LOCATIONS[slug].badge,
-  href: `/locations/${slug}`,
+  href: locationUrl(slug),
 }));
 
 export const NAV_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Meet Vanessa', href: '/meet-vanessa' },
-  { label: 'Locations', href: '/locations', children: LOCATION_CHILDREN },
+  {
+    label: 'Services',
+    href: '/services',
+    children: SERVICE_LOCATION_CHILDREN,
+  },
   { label: 'Blog', href: '/blog' },
   {
     label: 'Resources',

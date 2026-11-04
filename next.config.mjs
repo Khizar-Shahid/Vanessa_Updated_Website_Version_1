@@ -26,6 +26,7 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // Existing redirects
       {
         source: '/index.html',
         destination: '/',
@@ -33,7 +34,7 @@ const nextConfig = {
       },
       {
         source: '/clinic.html',
-        destination: '/locations',
+        destination: '/services',
         permanent: true,
       },
       {
@@ -52,59 +53,61 @@ const nextConfig = {
         permanent: true,
       },
 
-      // Service pages → Location-first URL structure (301 redirects)
+      // Old location overview URLs → new SEO URLs
       {
-        source: '/services',
-        destination: '/locations',
+        source: '/locations',
+        destination: '/services',
         statusCode: 301,
       },
+      {
+        source: '/locations/coral-gables',
+        destination: '/services',
+        statusCode: 301,
+      },
+      {
+        source: '/locations/miami',
+        destination: '/therapist-miami-fl',
+        statusCode: 301,
+      },
+
+      // Old location-first service URLs → new service URLs
+      {
+        source: '/locations/:location/:service',
+        destination: '/services/:service-:location',
+        statusCode: 301,
+      },
+
+      // Previous Miami landing URL → new Miami landing page
       {
         source: '/services/therapist-miami-fl',
-        destination: '/locations/miami',
+        destination: '/therapist-miami-fl',
         statusCode: 301,
       },
 
-      // Coral Gables service redirects
+      // Legacy Ways We Work URLs → new SEO URLs
       {
-        source: '/services/individual-therapy-coral-gables',
-        destination: '/locations/coral-gables/individual-therapy',
+        source: '/ways-we-work',
+        destination: '/services',
         statusCode: 301,
       },
       {
-        source: '/services/couples-therapy-coral-gables',
-        destination: '/locations/coral-gables/couples-therapy',
+        source: '/ways-we-work/individual-therapy',
+        destination: '/services/individual-therapy-coral-gables',
         statusCode: 301,
       },
       {
-        source: '/services/parenting-family-therapy-coral-gables',
-        destination: '/locations/coral-gables/parenting-family-therapy',
+        source: '/ways-we-work/couples-therapy',
+        destination: '/services/couples-therapy-coral-gables',
         statusCode: 301,
       },
       {
-        source: '/services/trauma-therapy-coral-gables',
-        destination: '/locations/coral-gables/trauma-therapy',
-        statusCode: 301,
-      },
-
-      // Miami service redirects
-      {
-        source: '/services/individual-therapy-miami',
-        destination: '/locations/miami/individual-therapy',
+        source: '/ways-we-work/trauma-focused-therapy',
+        destination: '/services/trauma-therapy-coral-gables',
         statusCode: 301,
       },
       {
-        source: '/services/couples-therapy-miami',
-        destination: '/locations/miami/couples-therapy',
-        statusCode: 301,
-      },
-      {
-        source: '/services/parenting-family-therapy-miami',
-        destination: '/locations/miami/parenting-family-therapy',
-        statusCode: 301,
-      },
-      {
-        source: '/services/trauma-therapy-miami',
-        destination: '/locations/miami/trauma-therapy',
+        source: '/ways-we-work/:path*',
+        destination: '/services',
         statusCode: 301,
       },
     ];

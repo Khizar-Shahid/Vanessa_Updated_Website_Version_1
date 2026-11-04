@@ -12,7 +12,7 @@ export default function HomeHero() {
       <div className="w-full max-w-[1160px] mx-auto px-6 relative z-10">
         <RevealGroup className="max-w-[900px] mx-auto" immediate stagger={0.12}>
           <RevealItem as="h1" className="font-serif text-5xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">
-            Find a Trusted Therapist in Florida
+            Therapist in Coral Gables, FL – Compassionate Therapy & Support
           </RevealItem>
           <RevealItem as="p" className="mt-6 mx-auto text-[17px] md:text-[20px] leading-[1.65] text-muted max-w-[56ch]">
             A safe, collaborative space to understand what&apos;s happening, make sense of the
