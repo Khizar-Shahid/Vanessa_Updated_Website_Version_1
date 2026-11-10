@@ -76,8 +76,9 @@ export default function RootLayout({
     email: 'vanessa@thrivementalhealthsolutions.com',
     url: 'https://www.thrivewiththerapy.org',
     sameAs: [
-      'https://www.instagram.com/thrivewiththerapy/',
+      'https://www.instagram.com/thrivewiththerapy?srtk=NmoybzlreXZjZnZk',
       'https://www.linkedin.com/in/vanessa-m-sierra-lmft-5a5070405',
+      'https://www.tiktok.com/@thrivewiththerapy?is_from_webapp=1&sender_device=pc',
     ],
     address: {
       '@type': 'PostalAddress',
