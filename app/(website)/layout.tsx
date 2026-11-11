@@ -5,6 +5,7 @@ import '../globals.css';
 import TopStrip from '@/components/layout/TopStrip';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import MapSection from '@/components/layout/MapSection';
 
 // Google Analytics 4 measurement ID
 const GA_MEASUREMENT_ID = 'G-DTYE3P8B89';
@@ -122,6 +123,7 @@ export default function RootLayout({
         <main id="main-content" tabIndex={-1} style={{ outline: 'none' }}>
           {children}
         </main>
+        <MapSection />
         <Footer />
       </body>
     </html>
