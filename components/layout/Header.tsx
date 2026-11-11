@@ -69,7 +69,7 @@ export default function Header() {
           className="relative z-50 rounded-lg no-underline text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           aria-label="Thrive with Therapy — Home"
         >
-          <LogoLockup priority />
+          <LogoLockup />
         </Link>
 
         <DesktopNav navLinks={NAV_LINKS} pathname={pathname} />
