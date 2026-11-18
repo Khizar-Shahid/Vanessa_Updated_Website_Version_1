@@ -5,7 +5,6 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 const NOTIFY_EMAILS = [
-  'abdurrehman.swe@gmail.com',
   'khizar@aplusactive.com',
   'tassadiqhussain35@gmail.com',
 ];
