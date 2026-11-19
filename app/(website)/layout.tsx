@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.thrivewiththerapy.org'),
   keywords: [
     'therapist in Coral Gables',
-    'Vanessa Sierra LMFT',
+    'Vanessa M.M. Sierra, LMFT',
     'Coral Gables therapist',
     'couples therapy Miami',
     'individual therapy Coral Gables',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     'EMDR trauma therapy',
     'marriage counseling Coral Gables',
   ],
-  authors: [{ name: 'Vanessa M. Sierra, LMFT' }],
+  authors: [{ name: 'Vanessa M.M. Sierra, LMFT' }],
   openGraph: {
     title: 'Therapist in Florida | Thrive With Therapy',
     description:
@@ -70,7 +70,7 @@ export default function RootLayout({
     name: 'Thrive with Therapy',
     founder: {
       '@type': 'Person',
-      name: 'Vanessa M. Sierra, LMFT',
+      name: 'Vanessa M.M. Sierra, LMFT',
       jobTitle: 'Licensed Marriage and Family Therapist',
     },
     telephone: '954-635-0234',

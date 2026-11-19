@@ -9,7 +9,7 @@ export const metadata = {
   },
   title: 'Blog | Thrive with Therapy',
   description:
-    'Videos and reflections from Vanessa M. Sierra, LMFT on relationships, emotions, patterns, parenting, and everyday challenges.',
+    'Videos and reflections from Vanessa M.M. Sierra, LMFT on relationships, emotions, patterns, parenting, and everyday challenges.',
 };
 
 export default async function BlogIndexPage() {

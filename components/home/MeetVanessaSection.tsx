@@ -13,7 +13,7 @@ export default function MeetVanessaSection() {
           <Eyebrow>MEET VANESSA</Eyebrow>
           <h2 className="font-serif text-4xl font-normal text-foreground text-balance [&>em]:italic [&>em]:text-primary">The Person Behind the Work.</h2>
           <p className="text-[18px] leading-[1.8]">
-            Vanessa M. Sierra is a Licensed Marriage and Family Therapist with more than 20 years
+            Vanessa M.M. Sierra, LMFT is a Licensed Marriage and Family Therapist with more than 20 years
             of experience working with adults, couples, families, and children. Her work is
             grounded in listening closely, understanding the patterns behind what clients are
             experiencing, and creating a supportive space where people can feel understood, safe,
@@ -31,7 +31,7 @@ export default function MeetVanessaSection() {
           <div className="relative aspect-[4/5] rounded-md overflow-hidden shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)]">
             <Image
               src="/images/vanessa.jpg"
-              alt="Portrait of Vanessa M. Sierra, LMFT"
+              alt="Portrait of Vanessa M.M. Sierra, LMFT"
               fill
               sizes="(max-width: 900px) 80vw, 400px"
               className="object-cover object-[center_30%]"

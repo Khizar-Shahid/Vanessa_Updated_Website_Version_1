@@ -95,7 +95,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   return {
     title: `${post.title} | Thrive with Therapy`,
-    description: post.excerpt || 'Read the latest blog post from Vanessa M. Sierra, LMFT.',
+    description: post.excerpt || 'Read the latest blog post from Vanessa M.M. Sierra, LMFT.',
     alternates: {
       canonical: `/blog/${slug}`,
     },
@@ -139,7 +139,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.title}
           </h1>
           <div className="flex items-center gap-3 text-muted text-[13.5px]">
-            <span>By {post.author || 'Vanessa M. Sierra, LMFT'}</span>
+            <span>By {post.author || 'Vanessa M.M. Sierra, LMFT'}</span>
             <span>&bull;</span>
             <time dateTime={post.publishedAt}>{date}</time>
           </div>
@@ -172,13 +172,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="w-16 h-16 rounded-full overflow-hidden bg-surface shrink-0 border border-border">
               <img
                 src="/images/vanessa.jpg"
-                alt="Vanessa M. Sierra, LMFT"
+                alt="Vanessa M.M. Sierra, LMFT"
                 className="w-full h-full object-cover"
               />
             </div>
             <div>
               <h4 className="font-serif text-xl text-foreground mb-1">
-                Written by {post.author || 'Vanessa M. Sierra, LMFT'}
+                Written by {post.author || 'Vanessa M.M. Sierra, LMFT'}
               </h4>
               <p className="text-muted text-[14px] leading-relaxed m-0">
                 {post.authorBio ||

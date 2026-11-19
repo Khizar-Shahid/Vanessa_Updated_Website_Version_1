@@ -17,7 +17,7 @@ const EXPLORE_LINKS = [
 const SOCIAL_LINKS = [
   {
     label: 'LinkedIn',
-    ariaLabel: 'Vanessa M. Sierra on LinkedIn',
+    ariaLabel: 'Vanessa M.M. Sierra, LMFT on LinkedIn',
     href: 'https://www.linkedin.com/in/vanessa-m-sierra-lmft-5a5070405',
     icon: (
       <>
@@ -80,7 +80,7 @@ export default function Footer() {
               <LogoLockup size={52} />
             </Link>
             <p className="mt-5 text-[14.5px] leading-[1.7] text-muted max-w-[40ch]">
-              Vanessa M. Sierra, LMFT provides thoughtful individual, couples, and family therapy. A
+              Vanessa M.M. Sierra, LMFT provides thoughtful individual, couples, and family therapy. A
               calm and collaborative space to understand the patterns beneath your experiences and
               find a healthier way forward.
             </p>
@@ -156,7 +156,7 @@ export default function Footer() {
 
         <div className="flex flex-wrap justify-between gap-4 pt-7 text-[13px]">
           <p className="text-muted max-w-none">
-            © {currentYear} Thrive with Therapy. Vanessa M. Sierra, LMFT. All rights reserved.
+            © {currentYear} Thrive with Therapy. Vanessa M.M. Sierra, LMFT. All rights reserved.
           </p>
           <ul className="list-none flex gap-6">
             <li>

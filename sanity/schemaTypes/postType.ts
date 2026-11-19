@@ -32,7 +32,7 @@ export const postType = defineType({
       name: 'author',
       title: 'Author',
       type: 'string',
-      initialValue: 'Vanessa Sierra, LMFT',
+      initialValue: 'Vanessa M.M. Sierra, LMFT',
     }),
     defineField({
       name: 'authorBio',

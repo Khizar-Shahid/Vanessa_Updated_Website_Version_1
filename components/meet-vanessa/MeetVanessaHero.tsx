@@ -15,7 +15,7 @@ export default function MeetVanessaHero() {
             <Eyebrow className="mb-3">MEET VANESSA</Eyebrow>
           </RevealItem>
           <RevealItem as="h1" className="font-serif text-5xl font-normal text-foreground leading-tight mb-4 text-balance [&>em]:italic [&>em]:text-primary">
-            Meet Vanessa Sierra, <em>LMFT</em>
+            Meet Vanessa M.M. Sierra, <em>LMFT</em>
           </RevealItem>
           <RevealItem as="p" className="text-[18px] leading-[1.7] text-muted text-[17px] md:text-[19px] max-w-[52ch]">
             A therapist, a listener, and a believer that the patterns we carry do not have to
@@ -27,7 +27,7 @@ export default function MeetVanessaHero() {
           <div className="relative aspect-[800/748] rounded-md overflow-hidden shadow-[0_18px_40px_-26px_rgba(42,43,42,0.45)] border border-border bg-surface">
             <Image
               src="/images/poster.png"
-              alt="Vanessa M. Sierra, LMFT - Influential Women Recognition"
+              alt="Vanessa M.M. Sierra, LMFT - Influential Women Recognition"
               fill
               priority
               sizes="(max-width: 860px) 88vw, 460px"
