@@ -41,6 +41,7 @@ export default function PodcastsPage() {
       <PodcastsFeed
         channel={podcastsData.channel}
         featured={podcastsData.featured}
+        secondEpisode={podcastsData.secondEpisode}
         episodes={podcastsData.episodes}
       />
     </div>

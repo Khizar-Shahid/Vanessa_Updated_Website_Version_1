@@ -7,6 +7,7 @@ import { Play } from 'lucide-react';
 interface YouTubePlayerFacadeProps {
   youtubeId: string;
   title: string;
+  thumbnailUrl?: string;
   priority?: boolean;
   aspectRatio?: string;
   className?: string;
@@ -15,6 +16,7 @@ interface YouTubePlayerFacadeProps {
 export default function YouTubePlayerFacade({
   youtubeId,
   title,
+  thumbnailUrl,
   priority = false,
   aspectRatio = '16 / 9',
   className = '',
@@ -23,9 +25,11 @@ export default function YouTubePlayerFacade({
   const [imgError, setImgError] = useState(false);
 
   // YouTube high-quality thumbnail fallback sequence
-  const posterUrl = imgError
+  const defaultPoster = imgError
     ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
     : `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
+
+  const posterUrl = thumbnailUrl || defaultPoster;
 
   if (isPlaying) {
     return (
@@ -64,6 +68,13 @@ export default function YouTubePlayerFacade({
         priority={priority}
         unoptimized
         onError={() => setImgError(true)}
+        onLoad={(e) => {
+          // YouTube returns a 120x90 placeholder when maxresdefault is missing
+          const img = e.currentTarget;
+          if (img.naturalWidth > 0 && img.naturalWidth <= 120) {
+            setImgError(true);
+          }
+        }}
         className="podcast-thumbnail-img object-cover transition-transform duration-500 group-hover:scale-105"
       />
       <div className="podcast-player-overlay absolute inset-0 bg-black/25 flex items-center justify-center transition-colors duration-300 group-hover:bg-black/40">

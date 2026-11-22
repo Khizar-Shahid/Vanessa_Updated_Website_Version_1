@@ -13,13 +13,17 @@ export type { PodcastChannel, PodcastEpisode };
 interface PodcastsFeedProps {
   channel: PodcastChannel;
   featured: PodcastEpisode;
+  secondEpisode?: PodcastEpisode;
   episodes: PodcastEpisode[];
 }
 
-export default function PodcastsFeed({ featured, episodes }: PodcastsFeedProps) {
+export default function PodcastsFeed({ featured, secondEpisode, episodes }: PodcastsFeedProps) {
   const [selectedTopic, setSelectedTopic] = useState<string>('All');
 
-  const allEpisodes = useMemo(() => [featured, ...episodes], [featured, episodes]);
+  const allEpisodes = useMemo(
+    () => [featured, ...(secondEpisode ? [secondEpisode] : []), ...episodes],
+    [featured, secondEpisode, episodes]
+  );
 
   // Extract all distinct topics
   const allTopics = useMemo(() => {
@@ -34,12 +38,15 @@ export default function PodcastsFeed({ featured, episodes }: PodcastsFeedProps) 
     return episodes.filter((ep) => ep.topics.includes(selectedTopic));
   }, [episodes, selectedTopic]);
 
-  const isFeaturedMatch = selectedTopic === 'All' || featured.topics.includes(selectedTopic);
+  const isFeaturedMatch =
+    selectedTopic === 'All' ||
+    featured.topics.includes(selectedTopic) ||
+    Boolean(secondEpisode && secondEpisode.topics.includes(selectedTopic));
 
   return (
     <div className="podcasts-feed">
       {/* 1. Featured Episode Spotlight */}
-      {isFeaturedMatch && <PodcastFeatured featured={featured} />}
+      {isFeaturedMatch && <PodcastFeatured featured={featured} secondEpisode={secondEpisode} />}
 
       {/* 2. Grid Section (ready for multiple episodes) */}
       {false && (

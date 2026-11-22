@@ -6,6 +6,7 @@ export interface PodcastEpisode {
   duration: string;
   publishedAt: string;
   topics: string[];
+  thumbnailUrl?: string;
 }
 
 export interface PodcastChannel {
