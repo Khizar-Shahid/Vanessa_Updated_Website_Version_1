@@ -26,7 +26,7 @@ export default function YouTubePlayerFacade({
 
   // YouTube high-quality thumbnail fallback sequence
   const defaultPoster = imgError
-    ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
+    ? `https://img.youtube.com/vi/${youtubeId}/sddefault.jpg`
     : `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`;
 
   const posterUrl = thumbnailUrl || defaultPoster;
